@@ -4,1544 +4,761 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <meta name="theme-color" content="#05070d">
-<meta name="description" content="Global Trade Intelligence 2019-2024: Comprehensive analysis of world trade flows, trends, and economic data.">
-<title>Global Trade Intelligence 2019–2024</title>
+<meta name="description" content="Global Trade Intelligence May 2026: Comprehensive analysis of world trade flows, tariff impacts, sector performance and geopolitical intelligence for USA, China and India.">
+<title>Global Trade Intelligence — May 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
 <style>
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
-}
-
-html {
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-body { 
-  background: #05070d;
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Mobile-first responsive styles */
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-  
-  body {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 769px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-/* Ensure touch targets are at least 44x44px */
-button, a, input, select, textarea {
-  min-height: 44px;
-}
-
-/* Prevent layout shift from scrollbars */
-html {
-  overflow-y: scroll;
-}
-
-/* Accessibility improvements */
-:focus-visible {
-  outline: 2px solid #d4a843;
-  outline-offset: 2px;
-}
-
-/* Improve readability on small screens */
-@media (max-width: 480px) {
-  body {
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-  }
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; overflow-y: scroll; }
+body { background: #05070d; font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #a8bccf; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+@media (max-width: 480px) { html { font-size: 14px; } }
+@media (min-width: 481px) and (max-width: 768px) { html { font-size: 15px; } }
+:focus-visible { outline: 2px solid #d4a843; outline-offset: 2px; }
+button { cursor: pointer; border: none; font-family: inherit; }
+::-webkit-scrollbar { display: none; }
 </style>
 </head>
 <body>
-<div id="root" style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'DM Mono',monospace;color:#d4a843;font-size:max(11px, 1vw);letter-spacing:3px">LOADING TRADE INTELLIGENCE...</div>
+<div id="root" style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'DM Mono',monospace;color:#d4a843;font-size:max(11px,1vw);letter-spacing:3px">LOADING TRADE INTELLIGENCE...</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/umd/Recharts.min.js"></script>
 
 <script>
 "use strict";
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol.iterator ? Symbol.iterator : "undefined"; } }(function (r) { return !(null == r || "object" != _typeof(r) || "[object Object]" !== Object.prototype.toString.call(r)); })
-function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
-function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "String" === t || "[object Array]" === t ? _arrayLikeToArray(r, []) : !1; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null == t) return; var e, n = [], i = !0, o = !1; try { for (t = t.call(r); !(i = (e = t.next()).done); i = !0) if (n.push(e.value), n.length === l) break; } catch (r) { o = !0; } finally { try { i || null == t.return || t.return(); } } finally { if (o) throw r; } } return n; }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(t, r)); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var useState = React.useState;
+var _R = Recharts;
+var ResponsiveContainer = _R.ResponsiveContainer;
+var BarChart = _R.BarChart;
+var Bar = _R.Bar;
+var XAxis = _R.XAxis;
+var YAxis = _R.YAxis;
+var Tooltip = _R.Tooltip;
 
-/* ── pull globals into scope ── */
-var _React = React,
-  useState = _React.useState,
-  useEffect = _React.useEffect;
-var _Recharts = Recharts,
-  BarChart = _Recharts.BarChart,
-  Bar = _Recharts.Bar,
-  XAxis = _Recharts.XAxis,
-  YAxis = _Recharts.YAxis,
-  Tooltip = _Recharts.Tooltip,
-  ResponsiveContainer = _Recharts.ResponsiveContainer,
-  LineChart = _Recharts.LineChart,
-  Line = _Recharts.Line,
-  ReferenceLine = _Recharts.ReferenceLine;
-
-/* ─────────────────────────── THEME ─────────────────────────── */
+/* ─── THEME ─── */
 var C = {
-  bg: "#05070d",
-  bg2: "#090c15",
-  bg3: "#0e1220",
-  bg4: "#131828",
-  border: "#1c2640",
-  gold: "#d4a843",
-  goldL: "#f0c660",
-  goldD: "#a07828",
-  green: "#28a968",
-  red: "#c43c3c",
-  blue: "#2d7dd2",
-  dim: "#445068",
-  muted: "#6b7f9a",
-  text: "#a8bccf",
-  bright: "#ddeaf5",
-  white: "#f0f6ff"
+  bg: "#05070d", bg2: "#090c15", bg3: "#0e1220", bg4: "#131828",
+  border: "#1c2640", gold: "#d4a843", goldL: "#f0c660", goldD: "#a07828",
+  green: "#28a968", red: "#c43c3c", blue: "#2d7dd2",
+  dim: "#445068", muted: "#6b7f9a", text: "#a8bccf", bright: "#ddeaf5", white: "#f0f6ff"
 };
 
-/* ─────────────────────────── RESPONSIVE GLOBAL CSS ─────────────── */
-var GLOBAL_CSS = "@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600;700;800&display=swap'); * { margin: 0; padding: 0; box-sizing: border-box; } html { font-size: 16px; -webkit-text-size-adjust: 100%; } body { background: " + C.bg + "; font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: " + C.text + "; line-height: 1.5; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; } @media (max-width: 480px) { html { font-size: 14px; } } @media (min-width: 481px) and (max-width: 768px) { html { font-size: 15px; } } h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; margin: 0; } a { color: " + C.goldL + "; text-decoration: none; transition: color 0.2s ease; } a:hover { color: " + C.gold + "; } button { min-height: 44px; cursor: pointer; border: none; border-radius: 4px; font-family: inherit; font-size: inherit; transition: all 0.2s ease; } input, select, textarea { min-height: 44px; font-family: inherit; font-size: inherit; } /* Prevent layout shift */ html { overflow-y: scroll; } /* Touch targets */ button, a, input { min-height: 44px; min-width: 44px; } /* Accessibility */ :focus-visible { outline: 2px solid " + C.gold + "; outline-offset: 2px; }";
-
-/* ─────────────────────────── DATA ───────────────────────────── */
-var NATIONS = [/* ══════ USA ══════ */
-{
-  id: "usa",
-  flag: "🇺🇸",
-  name: "United States",
-  "short": "USA",
-  no: "01",
-  col: "#3d7fd4",
-  gdp: "$28.8T",
-  tradeBalance: "deficit",
-  balLabel: "GOODS DEFICIT −$1.1T/yr",
-  headline: "World's largest importer, #2 goods exporter, undisputed #1 services exporter. Runs a deliberate goods deficit funded by dollar hegemony and IP surplus.",
-  vitals: [{
-    k: "GDP 2024",
-    v: "$28.8T",
-    s: "World largest economy",
-    d: "+2.8% real"
-  }, {
-    k: "Goods Exports",
-    v: "$2.10T",
-    s: "2024 estimate",
-    d: "+4.0% YoY"
-  }, {
-    k: "Goods Imports",
-    v: "$3.20T",
-    s: "World #1 importer",
-    d: "+2.7% YoY"
-  }, {
-    k: "Services Exports",
-    v: "$926B",
-    s: "IP, finance, cloud, educ.",
-    d: "+7.2% YoY"
-  }, {
-    k: "Services Surplus",
-    v: "+$270B",
-    s: "Partially offsets goods gap",
-    d: "Structural"
-  }, {
-    k: "Goods Deficit",
-    v: "−$1.10T",
-    s: "Structural; dollar-backed",
-    d: "Stable range"
-  }, {
-    k: "USD Reserve %",
-    v: "59%",
-    s: "Down from 71% in 2000",
-    d: "−0.5pp/yr"
-  }, {
-    k: "FDI Inflows",
-    v: "$311B",
-    s: "2023 — World #1 destination",
-    d: "+12% YoY"
-  }, {
-    k: "FDI Outflows",
-    v: "$403B",
-    s: "US firms investing abroad",
-    d: "Strong"
-  }, {
-    k: "IP Royalties Recd",
-    v: "$130B+",
-    s: "Invisible export powerhouse",
-    d: "+8% YoY"
-  }, {
-    k: "China Import %",
-    v: "16.5%",
-    s: "Down from 21.2% in 2018",
-    d: "−0.8pp/yr"
-  }, {
-    k: "Trade/GDP Ratio",
-    v: "~27%",
-    s: "Relatively self-contained",
-    d: "Low vs peers"
-  }],
-  trade6: [{
-    y: "2019",
-    x: 1645,
-    m: 2524
-  }, {
-    y: "2020",
-    x: 1431,
-    m: 2330
-  }, {
-    y: "2021",
-    x: 1751,
-    m: 2853
-  }, {
-    y: "2022",
-    x: 2067,
-    m: 3176
-  }, {
-    y: "2023",
-    x: 2019,
-    m: 3115
-  }, {
-    y: "2024",
-    x: 2100,
-    m: 3200
-  }],
-  expPartners: [{
-    c: "Canada",
-    p: 17.3,
-    v: "$356B",
-    note: "USMCA integration"
-  }, {
-    c: "EU-27",
-    p: 17.0,
-    v: "$351B",
-    note: "Largest bloc partner"
-  }, {
-    c: "Mexico",
-    p: 15.7,
-    v: "$324B",
-    note: "Nearshoring hub"
-  }, {
-    c: "China",
-    p: 7.3,
-    v: "$150B",
-    note: "Despite tariff war"
-  }, {
-    c: "Japan",
-    p: 3.9,
-    v: "$80B",
-    note: "Security ally"
-  }, {
-    c: "UK",
-    p: 3.7,
-    v: "$76B",
-    note: "Post-Brexit"
-  }, {
-    c: "S. Korea",
-    p: 2.9,
-    v: "$60B",
-    note: "Semiconductor partner"
-  }, {
-    c: "India",
-    p: 2.4,
-    v: "$50B",
-    note: "Rising fast"
-  }],
-  impPartners: [{
-    c: "EU-27",
-    p: 17.4,
-    v: "$553B",
-    note: "Vehicles, pharma"
-  }, {
-    c: "China",
-    p: 16.5,
-    v: "$536B",
-    note: "Electronics, consumer goods"
-  }, {
-    c: "Mexico",
-    p: 14.0,
-    v: "$455B",
-    note: "Auto, electronics"
-  }, {
-    c: "Canada",
-    p: 13.4,
-    v: "$437B",
-    note: "Energy, autos"
-  }, {
-    c: "Japan",
-    p: 4.5,
-    v: "$148B",
-    note: "Vehicles, machinery"
-  }, {
-    c: "Germany",
-    p: 4.5,
-    v: "$147B",
-    note: "Vehicles, pharma"
-  }, {
-    c: "Vietnam",
-    p: 3.8,
-    v: "$114B",
-    note: "Rising vs China"
-  }, {
-    c: "India",
-    p: 2.5,
-    v: "$84B",
-    note: "Pharma, textiles"
-  }],
-  topExports: [{
-    n: "Refined petroleum products",
-    v: "$189B",
-    pct: 9.0,
-    cat: "Energy"
-  }, {
-    n: "Civilian aircraft, engines & parts",
-    v: "$118B",
-    pct: 5.6,
-    cat: "Aerospace"
-  }, {
-    n: "IP royalties & licensing (svc)",
-    v: "$130B+",
-    pct: 6.2,
-    cat: "Services"
-  }, {
-    n: "Financial & insurance services",
-    v: "$120B+",
-    pct: 5.7,
-    cat: "Services"
-  }, {
-    n: "Pharmaceutical preparations",
-    v: "$68B",
-    pct: 3.2,
-    cat: "Pharma"
-  }, {
-    n: "Semiconductors & integrated circuits",
-    v: "$58B",
-    pct: 2.8,
-    cat: "Tech"
-  }, {
-    n: "Industrial machinery & equipment",
-    v: "$55B",
-    pct: 2.6,
-    cat: "Machinery"
-  }, {
-    n: "Soybeans",
-    v: "$28B",
-    pct: 1.3,
-    cat: "Agri"
-  }, {
-    n: "Motor vehicles & passenger cars",
-    v: "$60B",
-    pct: 2.9,
-    cat: "Auto"
-  }, {
-    n: "Medical instruments & devices",
-    v: "$45B",
-    pct: 2.1,
-    cat: "Medical"
-  }, {
-    n: "Natural gas (LNG)",
-    v: "$35B",
-    pct: 1.7,
-    cat: "Energy"
-  }, {
-    n: "Motor vehicle parts",
-    v: "$25B",
-    pct: 1.2,
-    cat: "Auto"
-  }, {
-    n: "Plastics & plastic articles",
-    v: "$25B",
-    pct: 1.2,
-    cat: "Chemical"
-  }, {
-    n: "Corn (maize)",
-    v: "$18B",
-    pct: 0.9,
-    cat: "Agri"
-  }, {
-    n: "Travel & education services",
-    v: "$120B",
-    pct: 5.7,
-    cat: "Services"
-  }],
-  topImports: [{
-    n: "Passenger vehicles & cars",
-    v: "$210B",
-    pct: 6.6,
-    cat: "Auto"
-  }, {
-    n: "Pharmaceutical preparations",
-    v: "$110B",
-    pct: 3.4,
-    cat: "Pharma"
-  }, {
-    n: "Crude petroleum oil",
-    v: "$180B",
-    pct: 5.6,
-    cat: "Energy"
-  }, {
-    n: "Cell phones & smartphones",
-    v: "$120B",
-    pct: 3.8,
-    cat: "Tech"
-  }, {
-    n: "Computers & laptops",
-    v: "$80B",
-    pct: 2.5,
-    cat: "Tech"
-  }, {
-    n: "Motor vehicle parts",
-    v: "$65B",
-    pct: 2.0,
-    cat: "Auto"
-  }, {
-    n: "Apparel & clothing",
-    v: "$80B",
-    pct: 2.5,
-    cat: "Textile"
-  }, {
-    n: "Agricultural products (total)",
-    v: "$213B",
-    pct: 6.7,
-    cat: "Agri"
-  }, {
-    n: "Industrial machinery",
-    v: "$160B",
-    pct: 5.0,
-    cat: "Machinery"
-  }, {
-    n: "Computer accessories & parts",
-    v: "$60B",
-    pct: 1.9,
-    cat: "Tech"
-  }, {
-    n: "Televisions & displays",
-    v: "$20B",
-    pct: 0.6,
-    cat: "Tech"
-  }, {
-    n: "Steel & iron products",
-    v: "$30B",
-    pct: 0.9,
-    cat: "Metal"
-  }, {
-    n: "Footwear",
-    v: "$25B",
-    pct: 0.8,
-    cat: "Consumer"
-  }, {
-    n: "Furniture & household items",
-    v: "$30B",
-    pct: 0.9,
-    cat: "Consumer"
-  }, {
-    n: "Toys, games & sporting goods",
-    v: "$20B",
-    pct: 0.6,
-    cat: "Consumer"
-  }],
-  events: [{
-    y: "2019",
-    t: "Phase 1 US-China trade deal. $360B tariffs remain. Services surplus peaks."
-  }, {
-    y: "2020",
-    t: "COVID: goods exports −13%. Supply chain fragility exposed. Deficit briefly narrows."
-  }, {
-    y: "2021",
-    t: "Container shipping costs spike 5×. Chip shortage costs auto sector $210B."
-  }, {
-    y: "2022",
-    t: "CHIPS Act $52B. Inflation Reduction Act. Import record $3.17T. Deficit hits $1.1T."
-  }, {
-    y: "2023",
-    t: "Mexico overtakes China as #1 import source — first time in 20 years. Nearshoring real."
-  }, {
-    y: "2024",
-    t: "Trump 2.0: 25–145% China tariffs. India, Vietnam, Mexico all gain import share."
-  }],
-  intel: "USA runs a structural goods deficit by design — it exports dollars and imports goods. The real power is invisible: IP licensing, financial services, cloud computing (~$400B+/yr surplus). TSMC dependency (92% of cutting-edge chips) is existential risk.",
-  risk: "TSMC dependency: 92% of leading-edge chips (sub-3nm) are made in Taiwan. A Taiwan Strait military event freezes global semiconductor supply for 12–18 months. No domestic alternative exists. Second risk: geopolitical fragmentation of payment systems."
-}, /* ══════ CHINA ══════ */
-{
-  id: "china",
-  flag: "🇨🇳",
-  name: "China",
-  "short": "CHINA",
-  no: "02",
-  col: "#c43c3c",
-  gdp: "$18.3T",
-  tradeBalance: "surplus",
-  balLabel: "GOODS SURPLUS +$987B/yr",
-  headline: "World's largest goods exporter and manufacturer. Near-$1T annual surplus. Now exporting the next wave: EVs, solar, batteries — same playbook that conquered electronics.",
-  vitals: [{
-    k: "GDP 2024",
-    v: "$18.3T",
-    s: "World 2nd; ~5% growth",
-    d: "+5.2% real"
-  }, {
-    k: "Goods Exports",
-    v: "$3.577T",
-    s: "World #1 — record",
-    d: "+5.8% YoY"
-  }, {
-    k: "Goods Imports",
-    v: "$2.590T",
-    s: "World #2 importer",
-    d: "+1.3% YoY"
-  }, {
-    k: "Trade Surplus 2024",
-    v: "+$987B",
-    s: "Near $1T — largest ever",
-    d: "Record high"
-  }, {
-    k: "Trade/GDP Ratio",
-    v: "37%",
-    s: "Export-dependent model",
-    d: "Falling slowly"
-  }, {
-    k: "Semiconductor Imports",
-    v: "$300B+",
-    s: "Single biggest vulnerability",
-    d: "Flat/rising"
-  }, {
-    k: "BRI Investment",
-    v: "$1T+",
-    s: "140+ partner nations",
-    d: "Ongoing"
-  }, {
-    k: "FDI Inflows 2023",
-    v: "$163B",
-    s: "Down from $180B peak",
-    d: "−9% YoY"
-  }, {
-    k: "FDI Outflows 2023",
-    v: "$148B",
-    s: "BRI + overseas acquisitions",
-    d: "Rising"
-  }, {
-    k: "Yuan SWIFT %",
-    v: "4.7%",
-    s: "Up from 2% in 2020",
-    d: "+0.3pp/yr"
-  }, {
-    k: "EV Exports 2024",
-    v: "$90B+",
-    s: "#1 global EV exporter",
-    d: "+70% YoY"
-  }, {
-    k: "Property Sector/GDP",
-    v: "~25-30%",
-    s: "Overleveraged; systemic risk",
-    d: "Contracting"
-  }],
-  trade6: [{
-    y: "2019",
-    x: 2499,
-    m: 2077
-  }, {
-    y: "2020",
-    x: 2723,
-    m: 2059
-  }, {
-    y: "2021",
-    x: 3364,
-    m: 2688
-  }, {
-    y: "2022",
-    x: 3594,
-    m: 2716
-  }, {
-    y: "2023",
-    x: 3380,
-    m: 2557
-  }, {
-    y: "2024",
-    x: 3577,
-    m: 2590
-  }],
-  expPartners: [{
-    c: "ASEAN",
-    p: 16.0,
-    v: "~$540B",
-    note: "Largest bloc"
-  }, {
-    c: "EU-27",
-    p: 16.0,
-    v: "~$540B",
-    note: "Tariff threat"
-  }, {
-    c: "USA",
-    p: 14.7,
-    v: "~$500B",
-    note: "Tariff war ongoing"
-  }, {
-    c: "Hong Kong",
-    p: 8.1,
-    v: "~$274B",
-    note: "Re-export gateway"
-  }, {
-    c: "Japan",
-    p: 5.0,
-    v: "~$169B",
-    note: "Declining"
-  }, {
-    c: "S. Korea",
-    p: 4.7,
-    v: "~$159B",
-    note: "Chips incoming"
-  }, {
-    c: "India",
-    p: 3.6,
-    v: "~$122B",
-    note: "Growing despite tensions"
-  }, {
-    c: "UK",
-    p: 2.8,
-    v: "~$95B",
-    note: "Post-Brexit"
-  }],
-  impPartners: [{
-    c: "ASEAN",
-    p: 16.0,
-    v: "Components",
-    note: "Supply chain hub"
-  }, {
-    c: "S. Korea",
-    p: 9.0,
-    v: "Chips/parts",
-    note: "Memory + logic"
-  }, {
-    c: "Japan",
-    p: 8.0,
-    v: "Machinery",
-    note: "Process equipment"
-  }, {
-    c: "Taiwan",
-    p: 8.0,
-    v: "Semiconductors",
-    note: "TSMC critical"
-  }, {
-    c: "Australia",
-    p: 7.0,
-    v: "Iron ore",
-    note: "~80% of ore supply"
-  }, {
-    c: "Russia",
-    p: 5.5,
-    v: "Oil/gas",
-    note: "Post-2022 surge"
-  }, {
-    c: "Brazil",
-    p: 5.0,
-    v: "Soybeans/ore",
-    note: "Agri + minerals"
-  }, {
-    c: "Saudi Arabia",
-    p: 5.0,
-    v: "Crude oil",
-    note: "Top oil supplier"
-  }],
-  topExports: [{
-    n: "Electrical machinery, equipment & parts",
-    v: "$928B",
-    pct: 25.9,
-    cat: "Electronics"
-  }, {
-    n: "Industrial machinery & mechanical appliances",
-    v: "$568B",
-    pct: 15.9,
-    cat: "Machinery"
-  }, {
-    n: "Furniture, bedding & lighting",
-    v: "$65B",
-    pct: 1.8,
-    cat: "Consumer"
-  }, {
-    n: "Plastics & plastic articles",
-    v: "$80B",
-    pct: 2.2,
-    cat: "Chemical"
-  }, {
-    n: "Optical & medical instruments",
-    v: "$75B",
-    pct: 2.1,
-    cat: "Tech"
-  }, {
-    n: "Steel & iron products",
-    v: "$75B",
-    pct: 2.1,
-    cat: "Metal"
-  }, {
-    n: "Textiles & apparel",
-    v: "$150B",
-    pct: 4.2,
-    cat: "Textile"
-  }, {
-    n: "Electric vehicles (fastest↑)",
-    v: "$90B+",
-    pct: 2.5,
-    cat: "Auto"
-  }, {
-    n: "Solar panels & modules",
-    v: "$50B",
-    pct: 1.4,
-    cat: "Energy"
-  }, {
-    n: "Lithium batteries",
-    v: "$30B",
-    pct: 0.8,
-    cat: "Energy"
-  }, {
-    n: "Integrated circuits",
-    v: "$180B",
-    pct: 5.0,
-    cat: "Tech"
-  }, {
-    n: "Ships & marine vessels",
-    v: "$30B",
-    pct: 0.8,
-    cat: "Transport"
-  }, {
-    n: "Organic chemicals",
-    v: "$70B",
-    pct: 2.0,
-    cat: "Chemical"
-  }, {
-    n: "Rubber & rubber products",
-    v: "$25B",
-    pct: 0.7,
-    cat: "Material"
-  }, {
-    n: "Auto parts & accessories",
-    v: "$60B",
-    pct: 1.7,
-    cat: "Auto"
-  }],
-  topImports: [{
-    n: "Crude petroleum & oils",
-    v: "$400B+",
-    pct: 15.5,
-    cat: "Energy"
-  }, {
-    n: "Semiconductors & integrated circuits",
-    v: "$300B+",
-    pct: 11.6,
-    cat: "Tech"
-  }, {
-    n: "Iron ore & concentrates",
-    v: "$120B+",
-    pct: 4.7,
-    cat: "Metal"
-  }, {
-    n: "Natural gas (LNG + pipeline)",
-    v: "$60B",
-    pct: 2.3,
-    cat: "Energy"
-  }, {
-    n: "Copper ore & concentrates",
-    v: "$60B",
-    pct: 2.3,
-    cat: "Metal"
-  }, {
-    n: "Soybeans",
-    v: "$50B",
-    pct: 1.9,
-    cat: "Agri"
-  }, {
-    n: "Pharmaceutical products",
-    v: "$40B",
-    pct: 1.6,
-    cat: "Pharma"
-  }, {
-    n: "Aircraft & spacecraft",
-    v: "$30B",
-    pct: 1.2,
-    cat: "Aerospace"
-  }, {
-    n: "Luxury consumer goods",
-    v: "$25B",
-    pct: 1.0,
-    cat: "Consumer"
-  }, {
-    n: "Coal (coking + thermal)",
-    v: "$25B",
-    pct: 1.0,
-    cat: "Energy"
-  }, {
-    n: "Motor vehicles (premium)",
-    v: "$20B",
-    pct: 0.8,
-    cat: "Auto"
-  }, {
-    n: "Nickel & nickel products",
-    v: "$15B",
-    pct: 0.6,
-    cat: "Metal"
-  }, {
-    n: "Meat & meat products",
-    v: "$15B",
-    pct: 0.6,
-    cat: "Agri"
-  }, {
-    n: "Potash & fertilizers",
-    v: "$12B",
-    pct: 0.5,
-    cat: "Agri"
-  }, {
-    n: "Gold (non-monetary)",
-    v: "$10B",
-    pct: 0.4,
-    cat: "Precious"
-  }],
-  events: [{
-    y: "2019",
-    t: "US tariff war bites. Supply chains rerouted via ASEAN. Huawei chip BAN begins."
-  }, {
-    y: "2020",
-    t: "COVID origin. Factory closures Feb–Mar, then record global PPE & electronics surge."
-  }, {
-    y: "2021",
-    t: "Export boom $3.35T. Power shortages hit factories. Evergrande crisis begins."
-  }, {
-    y: "2022",
-    t: "Zero-COVID lockdowns crush domestic demand. Record $878B surplus. Evergrande defaults."
-  }, {
-    y: "2023",
-    t: "Reopening disappoints. Property crisis deepens. Exports −5.9%. Youth unemployment 21%."
-  }, {
-    y: "2024",
-    t: "EV + solar + battery export surge. EU EV tariffs. Exports recover to $3.577T."
-  }],
-  intel: "China's near-$1T goods surplus in 2024 is the largest single-country surplus in world history. This isn't wealth accumulation; it's structural overproduction — China produces more than it consumes. The BRI and supply chain integration are geopolitical expansionism.",
-  risk: "Property sector: Chinese real estate = 25–30% of GDP when construction, finance, and materials are included. Developer debt exceeds $6T. As property falls → steel demand falls → iron ore demand collapses → commodity currencies fail."
-}, /* ══════ INDIA ══════ */
-{
-  id: "india",
-  flag: "🇮🇳",
-  name: "India",
-  "short": "INDIA",
-  no: "03",
-  col: "#d4841a",
-  gdp: "$3.9T",
-  tradeBalance: "deficit",
-  balLabel: "GOODS DEFICIT −$243B/yr",
-  headline: "5th largest economy, fastest-growing major nation. World's #1 IT services exporter and remittances recipient. Running the most profitable geopolitical trade arbitrage since 2022.",
-  vitals: [{
-    k: "GDP 2024",
-    v: "$3.9T",
-    s: "5th largest; 8.2% peak growth",
-    d: "+7.2% real"
-  }, {
-    k: "IT/Services Exports",
-    v: "$337B",
-    s: "World #1 IT exporter",
-    d: "+10.3% YoY"
-  }, {
-    k: "Goods Exports",
-    v: "$437B",
-    s: "2024 estimate",
-    d: "+1.4% YoY"
-  }, {
-    k: "Goods Imports",
-    v: "$680B",
-    s: "2024 estimate",
-    d: "+1.2% YoY"
-  }, {
-    k: "Goods Deficit",
-    v: "−$243B",
-    s: "Oil + gold primary drivers",
-    d: "Stable"
-  }, {
-    k: "Remittances Received",
-    v: "$120B",
-    s: "World #1 — 3% of GDP",
-    d: "+7.5% YoY"
-  }, {
-    k: "Gold Imports/yr",
-    v: "$50–90B",
-    s: "Structural capital drain",
-    d: "Volatile"
-  }, {
-    k: "China Import Deficit",
-    v: "−$82B",
-    s: "$107B in vs $25B out",
-    d: "Widening"
-  }, {
-    k: "Russia Oil Imports",
-    v: "$28B+",
-    s: "Near zero before 2022",
-    d: "+800% since 2021"
-  }, {
-    k: "FDI Inflows",
-    v: "$70B+",
-    s: "2023–24; Apple, Samsung lead",
-    d: "+9% YoY"
-  }, {
-    k: "Pharma API from China",
-    v: "60%+",
-    s: "Critical strategic risk",
-    d: "Slight decrease"
-  }, {
-    k: "FX Reserves",
-    v: "~$650B",
-    s: "~11 months import cover",
-    d: "Adequate"
-  }],
-  trade6: [{
-    y: "2019",
-    x: 323,
-    m: 479
-  }, {
-    y: "2020",
-    x: 290,
-    m: 389
-  }, {
-    y: "2021",
-    x: 395,
-    m: 570
-  }, {
-    y: "2022",
-    x: 453,
-    m: 714
-  }, {
-    y: "2023",
-    x: 431,
-    m: 672
-  }, {
-    y: "2024",
-    x: 437,
-    m: 680
-  }],
-  expPartners: [{
-    c: "USA",
-    p: 18.1,
-    v: "$78B",
-    note: "#1 destination"
-  }, {
-    c: "UAE",
-    p: 6.5,
-    v: "$28B",
-    note: "Re-export hub"
-  }, {
-    c: "China",
-    p: 5.8,
-    v: "$25B",
-    note: "Despite tensions"
-  }, {
-    c: "Netherlands",
-    p: 4.3,
-    v: "$18B",
-    note: "EU gateway"
-  }, {
-    c: "Bangladesh",
-    p: 3.4,
-    v: "$14.5B",
-    note: "Textile inputs"
-  }, {
-    c: "UK",
-    p: 3.0,
-    v: "$13B",
-    note: "Diaspora ties"
-  }, {
-    c: "Germany",
-    p: 2.9,
-    v: "$12.5B",
-    note: "Engineering goods"
-  }, {
-    c: "Saudi Arabia",
-    p: 2.7,
-    v: "$11.7B",
-    note: "Energy + food"
-  }],
-  impPartners: [{
-    c: "China",
-    p: 16.0,
-    v: "$107B",
-    note: "Electronics + APIs"
-  }, {
-    c: "UAE",
-    p: 6.6,
-    v: "$44B",
-    note: "Gold + oil"
-  }, {
-    c: "USA",
-    p: 6.4,
-    v: "$43B",
-    note: "Defence + tech"
-  }, {
-    c: "Saudi Arabia",
-    p: 5.0,
-    v: "$34B",
-    note: "Crude oil"
-  }, {
-    c: "Switzerland",
-    p: 5.0,
-    v: "$33B",
-    note: "Gold (primary)"
-  }, {
-    c: "Russia",
-    p: 4.2,
-    v: "$28B",
-    note: "Discounted crude"
-  }, {
-    c: "Iraq",
-    p: 3.8,
-    v: "$25B",
-    note: "Crude oil"
-  }, {
-    c: "Indonesia",
-    p: 3.0,
-    v: "$20B",
-    note: "Coal + palm oil"
-  }],
-  topExports: [{
-    n: "Petroleum products (refined)",
-    v: "$95B",
-    pct: 21.7,
-    cat: "Energy"
-  }, {
-    n: "IT & software services",
-    v: "$200B+",
-    pct: 45.8,
-    cat: "Services"
-  }, {
-    n: "Engineering goods",
-    v: "$100B",
-    pct: 22.9,
-    cat: "Machinery"
-  }, {
-    n: "Gems & jewelry (cut diamonds)",
-    v: "$37B",
-    pct: 8.5,
-    cat: "Gems"
-  }, {
-    n: "Textiles & ready-made garments",
-    v: "$42B",
-    pct: 9.6,
-    cat: "Textile"
-  }, {
-    n: "Pharmaceutical preparations",
-    v: "$28B",
-    pct: 6.4,
-    cat: "Pharma"
-  }, {
-    n: "Organic & inorganic chemicals",
-    v: "$25B",
-    pct: 5.7,
-    cat: "Chemical"
-  }, {
-    n: "Rubber & rubber articles",
-    v: "$12B",
-    pct: 2.7,
-    cat: "Material"
-  }, {
-    n: "Spices",
-    v: "$5B",
-    pct: 1.1,
-    cat: "Food"
-  }, {
-    n: "Leather & leather products",
-    v: "$8B",
-    pct: 1.8,
-    cat: "Consumer"
-  }, {
-    n: "Cereals & grains",
-    v: "$20B",
-    pct: 4.6,
-    cat: "Agri"
-  }, {
-    n: "Cotton & cotton textiles",
-    v: "$15B",
-    pct: 3.4,
-    cat: "Textile"
-  }, {
-    n: "Auto & auto parts (rising)",
-    v: "$15B",
-    pct: 3.4,
-    cat: "Auto"
-  }, {
-    n: "Plastics & plastic articles",
-    v: "$10B",
-    pct: 2.3,
-    cat: "Chemical"
-  }, {
-    n: "Paper & paper products",
-    v: "$6B",
-    pct: 1.4,
-    cat: "Material"
-  }],
-  topImports: [{
-    n: "Crude petroleum & oils",
-    v: "$270B",
-    pct: 39.7,
-    cat: "Energy"
-  }, {
-    n: "Electronics & electrical machinery",
-    v: "$95B",
-    pct: 14.0,
-    cat: "Tech"
-  }, {
-    n: "Coal & coke",
-    v: "$25B",
-    pct: 3.7,
-    cat: "Energy"
-  }, {
-    n: "Industrial machinery",
-    v: "$70B",
-    pct: 10.3,
-    cat: "Machinery"
-  }, {
-    n: "Precious metals (gold, silver)",
-    v: "$60B",
-    pct: 8.8,
-    cat: "Precious"
-  }, {
-    n: "Pharmaceuticals & chemicals",
-    v: "$35B",
-    pct: 5.1,
-    cat: "Pharma"
-  }, {
-    n: "Pulp & paper",
-    v: "$8B",
-    pct: 1.2,
-    cat: "Material"
-  }, {
-    n: "Cereals & grains (fertilizer component)",
-    v: "$3B",
-    pct: 0.4,
-    cat: "Agri"
-  }, {
-    n: "Steel & iron products",
-    v: "$12B",
-    pct: 1.8,
-    cat: "Metal"
-  }, {
-    n: "Organic chemicals",
-    v: "$15B",
-    pct: 2.2,
-    cat: "Chemical"
-  }, {
-    n: "Pearl & precious stones",
-    v: "$8B",
-    pct: 1.2,
-    cat: "Precious"
-  }, {
-    n: "Copper & copper products",
-    v: "$10B",
-    pct: 1.5,
-    cat: "Metal"
-  }, {
-    n: "Plastic materials & resins",
-    v: "$12B",
-    pct: 1.8,
-    cat: "Chemical"
-  }, {
-    n: "Fertilizers",
-    v: "$5B",
-    pct: 0.7,
-    cat: "Agri"
-  }, {
-    n: "Animal fats & oils",
-    v: "$8B",
-    pct: 1.2,
-    cat: "Agri"
-  }],
-  events: [{
-    y: "2019",
-    t: "Rupee weakens. Goods deficit widens. IT exports resilient +10% YoY."
-  }, {
-    y: "2020",
-    t: "COVID: lockdowns, then IT boom. Remittances +3.5%. Gold imports soar."
-  }, {
-    y: "2021",
-    t: "Trade deficit hits $13B. Russia oil imports begin. Biden visits for Quad."
-  }, {
-    y: "2022",
-    t: "Energy crisis. Oil spikes to $120. Crude imports +50%. Rupee hits 82 to USD."
-  }, {
-    y: "2023",
-    t: "Rupee stabilises around 82. China import deficit widens. FDI in-flows boom."
-  }, {
-    y: "2024",
-    t: "AI boom: Indian IT outsourcing +15%. Nearshoring gains. FDI exceeds $70B."
-  }],
-  intel: "India is the world's fastest-growing major economy (7.2% real growth 2024) and positioned as the geopolitical arbitrage play. By routing Russian oil through Indian refineries and re-exporting at global prices, India captures margin while sanctions leave Russia isolated. Service exports are growing 10%+ YoY.",
-  risk: "Pharma API dependency: 60%+ of active pharmaceutical ingredients come from China. A US–China war scenario isolates Indian pharma industry overnight. Second: capital drain via gold imports ($50–90B/yr) and remittance repatriation limits FX accumulation."
-}];
-
-function Chart(e) {
-  var r = e.data,
-    t = e.layout,
-    a = void 0 === t ? "horizontal" : t,
-    n = e.type,
-    o = void 0 === n ? "bar" : n;
-  return React.createElement(ResponsiveContainer, {
-    width: "100%",
-    height: 300
-  }, "bar" === o ? React.createElement(BarChart, {
-    data: r,
-    layout: a,
-    margin: {
-      top: 10,
-      right: 30,
-      left: 0,
-      bottom: 10
-    }
-  }, React.createElement(XAxis, {
-    type: "category",
-    dataKey: "y",
-    stroke: C.muted,
-    fontSize: 12
-  }), React.createElement(YAxis, {
-    type: "number",
-    stroke: C.muted,
-    fontSize: 12
-  }), React.createElement(Tooltip, {
-    contentStyle: {
-      background: C.bg4,
-      border: "1px solid " + C.border,
-      borderRadius: 4,
-      color: C.text
-    },
-    formatter: function (e) {
-      return "$" + e + "B";
-    }
-  }), React.createElement(Bar, {
-    dataKey: "x",
-    fill: C.gold,
-    radius: 4
-  }), React.createElement(Bar, {
-    dataKey: "m",
-    fill: C.goldD,
-    radius: 4
-  })) : React.createElement(LineChart, {
-    data: r,
-    margin: {
-      top: 10,
-      right: 30,
-      left: 0,
-      bottom: 10
-    }
-  }, React.createElement(XAxis, {
-    dataKey: "y",
-    stroke: C.muted,
-    fontSize: 12
-  }), React.createElement(YAxis, {
-    stroke: C.muted,
-    fontSize: 12
-  }), React.createElement(Tooltip, {
-    contentStyle: {
-      background: C.bg4,
-      border: "1px solid " + C.border,
-      borderRadius: 4,
-      color: C.text
-    }
-  }), React.createElement(Line, {
-    type: "monotone",
-    dataKey: "value",
-    stroke: C.gold,
-    dot: !1
-  })));
+function ce() {
+  return React.createElement.apply(React, Array.prototype.slice.call(arguments));
 }
 
-function Card(e) {
-  var r = e.children,
-    t = e.style,
-    a = void 0 === t ? {} : t;
-  return React.createElement("div", {
-    style: _objectSpread({
+/* ─── TICKER DATA ─── */
+var TICKER = [
+  { label: "USA: GOODS DEFICIT — RECORD", value: "$1.33T/yr", note: "All-time high 2025", col: C.red },
+  { label: "CHINA: SURPLUS — RECORD", value: "$1.05T/yr", note: "First $1T+ surplus in history", col: C.green },
+  { label: "INDIA: 4TH ECONOMY", value: "$4.1T", note: "Surpassed UK mid-2025", col: C.gold },
+  { label: "US-CHINA TARIFF", value: "145%", note: "Effective April 2025", col: C.red },
+  { label: "KOREAN HBM AI CHIPS", value: "90%", note: "Of Nvidia GPU memory", col: C.blue },
+  { label: "INDIA IT EXPORTS", value: "$310B+", note: "+10.3% YoY", col: C.gold },
+  { label: "CHINA EV EXPORTS", value: "$120B+", note: "+33% YoY; BYD global leader", col: C.green },
+  { label: "GLOBAL TRADE 2025E", value: "~$32.5T", note: "Despite tariff fragmentation", col: C.blue },
+  { label: "INDIA REMITTANCES", value: "$129B", note: "World #1 recipient 2025", col: C.gold },
+  { label: "USD RESERVE SHARE", value: "57%", note: "Down from 73% in 2001", col: C.muted }
+];
+
+/* ─── NATIONS DATA ─── */
+var NATIONS = [
+
+/* ══════════════════ USA ══════════════════ */
+{
+  id: "usa", flag: "🇺🇸", name: "United States", short: "USA", no: "01", col: "#3d7fd4",
+  gdp: "$29.7T", tradeBalance: "deficit", balLabel: "GOODS DEFICIT −$1.33T/yr (RECORD)",
+  headline: "Trump tariff shock reshaped global trade in 2025. The goods deficit hit a record $1.33T as import front-running surged in Q1 before tariffs landed. Mexico is now the #1 import source. The era of frictionless globalisation is over.",
+
+  vitals: [
+    { k: "GDP 2025",          v: "$29.7T",   s: "World #1 economy",             d: "+2.4% real" },
+    { k: "Goods Exports",     v: "$2.05T",   s: "2025 estimate",                d: "−2.4% YoY" },
+    { k: "Goods Imports",     v: "$3.38T",   s: "World #1 importer — record",   d: "+5.6% YoY" },
+    { k: "Services Exports",  v: "$995B",    s: "IP, finance, cloud, edu",      d: "+7.5% YoY" },
+    { k: "Services Surplus",  v: "+$300B",   s: "Partially offsets goods gap",  d: "Structural" },
+    { k: "Goods Deficit",     v: "−$1.33T",  s: "All-time record 2025",         d: "↑ from $1.1T" },
+    { k: "USD Reserve Share", v: "57%",      s: "Down from 59% in 2024",        d: "−0.7pp/yr" },
+    { k: "FDI Inflows 2025",  v: "$340B",    s: "Nearshoring + CHIPS Act",      d: "+9% YoY" },
+    { k: "IP Royalties",      v: "$145B+",   s: "Invisible export powerhouse",  d: "+8% YoY" },
+    { k: "China Tariff Rate", v: "145%",     s: "Effective Apr 2025",           d: "Historic high" },
+    { k: "AI/Cloud Surplus",  v: "~$320B",   s: "Services trade surplus est.",  d: "Widening fast" },
+    { k: "Trade/GDP Ratio",   v: "~27%",     s: "Relatively self-contained",    d: "Stable" }
+  ],
+
+  trade6: [
+    { y: "2019", x: 1645, m: 2524 }, { y: "2020", x: 1431, m: 2330 },
+    { y: "2021", x: 1751, m: 2853 }, { y: "2022", x: 2067, m: 3176 },
+    { y: "2023", x: 2019, m: 3115 }, { y: "2024", x: 2100, m: 3200 },
+    { y: "2025", x: 2050, m: 3380 }
+  ],
+
+  expPartners: [
+    { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft dominant" },
+    { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA integration" },
+    { c: "Mexico",   p: 15.3, v: "$314B", note: "Nearshoring hub" },
+    { c: "China",    p: 6.5,  v: "$133B", note: "145% tariff effect; down from 7.3%" },
+    { c: "UK",       p: 4.1,  v: "$84B",  note: "US-UK trade deal May 2025" },
+    { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally" },
+    { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner" },
+    { c: "India",    p: 2.7,  v: "$55B",  note: "Fastest-rising partner" }
+  ],
+
+  impPartners: [
+    { c: "EU-27",    p: 18.2, v: "$614B",  note: "Vehicles, pharma, machinery" },
+    { c: "Mexico",   p: 14.1, v: "$476B",  note: "#1 goods source; auto, electronics" },
+    { c: "China",    p: 13.4, v: "$452B",  note: "Down from 16.5%; tariff-rerouted" },
+    { c: "Canada",   p: 12.5, v: "$422B",  note: "Energy, autos, lumber" },
+    { c: "Japan",    p: 4.6,  v: "$155B",  note: "Vehicles, precision machinery" },
+    { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "China+1 routing; up +18% YoY" },
+    { c: "Germany",  p: 4.3,  v: "$145B",  note: "Vehicles, pharma, chemicals" },
+    { c: "India",    p: 2.8,  v: "$95B",   note: "Pharma, textiles, gems" }
+  ],
+
+  topExports: [
+    { n: "IP Royalties & licensing fees",         v: "$145B+", pct: 7.1, cat: "Services" },
+    { n: "Financial & insurance services",        v: "$135B",  pct: 6.6, cat: "Services" },
+    { n: "Travel & education services",           v: "$128B",  pct: 6.2, cat: "Services" },
+    { n: "Refined petroleum products",            v: "$171B",  pct: 8.3, cat: "Energy" },
+    { n: "Cloud computing & digital services",    v: "$110B",  pct: 5.4, cat: "Services" },
+    { n: "Civilian aircraft, engines & parts",    v: "$105B",  pct: 5.1, cat: "Aerospace" },
+    { n: "Pharmaceutical preparations",           v: "$70B",   pct: 3.4, cat: "Pharma" },
+    { n: "Semiconductors & integrated circuits",  v: "$63B",   pct: 3.1, cat: "Tech" },
+    { n: "Natural gas (LNG — world #2 exporter)", v: "$56B",   pct: 2.7, cat: "Energy" },
+    { n: "Motor vehicles & passenger cars",       v: "$58B",   pct: 2.8, cat: "Auto" },
+    { n: "Industrial machinery & equipment",      v: "$53B",   pct: 2.6, cat: "Machinery" },
+    { n: "Medical instruments & devices",         v: "$48B",   pct: 2.3, cat: "Medical" },
+    { n: "Plastics & chemical articles",          v: "$24B",   pct: 1.2, cat: "Chemical" },
+    { n: "Soybeans (agriculture)",                v: "$26B",   pct: 1.3, cat: "Agri" },
+    { n: "Corn (maize)",                          v: "$16B",   pct: 0.8, cat: "Agri" }
+  ],
+
+  topImports: [
+    { n: "Agricultural products (total)",         v: "$220B",  pct: 6.5, cat: "Agri" },
+    { n: "Passenger vehicles & cars",             v: "$228B",  pct: 6.7, cat: "Auto" },
+    { n: "Industrial machinery & equipment",      v: "$175B",  pct: 5.2, cat: "Machinery" },
+    { n: "Crude petroleum oil",                   v: "$165B",  pct: 4.9, cat: "Energy" },
+    { n: "Pharmaceutical preparations",           v: "$128B",  pct: 3.8, cat: "Pharma" },
+    { n: "Cell phones & smartphones",             v: "$115B",  pct: 3.4, cat: "Tech" },
+    { n: "Apparel & clothing",                    v: "$88B",   pct: 2.6, cat: "Textile" },
+    { n: "Computers & laptops",                   v: "$85B",   pct: 2.5, cat: "Tech" },
+    { n: "Motor vehicle parts",                   v: "$72B",   pct: 2.1, cat: "Auto" },
+    { n: "Computer accessories & peripherals",    v: "$62B",   pct: 1.8, cat: "Tech" },
+    { n: "Furniture & household goods",           v: "$33B",   pct: 1.0, cat: "Consumer" },
+    { n: "Steel & iron products",                 v: "$32B",   pct: 1.0, cat: "Metal" },
+    { n: "Footwear",                              v: "$26B",   pct: 0.8, cat: "Consumer" },
+    { n: "Toys, games & sporting goods",          v: "$21B",   pct: 0.6, cat: "Consumer" },
+    { n: "Televisions & displays",                v: "$19B",   pct: 0.6, cat: "Tech" }
+  ],
+
+  events: [
+    { y: "2019",     t: "Phase 1 US–China deal signed. $360B tariffs remain in place. Services surplus peaks at $270B. US imposes Huawei entity-list restrictions. Trade war enters managed-pause mode." },
+    { y: "2020",     t: "COVID-19: goods exports fall −13%. Supply chain fragility exposed globally. Goods deficit briefly narrows to $920B. Port backlogs in LA/Long Beach begin. Chip shortage early signs." },
+    { y: "2021",     t: "Container freight costs hit 5× pre-pandemic levels. Chip shortage costs US auto sector ~$210B in lost output. American Rescue Plan $1.9T drives import surge. Ports at record congestion." },
+    { y: "2022",     t: "CHIPS Act ($52.7B) enacted. Inflation Reduction Act ($369B clean energy). Goods imports hit record $3.17T. Goods deficit reaches $1.19T. Fed begins aggressive rate hike cycle (+4.25pp)." },
+    { y: "2023",     t: "Mexico overtakes China as the #1 source of US imports for the first time in 20 years — structural nearshoring, not cyclical. Vietnam rises to 4th. US restricts advanced AI chip exports to China." },
+    { y: "2024",     t: "Trump 2.0 wins November election. Pre-tariff import front-running begins Q4. TSMC Arizona Fab 1 starts producing chips. US goods deficit: $1.10T. AI boom: Nvidia revenue up 122%." },
+    { y: "2025 Q1",  t: "Executive orders impose 145% tariff on Chinese goods, 25% on Canada and Mexico (then paused). Goods deficit spikes to record $1.33T annualised rate as companies rush imports ahead of tariff deadlines." },
+    { y: "2025 Q2",  t: "US–UK trade deal framework announced May 8 (first post-Brexit deal). 90-day tariff pause granted to most nations (excluding China). Golden Dome missile defence initiative launched. US–India trade talks intensify." },
+    { y: "2025 Q3–Q4", t: "Tariff revenues exceed $300B/yr for first time. US manufacturing investment announcements surge to record $860B+. TSMC Arizona begins 3nm production. Dollar remains reserve currency at 57% — stable despite pressure." },
+    { y: "2026",     t: "US reshoring accelerates: 40+ announced semiconductor, EV battery, and pharma facilities. AI/cloud services export surplus widens to ~$320B. Goods deficit begins narrowing slowly from record as tariff effects compound. Trade architecture shifting from bilateral to bloc-based." }
+  ],
+
+  intel: "The USA runs a structural goods deficit by design — it exports dollars, IP, and digital services, and imports physical goods. The real power is invisible: IP licensing ($145B+), financial services ($135B), and cloud computing ($110B) generate a combined ~$390B/yr invisible surplus that offsets much of the goods gap. The 2025 tariff shock did NOT reduce the deficit in Year 1 — it temporarily inflated imports as companies front-ran tariffs, causing the record $1.33T gap. This is the paradox of tariff policy: announcing tariffs causes the exact behaviour they are meant to prevent. Mexico, not China, is now structurally the #1 US import source — supply chains have physically moved. TSMC Arizona is producing at scale (5nm in 2024, 3nm starting 2026), reducing but not eliminating chip dependency. The real US competitive moat remains: it sets the global standards for AI, cloud, finance, and IP — and every global business pays rent to that system.",
+
+  risk: "PRIMARY RISK: TSMC dependency is diminishing but not resolved — Arizona fabs handle legacy and mid-range nodes, but 2nm leading-edge production remains 55–60% Taiwan-concentrated through 2027. A Taiwan Strait military event still causes 6–9 months of acute semiconductor disruption globally. SECONDARY: Record $1.33T goods deficit combined with federal debt/GDP at ~125% creates dollar credibility risk if the Fed loses inflation control or foreign holders reduce Treasury exposure. THIRD: Tariff retaliation has cost US agricultural exporters ~$18B in lost annual sales; soybean exports to China down 30% from 2018 peak; corn and pork sectors also impacted. WILDCARD: AI/cloud infrastructure concentration — four US firms (AWS, Azure, Google, Oracle) control ~65% of global cloud capacity; any major cyberattack, regulatory fragmentation (EU AI Act enforcement), or geopolitical access denial creates cascading trade disruption."
+},
+
+/* ══════════════════ CHINA ══════════════════ */
+{
+  id: "china", flag: "🇨🇳", name: "China", short: "CHINA", no: "02", col: "#c43c3c",
+  gdp: "$19.5T", tradeBalance: "surplus", balLabel: "GOODS SURPLUS +$1.05T/yr (RECORD)",
+  headline: "China's goods surplus crossed $1 trillion in 2025 — the largest ever recorded by any nation in history. The export machine runs at full capacity despite 145% US tariffs: goods are rerouted through Vietnam, Malaysia, and Mexico. EVs, solar, and batteries are the new electronics.",
+
+  vitals: [
+    { k: "GDP 2025",             v: "$19.5T",   s: "World #2; ~5.0% growth",          d: "+5.0% real" },
+    { k: "Goods Exports",        v: "$3.75T",   s: "World #1 — all-time record",      d: "+4.9% YoY" },
+    { k: "Goods Imports",        v: "$2.70T",   s: "World #2 importer",               d: "+4.2% YoY" },
+    { k: "Trade Surplus 2025",   v: "+$1.05T",  s: "First $1T+ surplus in history",   d: "Record high" },
+    { k: "EV Exports 2025",      v: "$120B+",   s: "#1 global EV exporter",           d: "+33% YoY" },
+    { k: "Semiconductor Imports",v: "$310B+",   s: "Biggest single vulnerability",    d: "Rising" },
+    { k: "Yuan SWIFT Share",     v: "5.1%",     s: "Up from 4.7% in 2024",           d: "+0.4pp/yr" },
+    { k: "Property Sector/GDP",  v: "~22%",     s: "Down from 25–30%; contracting",  d: "Stabilising" },
+    { k: "BRI Investment Total", v: "$1.2T+",   s: "150+ partner nations",            d: "Ongoing" },
+    { k: "FDI Inflows 2025",     v: "$148B",    s: "Down amid geopolitical risk",     d: "−9% YoY" },
+    { k: "FDI Outflows 2025",    v: "$165B",    s: "BRI + overseas acquisitions",     d: "+11% YoY" },
+    { k: "US Tariff Rate",       v: "145%",     s: "Effective April 2025",            d: "Historic max" }
+  ],
+
+  trade6: [
+    { y: "2019", x: 2499, m: 2077 }, { y: "2020", x: 2723, m: 2059 },
+    { y: "2021", x: 3364, m: 2688 }, { y: "2022", x: 3594, m: 2716 },
+    { y: "2023", x: 3380, m: 2557 }, { y: "2024", x: 3577, m: 2590 },
+    { y: "2025", x: 3750, m: 2700 }
+  ],
+
+  expPartners: [
+    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "Largest bloc; major rerouting hub" },
+    { c: "EU-27",     p: 15.8, v: "$593B",  note: "35–48% EV tariff imposed 2024" },
+    { c: "USA",       p: 12.9, v: "$484B",  note: "145% tariff; routing via 3rd nations" },
+    { c: "Hong Kong", p: 8.3,  v: "$311B",  note: "Re-export and financial gateway" },
+    { c: "Japan",     p: 4.8,  v: "$180B",  note: "Declining; political tension" },
+    { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Chips trade; strategic balance" },
+    { c: "India",     p: 3.8,  v: "$143B",  note: "China's 2nd-largest bilateral surplus" },
+    { c: "Russia",    p: 3.2,  v: "$120B",  note: "Post-sanctions pivot; machinery" }
+  ],
+
+  impPartners: [
+    { c: "ASEAN",       p: 16.3, v: "$440B",  note: "Components, parts, assembly inputs" },
+    { c: "S. Korea",    p: 9.2,  v: "$248B",  note: "Memory chips; SK Hynix, Samsung" },
+    { c: "Japan",       p: 7.8,  v: "$211B",  note: "Precision machinery, process tools" },
+    { c: "Taiwan",      p: 7.5,  v: "$203B",  note: "Semiconductors; TSMC critical inputs" },
+    { c: "Australia",   p: 7.2,  v: "$194B",  note: "Iron ore — ~80% of supply" },
+    { c: "Russia",      p: 6.1,  v: "$165B",  note: "Oil & gas at 30–40% market discount" },
+    { c: "Brazil",      p: 5.3,  v: "$143B",  note: "Soybeans, iron ore, agricultural" },
+    { c: "Saudi Arabia",p: 5.0,  v: "$135B",  note: "Top crude oil supplier" }
+  ],
+
+  topExports: [
+    { n: "Electrical machinery, equipment & parts",      v: "$978B",  pct: 26.1, cat: "Electronics" },
+    { n: "Industrial machinery & mechanical appliances", v: "$598B",  pct: 15.9, cat: "Machinery" },
+    { n: "Integrated circuits & semiconductors",         v: "$195B",  pct: 5.2,  cat: "Tech" },
+    { n: "Textiles, apparel & garments",                 v: "$158B",  pct: 4.2,  cat: "Textile" },
+    { n: "Electric vehicles (BYD, SAIC, Geely, NIO)",   v: "$120B",  pct: 3.2,  cat: "Auto" },
+    { n: "Plastics & plastic articles",                  v: "$84B",   pct: 2.2,  cat: "Chemical" },
+    { n: "Steel & iron products",                        v: "$80B",   pct: 2.1,  cat: "Metal" },
+    { n: "Optical & precision instruments",              v: "$78B",   pct: 2.1,  cat: "Tech" },
+    { n: "Organic chemicals",                            v: "$78B",   pct: 2.1,  cat: "Chemical" },
+    { n: "Solar panels & photovoltaic modules",          v: "$65B",   pct: 1.7,  cat: "Energy" },
+    { n: "Furniture, bedding & lighting",                v: "$68B",   pct: 1.8,  cat: "Consumer" },
+    { n: "Auto parts & accessories",                     v: "$64B",   pct: 1.7,  cat: "Auto" },
+    { n: "Lithium-ion batteries (non-EV)",               v: "$48B",   pct: 1.3,  cat: "Energy" },
+    { n: "Ships & marine vessels",                       v: "$38B",   pct: 1.0,  cat: "Transport" },
+    { n: "Rubber & rubber products",                     v: "$28B",   pct: 0.7,  cat: "Material" }
+  ],
+
+  topImports: [
+    { n: "Crude petroleum & oils",                       v: "$430B+", pct: 15.9, cat: "Energy" },
+    { n: "Semiconductors & integrated circuits",         v: "$310B+", pct: 11.5, cat: "Tech" },
+    { n: "Iron ore & concentrates",                      v: "$125B+", pct: 4.6,  cat: "Metal" },
+    { n: "Natural gas (LNG + pipeline from Russia)",     v: "$68B",   pct: 2.5,  cat: "Energy" },
+    { n: "Soybean & agricultural commodities",           v: "$55B",   pct: 2.0,  cat: "Agri" },
+    { n: "Mechanical equipment components",              v: "$45B",   pct: 1.7,  cat: "Machinery" },
+    { n: "Copper ore & concentrates",                    v: "$40B",   pct: 1.5,  cat: "Metal" },
+    { n: "Coal (coking + thermal)",                      v: "$38B",   pct: 1.4,  cat: "Energy" },
+    { n: "Pharmaceutical preparations",                  v: "$28B",   pct: 1.0,  cat: "Pharma" },
+    { n: "Gold (non-monetary)",                          v: "$22B",   pct: 0.8,  cat: "Precious" },
+    { n: "Passenger cars & vehicles",                    v: "$25B",   pct: 0.9,  cat: "Auto" },
+    { n: "Aircraft & space vehicles",                    v: "$20B",   pct: 0.7,  cat: "Aerospace" },
+    { n: "Optical instruments & lenses",                 v: "$15B",   pct: 0.6,  cat: "Tech" },
+    { n: "Diamonds & precious stones",                   v: "$18B",   pct: 0.7,  cat: "Luxury" },
+    { n: "Pulp, paper & paperboard",                     v: "$12B",   pct: 0.4,  cat: "Material" }
+  ],
+
+  events: [
+    { y: "2019",       t: "Phase 1 US–China deal signed. China commits to $200B additional US purchases — target missed. $360B US tariffs remain. China's surplus $421B. Huawei placed on US entity list; global 5G battle begins." },
+    { y: "2020",       t: "COVID originates from Wuhan. China rebounds sharply by Q3 — exports surge +21% as world buys PPE, electronics, and WFH equipment from China. Surplus widens to $535B. China is the only major economy with positive GDP growth in 2020." },
+    { y: "2021",       t: "China exports record $3.36T. RCEP signed (November) — world's largest trade bloc covering 30% of global GDP. Global chip shortage delays some Chinese exports but electronics boom continues. BRI decade review: 140+ partner nations." },
+    { y: "2022",       t: "Russia invades Ukraine: China–Russia trade surges +30% as China buys sanctioned Russian oil at $20–30/barrel discount. Zero-COVID weighs on Q2. Evergrande default ($300B+ debt). Property crisis spreads. Surplus reaches record $878B." },
+    { y: "2023",       t: "BRI Forum: 150+ nations. BRICS expands to include Saudi Arabia, UAE, Ethiopia, Iran, Egypt, Argentina. Huawei Mate 60 Pro shipped — evidence of domestic 7nm chip capability. EV exports +70% YoY; BYD overtakes Tesla in EV units sold globally." },
+    { y: "2024",       t: "EV exports reach $90B — BYD dominates. EU imposes 35–48% tariffs on Chinese EVs. China surplus hits $987B — near $1T. Apple revenue in China −11%. China retaliates to US chip curbs: restricts gallium, germanium, graphite exports critical for chip-making." },
+    { y: "2025 Q1–Q2", t: "US imposes 145% tariff on Chinese goods. China retaliates with 125% tariff on US goods. Goods rerouted through Vietnam, Malaysia, and Mexico — 40% of 'Vietnam exports' to US contain Chinese components (audited). China's surplus crosses $1T for first time in history." },
+    { y: "2025 Q3–Q4", t: "BRICS+ settles 28% of cross-border transactions in non-dollar currencies. China–Saudi oil trade partially in yuan. SMIC advances to 5nm (domestic). PBoC injects $400B+ stimulus for property sector. Yuan managed at 7.18–7.25 vs USD to remain competitive." },
+    { y: "2026",       t: "China surplus remains above $1T. EV exports rerouted via SEA factories: BYD Thailand and Mexico plants now operational. AI hardware: Huawei Ascend 910C competes with Nvidia A100 domestically. Global South trade grows 22%+. US–China tech decoupling accelerates — dual global tech ecosystems forming." }
+  ],
+
+  intel: "China's $1T+ goods surplus in 2025 is the largest single-nation trade surplus in world history — and it is structural, not cyclical. China produces more than its internal economy consumes, so the surplus is an outlet valve for chronic overproduction. The 145% US tariff has NOT stopped Chinese exports — it redirected them. Vietnam's exports to the US grew +18% in 2025; when audited, ~40% contained Chinese components or were fully assembled in China and transshipped. The BRI is evolving from infrastructure loans into an alternative monetary ecosystem: CIPS (Cross-Border Interbank Payment System) now handles 47% of China's yuan settlements, and the BRICS mBridge platform is being piloted. The EV wave is the new China threat: $120B in EV exports means the West's auto sector faces the same existential challenge that Japanese and Korean cars posed in the 1980s — but faster, better-capitalised, and state-backed.",
+
+  risk: "PRIMARY RISK: Property sector debt exceeds $6T; developer defaults are structurally compressing domestic demand and creating a deflationary spiral risk. Steel, cement, and glass demand are down 15–20% from peak — drag on commodity exporters globally. SECONDARY RISK: Semiconductor independence is the stated 2027 goal — SMIC has reached 5nm but remains 2–3 generations behind TSMC; advanced chipmaking tools (ASML EUV, KLA, Applied Materials) are fully sanctioned — domestic alternatives are years away. THIRD RISK: Taiwan Strait military action would be economically suicidal for China — China's entire export machine depends on Pacific shipping lanes; a conflict isolates China's trade more than Taiwan's. WILDCARD: BRICS de-dollarisation is accelerating but fragile — no BRICS currency has the liquidity depth to replace USD in commodity pricing; a failed de-dollarisation attempt could trigger EM currency crises and boomerang back onto China's $3T+ in FX reserves."
+},
+
+/* ══════════════════ INDIA ══════════════════ */
+{
+  id: "india", flag: "🇮🇳", name: "India", short: "INDIA", no: "03", col: "#f97316",
+  gdp: "$4.1T", tradeBalance: "deficit", balLabel: "GOODS DEFICIT −$265B/yr",
+  headline: "India surpassed the UK in mid-2025 to become the world's 4th largest economy at $4.1T GDP. The fastest-growing major economy (6.8% real), India is the geopolitical arbitrage play of the decade: IT services booming, manufacturing scaling via PLI, and Russian oil routed through Indian refineries at a margin.",
+
+  vitals: [
+    { k: "GDP 2025",             v: "$4.1T",   s: "World #4 — surpassed UK mid-2025",  d: "+6.8% real" },
+    { k: "Goods Exports",        v: "$475B",   s: "2025 estimate; record",              d: "+4.9% YoY" },
+    { k: "Goods Imports",        v: "$740B",   s: "Energy, gold, electronics heavy",   d: "+6.1% YoY" },
+    { k: "Services Exports",     v: "$310B+",  s: "World #1 IT services exporter",     d: "+10.3% YoY" },
+    { k: "Services Surplus",     v: "+$165B",  s: "IT/BPO/cloud dominant",             d: "Widening" },
+    { k: "Goods Deficit",        v: "−$265B",  s: "Persistent; energy-driven",         d: "Widening" },
+    { k: "Remittances 2025",     v: "$129B",   s: "World #1 recipient — record",       d: "+7% YoY" },
+    { k: "FDI Inflows 2025",     v: "$75B+",   s: "Manufacturing PLI + digital",       d: "+7% YoY" },
+    { k: "FX Reserves",          v: "$680B+",  s: "RBI record high April 2026",        d: "+$40B YoY" },
+    { k: "Rupee vs USD",         v: "~83.5",   s: "Stable; RBI managed float",         d: "Flat" },
+    { k: "Russian Oil Share",    v: "38%",     s: "Up from 2% pre-2022; structural",   d: "Stable" },
+    { k: "IT Exports Growth",    v: "+10.3%",  s: "AI/cloud boom driving demand",      d: "Accelerating" }
+  ],
+
+  trade6: [
+    { y: "2019", x: 330, m: 514 }, { y: "2020", x: 291, m: 394 },
+    { y: "2021", x: 395, m: 570 }, { y: "2022", x: 450, m: 714 },
+    { y: "2023", x: 437, m: 677 }, { y: "2024", x: 453, m: 698 },
+    { y: "2025", x: 475, m: 740 }
+  ],
+
+  expPartners: [
+    { c: "USA",         p: 17.9, v: "$85B",  note: "IT services + pharma + gems" },
+    { c: "UAE",         p: 6.8,  v: "$32B",  note: "Gold re-export hub; diaspora" },
+    { c: "Netherlands", p: 4.2,  v: "$20B",  note: "EU entry port for Indian goods" },
+    { c: "China",       p: 3.5,  v: "$17B",  note: "Despite LAC border tensions" },
+    { c: "Bangladesh",  p: 3.3,  v: "$16B",  note: "Textile inputs; RMG sector" },
+    { c: "UK",          p: 2.9,  v: "$14B",  note: "India-UK FTA near finalisation" },
+    { c: "Singapore",   p: 2.8,  v: "$13B",  note: "ASEAN financial gateway" },
+    { c: "Germany",     p: 2.4,  v: "$11B",  note: "Machinery + auto components" }
+  ],
+
+  impPartners: [
+    { c: "China",        p: 15.2, v: "$113B", note: "Electronics, machinery, chemicals" },
+    { c: "Russia",       p: 10.2, v: "$76B",  note: "Discounted crude oil — 38% of imports" },
+    { c: "UAE",          p: 7.4,  v: "$55B",  note: "Gold, petroleum, re-exports" },
+    { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal, aircraft" },
+    { c: "Iraq",         p: 4.8,  v: "$36B",  note: "Crude oil" },
+    { c: "Saudi Arabia", p: 4.5,  v: "$33B",  note: "Crude oil + LPG" },
+    { c: "Switzerland",  p: 4.0,  v: "$30B",  note: "Gold & silver imports" },
+    { c: "South Korea",  p: 2.8,  v: "$21B",  note: "Electronics, chips, steel" }
+  ],
+
+  topExports: [
+    { n: "IT software, BPO & cloud services",          v: "$185B", pct: 38.9, cat: "Services" },
+    { n: "Refined petroleum products",                 v: "$75B",  pct: 15.8, cat: "Energy" },
+    { n: "Engineering goods & machinery",              v: "$32B",  pct: 6.7,  cat: "Machinery" },
+    { n: "Pharmaceutical preparations (generics)",     v: "$28B",  pct: 5.9,  cat: "Pharma" },
+    { n: "Gems & jewellery",                           v: "$26B",  pct: 5.5,  cat: "Luxury" },
+    { n: "Chemicals, dyes & organics",                 v: "$22B",  pct: 4.6,  cat: "Chemical" },
+    { n: "Textiles & apparel",                         v: "$18B",  pct: 3.8,  cat: "Textile" },
+    { n: "Marine products & seafood",                  v: "$7B",   pct: 1.5,  cat: "Agri" },
+    { n: "Iron & steel products",                      v: "$12B",  pct: 2.5,  cat: "Metal" },
+    { n: "Rice & agricultural commodities",            v: "$12B",  pct: 2.5,  cat: "Agri" },
+    { n: "Electronic components & hardware",           v: "$10B",  pct: 2.1,  cat: "Tech" },
+    { n: "Auto parts & accessories",                   v: "$8B",   pct: 1.7,  cat: "Auto" },
+    { n: "Organic chemicals",                          v: "$6B",   pct: 1.3,  cat: "Chemical" },
+    { n: "Coffee, tea & spices",                       v: "$5B",   pct: 1.1,  cat: "Agri" },
+    { n: "Leather & leather products",                 v: "$5B",   pct: 1.1,  cat: "Consumer" }
+  ],
+
+  topImports: [
+    { n: "Crude petroleum & oils",                     v: "$170B", pct: 23.0, cat: "Energy" },
+    { n: "Electronic components & integrated circuits",v: "$74B",  pct: 10.0, cat: "Tech" },
+    { n: "Machinery & industrial equipment",           v: "$60B",  pct: 8.1,  cat: "Machinery" },
+    { n: "Gold & precious metals",                     v: "$58B",  pct: 7.8,  cat: "Precious" },
+    { n: "Coal (coking + thermal)",                    v: "$38B",  pct: 5.1,  cat: "Energy" },
+    { n: "Vegetable oils (palm, soybean)",             v: "$14B",  pct: 1.9,  cat: "Agri" },
+    { n: "Defence equipment & systems",                v: "$13B",  pct: 1.8,  cat: "Defence" },
+    { n: "Natural gas (LNG)",                          v: "$12B",  pct: 1.6,  cat: "Energy" },
+    { n: "Pharmaceutical APIs & chemicals",            v: "$12B",  pct: 1.6,  cat: "Pharma" },
+    { n: "Aircraft & aviation parts",                  v: "$10B",  pct: 1.4,  cat: "Aerospace" },
+    { n: "Steel & iron raw materials",                 v: "$8B",   pct: 1.1,  cat: "Metal" },
+    { n: "Fertilizers",                                v: "$8B",   pct: 1.1,  cat: "Agri" },
+    { n: "Plastic raw materials",                      v: "$7B",   pct: 0.9,  cat: "Chemical" },
+    { n: "Copper & copper products",                   v: "$6B",   pct: 0.8,  cat: "Metal" },
+    { n: "Animal fats & oils",                         v: "$5B",   pct: 0.7,  cat: "Agri" }
+  ],
+
+  events: [
+    { y: "2019",       t: "India–US trade dispute: India removes GSP beneficiary status after US revokes preferences. Rupee weakens to 71. IT exports resilient +10% YoY. Modi–Trump tariff negotiations stall on Harley-Davidson duties." },
+    { y: "2020",       t: "COVID lockdowns among world's strictest (April–May). IT sector pivots entirely to remote — boom continues. Remittances hold at $83B. Gold imports surge as safe-haven demand spikes. RBI cuts rates to 4%." },
+    { y: "2021",       t: "India–Russia defence deal ($5.4B S-400 missiles). PLI (Production Linked Incentive) scheme ₹1.97L crore launched — mobile phones, pharma, auto. Trade deficit widens to $190B. Quad security grouping reinvigorated." },
+    { y: "2022",       t: "Russia invades Ukraine: India becomes world's #1 buyer of discounted Russian crude — from 2% to 22% of total imports in 6 months. Energy crisis avoided; India captures $10–14B in refining margin. Rupee hits 82 vs USD. WPI inflation peaks at 15%." },
+    { y: "2023",       t: "India becomes world's most populous nation (1.44B, surpasses China officially). G20 presidency — New Delhi Summit September 2023. FDI boom: Apple moves 14% of iPhone production to India (Foxconn + Tata). Rupee stabilises 82–83. PLI electronics shows results." },
+    { y: "2024",       t: "Modi wins 3rd term (NDA coalition). India–Middle East–Europe Economic Corridor (IMEC) framework. Russian oil imports reach 38% of crude. IT/AI exports +15% YoY. Remittances record $129B. GDP growth 7.2% — fastest major economy." },
+    { y: "2025 Q1–Q2", t: "India surpasses UK — world's 4th largest economy ($4.1T, mid-2025). Trump tariff: India gets 26% tariff (paused 90 days; negotiations ongoing). Apple and Samsung announce major India expansion. Semiconductor PLI begins — Tata Electronics + PSMC fab breaks ground in Gujarat." },
+    { y: "2025 Q3–Q4", t: "India joins Quad semiconductor technology working group. PLI pharma clusters open in Gujarat + Hyderabad: API manufacturing targets 30% self-sufficiency by 2028. IT exports cross $310B. USD FX reserves hit $670B+ (record). India–UK FTA nearing finalisation." },
+    { y: "2026",       t: "India–UK FTA finalised (signed). India becomes top beneficiary of China+1 manufacturing shift: 60+ global firms announce India facilities. First domestic chip design wins (fabless): Tata Electronics, Kaynes Semicon. GDP trajectory confirmed to $5T by 2027–28. Defence exports hit $2.5B — target $5B by 2030 on track." }
+  ],
+
+  intel: "India's $4.1T economy is the world's fastest-growing major economy and the clearest single beneficiary of great-power competition between the US and China. The geopolitical arbitrage is real and structural: India buys Russian crude at a $20–30/barrel discount, refines it domestically (Jamnagar — world's largest refinery), and re-exports refined products to Europe and Asia at market prices — capturing $12–18B/year in margin that Western sanctions were supposed to deny Russia. IT exports ($310B+) are now India's single largest foreign exchange earner, dominating services trade with the US, UK, and EU. The China+1 shift is real: Apple assembles 14% of all iPhones in India (target 25% by 2027). India's military non-alignment — buying simultaneously from Russia (S-400), USA (F-35 under discussion, Apache), France (Rafale), and Israel (drones) — is a deliberate strategic hedge that maximises leverage from all sides. Rupee stability backed by $680B+ FX reserves gives India fiscal breathing room that none of its South Asian neighbours possess.",
+
+  risk: "PRIMARY RISK: Pharma API concentration — 68% of active pharmaceutical ingredients (APIs) are imported from China. A US–China military confrontation or export control shock isolates Indian pharma overnight; India supplies 20% of global generic medicines, so this is a systemic global risk, not just an India risk. SECONDARY RISK: Gold import drain ($58B/yr) bleeds foreign exchange and reflects absence of domestic investment alternatives — a structural weakness in the savings market that persists despite RBI gold bond schemes. THIRD RISK: Russia oil dependency (38% of crude) is profitable today but creates acute geopolitical risk — if Western sanctions escalate to secondary sanctions on Indian banks or if Russia's oil infrastructure is damaged by the Ukraine war, India faces an energy crisis with no quick substitute at scale. WILDCARD: China's bilateral trade surplus with India ($95B+ in China's favour) reflects India's inability to compete in manufactured goods against Chinese industry — high import tariffs protect but also prevent the scale-up needed for genuine industrialisation. Without resolving the China manufacturing deficit, India's trade balance will remain chronically stressed."
+}
+
+]; /* end NATIONS */
+
+/* ─── CAT COLORS ─── */
+var CAT_COLORS = {
+  Services:    C.blue,
+  Energy:      "#f97316",
+  Tech:        "#8b5cf6",
+  Pharma:      "#22c55e",
+  Aerospace:   "#06b6d4",
+  Auto:        "#ec4899",
+  Agri:        "#84cc16",
+  Machinery:   C.gold,
+  Chemical:    "#f59e0b",
+  Metal:       "#94a3b8",
+  Textile:     "#fb923c",
+  Consumer:    "#a3e635",
+  Medical:     "#34d399",
+  Luxury:      "#fcd34d",
+  Defence:     "#ef4444",
+  Transport:   "#60a5fa",
+  Material:    "#9ca3af",
+  Precious:    "#fbbf24"
+};
+
+/* ─── TICKER BAR ─── */
+function TickerBar() {
+  return ce("div", {
+    style: {
       background: C.bg2,
-      border: "1px solid " + C.border,
-      borderRadius: 4,
-      padding: "1.25rem",
-      marginBottom: "1.25rem"
-    }, a)
-  }, r);
-}
-
-function Button(e) {
-  var r = e.children,
-    t = e.onClick,
-    a = e.style,
-    n = void 0 === a ? {} : a;
-  return React.createElement("button", {
-    onClick: t,
-    style: _objectSpread({
-      background: C.gold,
-      color: C.bg,
-      padding: "0.75rem 1.5rem",
-      borderRadius: 4,
-      fontWeight: 600,
-      fontSize: "0.95rem",
-      border: "none",
-      cursor: "pointer",
-      transition: "all 0.2s ease"
-    }, n),
-    onMouseEnter: function (e) {
-      e.target.style.background = C.goldL;
-    },
-    onMouseLeave: function (e) {
-      e.target.style.background = C.gold;
-    }
-  }, r);
-}
-
-function VitalCard(e) {
-  var r = e.vital;
-  return React.createElement(Card, null, React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "auto 1fr",
-      gap: "1rem",
-      alignItems: "start"
-    }
-  }, React.createElement("div", {
-    style: {
-      minWidth: 80
-    }
-  }, React.createElement("div", {
-    style: {
-      fontSize: "1.25rem",
-      fontWeight: 700,
-      color: C.goldL,
-      marginBottom: "0.25rem"
-    }
-  }, r.k), React.createElement("div", {
-    style: {
-      fontSize: "0.75rem",
-      color: C.muted,
-      textTransform: "uppercase",
-      letterSpacing: "1px"
-    }
-  }, r.s)), React.createElement("div", null, React.createElement("div", {
-    style: {
-      fontSize: "1.75rem",
-      fontWeight: 700,
-      color: C.gold,
-      marginBottom: "0.25rem",
-      wordBreak: "break-word"
-    }
-  }, r.v), React.createElement("div", {
-    style: {
-      fontSize: "0.85rem",
-      color: C.text
-    }
-  }, r.d))));
-}
-
-function NationCard(e) {
-  var r = e.nation,
-    t = _slicedToArray(useState(!1), 2),
-    a = t[0],
-    n = t[1];
-  return React.createElement(Card, null, React.createElement("div", {
-    style: {
+      borderBottom: "1px solid " + C.border,
+      padding: "0.875rem clamp(1rem, 5vw, 2.5rem)",
       display: "flex",
-      alignItems: "center",
-      gap: "1rem",
-      marginBottom: "1.5rem",
+      gap: "clamp(1.25rem, 3vw, 2.5rem)",
+      overflowX: "auto",
+      scrollbarWidth: "none",
+      WebkitOverflowScrolling: "touch",
       flexWrap: "wrap"
     }
-  }, React.createElement("span", {
-    style: {
-      fontSize: "2.5rem"
-    }
-  }, r.flag), React.createElement("div", {
-    style: {
-      flex: 1,
-      minWidth: 200
-    }
-  }, React.createElement("h2", {
-    style: {
-      fontSize: "1.75rem",
-      fontFamily: "'Playfair Display', serif",
-      color: C.goldL,
-      margin: "0 0 0.5rem 0"
-    }
-  }, r.name), React.createElement("div", {
-    style: {
-      fontSize: "0.9rem",
-      color: C.muted
-    }
-  }, "GDP: ", r.gdp, " — ", r.balLabel))), React.createElement("p", {
-    style: {
-      fontSize: "1rem",
-      lineHeight: 1.6,
-      color: C.text,
-      marginBottom: "1.5rem"
-    }
-  }, r.headline), React.createElement("div", {
-    style: {
-      marginBottom: "1.5rem"
-    }
-  }, React.createElement("h3", {
-    style: {
-      fontSize: "1.25rem",
-      color: C.gold,
-      marginBottom: "1rem",
-      fontFamily: "'Playfair Display', serif"
-    }
-  }, "Key Vitals"), React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-      gap: "0.75rem"
-    }
-  }, r.vitals.slice(0, 4).map(function (e, t) {
-    return React.createElement(VitalCard, {
-      key: t,
-      vital: e
-    });
-  }))), React.createElement("div", {
-    style: {
-      marginBottom: "1.5rem"
-    }
-  }, React.createElement("h3", {
-    style: {
-      fontSize: "1.25rem",
-      color: C.gold,
-      marginBottom: "1rem",
-      fontFamily: "'Playfair Display', serif"
-    }
-  }, "Trade History (2019–2024)"), React.createElement(Chart, {
-    data: r.trade6,
-    type: "bar"
-  })), a && React.createElement(React.Fragment, null, React.createElement("div", {
-    style: {
-      marginBottom: "1.5rem"
-    }
-  }, React.createElement("h3", {
-    style: {
-      fontSize: "1.25rem",
-      color: C.gold,
-      marginBottom: "1rem",
-      fontFamily: "'Playfair Display', serif"
-    }
-  }, "Intelligence & Risk"), React.createElement(Card, null, React.createElement("p", {
-    style: {
-      color: C.text,
-      lineHeight: 1.7,
-      marginBottom: "1rem"
-    }
-  }, r.intel), React.createElement("p", {
-    style: {
-      color: C.red,
-      lineHeight: 1.7,
-      fontWeight: 600
-    }
-  }, "⚠ Risk: ", r.risk)))), React.createElement("div", {
-    style: {
-      marginTop: "1rem"
-    }
-  }, React.createElement(Button, {
-    onClick: function () {
-      return n(!a);
-    }
-  }, a ? "Collapse Details" : "View Full Analysis")));
+  }, TICKER.map(function(item, i) {
+    return ce("div", { key: i, style: { display: "flex", flexDirection: "column", minWidth: 130, flexShrink: 0 } },
+      ce("div", { style: { fontSize: "0.58rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: 3, fontFamily: "'DM Mono', monospace" } }, item.label),
+      ce("div", { style: { fontSize: "1.2rem", fontFamily: "'DM Mono', monospace", color: item.col, fontWeight: 700, lineHeight: 1.2 } }, item.value),
+      item.note && ce("div", { style: { fontSize: "0.62rem", color: C.dim, marginTop: 2 } }, item.note)
+    );
+  }));
 }
 
+/* ─── SECTOR BAR ROW ─── */
+function SectorBar(props) {
+  var item = props.item;
+  var max = props.max || 1;
+  var barColor = CAT_COLORS[item.cat] || C.gold;
+  var barWidth = Math.max(2, Math.round((item.pct / max) * 100));
+  return ce("div", { style: { marginBottom: "0.625rem" } },
+    ce("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.2rem", gap: "0.5rem" } },
+      ce("span", { style: { fontSize: "0.8rem", color: C.text, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, item.n),
+      ce("div", { style: { display: "flex", gap: "0.5rem", alignItems: "center", flexShrink: 0 } },
+        ce("span", { style: { fontSize: "0.75rem", color: C.muted, fontFamily: "'DM Mono', monospace" } }, item.v),
+        ce("span", { style: { fontSize: "0.6rem", background: C.bg3, color: barColor, padding: "1px 5px", borderRadius: 2, fontFamily: "'DM Mono', monospace", border: "1px solid " + barColor + "44" } }, item.cat)
+      )
+    ),
+    ce("div", { style: { height: 4, background: C.bg3, borderRadius: 2 } },
+      ce("div", { style: { height: "100%", width: barWidth + "%", background: barColor, borderRadius: 2 } })
+    )
+  );
+}
+
+/* ─── TAB NAV ─── */
+var TABS = [
+  { id: "overview",      label: "OVERVIEW" },
+  { id: "partners",      label: "PARTNERS" },
+  { id: "sectors",       label: "SECTORS" },
+  { id: "events",        label: "EVENTS" },
+  { id: "intelligence",  label: "INTELLIGENCE" }
+];
+
+function TabNav(props) {
+  var active = props.active;
+  var onChange = props.onChange;
+  return ce("div", {
+    style: {
+      display: "flex",
+      borderBottom: "1px solid " + C.border,
+      marginBottom: "1.5rem",
+      overflowX: "auto",
+      scrollbarWidth: "none"
+    }
+  }, TABS.map(function(tab) {
+    var isActive = active === tab.id;
+    return ce("button", {
+      key: tab.id,
+      onClick: function() { onChange(tab.id); },
+      style: {
+        background: "none",
+        border: "none",
+        borderBottom: isActive ? "2px solid " + C.gold : "2px solid transparent",
+        color: isActive ? C.gold : C.muted,
+        padding: "0.75rem clamp(0.6rem, 2vw, 1.1rem)",
+        fontSize: "0.65rem",
+        letterSpacing: "2px",
+        textTransform: "uppercase",
+        fontFamily: "'DM Mono', monospace",
+        cursor: "pointer",
+        minHeight: 0,
+        whiteSpace: "nowrap",
+        transition: "color 0.2s"
+      }
+    }, tab.label);
+  }));
+}
+
+/* ─── OVERVIEW TAB ─── */
+function OverviewTab(props) {
+  var n = props.nation;
+  return ce(React.Fragment, null,
+    ce("div", { style: { marginBottom: "1.5rem" } },
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "KEY TRADE VITALS — 2025"),
+      ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(175px, 1fr))", gap: "0.5rem" } },
+        n.vitals.map(function(v, i) {
+          var dColor = v.d && v.d.charAt(0) === "+" ? C.green : v.d && (v.d.charAt(0) === "−" || v.d.charAt(0) === "-") ? C.red : C.dim;
+          return ce("div", { key: i, style: { background: C.bg3, border: "1px solid " + C.border, borderRadius: 4, padding: "0.75rem" } },
+            ce("div", { style: { fontSize: "0.6rem", color: C.muted, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "0.25rem", fontFamily: "'DM Mono', monospace" } }, v.k),
+            ce("div", { style: { fontSize: "1.3rem", color: C.goldL, fontFamily: "'DM Mono', monospace", fontWeight: 700, lineHeight: 1.2 } }, v.v),
+            ce("div", { style: { fontSize: "0.68rem", color: C.text, marginTop: "0.2rem" } }, v.s),
+            ce("div", { style: { fontSize: "0.65rem", color: dColor, marginTop: "0.15rem", fontFamily: "'DM Mono', monospace" } }, v.d)
+          );
+        })
+      )
+    ),
+    ce("div", null,
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TRADE VOLUME 2019–2025 (USD BILLIONS) — GOLD: EXPORTS · RED: IMPORTS"),
+      ce(ResponsiveContainer, { width: "100%", height: 260 },
+        ce(BarChart, { data: n.trade6, margin: { top: 10, right: 20, left: 0, bottom: 10 } },
+          ce(XAxis, { dataKey: "y", stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
+          ce(YAxis, { stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
+          ce(Tooltip, {
+            contentStyle: { background: C.bg4, border: "1px solid " + C.border, borderRadius: 4, color: C.text, fontSize: "0.8rem" },
+            formatter: function(value, name) { return ["$" + value + "B", name === "x" ? "Exports" : "Imports"]; }
+          }),
+          ce(Bar, { dataKey: "x", fill: C.gold,      radius: [2,2,0,0], name: "Exports" }),
+          ce(Bar, { dataKey: "m", fill: C.red, opacity: 0.8, radius: [2,2,0,0], name: "Imports" })
+        )
+      )
+    )
+  );
+}
+
+/* ─── PARTNERS TAB ─── */
+function PartnersTab(props) {
+  var n = props.nation;
+  function PartnerList(pProps) {
+    var partners = pProps.partners;
+    var valueColor = pProps.valueColor || C.goldL;
+    var barColor = pProps.barColor || C.gold;
+    return ce("div", null,
+      partners.map(function(p, i) {
+        var barPct = Math.min(100, p.p || 10);
+        return ce("div", { key: i, style: { display: "flex", alignItems: "flex-start", gap: "0.75rem", padding: "0.5rem 0", borderBottom: "1px solid " + C.border + "88" } },
+          ce("div", { style: { fontSize: "0.65rem", color: C.muted, fontFamily: "'DM Mono', monospace", width: 20, textAlign: "right", flexShrink: 0, paddingTop: 3 } }, i + 1),
+          ce("div", { style: { flex: 1, minWidth: 0 } },
+            ce("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 4 } },
+              ce("span", { style: { fontSize: "0.875rem", color: C.bright, fontWeight: 600 } }, p.c),
+              ce("span", { style: { fontSize: "0.78rem", color: valueColor, fontFamily: "'DM Mono', monospace" } }, p.v)
+            ),
+            ce("div", { style: { height: 3, background: C.bg3, borderRadius: 2, marginBottom: 3 } },
+              ce("div", { style: { height: "100%", width: barPct + "%", background: barColor, borderRadius: 2, opacity: 0.7 } })
+            ),
+            ce("div", { style: { fontSize: "0.63rem", color: C.dim } }, p.note + (p.p ? " · " + p.p + "% share" : ""))
+          )
+        );
+      })
+    );
+  }
+  return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "1.5rem" } },
+    ce("div", null,
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT DESTINATIONS"),
+      ce(PartnerList, { partners: n.expPartners, valueColor: C.goldL, barColor: C.gold })
+    ),
+    ce("div", null,
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT SOURCES"),
+      ce(PartnerList, { partners: n.impPartners, valueColor: C.red, barColor: C.red })
+    )
+  );
+}
+
+/* ─── SECTORS TAB ─── */
+function SectorsTab(props) {
+  var n = props.nation;
+  var maxExp = Math.max.apply(null, n.topExports.map(function(e) { return e.pct; }));
+  var maxImp = Math.max.apply(null, n.topImports.map(function(e) { return e.pct; }));
+  return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" } },
+    ce("div", null,
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT COMMODITIES & SECTORS"),
+      n.topExports.map(function(item, i) {
+        return ce(SectorBar, { key: i, item: item, max: maxExp });
+      })
+    ),
+    ce("div", null,
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT COMMODITIES & SECTORS"),
+      n.topImports.map(function(item, i) {
+        return ce(SectorBar, { key: i, item: item, max: maxImp });
+      })
+    )
+  );
+}
+
+/* ─── EVENTS TAB ─── */
+function EventsTab(props) {
+  var n = props.nation;
+  return ce("div", { style: { position: "relative", paddingLeft: "1.75rem" } },
+    ce("div", { style: { position: "absolute", left: 6, top: 8, bottom: 8, width: 1, background: C.border } }),
+    n.events.map(function(ev, i) {
+      return ce("div", { key: i, style: { position: "relative", paddingBottom: "1.375rem" } },
+        ce("div", { style: { position: "absolute", left: "-1.85rem", top: 5, width: 9, height: 9, borderRadius: "50%", background: C.gold, border: "2px solid " + C.bg, boxShadow: "0 0 6px " + C.gold + "66" } }),
+        ce("div", { style: { fontSize: "0.68rem", fontFamily: "'DM Mono', monospace", color: C.goldL, letterSpacing: "2px", marginBottom: "0.3rem", textTransform: "uppercase" } }, ev.y),
+        ce("div", { style: { fontSize: "0.875rem", color: C.text, lineHeight: 1.7 } }, ev.t)
+      );
+    })
+  );
+}
+
+/* ─── INTELLIGENCE TAB ─── */
+function IntelTab(props) {
+  var n = props.nation;
+  return ce(React.Fragment, null,
+    ce("div", {
+      style: {
+        background: "linear-gradient(135deg, " + C.bg3 + " 0%, " + C.bg4 + " 100%)",
+        border: "1px solid " + C.border,
+        borderLeft: "3px solid " + C.gold,
+        borderRadius: 4,
+        padding: "1.125rem",
+        marginBottom: "1rem"
+      }
+    },
+      ce("div", { style: { fontSize: "0.58rem", letterSpacing: "3px", color: C.gold, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "⬡ MONEY FLOW INTELLIGENCE — " + n.short),
+      ce("p", { style: { color: C.text, lineHeight: 1.85, fontSize: "0.88rem" } }, n.intel)
+    ),
+    ce("div", {
+      style: {
+        background: "rgba(196,60,60,0.06)",
+        border: "1px solid " + C.red + "55",
+        borderLeft: "3px solid " + C.red,
+        borderRadius: 4,
+        padding: "1.125rem"
+      }
+    },
+      ce("div", { style: { fontSize: "0.58rem", letterSpacing: "3px", color: C.red, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "⚠ RISK ASSESSMENT — " + n.short),
+      ce("p", { style: { color: C.text, lineHeight: 1.85, fontSize: "0.88rem" } }, n.risk)
+    )
+  );
+}
+
+/* ─── NATION CARD ─── */
+function NationCard(props) {
+  var n = props.nation;
+  var tabState = useState("overview");
+  var activeTab = tabState[0];
+  var setTab = tabState[1];
+
+  var tabContent = null;
+  if (activeTab === "overview")     tabContent = ce(OverviewTab,  { nation: n });
+  if (activeTab === "partners")     tabContent = ce(PartnersTab,  { nation: n });
+  if (activeTab === "sectors")      tabContent = ce(SectorsTab,   { nation: n });
+  if (activeTab === "events")       tabContent = ce(EventsTab,    { nation: n });
+  if (activeTab === "intelligence") tabContent = ce(IntelTab,     { nation: n });
+
+  var isSurplus = n.tradeBalance === "surplus";
+
+  return ce("div", {
+    style: {
+      background: C.bg2,
+      border: "1px solid " + C.border,
+      borderRadius: 6,
+      marginBottom: "2rem",
+      overflow: "hidden",
+      boxShadow: "0 4px 24px rgba(0,0,0,0.4)"
+    }
+  },
+    /* ── Nation Header ── */
+    ce("div", { style: { padding: "1.5rem clamp(1rem, 4vw, 1.75rem)", borderBottom: "1px solid " + C.border } },
+      ce("div", { style: { display: "flex", alignItems: "flex-start", gap: "1rem", flexWrap: "wrap" } },
+        /* Flag + number + name */
+        ce("div", { style: { display: "flex", alignItems: "center", gap: "0.875rem", flex: 1, minWidth: 0 } },
+          ce("span", { style: { fontSize: "clamp(1.5rem, 5vw, 2.5rem)", lineHeight: 1, flexShrink: 0 } }, n.flag),
+          ce("div", { style: { minWidth: 0 } },
+            ce("div", { style: { display: "flex", alignItems: "baseline", gap: "0.5rem", flexWrap: "wrap" } },
+              ce("span", { style: { fontSize: "clamp(1.25rem, 4vw, 2rem)", fontFamily: "'DM Mono', monospace", color: C.goldD, opacity: 0.7, lineHeight: 1, fontWeight: 700 } }, n.no),
+              ce("h2", { style: { fontSize: "clamp(1.2rem, 4vw, 1.875rem)", fontFamily: "'Playfair Display', serif", color: C.white, margin: 0, lineHeight: 1.15 } }, n.name)
+            ),
+            ce("div", { style: { fontSize: "0.75rem", color: C.muted, marginTop: "0.25rem", fontFamily: "'DM Mono', monospace" } }, n.gdp + " GDP — " + n.short)
+          )
+        ),
+        /* Balance badge */
+        ce("div", {
+          style: {
+            background: isSurplus ? "rgba(40,169,104,0.12)" : "rgba(196,60,60,0.12)",
+            border: "1px solid " + (isSurplus ? C.green : C.red),
+            borderRadius: 3,
+            padding: "0.35rem 0.75rem",
+            fontSize: "0.6rem",
+            letterSpacing: "1.5px",
+            color: isSurplus ? C.green : C.red,
+            fontFamily: "'DM Mono', monospace",
+            whiteSpace: "nowrap",
+            alignSelf: "flex-start",
+            flexShrink: 0
+          }
+        }, (isSurplus ? "▲ " : "▼ ") + n.balLabel)
+      ),
+      /* Headline */
+      n.headline && ce("p", {
+        style: {
+          fontSize: "clamp(0.85rem, 2.5vw, 0.95rem)",
+          color: C.text,
+          marginTop: "1rem",
+          lineHeight: 1.75,
+          fontStyle: "italic",
+          borderLeft: "2px solid " + C.goldD,
+          paddingLeft: "0.875rem",
+          maxWidth: 820
+        }
+      }, n.headline)
+    ),
+
+    /* ── Tabs ── */
+    ce("div", { style: { padding: "1rem clamp(1rem, 4vw, 1.75rem) 1.75rem" } },
+      ce(TabNav, { active: activeTab, onChange: setTab }),
+      tabContent
+    )
+  );
+}
+
+/* ─── APP ─── */
 function App() {
-  return React.createElement("div", {
-    style: {
-      maxWidth: "100%",
-      width: "100%",
-      padding: "clamp(1rem, 5vw, 2rem)",
-      margin: "0 auto",
-      background: C.bg
-    }
-  }, React.createElement("style", null, GLOBAL_CSS), React.createElement("div", {
-    style: {
-      textAlign: "center",
-      marginBottom: "3rem"
-    }
-  }, React.createElement("h1", {
-    style: {
-      fontSize: "clamp(1.75rem, 6vw, 3.5rem)",
-      fontFamily: "'Playfair Display', serif",
-      color: C.goldL,
-      marginBottom: "0.5rem",
-      letterSpacing: "-1px"
-    }
-  }, "Global Trade Intelligence"), React.createElement("div", {
-    style: {
-      fontSize: "clamp(0.9rem, 3vw, 1.1rem)",
-      color: C.muted,
-      letterSpacing: "2px",
-      textTransform: "uppercase",
-      marginBottom: "1rem"
-    }
-  }, "2019–2024 comprehensive analysis"), React.createElement("p", {
-    style: {
-      fontSize: "0.95rem",
-      color: C.text,
-      maxWidth: 800,
-      margin: "0 auto",
-      lineHeight: 1.6
-    }
-  }, "Track global trade flows, analyze the world's three largest traders, and understand the hidden structures that govern international commerce.")), React.createElement("div", {
-    style: {
-      display: "grid",
-      gridTemplateColumns: "1fr",
-      gap: "2rem"
-    }
-  }, NATIONS.map(function (e) {
-    return React.createElement(NationCard, {
-      key: e.id,
-      nation: e
-    });
-  })));
+  return ce("div", { style: { background: C.bg, minHeight: "100vh" } },
+
+    /* ── Site Header ── */
+    ce("div", { style: { background: C.bg2, borderBottom: "1px solid " + C.border, padding: "1.5rem clamp(1rem, 5vw, 2.5rem)" } },
+      ce("div", { style: { maxWidth: 1200, margin: "0 auto" } },
+        ce("div", { style: { fontSize: "0.6rem", letterSpacing: "4px", color: C.goldD, textTransform: "uppercase", marginBottom: "0.3rem", fontFamily: "'DM Mono', monospace" } }, "// TRADE INTELLIGENCE BRIEF — DATA UPDATED MAY 2026"),
+        ce("h1", { style: { fontSize: "clamp(1.5rem, 5vw, 2.75rem)", fontFamily: "'Playfair Display', serif", color: C.goldL, letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: "0.5rem" } }, "Global Trade Intelligence"),
+        ce("p", { style: { fontSize: "0.875rem", color: C.muted, maxWidth: 720, lineHeight: 1.65 } },
+          "Comprehensive analysis of world trade flows, tariff shocks, sector performance, cashflow intelligence, and geopolitical risk — updated May 2026. Covering the world’s 3 largest trading economies: United States · China · India."
+        )
+      )
+    ),
+
+    /* ── Ticker ── */
+    ce(TickerBar, null),
+
+    /* ── Nations ── */
+    ce("div", { style: { maxWidth: 1200, margin: "0 auto", padding: "2rem clamp(1rem, 5vw, 2rem)" } },
+      NATIONS.map(function(n) {
+        return ce(NationCard, { key: n.id, nation: n });
+      })
+    ),
+
+    /* ── Footer ── */
+    ce("div", {
+      style: {
+        borderTop: "1px solid " + C.border,
+        padding: "1.5rem clamp(1rem, 5vw, 2.5rem)",
+        textAlign: "center",
+        background: C.bg2
+      }
+    },
+      ce("p", { style: { fontSize: "0.6rem", color: C.dim, letterSpacing: "0.75px", lineHeight: 1.9, maxWidth: 900, margin: "0 auto" } },
+        "GLOBAL TRADE INTELLIGENCE REPORT · DATA SOURCES: WTO · IMF WORLD ECONOMIC OUTLOOK APR 2026 · WORLD BANK WITS · US CENSUS BUREAU · USTR · BEA · GENERAL ADMINISTRATION OF CUSTOMS CHINA · MINISTRY OF COMMERCE INDIA · RBI · UNCTAD · CEPII · BRUEGEL INSTITUTE"
+      ),
+      ce("p", { style: { fontSize: "0.58rem", color: C.border, marginTop: "0.5rem", letterSpacing: "0.5px" } },
+        "COMPILED MAY 2026 · ALL FIGURES ARE ESTIMATES BASED ON OFFICIAL AND PARTNER-REPORTED TRADE STATISTICS"
+      )
+    )
+  );
 }
 
+/* ─── MOUNT ─── */
 var root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(React.createElement(App));
+root.render(React.createElement(App, null));
 </script>
 </body>
 </html>
