@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#05070d">
-<title>Global Trade Intelligence 2019–2024</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@300;400;500;600;700&display=swap">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="description" content="Real-time global trade intelligence — exports, imports, bilateral flows and geopolitical money movements for 13 major economies." />
+<title>Global Trade Intelligence · Where Money Moves</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Production React 18 -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<!-- PropTypes (required by Recharts) -->
+<script crossorigin src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"></script>
+<!-- Recharts -->
+<script crossorigin src="https://unpkg.com/recharts@2.5.0/umd/Recharts.min.js"></script>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { overflow-x: hidden; }
-body { background: #05070d; overflow-x: hidden; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#06080f}
+body{background:#06080f;color:#c0d0e0;overflow-x:hidden}
+#root{min-height:100vh}
 </style>
 </head>
 <body>
-<div id="root" style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'DM Mono',monospace;color:#d4a843;font-size:11px;letter-spacing:3px">LOADING TRADE INTELLIGENCE…</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/umd/Recharts.min.js"></script>
+<div id="root"></div>
 <script>
 "use strict";
 
@@ -54,32 +58,54 @@ var _Recharts = Recharts,
   Line = _Recharts.Line,
   ReferenceLine = _Recharts.ReferenceLine;
 
-/* ── theme ── */
+/* ═══════════════════════════════════════════════
+   DESIGN SYSTEM — Navy-Intelligence Theme
+   Psychology: authority (navy), premium (gold),
+   urgency (red), trust (green), depth (layers)
+   ═══════════════════════════════════════════════ */
 var C = {
-  bg: "#05070d",
-  bg2: "#090c15",
-  bg3: "#0e1220",
-  bg4: "#131828",
-  border: "#1c2640",
-  gold: "#d4a843",
-  goldL: "#f0c660",
-  goldD: "#a07828",
-  green: "#28a968",
-  red: "#c43c3c",
-  blue: "#2d7dd2",
-  dim: "#445068",
-  muted: "#6b7f9a",
-  text: "#a8bccf",
-  bright: "#ddeaf5",
-  white: "#f0f6ff"
+  /* depth layers — navy-black builds institutional authority */
+  bg: "#06080f",
+  bg2: "#090d1a",
+  bg3: "#0d1222",
+  bg4: "#111828",
+  bg5: "#161e30",
+  /* borders — blue-tinted for intelligence terminal feel */
+  border: "#1a2540",
+  borderL: "#243050",
+  /* gold — warm honey, not cheap yellow: signals premium data */
+  gold: "#e8b84a",
+  goldL: "#f5ce6a",
+  goldD: "#b08030",
+  goldXL: "#fff0c0",
+  /* semantic — high saturation for emotional triggers */
+  green: "#22c97a",
+  /* gain, surplus, growth */
+  red: "#e84848",
+  /* loss, deficit, danger */
+  blue: "#4d9de0",
+  /* trust, technology, data */
+  purple: "#9b6de0",
+  /* shadow/sanctioned flows */
+  orange: "#e8832a",
+  /* commodity, energy */
+
+  /* text — higher contrast than before */
+  bright: "#eaf2fb",
+  /* headings, primary content */
+  text: "#c0d0e0",
+  /* body — WCAG AA on bg3 */
+  muted: "#7a8fa8",
+  /* secondary */
+  dim: "#4a5a70",
+  /* tertiary labels */
+  white: "#f8faff"
 };
+var GLOBAL_CSS = "\n@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600;700&display=swap');\n\n/* \u2500\u2500 reset \u2500\u2500 */\n*{margin:0;padding:0;box-sizing:border-box}\nhtml{scroll-behavior:smooth;overflow-x:hidden;font-size:15px}\nbody{\n  background:#06080f;\n  color:#c0d0e0;\n  font-family:'Inter',sans-serif;\n  -webkit-font-smoothing:antialiased;\n  -moz-osx-font-smoothing:grayscale;\n  overflow-x:hidden;\n  line-height:1.65;\n}\n::selection{background:#e8b84a33;color:#f5ce6a}\n::-webkit-scrollbar{width:4px;height:4px}\n::-webkit-scrollbar-thumb{background:#b08030;border-radius:3px}\n::-webkit-scrollbar-track{background:#090d1a}\na{text-decoration:none;color:inherit}\n.country-anchor{scroll-margin-top:58px}\n\n/* \u2500\u2500 typography scale \u2500\u2500 */\n/* Display: Playfair Display \u2014 gravitas, authority, \"this matters\" */\n/* Data:    DM Mono \u2014 precision, terminal, machine-verified */\n/* Body:    Inter \u2014 modern clarity, high legibility at small sizes */\n\n/* Tabular numbers \u2014 data lines up perfectly */\n.mono,.num{\n  font-family:'DM Mono',monospace;\n  font-feature-settings:\"tnum\" 1,\"zero\" 1;\n}\n\n/* \u2500\u2500 keyframes \u2500\u2500 */\n@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}\n@keyframes fadeIn{from{opacity:0}to{opacity:1}}\n@keyframes tabSlide{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}\n@keyframes glowBreath{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 22px #e8b84a55}}\n@keyframes borderPulse{0%,100%{box-shadow:-3px 0 0 #e8b84a}50%{box-shadow:-3px 0 20px #e8b84a66}}\n@keyframes countReveal{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}\n@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}\n@keyframes shimmerLine{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}\n@keyframes pillGlow{0%,100%{box-shadow:none}50%{box-shadow:0 0 12px currentColor}}\n\n/* \u2500\u2500 scroll reveal \u2500\u2500 */\n.sr{opacity:0;transform:translateY(22px);\n  transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1);\n  will-change:opacity,transform}\n.sr.on{opacity:1;transform:translateY(0)}\n.sr-l{opacity:0;transform:translateX(-20px);\n  transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1)}\n.sr-l.on{opacity:1;transform:translateX(0)}\n\n/* \u2500\u2500 stagger \u2500\u2500 */\n.d1{transition-delay:.05s}.d2{transition-delay:.10s}.d3{transition-delay:.15s}\n.d4{transition-delay:.20s}.d5{transition-delay:.25s}.d6{transition-delay:.30s}\n.d7{transition-delay:.35s}.d8{transition-delay:.40s}.d9{transition-delay:.45s}\n\n/* \u2500\u2500 animated bar \u2500\u2500 */\n.abar{width:0!important;transition:width 1.2s cubic-bezier(.4,0,.2,1)!important}\n.abar.go{width:var(--w)!important}\n\n/* \u2500\u2500 card hover \u2500\u2500 */\n.chov{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}\n.chov:hover{\n  transform:translateY(-2px);\n  box-shadow:0 6px 28px rgba(0,0,0,.5),0 0 0 1px #b0803044;\n  border-color:#1e2e4a!important\n}\n\n/* \u2500\u2500 vital card \u2500\u2500 */\n.vcard{transition:background .15s,border-color .15s}\n.vcard:hover{background:#111828!important;border-color:#b0803055!important}\n\n/* \u2500\u2500 tab content \u2500\u2500 */\n.tabpane{animation:tabSlide .25s ease}\n\n/* \u2500\u2500 flow card \u2500\u2500 */\n.fcard{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}\n.fcard:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.55)}\n\n/* \u2500\u2500 nav pill button \u2500\u2500 */\n.npill{\n  display:inline-flex;align-items:center;gap:6px;\n  padding:6px 13px;\n  border-radius:4px;\n  border:1px solid #1a2540;\n  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.8px;\n  color:#4a5a70;\n  background:transparent;\n  cursor:pointer;text-decoration:none;\n  transition:all .18s ease;\n  flex-shrink:0;white-space:nowrap;\n}\n.npill:hover{border-color:#7a8fa8;color:#c0d0e0;background:#0d1222}\n.npill.active{color:#fff;background:var(--nc);border-color:var(--nc);\n  box-shadow:0 0 14px var(--nc-glow)}\n\n/* \u2500\u2500 progress bar \u2500\u2500 */\n.sprg{position:absolute;bottom:0;left:0;height:2px;\n  background:linear-gradient(90deg,#e8b84a,#f5ce6a,#e8b84a);\n  background-size:200% 100%;\n  transition:width .1s linear;pointer-events:none}\n\n/* \u2500\u2500 ticker \u2500\u2500 */\n.ticker-wrap{overflow:hidden;white-space:nowrap;border-top:1px solid #1a2540;border-bottom:1px solid #1a2540}\n.ticker-inner{display:inline-flex;animation:ticker 40s linear infinite}\n.ticker-inner:hover{animation-play-state:paused}\n\n/* \u2500\u2500 hero grid \u2500\u2500 */\n.hgrid{\n  position:absolute;inset:0;pointer-events:none;\n  background-image:\n    linear-gradient(#1a254008 1px,transparent 1px),\n    linear-gradient(90deg,#1a254008 1px,transparent 1px);\n  background-size:72px 72px;\n  mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.25) 20%,rgba(0,0,0,.25) 80%,transparent 100%);\n  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.25) 20%,rgba(0,0,0,.25) 80%,transparent 100%)\n}\n\n/* \u2500\u2500 section number \u2500\u2500 */\n.secnum{transition:opacity .3s,color .3s,transform .35s cubic-bezier(.4,0,.2,1)}\n.csec:hover .secnum{opacity:.25!important;color:#e8b84a!important;transform:scale(1.12) translateX(4px)}\n\n/* \u2500\u2500 timeline \u2500\u2500 */\n.tldot{transition:transform .15s,box-shadow .15s}\n.tlrow:hover .tldot{transform:scale(1.7);box-shadow:0 0 12px #e8b84a99}\n\n/* \u2500\u2500 stat box \u2500\u2500 */\n.statbox{transition:background .15s,border-color .15s,transform .15s}\n.statbox:hover{background:#111828!important;border-color:#e8b84a44!important;transform:translateY(-1px)}\n\n/* \u2500\u2500 intel box \u2500\u2500 */\n.intel-pulse{animation:borderPulse 4s ease-in-out .5s 2}\n\n/* \u2500\u2500 glow breath \u2500\u2500 */\n.glow-breath{animation:glowBreath 3.5s ease-in-out infinite}\n\n/* \u2500\u2500 mobile nav \u2500\u2500 */\n.nav-scroll{display:flex;align-items:stretch;overflow-x:auto;-webkit-overflow-scrolling:touch;\n  scrollbar-width:none;padding:0 16px;gap:6px;align-items:center}\n.nav-scroll::-webkit-scrollbar{display:none}\n\n/* \u2500\u2500 tab bar \u2500\u2500 */\n.tabbar{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;\n  scrollbar-width:none;border-bottom:1px solid #1a2540;margin-bottom:22px}\n.tabbar::-webkit-scrollbar{display:none}\n.tabbtn{white-space:nowrap;flex-shrink:0;\n  background:none;border:none;cursor:pointer;\n  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;\n  padding:12px 16px;transition:all .18s;position:relative}\n\n/* \u2500\u2500 responsive \u2500\u2500 */\n@media(max-width:1024px){.flwg{grid-template-columns:1fr 1fr!important}}\n@media(max-width:900px){.ovg{grid-template-columns:1fr!important}}\n@media(max-width:640px){\n  html{font-size:14px}\n  .hstats{grid-template-columns:1fr 1fr!important}\n  .g2{grid-template-columns:1fr!important}\n  .vitg{grid-template-columns:1fr 1fr!important}\n  .flwg{grid-template-columns:1fr!important}\n}\n@media(max-width:420px){\n  .hstats,.vitg{grid-template-columns:1fr!important}\n}\n";
 
-/* ── global CSS ── */
-var GLOBAL_CSS = "\n@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@300;400;500;600;700&display=swap');\n*{margin:0;padding:0;box-sizing:border-box}\nhtml{scroll-behavior:smooth}\nbody{background:#05070d;color:#a8bccf;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}\n::-webkit-scrollbar{width:3px;height:3px}\n::-webkit-scrollbar-thumb{background:#a07828;border-radius:2px}\n::-webkit-scrollbar-track{background:#090c15}\na{text-decoration:none;color:inherit}\n.country-anchor{scroll-margin-top:54px}\nimg,video,iframe,table{max-width:100%}\n\n@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}\n@keyframes fadeIn{from{opacity:0}to{opacity:1}}\n@keyframes tabIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}\n@keyframes glowPulse{0%,100%{opacity:.5}50%{opacity:1}}\n@keyframes borderFlash{0%,100%{box-shadow:-3px 0 0 #d4a843}50%{box-shadow:-3px 0 18px #d4a84388}}\n@keyframes countUp{from{opacity:0;transform:translateY(8px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}\n\n/* scroll reveal */\n.sr{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}\n.sr.on{opacity:1;transform:translateY(0)}\n.sr-l{opacity:0;transform:translateX(-22px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}\n.sr-l.on{opacity:1;transform:translateX(0)}\n\n/* stagger delays */\n.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}\n.d4{transition-delay:.24s}.d5{transition-delay:.30s}.d6{transition-delay:.36s}\n.d7{transition-delay:.42s}.d8{transition-delay:.48s}.d9{transition-delay:.54s}\n\n/* animated partner bar */\n.abar{width:0!important;transition:width 1.1s cubic-bezier(.4,0,.2,1)!important}\n.abar.go{width:var(--w)!important}\n\n/* card hover */\n.chov{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}\n.chov:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 0 1px #a0782844}\n\n/* vital card */\n.vcard{transition:background .18s,border-color .18s,box-shadow .18s}\n.vcard:hover{background:#131828!important;border-color:#a0782866!important;box-shadow:0 0 22px rgba(212,168,67,.07)!important}\n\n/* tab content */\n.tabpane{animation:tabIn .28s ease}\n\n/* flow card */\n.fcard{transition:transform .22s ease,box-shadow .22s ease}\n.fcard:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.55)}\n\n/* glow */\n.glow{animation:glowPulse 3s ease-in-out infinite}\n\n/* timeline */\n.tldot{transition:transform .18s,box-shadow .18s}\n.tlrow:hover .tldot{transform:scale(1.6);box-shadow:0 0 10px #d4a84388}\n\n/* hero grid bg */\n.hgrid{position:absolute;inset:0;pointer-events:none;\n  background-image:linear-gradient(#1c264012 1px,transparent 1px),linear-gradient(90deg,#1c264012 1px,transparent 1px);\n  background-size:64px 64px;\n  mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.3) 25%,rgba(0,0,0,.3) 75%,transparent);\n  -webkit-mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.3) 25%,rgba(0,0,0,.3) 75%,transparent)}\n\n/* section number hover */\n.secnum{transition:opacity .3s,color .3s,transform .3s}\n.csec:hover .secnum{opacity:.5!important;color:#d4a843!important;transform:scale(1.08)}\n\n/* pill */\n.pill-hover{transition:all .2s}\n.pill-hover:hover{filter:brightness(1.2)}\n\n/* hamburger */\n.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}\n.hbg span{display:block;width:22px;height:2px;background:#6b7f9a;transition:all .28s;border-radius:1px}\n.hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}\n.hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}\n.hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}\n.mmenu{display:none;position:absolute;top:100%;left:0;right:0;background:#05070dee;\n  backdrop-filter:blur(18px);border-bottom:1px solid #1c2640;\n  flex-direction:column;padding:6px 18px 14px;gap:2px;z-index:600;animation:fadeIn .2s ease}\n.mmenu.open{display:flex}\n\n/* scroll progress bar */\n.sprg{position:absolute;bottom:0;left:0;height:2px;background:linear-gradient(90deg,#d4a843,#f0c660);transition:width .12s linear;pointer-events:none}\n\n/* mobile tab bar */\n.tabbar{display:flex;border-bottom:1px solid #1c2640;margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}\n.tabbar::-webkit-scrollbar{display:none}\n.tabbtn{white-space:nowrap;flex-shrink:0}\n\n/* hide element on mobile */\n@media(max-width:640px){.hide-mobile{display:none!important}}\n\n/* hamburger visible on mobile */\n@media(max-width:768px){.hbg{display:flex!important}.navlinks{display:none!important}}\n";
-
-/* ── breakpoint hook ── */
+/* ── hooks ── */
 function useBreakpoint() {
-  var _useState = useState(window.innerWidth),
+  var _useState = useState(typeof window !== "undefined" ? window.innerWidth : 1200),
     _useState2 = _slicedToArray(_useState, 2),
     w = _useState2[0],
     setW = _useState2[1];
@@ -87,24 +113,22 @@ function useBreakpoint() {
     var h = function h() {
       return setW(window.innerWidth);
     };
-    window.addEventListener('resize', h, {
+    window.addEventListener("resize", h, {
       passive: true
     });
     return function () {
-      return window.removeEventListener('resize', h);
+      return window.removeEventListener("resize", h);
     };
   }, []);
   return {
-    xs: w < 480,
+    xs: w < 420,
     sm: w < 640,
     md: w < 900,
     lg: w < 1200
   };
 }
-
-/* ── intersection hook ── */
 function useInView() {
-  var threshold = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.12;
+  var threshold = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.1;
   var ref = useRef(null);
   var _useState3 = useState(false),
     _useState4 = _slicedToArray(_useState3, 2),
@@ -130,8 +154,6 @@ function useInView() {
   }, []);
   return [ref, on];
 }
-
-/* ── scroll progress hook ── */
 function useScrollProgress() {
   var _useState5 = useState(0),
     _useState6 = _slicedToArray(_useState5, 2),
@@ -142,19 +164,17 @@ function useScrollProgress() {
       var max = document.documentElement.scrollHeight - window.innerHeight;
       setPct(max > 0 ? window.scrollY / max * 100 : 0);
     };
-    window.addEventListener('scroll', h, {
+    window.addEventListener("scroll", h, {
       passive: true
     });
     return function () {
-      return window.removeEventListener('scroll', h);
+      return window.removeEventListener("scroll", h);
     };
   }, []);
   return pct;
 }
-
-/* ── parallax hook ── */
 function useParallax() {
-  var speed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.2;
+  var speed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0.18;
   var _useState7 = useState(0),
     _useState8 = _slicedToArray(_useState7, 2),
     y = _useState8[0],
@@ -163,11 +183,11 @@ function useParallax() {
     var h = function h() {
       return setY(window.scrollY * speed);
     };
-    window.addEventListener('scroll', h, {
+    window.addEventListener("scroll", h, {
       passive: true
     });
     return function () {
-      return window.removeEventListener('scroll', h);
+      return window.removeEventListener("scroll", h);
     };
   }, [speed]);
   return y;
@@ -4713,7 +4733,7 @@ function catColor(c) {
   return CAT_COLORS[(c || "").split(" (")[0]] || "#607080";
 }
 
-/* ── tooltip ── */
+/* ── Tooltip ── */
 function CTip(_ref3) {
   var active = _ref3.active,
     payload = _ref3.payload,
@@ -4721,24 +4741,37 @@ function CTip(_ref3) {
   if (!active || !(payload !== null && payload !== void 0 && payload.length)) return null;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: C.bg3,
-      border: "1px solid ".concat(C.border),
+      background: C.bg4,
+      border: "1px solid ".concat(C.borderL),
+      borderRadius: 3,
       padding: "10px 14px",
       fontFamily: "'DM Mono',monospace",
-      fontSize: 11
+      fontSize: 11,
+      boxShadow: "0 8px 32px rgba(0,0,0,.6)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       color: C.gold,
-      marginBottom: 6
+      marginBottom: 6,
+      letterSpacing: 1.5,
+      fontSize: 9
     }
   }, label), payload.map(function (p, i) {
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       style: {
-        color: p.color
+        color: p.color,
+        marginTop: 2
       }
-    }, p.name, ": $", Number(p.value).toLocaleString(), "B");
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: C.muted
+      }
+    }, p.name, ": "), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontWeight: 500
+      }
+    }, "$", Number(p.value).toLocaleString(), "B"));
   }));
 }
 
@@ -4753,6 +4786,7 @@ function Card(_ref4) {
     style: _objectSpread({
       background: C.bg2,
       border: "1px solid ".concat(C.border),
+      borderRadius: 2,
       padding: "18px 20px",
       minWidth: 0,
       overflow: "hidden"
@@ -4760,36 +4794,38 @@ function Card(_ref4) {
   }, title && /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'DM Mono',monospace",
-      fontSize: 8,
+      fontSize: 7.5,
       color: C.gold,
       letterSpacing: 3,
       textTransform: "uppercase",
       marginBottom: 14,
       paddingBottom: 9,
-      borderBottom: "1px solid ".concat(C.border)
+      borderBottom: "1px solid ".concat(C.border),
+      lineHeight: 1.5
     }
   }, title), children);
 }
 
-/* ── Pill ── */
-function Pill(_ref5) {
+/* ── StatusPill ── */
+function StatusPill(_ref5) {
   var label = _ref5.label,
     ok = _ref5.ok;
   var col = ok ? C.green : C.red;
   return /*#__PURE__*/React.createElement("div", {
-    className: "pill-hover",
     style: {
-      border: "1px solid ".concat(col),
+      border: "1px solid ".concat(col, "44"),
       color: col,
-      background: "".concat(col, "14"),
-      padding: "6px 12px",
+      background: "".concat(col, "12"),
+      padding: "5px 12px",
       fontFamily: "'DM Mono',monospace",
-      fontSize: 9,
-      letterSpacing: 1.5,
+      fontSize: 8.5,
+      letterSpacing: 2,
       flexShrink: 0,
-      whiteSpace: "nowrap"
+      whiteSpace: "nowrap",
+      borderRadius: 2,
+      transition: "all .2s"
     }
-  }, label);
+  }, ok ? "▲ " : "▼ ", label);
 }
 
 /* ── PartnerRow ── */
@@ -4824,7 +4860,7 @@ function PartnerRow(_ref6) {
       return obs.disconnect();
     };
   }, [animate]);
-  var cols = hideval ? "90px 1fr 42px" : "110px 1fr 44px 80px";
+  var cols = hideval ? "100px 1fr 40px" : "120px 1fr 44px 80px";
   return /*#__PURE__*/React.createElement("div", {
     ref: ref,
     style: {
@@ -4832,14 +4868,14 @@ function PartnerRow(_ref6) {
       gridTemplateColumns: cols,
       gap: 8,
       alignItems: "center",
-      marginBottom: 9,
+      marginBottom: 10,
       minWidth: 0
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'DM Mono',monospace",
       fontSize: 9.5,
-      color: C.muted,
+      color: C.text,
       overflow: "hidden",
       textOverflow: "ellipsis",
       whiteSpace: "nowrap"
@@ -4847,8 +4883,10 @@ function PartnerRow(_ref6) {
   }, item.c), /*#__PURE__*/React.createElement("div", {
     style: {
       background: "".concat(C.bright, "08"),
-      height: 5,
+      height: 4,
       position: "relative",
+      borderRadius: 2,
+      overflow: "hidden",
       minWidth: 0
     }
   }, animate ? /*#__PURE__*/React.createElement("div", {
@@ -4858,17 +4896,20 @@ function PartnerRow(_ref6) {
       position: "absolute",
       top: 0,
       left: 0,
-      height: 5,
-      background: color
+      height: 4,
+      background: color,
+      borderRadius: 2,
+      opacity: .9
     }
   }) : /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       top: 0,
       left: 0,
-      height: 5,
+      height: 4,
       width: w,
-      background: color
+      background: color,
+      borderRadius: 2
     }
   })), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -4876,7 +4917,8 @@ function PartnerRow(_ref6) {
       fontSize: 10,
       color: C.gold,
       textAlign: "right",
-      whiteSpace: "nowrap"
+      whiteSpace: "nowrap",
+      fontWeight: 500
     }
   }, item.p, "%"), !hideval && /*#__PURE__*/React.createElement("div", {
     style: {
@@ -4907,27 +4949,28 @@ function SectorRow(_ref9) {
     className: "sr d".concat(Math.min(idx + 1, 9)),
     style: {
       display: "grid",
-      gridTemplateColumns: "1fr 60px",
+      gridTemplateColumns: "1fr 62px",
       alignItems: "center",
       gap: 8,
-      marginBottom: 7,
+      marginBottom: 8,
       minWidth: 0
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       alignItems: "center",
-      gap: 8,
+      gap: 9,
       minWidth: 0,
       overflow: "hidden"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      width: 3,
-      height: 22,
+      width: 2.5,
+      height: 24,
       background: col,
       flexShrink: 0,
-      borderRadius: 2
+      borderRadius: 2,
+      opacity: .85
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -4937,9 +4980,9 @@ function SectorRow(_ref9) {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 10,
+      fontSize: 10.5,
       color: C.text,
-      lineHeight: 1.3,
+      lineHeight: 1.4,
       overflow: "hidden",
       textOverflow: "ellipsis",
       whiteSpace: "nowrap"
@@ -4949,29 +4992,30 @@ function SectorRow(_ref9) {
       display: "flex",
       alignItems: "center",
       gap: 5,
-      marginTop: 2
+      marginTop: 3
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      height: 2.5,
-      width: on ? "".concat(Math.min(pct * 0.6, 80), "px") : "0px",
+      height: 2,
+      width: on ? "".concat(Math.min(pct * 0.55, 75), "px") : "0px",
       background: col,
-      opacity: 0.5,
-      transition: "width 0.9s cubic-bezier(.4,0,.2,1)",
+      opacity: .45,
+      transition: "width 1s cubic-bezier(.4,0,.2,1)",
       flexShrink: 0
     }
   }), /*#__PURE__*/React.createElement("span", {
     style: {
-      fontSize: 8,
+      fontSize: 7.5,
       color: C.dim,
       fontFamily: "'DM Mono',monospace",
-      letterSpacing: 1,
-      flexShrink: 0
+      letterSpacing: 1.5,
+      flexShrink: 0,
+      textTransform: "uppercase"
     }
   }, item.cat)))), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'DM Mono',monospace",
-      fontSize: 10,
+      fontSize: 10.5,
       color: col,
       textAlign: "right",
       fontWeight: 500,
@@ -4991,9 +5035,10 @@ function VitalsGrid(_ref0) {
     _useInView4 = _slicedToArray(_useInView3, 2),
     ref = _useInView4[0],
     on = _useInView4[1];
-  var cols = xs ? "1fr" : sm ? "1fr 1fr" : md ? "1fr 1fr" : "repeat(4,1fr)";
+  var cols = xs ? "1fr 1fr" : sm ? "1fr 1fr" : md ? "repeat(3,1fr)" : "repeat(4,1fr)";
   return /*#__PURE__*/React.createElement("div", {
     ref: ref,
+    className: "vitg",
     style: {
       display: "grid",
       gridTemplateColumns: cols,
@@ -5003,23 +5048,27 @@ function VitalsGrid(_ref0) {
       marginBottom: 18
     }
   }, vitals.map(function (v, i) {
+    var isPos = v.d.includes("+");
+    var isNeg = v.d.includes("−") || v.d.includes("-");
+    var dCol = isPos ? C.green : isNeg ? C.red : C.dim;
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       className: "vcard sr d".concat(Math.min(i + 1, 9)),
       style: {
         background: C.bg3,
-        padding: "13px 15px",
-        minWidth: 0
+        padding: "13px 14px",
+        minWidth: 0,
+        overflow: "hidden"
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "'DM Mono',monospace",
-        fontSize: 7.5,
+        fontSize: 7,
         color: C.dim,
-        letterSpacing: 2,
+        letterSpacing: 2.2,
         textTransform: "uppercase",
-        marginBottom: 5,
-        lineHeight: 1.4
+        marginBottom: 6,
+        lineHeight: 1.5
       }
     }, v.k), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -5027,23 +5076,25 @@ function VitalsGrid(_ref0) {
         fontSize: sm ? 13 : 15,
         fontWeight: 700,
         color: C.goldL,
-        marginBottom: 3,
+        marginBottom: 4,
         lineHeight: 1.2,
-        animation: on ? "countUp 0.4s ease ".concat(i * 0.06, "s both") : "none"
+        animation: on ? "countReveal 0.4s ease ".concat(i * 0.07, "s both") : "none",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap"
       }
     }, v.v), /*#__PURE__*/React.createElement("div", {
       style: {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "flex-start",
-        gap: 4,
-        flexWrap: "wrap"
+        gap: 4
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         fontSize: 9,
-        color: C.dim,
-        lineHeight: 1.3,
+        color: C.muted,
+        lineHeight: 1.4,
         minWidth: 0,
         flex: 1
       }
@@ -5051,9 +5102,10 @@ function VitalsGrid(_ref0) {
       style: {
         fontFamily: "'DM Mono',monospace",
         fontSize: 8,
-        color: v.d.includes("+") ? C.green : v.d.includes("−") || v.d.includes("-") ? C.red : C.dim,
+        color: dCol,
         whiteSpace: "nowrap",
-        flexShrink: 0
+        flexShrink: 0,
+        letterSpacing: .5
       }
     }, v.d)));
   }));
@@ -5066,7 +5118,7 @@ function Timeline(_ref1) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
-      paddingLeft: 20
+      paddingLeft: 22
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -5075,7 +5127,7 @@ function Timeline(_ref1) {
       top: 8,
       bottom: 8,
       width: 1,
-      background: "linear-gradient(to bottom, ".concat(col, "88, ").concat(C.border, ")")
+      background: "linear-gradient(to bottom, ".concat(col, "66, ").concat(C.border, "00)")
     }
   }), events.map(function (e, i) {
     return /*#__PURE__*/React.createElement("div", {
@@ -5083,7 +5135,7 @@ function Timeline(_ref1) {
       className: "tlrow sr d".concat(Math.min(i + 1, 9)),
       style: {
         position: "relative",
-        marginBottom: 14,
+        marginBottom: 16,
         paddingLeft: 16
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -5091,7 +5143,7 @@ function Timeline(_ref1) {
       style: {
         position: "absolute",
         left: -5,
-        top: 6,
+        top: 7,
         width: 9,
         height: 9,
         borderRadius: "50%",
@@ -5101,7 +5153,7 @@ function Timeline(_ref1) {
     }), /*#__PURE__*/React.createElement("div", {
       style: {
         display: "flex",
-        gap: 10,
+        gap: 12,
         minWidth: 0
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -5110,13 +5162,13 @@ function Timeline(_ref1) {
         fontSize: 10,
         fontWeight: 500,
         color: C.gold,
-        minWidth: 32,
-        lineHeight: 1.6,
+        minWidth: 34,
+        lineHeight: 1.8,
         flexShrink: 0
       }
     }, e.y), /*#__PURE__*/React.createElement("div", {
       style: {
-        fontSize: 11,
+        fontSize: 11.5,
         color: C.text,
         lineHeight: 1.8,
         minWidth: 0
@@ -5136,54 +5188,78 @@ function IntelBox(_ref10) {
   return /*#__PURE__*/React.createElement("div", {
     ref: ref
   }, /*#__PURE__*/React.createElement("div", {
-    className: "sr",
+    className: "sr intel-pulse",
     style: {
-      background: C.bg3,
+      background: "".concat(C.bg3),
       borderLeft: "3px solid ".concat(C.gold),
-      padding: "20px 22px",
-      marginTop: 18,
-      animation: on ? "borderFlash 4s ease-in-out .5s 2" : "none"
+      borderRadius: "0 2px 2px 0",
+      padding: "22px 24px",
+      marginTop: 18
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "'DM Mono',monospace",
-      fontSize: 8,
-      color: C.gold,
-      letterSpacing: 3,
-      marginBottom: 14
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      marginBottom: 16
     }
-  }, "\u2B21 MONEY FLOW INTELLIGENCE"), intel.split("\n\n").map(function (p, i) {
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 6,
+      height: 6,
+      borderRadius: "50%",
+      background: C.gold,
+      animation: "shimmerLine 2s ease-in-out infinite"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'DM Mono',monospace",
+      fontSize: 7.5,
+      color: C.gold,
+      letterSpacing: 3.5,
+      textTransform: "uppercase"
+    }
+  }, "Money Flow Intelligence")), intel.split("\n\n").map(function (p, i) {
     return /*#__PURE__*/React.createElement("p", {
       key: i,
       className: "sr d".concat(Math.min(i + 1, 9)),
       style: {
         fontSize: 12,
         color: C.text,
-        lineHeight: 1.9,
-        marginBottom: 10
+        lineHeight: 2,
+        marginBottom: 12,
+        fontFamily: "'Inter',sans-serif"
       }
     }, p);
   })), /*#__PURE__*/React.createElement("div", {
     className: "sr d2",
     style: {
-      background: "rgba(196,60,60,0.07)",
+      background: "rgba(232,72,72,0.06)",
       borderLeft: "3px solid ".concat(C.red),
+      borderRadius: "0 2px 2px 0",
       padding: "14px 20px",
       marginTop: 8
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "'DM Mono',monospace",
-      fontSize: 8,
-      color: C.red,
-      letterSpacing: 3,
-      marginBottom: 9
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      marginBottom: 10
     }
-  }, "\u26A0 STRUCTURAL RISK"), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 11,
+      fontFamily: "'DM Mono',monospace",
+      fontSize: 7.5,
+      color: C.red,
+      letterSpacing: 3
+    }
+  }, "\u26A0 Structural Risk")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 11.5,
       color: C.muted,
-      lineHeight: 1.85
+      lineHeight: 1.9,
+      fontFamily: "'Inter',sans-serif"
     }
   }, risk)));
 }
@@ -5219,16 +5295,9 @@ function TabBar(_ref11) {
         return set(t.id);
       },
       style: {
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        fontFamily: "'DM Mono',monospace",
-        fontSize: 9,
-        letterSpacing: 2,
         color: active === t.id ? C.bright : C.dim,
-        padding: "12px 14px",
         borderBottom: "2px solid ".concat(active === t.id ? col : "transparent"),
-        transition: "all 0.2s"
+        background: active === t.id ? "".concat(col, "0e") : "none"
       }
     }, t.label);
   }));
@@ -5240,11 +5309,12 @@ function CountrySection(_ref12) {
     _useState10 = _slicedToArray(_useState1, 2),
     tab = _useState10[0],
     setTab = _useState10[1];
-  var _useInView7 = useInView(0.06),
+  var _useInView7 = useInView(0.05),
     _useInView8 = _slicedToArray(_useInView7, 2),
     secRef = _useInView8[0],
     secOn = _useInView8[1];
   var _useBreakpoint2 = useBreakpoint(),
+    xs = _useBreakpoint2.xs,
     sm = _useBreakpoint2.sm,
     md = _useBreakpoint2.md;
   var exMax = Math.max.apply(Math, _toConsumableArray(b.expPartners.map(function (p) {
@@ -5259,7 +5329,7 @@ function CountrySection(_ref12) {
   var imSMax = Math.max.apply(Math, _toConsumableArray(b.topImports.map(function (s) {
     return s.pct;
   })));
-  var pad = sm ? "0 16px" : "0 28px";
+  var pad = sm ? "0 14px" : "0 28px";
   var twoCol = md ? "1fr" : "1fr 1fr";
   var ovgCols = md ? "1fr" : "3fr 2fr";
   return /*#__PURE__*/React.createElement("section", {
@@ -5267,7 +5337,7 @@ function CountrySection(_ref12) {
     id: b.id,
     className: "country-anchor csec",
     style: {
-      padding: "48px 0",
+      padding: sm ? "36px 0" : "52px 0",
       borderBottom: "1px solid ".concat(C.border),
       overflow: "hidden"
     }
@@ -5281,21 +5351,22 @@ function CountrySection(_ref12) {
     className: "sr ".concat(secOn ? "on" : ""),
     style: {
       display: "flex",
-      gap: 12,
+      gap: sm ? 10 : 16,
       alignItems: "flex-start",
-      marginBottom: 20,
+      marginBottom: 18,
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "secnum",
     style: {
       fontFamily: "'Playfair Display',serif",
-      fontSize: sm ? 36 : 52,
+      fontSize: sm ? 42 : 64,
       fontWeight: 900,
       color: C.gold,
-      opacity: 0.12,
+      opacity: .1,
       lineHeight: 1,
-      flexShrink: 0
+      flexShrink: 0,
+      userSelect: "none"
     }
   }, b.no), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -5307,28 +5378,29 @@ function CountrySection(_ref12) {
       display: "flex",
       alignItems: "center",
       gap: 10,
-      marginBottom: 5,
+      marginBottom: 6,
       flexWrap: "wrap"
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
-      fontSize: sm ? 20 : 26
+      fontSize: sm ? 22 : 28
     }
   }, b.flag), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: "'Playfair Display',serif",
-      fontSize: sm ? 18 : 24,
+      fontSize: sm ? 18 : 26,
       fontWeight: 700,
-      color: C.white
+      color: C.white,
+      lineHeight: 1.2
     }
   }, b.name)), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'DM Mono',monospace",
-      fontSize: 9,
+      fontSize: 8.5,
       color: C.dim,
-      letterSpacing: 1.5
+      letterSpacing: 2
     }
-  }, b.gdp, " GDP")), /*#__PURE__*/React.createElement(Pill, {
+  }, b.gdp, " GDP \u2014 ", b["short"])), /*#__PURE__*/React.createElement(StatusPill, {
     label: b.balLabel,
     ok: b.tradeBalance === "surplus"
   })), /*#__PURE__*/React.createElement("div", {
@@ -5338,16 +5410,16 @@ function CountrySection(_ref12) {
       fontSize: sm ? 12 : 13.5,
       fontStyle: "italic",
       color: C.muted,
-      marginBottom: 22,
-      paddingLeft: sm ? 12 : 20,
-      borderLeft: "2px solid ".concat(b.col, "44"),
-      lineHeight: 1.75,
+      marginBottom: 20,
+      paddingLeft: sm ? 12 : 18,
+      borderLeft: "2px solid ".concat(b.col, "55"),
+      lineHeight: 1.8,
       maxWidth: 820
     }
   }, b.headline), /*#__PURE__*/React.createElement("div", {
     style: {
       height: 1,
-      background: "linear-gradient(90deg, ".concat(b.col, "66, transparent)"),
+      background: "linear-gradient(90deg, ".concat(b.col, "77, ").concat(b.col, "22, transparent)"),
       marginBottom: 18
     }
   }), /*#__PURE__*/React.createElement(TabBar, {
@@ -5365,11 +5437,11 @@ function CountrySection(_ref12) {
       gap: 14
     }
   }, /*#__PURE__*/React.createElement(Card, {
-    title: "// 6-YEAR TRADE VOLUME \xB7 EXPORTS vs IMPORTS (USD BILLIONS)"
+    title: "6-Year Trade Volume \xB7 Exports vs Imports (USD Billions)"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
-      gap: 16,
+      gap: 18,
       marginBottom: 10,
       flexWrap: "wrap"
     }
@@ -5382,23 +5454,23 @@ function CountrySection(_ref12) {
       style: {
         display: "flex",
         alignItems: "center",
-        gap: 5,
+        gap: 6,
         fontFamily: "'DM Mono',monospace",
-        fontSize: 9,
-        color: C.dim
+        fontSize: 8.5,
+        color: C.muted
       }
     }, /*#__PURE__*/React.createElement("span", {
       style: {
         display: "inline-block",
-        width: 10,
-        height: 10,
+        width: 8,
+        height: 8,
         background: c,
-        borderRadius: 2
+        borderRadius: 1
       }
     }), l);
   })), /*#__PURE__*/React.createElement("div", {
     style: {
-      height: sm ? 150 : 175
+      height: sm ? 148 : 172
     }
   }, /*#__PURE__*/React.createElement(ResponsiveContainer, {
     width: "100%",
@@ -5406,12 +5478,12 @@ function CountrySection(_ref12) {
   }, /*#__PURE__*/React.createElement(BarChart, {
     data: b.trade6,
     barGap: 3,
-    barCategoryGap: "26%"
+    barCategoryGap: "28%"
   }, /*#__PURE__*/React.createElement(XAxis, {
     dataKey: "y",
     tick: {
       fill: C.dim,
-      fontSize: sm ? 8 : 10,
+      fontSize: sm ? 7.5 : 9.5,
       fontFamily: "'DM Mono',monospace"
     },
     axisLine: {
@@ -5429,7 +5501,7 @@ function CountrySection(_ref12) {
     tickFormatter: function tickFormatter(v) {
       return "$".concat(v, "B");
     },
-    width: sm ? 44 : 52
+    width: sm ? 42 : 50
   }), /*#__PURE__*/React.createElement(Tooltip, {
     content: /*#__PURE__*/React.createElement(CTip, null)
   }), /*#__PURE__*/React.createElement(Bar, {
@@ -5443,16 +5515,16 @@ function CountrySection(_ref12) {
     dataKey: "m",
     name: "Imports",
     fill: C.red,
-    opacity: 0.85,
+    opacity: .85,
     radius: [2, 2, 0, 0],
     isAnimationActive: true,
     animationDuration: 900,
-    animationBegin: 150
+    animationBegin: 160
   }))))), /*#__PURE__*/React.createElement(Card, {
-    title: "// TRADE BALANCE BY YEAR"
+    title: "Trade Balance by Year"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      height: 90
+      height: 86
     }
   }, /*#__PURE__*/React.createElement(ResponsiveContainer, {
     width: "100%",
@@ -5461,7 +5533,7 @@ function CountrySection(_ref12) {
     data: b.trade6.map(function (d) {
       return {
         y: d.y,
-        b: d.x - d.m
+        b: +(d.x - d.m).toFixed(1)
       };
     })
   }, /*#__PURE__*/React.createElement(XAxis, {
@@ -5484,11 +5556,12 @@ function CountrySection(_ref12) {
         label = _ref15.label;
       return active && payload !== null && payload !== void 0 && payload.length ? /*#__PURE__*/React.createElement("div", {
         style: {
-          background: C.bg3,
-          border: "1px solid ".concat(C.border),
+          background: C.bg4,
+          border: "1px solid ".concat(C.borderL),
           padding: "6px 10px",
           fontSize: 10,
-          fontFamily: "'DM Mono',monospace"
+          fontFamily: "'DM Mono',monospace",
+          borderRadius: 2
         }
       }, /*#__PURE__*/React.createElement("span", {
         style: {
@@ -5498,19 +5571,19 @@ function CountrySection(_ref12) {
         style: {
           color: payload[0].value >= 0 ? C.green : C.red
         }
-      }, payload[0].value >= 0 ? "+" : "", payload[0].value.toFixed(0), "B")) : null;
+      }, payload[0].value >= 0 ? "+" : "", payload[0].value, "B")) : null;
     }
   }), /*#__PURE__*/React.createElement(Line, {
     dataKey: "b",
-    stroke: C.gold,
+    stroke: b.col,
     strokeWidth: 2,
     dot: {
-      fill: C.gold,
+      fill: b.col,
       r: 3
     },
     type: "monotone",
     isAnimationActive: true,
-    animationDuration: 1000
+    animationDuration: 1100
   })))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 12,
@@ -5519,18 +5592,17 @@ function CountrySection(_ref12) {
       gap: 5
     }
   }, b.trade6.map(function (d, i) {
-    var bal = d.x - d.m;
+    var bal = +(d.x - d.m).toFixed(1);
     var abs = Math.abs(bal);
-    var nf = b.id === "pakistan" ? 4.5 : b.id === "australia" ? 20 : b.id === "mideast" ? 25 : 130;
+    var nf = b.id === "pakistan" ? 5 : b.id === "australia" ? 22 : b.id === "mideast" ? 28 : b.id === "vietnam" ? 20 : b.id === "turkey" ? 15 : 135;
     var w = Math.min(abs / nf * 100, 100);
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       style: {
         display: "grid",
-        gridTemplateColumns: "38px 1fr 66px",
+        gridTemplateColumns: "38px 1fr 68px",
         gap: 6,
-        alignItems: "center",
-        minWidth: 0
+        alignItems: "center"
       }
     }, /*#__PURE__*/React.createElement("span", {
       style: {
@@ -5540,14 +5612,14 @@ function CountrySection(_ref12) {
       }
     }, d.y), /*#__PURE__*/React.createElement("div", {
       style: {
-        height: 4,
+        height: 3,
         background: C.bg4,
         borderRadius: 2,
         overflow: "hidden"
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
-        height: 4,
+        height: 3,
         width: "".concat(w, "%"),
         background: bal >= 0 ? C.green : C.red,
         borderRadius: 2
@@ -5569,7 +5641,7 @@ function CountrySection(_ref12) {
       gap: 14
     }
   }, /*#__PURE__*/React.createElement(Card, {
-    title: "// EXPORT PARTNERS \u2014 % of total goods exports"
+    title: "Export Partners \u2014 % of total goods exports"
   }, b.expPartners.map(function (p, i) {
     return /*#__PURE__*/React.createElement(PartnerRow, {
       key: i,
@@ -5580,7 +5652,7 @@ function CountrySection(_ref12) {
       hideval: sm
     });
   })), /*#__PURE__*/React.createElement(Card, {
-    title: "// IMPORT PARTNERS \u2014 % of total goods imports"
+    title: "Import Partners \u2014 % of total goods imports"
   }, b.impPartners.map(function (p, i) {
     return /*#__PURE__*/React.createElement(PartnerRow, {
       key: i,
@@ -5599,18 +5671,19 @@ function CountrySection(_ref12) {
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "'DM Mono',monospace",
-      fontSize: 8,
+      fontSize: 7.5,
       color: C.dim,
-      letterSpacing: 2,
-      marginBottom: 10
+      letterSpacing: 2.5,
+      marginBottom: 10,
+      textTransform: "uppercase"
     }
-  }, "PARTNER NOTES"), b.impPartners.slice(0, 4).map(function (p, i) {
+  }, "Partner Notes"), b.impPartners.slice(0, 4).map(function (p, i) {
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       style: {
         display: "flex",
         gap: 8,
-        marginBottom: 5,
+        marginBottom: 6,
         flexWrap: "wrap"
       }
     }, /*#__PURE__*/React.createElement("span", {
@@ -5618,13 +5691,14 @@ function CountrySection(_ref12) {
         fontFamily: "'DM Mono',monospace",
         fontSize: 9,
         color: C.gold,
-        minWidth: 80,
+        minWidth: 82,
         flexShrink: 0
       }
     }, p.c.split(" ")[0]), /*#__PURE__*/React.createElement("span", {
       style: {
-        fontSize: 10,
-        color: C.dim
+        fontSize: 10.5,
+        color: C.muted,
+        lineHeight: 1.6
       }
     }, p.note));
   })))), tab === "sectors" && /*#__PURE__*/React.createElement("div", {
@@ -5635,7 +5709,7 @@ function CountrySection(_ref12) {
       gap: 14
     }
   }, /*#__PURE__*/React.createElement(Card, {
-    title: "// TOP 15 EXPORT COMMODITIES & SECTORS"
+    title: "Top 15 Export Commodities & Sectors"
   }, b.topExports.map(function (s, i) {
     return /*#__PURE__*/React.createElement(SectorRow, {
       key: i,
@@ -5644,7 +5718,7 @@ function CountrySection(_ref12) {
       idx: i
     });
   })), /*#__PURE__*/React.createElement(Card, {
-    title: "// TOP 15 IMPORT COMMODITIES & SECTORS"
+    title: "Top 15 Import Commodities & Sectors"
   }, b.topImports.map(function (s, i) {
     return /*#__PURE__*/React.createElement(SectorRow, {
       key: i,
@@ -5655,7 +5729,7 @@ function CountrySection(_ref12) {
   }))), tab === "timeline" && /*#__PURE__*/React.createElement("div", {
     className: "tabpane"
   }, /*#__PURE__*/React.createElement(Card, {
-    title: "// KEY TRADE EVENTS 2019\u20132024"
+    title: "Key Trade Events 2019\u20132024"
   }, /*#__PURE__*/React.createElement(Timeline, {
     events: b.events,
     col: b.col
@@ -5667,6 +5741,33 @@ function CountrySection(_ref12) {
   }))));
 }
 
+/* ── Ticker ── */
+function Ticker() {
+  var items = ["🇨🇳 China surplus 2024: +$987B", "🇺🇸 USA goods deficit: −$1.1T", "🛢 Brent crude Mar'25: $74.4/bbl", "🇷🇺 Russia-China trade: +35% YoY", "🇮🇳 India IT exports: $200B+", "🇸🇦 Saudi Aramco revenue: $440B", "🇩🇪 Germany auto exports: €240B", "🌍 Global goods trade 2024: ~$32T", "🇦🇺 Australia iron ore: $104B to China", "⚫ Iran shadow oil: ~$48B/yr", "🇻🇳 Vietnam FDI surplus: +$24B", "🇧🇷 Brazil agri exports: $170B"];
+  var doubled = [].concat(items, items);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ticker-wrap",
+    style: {
+      background: C.bg,
+      padding: "6px 0"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ticker-inner"
+  }, doubled.map(function (item, i) {
+    return /*#__PURE__*/React.createElement("span", {
+      key: i,
+      style: {
+        fontFamily: "'DM Mono',monospace",
+        fontSize: 9,
+        color: C.muted,
+        letterSpacing: 1.2,
+        padding: "0 32px",
+        flexShrink: 0
+      }
+    }, item);
+  })));
+}
+
 /* ── Nav ── */
 function Nav(_ref16) {
   var active = _ref16.active,
@@ -5674,21 +5775,17 @@ function Nav(_ref16) {
   var scrollPct = useScrollProgress();
   var _useState11 = useState(false),
     _useState12 = _slicedToArray(_useState11, 2),
-    open = _useState12[0],
-    setOpen = _useState12[1];
-  var _useState13 = useState(false),
-    _useState14 = _slicedToArray(_useState13, 2),
-    scrolled = _useState14[0],
-    setScrolled = _useState14[1];
+    scrolled = _useState12[0],
+    setScrolled = _useState12[1];
   useEffect(function () {
     var h = function h() {
-      return setScrolled(window.scrollY > 30);
+      return setScrolled(window.scrollY > 40);
     };
-    window.addEventListener('scroll', h, {
+    window.addEventListener("scroll", h, {
       passive: true
     });
     return function () {
-      return window.removeEventListener('scroll', h);
+      return window.removeEventListener("scroll", h);
     };
   }, []);
   return /*#__PURE__*/React.createElement("nav", {
@@ -5696,11 +5793,11 @@ function Nav(_ref16) {
       position: "sticky",
       top: 0,
       zIndex: 500,
-      background: scrolled ? "".concat(C.bg, "f5") : "".concat(C.bg2, "f5"),
-      backdropFilter: "blur(18px)",
-      WebkitBackdropFilter: "blur(18px)",
+      background: scrolled ? "".concat(C.bg, "f8") : "".concat(C.bg2, "f5"),
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
       borderBottom: "1px solid ".concat(C.border),
-      transition: "background 0.3s"
+      transition: "background .35s ease"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "sprg",
@@ -5709,109 +5806,72 @@ function Nav(_ref16) {
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
+      maxWidth: 1320,
+      margin: "0 auto",
       display: "flex",
       alignItems: "stretch",
-      padding: "0 20px",
-      maxWidth: 1320,
-      margin: "0 auto"
+      padding: "0 14px",
+      gap: 0,
+      minHeight: 48
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: "'Playfair Display',serif",
-      fontSize: 12,
-      fontWeight: 700,
-      color: C.gold,
-      padding: "0 16px 0 0",
-      borderRight: "1px solid ".concat(C.border),
-      marginRight: 12,
       display: "flex",
       alignItems: "center",
-      whiteSpace: "nowrap",
-      flexShrink: 0,
-      letterSpacing: 1
+      gap: 8,
+      padding: "0 16px 0 4px",
+      borderRight: "1px solid ".concat(C.border),
+      marginRight: 10,
+      flexShrink: 0
     }
-  }, "TRADE INTEL"), /*#__PURE__*/React.createElement("div", {
-    className: "navlinks",
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      display: "flex",
-      alignItems: "stretch",
+      width: 4,
+      height: 18,
+      background: C.gold,
+      borderRadius: 2,
+      animation: "shimmerLine 3s ease-in-out infinite"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'Playfair Display',serif",
+      fontSize: 11.5,
+      fontWeight: 700,
+      color: C.gold,
+      letterSpacing: 1.2,
+      whiteSpace: "nowrap"
+    }
+  }, "TRADE INTEL")), /*#__PURE__*/React.createElement("div", {
+    className: "nav-scroll",
+    style: {
       flex: 1,
-      overflowX: "auto"
+      minWidth: 0
     }
   }, NATIONS.map(function (n) {
     return /*#__PURE__*/React.createElement("a", {
       key: n.id,
       href: "#".concat(n.id),
+      className: "npill".concat(active === n.id ? " active" : ""),
+      style: {
+        "--nc": n.col,
+        "--nc-glow": "".concat(n.col, "55")
+      },
       onClick: function onClick() {
         return setActive(n.id);
-      },
-      style: {
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 6,
-        padding: "13px 10px",
-        fontFamily: "'DM Mono',monospace",
-        fontSize: 9,
-        letterSpacing: 1.5,
-        color: active === n.id ? C.bright : C.dim,
-        borderBottom: "2px solid ".concat(active === n.id ? n.col : "transparent"),
-        background: active === n.id ? "".concat(n.col, "12") : "transparent",
-        transition: "all 0.18s",
-        flexShrink: 0,
-        whiteSpace: "nowrap"
       }
     }, /*#__PURE__*/React.createElement("span", {
       style: {
-        fontSize: 13
+        fontSize: 11,
+        lineHeight: 1
       }
-    }, n.flag), n["short"]);
-  })), /*#__PURE__*/React.createElement("button", {
-    className: "hbg".concat(open ? " open" : ""),
-    onClick: function onClick() {
-      return setOpen(function (p) {
-        return !p;
-      });
-    },
-    "aria-label": "menu"
-  }, /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null))), /*#__PURE__*/React.createElement("div", {
-    className: "mmenu".concat(open ? " open" : "")
-  }, NATIONS.map(function (n) {
-    return /*#__PURE__*/React.createElement("a", {
-      key: n.id,
-      href: "#".concat(n.id),
-      onClick: function onClick() {
-        setActive(n.id);
-        setOpen(false);
-      },
-      style: {
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-        padding: "10px 6px",
-        fontFamily: "'DM Mono',monospace",
-        fontSize: 10,
-        color: active === n.id ? C.bright : C.muted,
-        borderBottom: "1px solid ".concat(C.border, "33"),
-        borderLeft: "2px solid ".concat(active === n.id ? n.col : "transparent")
-      }
-    }, /*#__PURE__*/React.createElement("span", {
-      style: {
-        fontSize: 16
-      }
-    }, n.flag), n["short"], /*#__PURE__*/React.createElement("span", {
-      style: {
-        marginLeft: "auto",
-        fontSize: 9,
-        color: C.dim
-      }
-    }, n.gdp));
-  })));
+    }, n.flag), /*#__PURE__*/React.createElement("span", null, n["short"]));
+  }))), /*#__PURE__*/React.createElement(Ticker, null));
 }
 
 /* ── Hero ── */
 function Hero() {
-  var parallaxY = useParallax(0.18);
-  var _useInView9 = useInView(0.05),
+  var parallaxY = useParallax(0.16);
+  var _useInView9 = useInView(0.04),
     _useInView0 = _slicedToArray(_useInView9, 2),
     ref = _useInView0[0],
     on = _useInView0[1];
@@ -5819,29 +5879,34 @@ function Hero() {
     xs = _useBreakpoint3.xs,
     sm = _useBreakpoint3.sm,
     md = _useBreakpoint3.md;
-  var statCols = xs ? "1fr" : sm ? "1fr 1fr" : md ? "repeat(3,1fr)" : "repeat(5,1fr)";
+  var statCols = xs ? "1fr 1fr" : sm ? "1fr 1fr" : md ? "repeat(3,1fr)" : "repeat(5,1fr)";
+  var pad = sm ? "44px 14px 36px" : "64px 28px 52px";
   var stats = [{
     l: "World Goods Trade 2024",
     v: "~$32T",
+    d: "+4.2%",
     n: "Total global merchandise"
   }, {
-    l: "China Surplus 2024",
+    l: "China Trade Surplus",
     v: "+$987B",
-    n: "Near $1T — record"
+    d: "record",
+    n: "Near $1T — unprecedented"
   }, {
     l: "USA Goods Deficit",
     v: "−$1.1T",
+    d: "stable",
     n: "Structural; by design"
   }, {
-    l: "Russia-China Trade",
+    l: "Russia–China Trade",
     v: "35%",
+    d: "+8pp",
     n: "China share of Russia total"
   }, {
-    l: "Iran Shadow Economy",
+    l: "Shadow Oil Flows",
     v: "$50B+",
-    n: "Annual off-books oil flows"
+    d: "Iran",
+    n: "Annual off-books estimate"
   }];
-  var pad = sm ? "40px 16px 32px" : "54px 28px 44px";
   return /*#__PURE__*/React.createElement("div", {
     ref: ref,
     style: {
@@ -5854,67 +5919,94 @@ function Hero() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "hgrid",
     style: {
-      transform: "translateY(".concat(parallaxY * 0.4, "px)")
+      transform: "translateY(".concat(parallaxY * .4, "px)")
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
-      top: "30%",
-      left: "60%",
-      width: 400,
-      height: 400,
+      top: "25%",
+      left: "62%",
+      width: 480,
+      height: 480,
       borderRadius: "50%",
-      background: "radial-gradient(circle, ".concat(C.gold, "0a, transparent 70%)"),
-      transform: "translateY(".concat(parallaxY * 0.6, "px)"),
+      background: "radial-gradient(circle, ".concat(C.gold, "09, transparent 65%)"),
+      transform: "translateY(".concat(parallaxY * .55, "px)"),
+      pointerEvents: "none"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: "10%",
+      left: "10%",
+      width: 280,
+      height: 280,
+      borderRadius: "50%",
+      background: "radial-gradient(circle, ".concat(C.red, "06, transparent 70%)"),
       pointerEvents: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
-      zIndex: 1
+      zIndex: 1,
+      maxWidth: 860
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "sr ".concat(on ? "on" : ""),
     style: {
       fontFamily: "'DM Mono',monospace",
-      fontSize: sm ? 8 : 9,
+      fontSize: sm ? 7.5 : 8.5,
       color: C.gold,
-      letterSpacing: 3,
-      marginBottom: 16
+      letterSpacing: 3.5,
+      marginBottom: 18,
+      display: "flex",
+      alignItems: "center",
+      gap: 10
     }
-  }, "// GLOBAL TRADE INTELLIGENCE \xB7 9 BLOCS \xB7 2019\u20132024 \xB7 15 COMMODITIES PER NATION"), /*#__PURE__*/React.createElement("h1", {
-    className: "sr d1 ".concat(on ? "on" : ""),
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "inline-block",
+      width: 20,
+      height: 1,
+      background: C.gold,
+      opacity: .5
+    }
+  }), "GLOBAL TRADE INTELLIGENCE \xB7 ", NATIONS.length, " NATIONS \xB7 2019\u20132024"), /*#__PURE__*/React.createElement("h1", {
+    className: "sr d1 glow-breath ".concat(on ? "on" : ""),
     style: {
       fontFamily: "'Playfair Display',serif",
-      fontSize: sm ? 24 : 38,
+      fontSize: xs ? 26 : sm ? 32 : 46,
       fontWeight: 900,
       color: C.white,
-      lineHeight: 1.15,
-      marginBottom: 8,
-      maxWidth: 680
+      lineHeight: 1.12,
+      marginBottom: 10,
+      letterSpacing: "-.5px"
     }
-  }, "Where Money Moves"), /*#__PURE__*/React.createElement("h2", {
+  }, "Where Money", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: C.gold
+    }
+  }, "Actually"), " Moves"), /*#__PURE__*/React.createElement("h2", {
     className: "sr d2 ".concat(on ? "on" : ""),
     style: {
       fontFamily: "'Playfair Display',serif",
-      fontSize: sm ? 14 : 20,
+      fontSize: sm ? 14 : 19,
       fontWeight: 400,
       fontStyle: "italic",
       color: C.muted,
-      marginBottom: 16,
-      maxWidth: 680
+      marginBottom: 18
     }
   }, "The Real Architecture of Global Trade"), /*#__PURE__*/React.createElement("p", {
     className: "sr d3 ".concat(on ? "on" : ""),
     style: {
-      fontSize: sm ? 11 : 12,
-      color: C.dim,
-      maxWidth: 600,
+      fontSize: sm ? 11 : 12.5,
+      color: C.text,
+      maxWidth: 620,
       lineHeight: 2,
-      marginBottom: 32
+      marginBottom: 36,
+      fontFamily: "'Inter',sans-serif"
     }
-  }, "Sector-by-sector, commodity-by-commodity breakdown of exports, imports, trade partners, and geopolitical money flows for 9 major trade blocs. Data from WTO, World Bank WITS, IMF, national customs authorities, and USTR. Shadow economy flows documented. Use tabs within each nation for layered analysis."), /*#__PURE__*/React.createElement("div", {
-    className: "sr d4 ".concat(on ? "on" : ""),
+  }, "Sector-by-sector, commodity-by-commodity breakdown of exports, imports, trade partners and geopolitical money flows for ", NATIONS.length, " major economies. Data from WTO, World Bank WITS, IMF, and national customs authorities. Shadow flows documented. Use the tabs within each nation for layered analysis."), /*#__PURE__*/React.createElement("div", {
+    className: "sr d4 ".concat(on ? "on" : "", " hstats"),
     style: {
       display: "grid",
       gridTemplateColumns: statCols,
@@ -5925,7 +6017,7 @@ function Hero() {
   }, stats.map(function (s, i) {
     return /*#__PURE__*/React.createElement("div", {
       key: i,
-      className: "vcard",
+      className: "statbox",
       style: {
         background: C.bg3,
         padding: sm ? "14px 12px" : "18px 16px"
@@ -5933,35 +6025,50 @@ function Hero() {
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "'DM Mono',monospace",
-        fontSize: 7.5,
+        fontSize: 7,
         color: C.dim,
-        letterSpacing: 2,
+        letterSpacing: 2.5,
         textTransform: "uppercase",
         marginBottom: 8,
-        lineHeight: 1.5
+        lineHeight: 1.6
       }
     }, s.l), /*#__PURE__*/React.createElement("div", {
-      className: "glow",
       style: {
         fontFamily: "'Playfair Display',serif",
-        fontSize: sm ? 18 : 22,
+        fontSize: sm ? 18 : 23,
         fontWeight: 700,
         color: C.gold,
-        lineHeight: 1
+        lineHeight: 1,
+        marginBottom: 5
       }
     }, s.v), /*#__PURE__*/React.createElement("div", {
       style: {
-        fontSize: 9.5,
-        color: C.dim,
-        marginTop: 6
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: 4,
+        flexWrap: "wrap"
       }
-    }, s.n));
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 9,
+        color: C.dim,
+        lineHeight: 1.4
+      }
+    }, s.n), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'DM Mono',monospace",
+        fontSize: 8,
+        color: C.muted,
+        whiteSpace: "nowrap"
+      }
+    }, s.d)));
   }))));
 }
 
 /* ── MasterFlows ── */
 function MasterFlows() {
-  var _useInView1 = useInView(0.1),
+  var _useInView1 = useInView(0.08),
     _useInView10 = _slicedToArray(_useInView1, 2),
     ref = _useInView10[0],
     on = _useInView10[1];
@@ -5969,66 +6076,66 @@ function MasterFlows() {
     sm = _useBreakpoint4.sm,
     md = _useBreakpoint4.md;
   var cols = sm ? "1fr" : md ? "1fr 1fr" : "repeat(3,1fr)";
-  var pad = sm ? "0 16px" : "0 28px";
+  var pad = sm ? "0 14px" : "0 28px";
   var flows = [{
     from: "China",
     to: "USA",
     val: "$500B/yr",
     col: C.red,
-    desc: "Electronics, phones, machinery → American consumers. World's largest bilateral goods flow."
+    desc: "Electronics, phones, machinery flowing to American consumers. World's largest bilateral goods corridor by volume."
   }, {
     from: "Middle East",
     to: "Asia",
     val: "$400B+/yr",
-    col: "#7a3db8",
-    desc: "Saudi+UAE+Iran oil → China, Japan, India, Korea. Petrodollar recycling backstops USD reserve status."
+    col: C.purple,
+    desc: "Saudi+UAE+Iran crude → China, Japan, India, Korea. Petrodollar recycling underpins USD reserve status globally."
   }, {
     from: "Australia",
     to: "China",
     val: "$104B/yr",
-    col: C.goldD,
-    desc: "Pilbara iron ore → Chinese steel mills → global construction. Mutual hostage, one corridor."
+    col: C.orange,
+    desc: "Pilbara iron ore → Chinese steel mills → global construction. Two economies in a mutual economic hostage scenario."
   }, {
     from: "Russia",
-    to: "India+China",
+    to: "India + China",
     val: "$200B+/yr",
     col: C.red,
-    desc: "Urals crude at 20% discount → India refines → sells to West. India earns the arbitrage on both ends."
+    desc: "Urals crude at 20% discount → India refines → sells to West. India earns arbitrage on both ends. Sanctions bypassed."
   }, {
     from: "India IT",
     to: "Global",
     val: "$200B+/yr",
-    col: "#d4841a",
-    desc: "Indian engineers → US/EU tech firms. Invisible in goods data. Strategic shield vs sanctions."
+    col: C.orange,
+    desc: "Indian engineers → US/EU tech. Invisible in goods data. Services surplus is India's strategic financial shield."
   }, {
     from: "Iran",
     to: "China (shadow)",
     val: "~$48B/yr",
-    col: "#7a3db8",
-    desc: "Crude via shadow fleet → Chinese teapot refineries, paid in yuan. Proof: sanctions can be routed around."
+    col: C.purple,
+    desc: "Crude via shadow fleet → Chinese teapot refineries, settled in yuan. Proof that sanctions can be systematically routed around."
   }, {
     from: "Germany",
     to: "China",
     val: "~€40B/yr",
     col: C.blue,
-    desc: "BMW, VW, Mercedes → Chinese middle class. 30–35% of German auto profits. Why Germany resists decoupling."
+    desc: "BMW, VW, Mercedes to Chinese middle class. 30–35% of German auto profits. The real reason Germany resists decoupling."
   }, {
     from: "Pakistan Diaspora",
     to: "Pakistan",
     val: "$27B/yr",
-    col: "#287a4d",
-    desc: "Workers in UAE/Saudi/UK send money home. More vital to survival than all Pakistani exports combined."
+    col: C.green,
+    desc: "Workers in UAE/Saudi/UK remitting home. More vital to national survival than all Pakistani export earnings combined."
   }, {
     from: "USA IP + Finance",
     to: "World",
     val: "$400B+/yr",
-    col: "#3d7fd4",
-    desc: "IP licensing, financial services, cloud computing — why USA can run $1T+ goods deficit without currency collapse."
+    col: C.blue,
+    desc: "IP licensing, financial services, cloud — why the USA can run a $1T+ goods deficit without triggering currency collapse."
   }];
   return /*#__PURE__*/React.createElement("section", {
     ref: ref,
     style: {
-      padding: "56px 0",
+      padding: "60px 0",
       background: C.bg2,
       borderTop: "1px solid ".concat(C.border),
       overflow: "hidden"
@@ -6045,19 +6152,32 @@ function MasterFlows() {
       fontFamily: "'DM Mono',monospace",
       fontSize: 8,
       color: C.gold,
-      letterSpacing: 3,
-      marginBottom: 14
+      letterSpacing: 3.5,
+      marginBottom: 12,
+      display: "flex",
+      alignItems: "center",
+      gap: 10
     }
-  }, "// THE 9 BILATERAL FLOWS THAT ACTUALLY GOVERN THE GLOBAL ECONOMY"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "inline-block",
+      width: 20,
+      height: 1,
+      background: C.gold,
+      opacity: .5
+    }
+  }), "THE FLOWS THAT GOVERN THE GLOBAL ECONOMY"), /*#__PURE__*/React.createElement("h2", {
     className: "sr d1 ".concat(on ? "on" : ""),
     style: {
       fontFamily: "'Playfair Display',serif",
-      fontSize: sm ? 20 : 26,
+      fontSize: sm ? 22 : 28,
       fontWeight: 700,
       color: C.white,
-      marginBottom: 30
+      marginBottom: 32,
+      lineHeight: 1.2
     }
   }, "Master Trade Flow Map"), /*#__PURE__*/React.createElement("div", {
+    className: "flwg",
     style: {
       display: "grid",
       gridTemplateColumns: cols,
@@ -6072,7 +6192,8 @@ function MasterFlows() {
         border: "1px solid ".concat(C.border),
         borderTop: "2px solid ".concat(f.col),
         padding: "16px 18px",
-        minWidth: 0
+        minWidth: 0,
+        borderRadius: 2
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
@@ -6080,8 +6201,7 @@ function MasterFlows() {
         justifyContent: "space-between",
         alignItems: "flex-start",
         marginBottom: 10,
-        gap: 8,
-        flexWrap: "wrap"
+        gap: 8
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
@@ -6090,16 +6210,18 @@ function MasterFlows() {
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "'Playfair Display',serif",
-        fontSize: 13,
+        fontSize: 13.5,
         fontWeight: 700,
-        color: C.white
+        color: C.white,
+        lineHeight: 1.3
       }
     }, f.from), /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "'DM Mono',monospace",
-        fontSize: 8.5,
+        fontSize: 8,
         color: C.dim,
-        marginTop: 2
+        marginTop: 3,
+        letterSpacing: 1
       }
     }, "\u2192 ", f.to)), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -6114,7 +6236,8 @@ function MasterFlows() {
       style: {
         fontSize: 11,
         color: C.muted,
-        lineHeight: 1.8
+        lineHeight: 1.85,
+        fontFamily: "'Inter',sans-serif"
       }
     }, f.desc));
   }))));
@@ -6122,10 +6245,12 @@ function MasterFlows() {
 
 /* ── App ── */
 function App() {
-  var _useState15 = useState("usa"),
-    _useState16 = _slicedToArray(_useState15, 2),
-    activeNav = _useState16[0],
-    setActiveNav = _useState16[1];
+  var _useState13 = useState("usa"),
+    _useState14 = _slicedToArray(_useState13, 2),
+    activeNav = _useState14[0],
+    setActiveNav = _useState14[1];
+
+  /* inject global styles */
   useEffect(function () {
     var el = document.createElement("style");
     el.textContent = GLOBAL_CSS;
@@ -6134,14 +6259,16 @@ function App() {
       return document.head.removeChild(el);
     };
   }, []);
+
+  /* highlight active nav item via IntersectionObserver */
   useEffect(function () {
     var obs = new IntersectionObserver(function (entries) {
       return entries.forEach(function (e) {
         if (e.isIntersecting) setActiveNav(e.target.id);
       });
     }, {
-      threshold: 0.15,
-      rootMargin: "-54px 0px -55% 0px"
+      threshold: 0.12,
+      rootMargin: "-48px 0px -52% 0px"
     });
     NATIONS.forEach(function (n) {
       var el = document.getElementById(n.id);
@@ -6151,19 +6278,26 @@ function App() {
       return obs.disconnect();
     };
   }, []);
+
+  /* global scroll reveal */
   useEffect(function () {
     var obs = new IntersectionObserver(function (entries) {
       return entries.forEach(function (e) {
         if (e.isIntersecting) e.target.classList.add("on");
       });
     }, {
-      threshold: 0.08
+      threshold: 0.06
     });
-    document.querySelectorAll(".sr,.sr-l").forEach(function (el) {
-      return obs.observe(el);
-    });
+    var apply = function apply() {
+      return document.querySelectorAll(".sr,.sr-l").forEach(function (el) {
+        return obs.observe(el);
+      });
+    };
+    apply();
+    var t = setTimeout(apply, 800);
     return function () {
-      return obs.disconnect();
+      obs.disconnect();
+      clearTimeout(t);
     };
   }, []);
   return /*#__PURE__*/React.createElement("div", {
@@ -6182,16 +6316,23 @@ function App() {
     });
   }), /*#__PURE__*/React.createElement(MasterFlows, null), /*#__PURE__*/React.createElement("footer", {
     style: {
-      padding: "28px",
+      padding: "32px 28px",
       textAlign: "center",
       fontFamily: "'DM Mono',monospace",
-      fontSize: 8.5,
+      fontSize: 8,
       color: C.dim,
       letterSpacing: 1.5,
-      lineHeight: 2.4,
-      borderTop: "1px solid ".concat(C.border)
+      lineHeight: 2.6,
+      borderTop: "1px solid ".concat(C.border),
+      background: C.bg2
     }
-  }, "DATA: WTO \xB7 WORLD BANK WITS \xB7 IMF DOTS \xB7 US CENSUS BUREAU / USTR \xB7 DFAT AUSTRALIA \xB7 BRUEGEL INSTITUTE (Russia) \xB7 GAC CHINA \xB7 MoCI INDIA \xB7 PBS PAKISTAN \xB7 GASTAT SAUDI ARABIA", /*#__PURE__*/React.createElement("br", null), "COMPILED MAY 2026 \xB7 RUSSIA POST-2022 DATA RECONSTRUCTED FROM PARTNER-REPORTED SOURCES \xB7 IRAN INCLUDES SHADOW ECONOMY ESTIMATES FROM BRUEGEL + KPLER + IMF"));
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 6,
+      color: C.muted,
+      fontSize: 9
+    }
+  }, "GLOBAL TRADE INTELLIGENCE"), "DATA: WTO \xB7 WORLD BANK WITS \xB7 IMF DOTS \xB7 US CENSUS BUREAU \xB7 USTR \xB7 DFAT AUSTRALIA \xB7 BRUEGEL INSTITUTE \xB7 GAC CHINA \xB7 MoCI INDIA \xB7 PBS PAKISTAN \xB7 GASTAT SAUDI ARABIA", /*#__PURE__*/React.createElement("br", null), "COMPILED MAY 2026 \xB7 RUSSIA POST-2022 DATA RECONSTRUCTED FROM PARTNER-REPORTED SOURCES", /*#__PURE__*/React.createElement("br", null), "IRAN INCLUDES SHADOW ECONOMY ESTIMATES FROM BRUEGEL + KPLER + IMF"));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 </script>
