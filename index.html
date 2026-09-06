@@ -61,7 +61,7 @@ var TICKER = [
   { label: "KOREAN HBM AI CHIPS", value: "90%", note: "Of Nvidia GPU memory", col: C.blue },
   { label: "INDIA SERVICES EXPORTS", value: "$418B", note: "FY25-26; +8% YoY", col: C.gold },
   { label: "CHINA NEV EXPORTS", value: "2.62M units", note: "Doubled YoY; BYD global EV leader", col: C.green },
-  { label: "GLOBAL TRADE 2025", value: "~$33T", note: "Record despite tariff fragmentation", col: C.blue },
+  { label: "GLOBAL TRADE 2025", value: "$34.9T", note: "WTO goods+services exports; +8% YoY, record", col: C.blue },
   { label: "INDIA REMITTANCES", value: "$135.5B", note: "FY2024-25 record; World #1 recipient", col: C.gold },
   { label: "USD RESERVE SHARE", value: "57.1%", note: "Up from 56.4% (IMF COFER Q1 2026)", col: C.muted }
 ];
@@ -100,8 +100,8 @@ var NATIONS = [
   expPartners: [
     { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft dominant" },
     { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA integration" },
-    { c: "Mexico",   p: 15.3, v: "$314B", note: "Nearshoring hub" },
-    { c: "China",    p: 6.5,  v: "$133B", note: "Tariff-war effect; down from 7.3%" },
+    { c: "Mexico",   p: 15.4, v: "$334B", note: "Nearshoring hub" },
+    { c: "China",    p: 6.6,  v: "$143.5B", note: "Tariff-war effect; down from 7.3% share" },
     { c: "UK",       p: 4.1,  v: "$84B",  note: "US-UK trade deal May 2025" },
     { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally" },
     { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner" },
@@ -110,9 +110,9 @@ var NATIONS = [
 
   impPartners: [
     { c: "EU-27",    p: 18.2, v: "$614B",  note: "Vehicles, pharma, machinery" },
-    { c: "Mexico",   p: 14.1, v: "$476B",  note: "#1 goods source; auto, electronics" },
-    { c: "China",    p: 13.4, v: "$452B",  note: "Down from 16.5%; truce eased tariff at ~33% blended" },
-    { c: "Canada",   p: 12.5, v: "$422B",  note: "Energy, autos, lumber" },
+    { c: "Mexico",   p: 14.8, v: "$505.9B", note: "#1 goods source; auto, electronics" },
+    { c: "China",    p: 12.9, v: "$438.9B", note: "Down from 16.5%; truce eased tariff at ~33% blended" },
+    { c: "Canada",   p: 12.1, v: "$412.7B", note: "Energy, autos, lumber" },
     { c: "Japan",    p: 4.6,  v: "$155B",  note: "Vehicles, precision machinery" },
     { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "China+1 routing; up +18% YoY" },
     { c: "Germany",  p: 4.3,  v: "$145B",  note: "Vehicles, pharma, chemicals" },
@@ -206,7 +206,7 @@ var NATIONS = [
   expPartners: [
     { c: "ASEAN",     p: 17.2, v: "$645B",  note: "Largest bloc; major rerouting hub" },
     { c: "EU-27",     p: 15.8, v: "$593B",  note: "35–48% EV tariff imposed 2024" },
-    { c: "USA",       p: 12.9, v: "$484B",  note: "~33% blended tariff; routing via 3rd nations" },
+    { c: "USA",       p: 11.1, v: "$421B",  note: "−19.8% YoY on tariffs; ASEAN overtook US as top regional buyer" },
     { c: "Hong Kong", p: 8.3,  v: "$311B",  note: "Re-export and financial gateway" },
     { c: "Japan",     p: 4.8,  v: "$180B",  note: "Declining; political tension" },
     { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Chips trade; strategic balance" },
@@ -230,7 +230,7 @@ var NATIONS = [
     { n: "Industrial machinery & mechanical appliances", v: "$598B",  pct: 15.9, cat: "Machinery" },
     { n: "Integrated circuits & semiconductors",         v: "$195B",  pct: 5.2,  cat: "Tech" },
     { n: "Textiles, apparel & garments",                 v: "$158B",  pct: 4.2,  cat: "Textile" },
-    { n: "Electric vehicles (BYD, SAIC, Geely, NIO)",   v: "$120B",  pct: 3.2,  cat: "Auto" },
+    { n: "New-energy vehicles (BYD, SAIC, Geely, NIO)", v: "~$37B",  pct: 1.0,  cat: "Auto" },
     { n: "Plastics & plastic articles",                  v: "$84B",   pct: 2.2,  cat: "Chemical" },
     { n: "Steel & iron products",                        v: "$80B",   pct: 2.1,  cat: "Metal" },
     { n: "Optical & precision instruments",              v: "$78B",   pct: 2.1,  cat: "Tech" },
@@ -283,7 +283,7 @@ var NATIONS = [
 {
   id: "india", flag: "🇮🇳", name: "India", short: "INDIA", no: "03", col: "#f97316",
   gdp: "$3.92T", tradeBalance: "deficit", balLabel: "MERCH. TRADE DEFICIT −$333B/yr (FY25-26)",
-  headline: "India now ranks the world's 6th largest economy at $3.92T (IMF, Apr 2026) — a statistical slip from earlier '4th largest' estimates, driven by rupee depreciation (past 94/USD) and a February 2026 GDP base-year revision, not a growth reversal. Real growth stayed the fastest among major economies (~7.7%, FY25-26), and India is forecast to reclaim 4th place by 2027 at ~$4.6T. The merchandise trade deficit widened to $333B on record imports, but record FX reserves and remittances cushion the external position.",
+  headline: "India now ranks the world's 6th largest economy at $3.92T (IMF, Apr 2026) — a statistical slip from earlier '4th largest' estimates, driven by rupee depreciation (past 94/USD) and a February 2026 GDP base-year revision, not a growth reversal. Real growth stayed the fastest among major economies (~7.7%, FY25-26), and India is forecast to reclaim 4th place by 2027 at ~$4.6T. China overtook the US as India's largest trading partner in FY25-26 as exports to China jumped 36.7%, even as the merchandise trade deficit widened to $333B on record imports; record FX reserves and remittances cushion the external position.",
 
   vitals: [
     { k: "GDP 2025-26",          v: "$3.92T",  s: "World #6 (IMF Apr'26); 4th again by 2027E", d: "+7.7% real" },
@@ -311,7 +311,7 @@ var NATIONS = [
     { c: "USA",         p: 17.9, v: "$85B",  note: "IT services + pharma + gems" },
     { c: "UAE",         p: 6.8,  v: "$32B",  note: "Gold re-export hub; diaspora" },
     { c: "Netherlands", p: 4.2,  v: "$20B",  note: "EU entry port for Indian goods" },
-    { c: "China",       p: 3.5,  v: "$17B",  note: "Despite LAC border tensions" },
+    { c: "China",       p: 4.4,  v: "$19.5B", note: "+36.7% YoY; China now India's #1 trade partner overall" },
     { c: "Bangladesh",  p: 3.3,  v: "$16B",  note: "Textile inputs; RMG sector" },
     { c: "UK",          p: 2.9,  v: "$14B",  note: "India-UK FTA near finalisation" },
     { c: "Singapore",   p: 2.8,  v: "$13B",  note: "ASEAN financial gateway" },
@@ -319,9 +319,9 @@ var NATIONS = [
   ],
 
   impPartners: [
-    { c: "China",        p: 15.2, v: "$113B", note: "Electronics, machinery, chemicals" },
-    { c: "Russia",       p: 10.2, v: "$76B",  note: "Discounted crude oil — now ~40-43% of imports" },
-    { c: "UAE",          p: 7.4,  v: "$55B",  note: "Gold, petroleum, re-exports" },
+    { c: "China",        p: 14.6, v: "$113B", note: "Electronics, machinery, chemicals; India's top import source" },
+    { c: "Russia",       p: 8.7,  v: "$67B",  note: "Discounted crude oil — still ~40-43% of oil imports" },
+    { c: "UAE",          p: 8.6,  v: "$66B",  note: "Gold, petroleum, re-exports; +55% YoY surge" },
     { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal, aircraft" },
     { c: "Iraq",         p: 4.8,  v: "$36B",  note: "Crude oil" },
     { c: "Saudi Arabia", p: 4.5,  v: "$33B",  note: "Crude oil + LPG" },
@@ -376,10 +376,10 @@ var NATIONS = [
     { y: "2025 Q3–Q4", t: "India joins Quad semiconductor technology working group. PLI pharma clusters open in Gujarat + Hyderabad. Full-year FY25-26 trade data: merchandise exports $441.8B, imports $775.0B, merchandise deficit widens to $333.2B; services exports reach $418.3B." },
     { y: "2026 Feb",   t: "US–India interim trade deal cuts the tariff on most Indian goods from a 50% peak to 18%, in exchange for Indian commitments on US sourcing and reduced Russian oil purchases; India continues buying Russian crude regardless, which still supplies ~40-43% of imports by August 2026." },
     { y: "2026 Apr",   t: "IMF WEO revises India's nominal GDP down to $3.92T (6th largest), reflecting rupee depreciation past 88/USD and a MoSPI GDP base-year revision (2011-12 to 2022-23) — not a growth slowdown; RBI still projects ~7.6-7.7% real growth for FY25-26. India is forecast to regain 4th place by 2027 at ~$4.6T." },
-    { y: "2026",       t: "FX reserves climb to a record $729.3B (Aug 2026) on heavy NRI-deposit and RBI-measure inflows as the rupee weakens past 94/USD. India remains the top beneficiary of China+1 manufacturing shift, but the merchandise trade deficit keeps widening on record imports." }
+    { y: "2026",       t: "China overtakes the US as India's largest trading partner (combined trade) as exports to China jump 36.7% to $19.5B. FX reserves climb to a record $729.3B (Aug 2026) on heavy NRI-deposit and RBI-measure inflows as the rupee weakens past 94/USD. India remains the top beneficiary of China+1 manufacturing shift, but the merchandise trade deficit keeps widening on record imports." }
   ],
 
-  intel: "India's economy — $3.92T by IMF's April 2026 count, still the fastest-growing among major economies at roughly 7.7% real — proved to be a bigger currency and statistics story in 2026 than a growth story: rupee depreciation past 88-94/USD and a GDP base-year revision knocked India from an earlier '4th largest' estimate to 6th, with a return to 4th projected for 2027. The trade picture: merchandise exports grew only modestly (+0.9% to $441.8B) while imports jumped 7.5% to $775.0B, widening the merchandise deficit to $333.2B and the overall goods-plus-services deficit to $119.3B. The geopolitical-arbitrage trade continues regardless of US pressure — India kept buying discounted Russian crude (still ~40-43% of imports in mid-2026) even after committing, as part of the February 2026 tariff deal that cut US duties from 50% to 18%, to reduce those purchases. Services exports ($418B) remain India's single largest and fastest-growing external earner, dominating trade with the US, UK, and EU. Record FX reserves ($729B) and remittances ($135.5B, world's largest) give India a cushion the rupee's slide would otherwise erode.",
+  intel: "India's economy — $3.92T by IMF's April 2026 count, still the fastest-growing among major economies at roughly 7.7% real — proved to be a bigger currency and statistics story in 2026 than a growth story: rupee depreciation past 88-94/USD and a GDP base-year revision knocked India from an earlier '4th largest' estimate to 6th, with a return to 4th projected for 2027. The trade picture: merchandise exports grew only modestly (+0.9% to $441.8B) while imports jumped 7.5% to $775.0B, widening the merchandise deficit to $333.2B and the overall goods-plus-services deficit to $119.3B. The geopolitical-arbitrage trade continues regardless of US pressure — India kept buying discounted Russian crude (still ~40-43% of imports in mid-2026) even after committing, as part of the February 2026 tariff deal that cut US duties from 50% to 18%, to reduce those purchases. Services exports ($418B) remain India's single largest and fastest-growing external earner, dominating trade with the US, UK, and EU. China overtook the US as India's largest trading partner by combined trade in FY25-26 — exports to China jumped 36.7% to $19.5B even as China remained India's #1 import source ($113B) — underscoring how intertwined the two rivals' economies remain despite border tensions. Record FX reserves ($729B) and remittances ($135.5B, world's largest) give India a cushion the rupee's slide would otherwise erode.",
 
   risk: "PRIMARY RISK: Pharma API concentration — a majority of active pharmaceutical ingredients (APIs) are imported from China. A US–China military confrontation or export control shock isolates Indian pharma overnight; India supplies roughly a fifth of global generic medicines, so this is a systemic global risk, not just an India risk. SECONDARY RISK: the rupee's slide past 94/USD and the widening merchandise deficit ($333B, FY25-26) show the external position is more strained than the '4th largest economy' narrative suggested — gold import drain and energy costs remain structural drags on the currency. THIRD RISK: Russia oil dependency (~40-43% of crude, still elevated despite a US deal to reduce it) creates acute geopolitical risk and diplomatic friction with Washington — India rejects the idea it needs US permission for its energy purchases, keeping the tariff truce fragile. WILDCARD: China's bilateral trade surplus with India reflects India's inability to compete in manufactured goods against Chinese industry — high import tariffs protect but also prevent the scale-up needed for genuine industrialisation. Without resolving the China manufacturing deficit, India's trade balance will remain chronically stressed."
 }
