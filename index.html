@@ -98,37 +98,38 @@ var NATIONS = [
   ],
 
   expPartners: [
-    { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft dominant" },
-    { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA integration" },
-    { c: "Mexico",   p: 15.4, v: "$334B", note: "Nearshoring hub" },
-    { c: "China",    p: 6.6,  v: "$143.5B", note: "Tariff-war effect; down from 7.3% share" },
-    { c: "UK",       p: 4.1,  v: "$84B",  note: "US-UK trade deal May 2025" },
-    { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally" },
-    { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner" },
-    { c: "India",    p: 2.7,  v: "$55B",  note: "Fastest-rising partner" }
+    { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft; energy exports surging on Hormuz" },
+    { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA; ~$145.4B of US exports Jan–May 2026" },
+    { c: "Mexico",   p: 15.4, v: "$334B", note: "#1 destination — $162.2B Jan–May 2026, from $139.8B" },
+    { c: "China",    p: 6.6,  v: "$143.5B", note: "Tariff-war effect; ~37.5% blended rate on the return leg" },
+    { c: "UK",       p: 4.1,  v: "$84B",  note: "US–UK deal May 2025; a top-5 US LNG destination in 2026" },
+    { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally; Asia overtook Europe for US LNG Jun'26" },
+    { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner; AI supply-chain linked" },
+    { c: "India",    p: 2.7,  v: "$55B",  note: "Fastest-rising partner; 18% US tariff since Feb 2026" }
   ],
 
   impPartners: [
     { c: "EU-27",    p: 18.2, v: "$614B",  note: "Vehicles, pharma, machinery" },
-    { c: "Mexico",   p: 14.8, v: "$505.9B", note: "#1 goods source; auto, electronics" },
-    { c: "China",    p: 12.9, v: "$438.9B", note: "Blended rate now ~37.5% after Jul'26 forced-labor tariff" },
-    { c: "Canada",   p: 12.1, v: "$412.7B", note: "Energy, autos, lumber" },
+    { c: "Mexico",   p: 14.8, v: "$505.9B", note: "#1 source — $242.9B YTD 2026; auto, electronics" },
+    { c: "China",    p: 12.9, v: "$438.9B", note: "Slipped to 4th in 2026 — $104.2B YTD, −$97.1B YoY; ~37.5% blended" },
+    { c: "Canada",   p: 12.1, v: "$412.7B", note: "Energy, autos, lumber — $163.0B YTD 2026" },
+    { c: "Taiwan",   p: 5.6,  v: "$176.7B", note: "OVERTOOK CHINA IN 2026 — AI servers; advanced systems +93.5%" },
     { c: "Japan",    p: 4.6,  v: "$155B",  note: "Vehicles, precision machinery" },
-    { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "China+1 routing; up +18% YoY" },
+    { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "$55.9B YTD 2026 — closing on China's share" },
     { c: "Germany",  p: 4.3,  v: "$145B",  note: "Vehicles, pharma, chemicals" },
-    { c: "India",    p: 2.8,  v: "$95B",   note: "Pharma, textiles, gems" }
+    { c: "India",    p: 2.8,  v: "$95B",   note: "Pharma, textiles, gems; 18% US tariff since Feb 2026" }
   ],
 
   topExports: [
     { n: "IP Royalties & licensing fees",         v: "$145B+", pct: 7.1, cat: "Services" },
     { n: "Financial & insurance services",        v: "$135B",  pct: 6.6, cat: "Services" },
     { n: "Travel & education services",           v: "$128B",  pct: 6.2, cat: "Services" },
-    { n: "Refined petroleum products",            v: "$171B",  pct: 8.3, cat: "Energy" },
+    { n: "Refined petroleum products (record 2026 export year)", v: "$171B",  pct: 8.3, cat: "Energy" },
     { n: "Cloud computing & digital services",    v: "$110B",  pct: 5.4, cat: "Services" },
     { n: "Civilian aircraft, engines & parts",    v: "$105B",  pct: 5.1, cat: "Aerospace" },
     { n: "Pharmaceutical preparations",           v: "$70B",   pct: 3.4, cat: "Pharma" },
     { n: "Semiconductors & integrated circuits",  v: "$63B",   pct: 3.1, cat: "Tech" },
-    { n: "Natural gas (LNG — world #2 exporter)", v: "$56B",   pct: 2.7, cat: "Energy" },
+    { n: "Natural gas (LNG — record 17.4 Bcf/d H1'26, +23%)", v: "$56B",   pct: 2.7, cat: "Energy" },
     { n: "Motor vehicles & passenger cars",       v: "$58B",   pct: 2.8, cat: "Auto" },
     { n: "Industrial machinery & equipment",      v: "$53B",   pct: 2.6, cat: "Machinery" },
     { n: "Medical instruments & devices",         v: "$48B",   pct: 2.3, cat: "Medical" },
@@ -141,11 +142,11 @@ var NATIONS = [
     { n: "Agricultural products (total)",         v: "$220B",  pct: 6.5, cat: "Agri" },
     { n: "Passenger vehicles & cars",             v: "$228B",  pct: 6.7, cat: "Auto" },
     { n: "Industrial machinery & equipment",      v: "$175B",  pct: 5.2, cat: "Machinery" },
-    { n: "Crude petroleum oil",                   v: "$165B",  pct: 4.9, cat: "Energy" },
+    { n: "Crude petroleum (repriced by Hormuz war)", v: "$165B",  pct: 4.9, cat: "Energy" },
     { n: "Pharmaceutical preparations",           v: "$128B",  pct: 3.8, cat: "Pharma" },
     { n: "Cell phones & smartphones",             v: "$115B",  pct: 3.4, cat: "Tech" },
     { n: "Apparel & clothing",                    v: "$88B",   pct: 2.6, cat: "Textile" },
-    { n: "Computers & laptops",                   v: "$85B",   pct: 2.5, cat: "Tech" },
+    { n: "Computers & AI servers (Taiwan-led 2026)", v: "$85B",   pct: 2.5, cat: "Tech" },
     { n: "Motor vehicle parts",                   v: "$72B",   pct: 2.1, cat: "Auto" },
     { n: "Computer accessories & peripherals",    v: "$62B",   pct: 1.8, cat: "Tech" },
     { n: "Furniture & household goods",           v: "$33B",   pct: 1.0, cat: "Consumer" },
@@ -208,33 +209,33 @@ var NATIONS = [
   ],
 
   expPartners: [
-    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "+19% in 2026; 18% of exports — now #1, ~$77B rerouted" },
-    { c: "EU-27",     p: 15.8, v: "$593B",  note: "35–48% EV tariff imposed 2024" },
-    { c: "USA",       p: 11.1, v: "$421B",  note: "−10% in 2026; US share of exports down to 11%" },
+    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "#1 partner — ¥5.14T in 7M 2026, +20%; ~$77B US-bound rerouted" },
+    { c: "EU-27",     p: 15.8, v: "$593B",  note: "¥3.67T in 7M 2026, +9.5%; 35–48% EV tariff since 2024" },
+    { c: "USA",       p: 11.1, v: "$421B",  note: "¥2.38T in 7M 2026, −1.6%; US down to ~11% of exports" },
     { c: "Hong Kong", p: 8.3,  v: "$311B",  note: "Re-export and financial gateway" },
-    { c: "Japan",     p: 4.8,  v: "$180B",  note: "Declining; political tension" },
-    { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Chips trade; strategic balance" },
-    { c: "India",     p: 3.8,  v: "$143B",  note: "China's 2nd-largest bilateral surplus" },
-    { c: "Russia",    p: 3.2,  v: "$120B",  note: "Post-sanctions pivot; machinery" }
+    { c: "Japan",     p: 4.8,  v: "$180B",  note: "Exports to Japan +14.0% YoY in July 2026" },
+    { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Exports +46.6% YoY in Jul'26 — AI chip supply chain" },
+    { c: "India",     p: 3.8,  v: "$143B",  note: "China's 2nd-largest bilateral surplus; India's #1 source" },
+    { c: "Russia",    p: 3.2,  v: "$120B",  note: "Post-sanctions pivot; machinery, autos, electronics" }
   ],
 
   impPartners: [
-    { c: "ASEAN",       p: 16.3, v: "$440B",  note: "Components, parts, assembly inputs" },
-    { c: "S. Korea",    p: 9.2,  v: "$248B",  note: "Memory chips; SK Hynix, Samsung" },
+    { c: "ASEAN",       p: 16.3, v: "$440B",  note: "Intermediate goods +24.5% — two-thirds of China–ASEAN trade" },
+    { c: "S. Korea",    p: 9.2,  v: "$248B",  note: "Memory chips; HBM for AI accelerators — flows +46.6% Jul'26" },
     { c: "Japan",       p: 7.8,  v: "$211B",  note: "Precision machinery, process tools" },
     { c: "Taiwan",      p: 7.5,  v: "$203B",  note: "Semiconductors; TSMC critical inputs" },
     { c: "Australia",   p: 7.2,  v: "$194B",  note: "Iron ore — ~80% of supply" },
-    { c: "Russia",      p: 6.1,  v: "$165B",  note: "Oil & gas at 30–40% market discount" },
-    { c: "Brazil",      p: 5.3,  v: "$143B",  note: "Soybeans, iron ore, agricultural" },
-    { c: "Saudi Arabia",p: 5.0,  v: "$135B",  note: "Top crude oil supplier" }
+    { c: "Russia",      p: 6.1,  v: "$165B",  note: "Discounted oil & gas — avoids Hormuz, safer in 2026" },
+    { c: "Brazil",      p: 5.3,  v: "$143B",  note: "Soybeans, iron ore — displaced US soy" },
+    { c: "Saudi Arabia",p: 5.0,  v: "$135B",  note: "Top crude supplier — Hormuz closure repriced 2026 imports" }
   ],
 
   topExports: [
     { n: "Electrical machinery, equipment & parts",      v: "$978B",  pct: 26.1, cat: "Electronics" },
     { n: "Industrial machinery & mechanical appliances", v: "$598B",  pct: 15.9, cat: "Machinery" },
-    { n: "Integrated circuits & semiconductors",         v: "$195B",  pct: 5.2,  cat: "Tech" },
+    { n: "Integrated circuits (2026: export value ~doubled)", v: "$195B",  pct: 5.2,  cat: "Tech" },
     { n: "Textiles, apparel & garments",                 v: "$158B",  pct: 4.2,  cat: "Textile" },
-    { n: "New-energy vehicles (BYD, SAIC, Geely, NIO)", v: "~$37B",  pct: 1.0,  cat: "Auto" },
+    { n: "New-energy vehicles (2.36M units in H1 2026)",  v: "~$37B",  pct: 1.0,  cat: "Auto" },
     { n: "Plastics & plastic articles",                  v: "$84B",   pct: 2.2,  cat: "Chemical" },
     { n: "Steel & iron products",                        v: "$80B",   pct: 2.1,  cat: "Metal" },
     { n: "Optical & precision instruments",              v: "$78B",   pct: 2.1,  cat: "Tech" },
@@ -248,7 +249,7 @@ var NATIONS = [
   ],
 
   topImports: [
-    { n: "Crude petroleum & oils",                       v: "$430B+", pct: 15.9, cat: "Energy" },
+    { n: "Crude petroleum & oils (repriced by Hormuz war)", v: "$430B+", pct: 15.9, cat: "Energy" },
     { n: "Semiconductors & integrated circuits",         v: "$310B+", pct: 11.5, cat: "Tech" },
     { n: "Iron ore & concentrates",                      v: "$125B+", pct: 4.6,  cat: "Metal" },
     { n: "Natural gas (LNG + pipeline from Russia)",     v: "$68B",   pct: 2.5,  cat: "Energy" },
@@ -316,30 +317,30 @@ var NATIONS = [
   ],
 
   expPartners: [
-    { c: "USA",         p: 17.9, v: "$85B",  note: "IT services + pharma + gems" },
+    { c: "USA",         p: 17.9, v: "$85B",  note: "#1 destination; 18% US tariff since Feb 2026" },
     { c: "UAE",         p: 6.8,  v: "$32B",  note: "Gold re-export hub; diaspora" },
     { c: "Netherlands", p: 4.2,  v: "$20B",  note: "EU entry port for Indian goods" },
-    { c: "China",       p: 4.4,  v: "$19.5B", note: "+36.7% YoY; China now India's #1 trade partner overall" },
+    { c: "China",       p: 4.4,  v: "$19.5B", note: "+36.7%; among Apr–Jul 2026's fastest-growing destinations" },
     { c: "Bangladesh",  p: 3.3,  v: "$16B",  note: "Textile inputs; RMG sector" },
-    { c: "UK",          p: 2.9,  v: "$14B",  note: "India-UK FTA near finalisation" },
-    { c: "Singapore",   p: 2.8,  v: "$13B",  note: "ASEAN financial gateway" },
+    { c: "UK",          p: 2.9,  v: "$14B",  note: "India–UK CETA in force 15 Jul 2026 — ~99% zero-duty access" },
+    { c: "Singapore",   p: 2.8,  v: "$13B",  note: "Now a top-3 destination in Apr–Jul 2026" },
     { c: "Germany",     p: 2.4,  v: "$11B",  note: "Machinery + auto components" }
   ],
 
   impPartners: [
-    { c: "China",        p: 14.6, v: "$113B", note: "Electronics, machinery, chemicals; India's top import source" },
-    { c: "Russia",       p: 8.7,  v: "$67B",  note: "Above 50% of oil imports by Jun–Jul 2026 — Hormuz effect" },
-    { c: "UAE",          p: 8.6,  v: "$66B",  note: "Gold, petroleum, re-exports; +55% YoY surge" },
-    { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal, aircraft" },
+    { c: "China",        p: 14.6, v: "$113B", note: "+27.9% in Apr–Jun 2026; still India's top import source" },
+    { c: "Russia",       p: 8.7,  v: "$67B",  note: "+52.7% Apr–Jun; above 50% of oil imports at the Jun–Jul peak" },
+    { c: "UAE",          p: 8.6,  v: "$66B",  note: "Gold, petroleum, re-exports; Oman up 221.8% alongside" },
+    { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal; +23.8% in Apr–Jun 2026" },
     { c: "Iraq",         p: 4.8,  v: "$36B",  note: "Crude oil — ships through Hormuz" },
     { c: "Saudi Arabia", p: 4.5,  v: "$33B",  note: "Crude oil + LPG; Hormuz-exposed" },
-    { c: "Switzerland",  p: 4.0,  v: "$30B",  note: "Gold & silver imports" },
+    { c: "Switzerland",  p: 4.0,  v: "$30B",  note: "Gold & silver; Brazil up 174.7% as sourcing diversifies" },
     { c: "South Korea",  p: 2.8,  v: "$21B",  note: "Electronics, chips, steel" }
   ],
 
   topExports: [
     { n: "IT software, BPO & cloud services",          v: "$185B", pct: 38.9, cat: "Services" },
-    { n: "Refined petroleum products",                 v: "$75B",  pct: 15.8, cat: "Energy" },
+    { n: "Refined petroleum (Jul'26: $6.92B, +67.6% YoY)", v: "$75B",  pct: 15.8, cat: "Energy" },
     { n: "Engineering goods & machinery",              v: "$32B",  pct: 6.7,  cat: "Machinery" },
     { n: "Pharmaceutical preparations (generics)",     v: "$28B",  pct: 5.9,  cat: "Pharma" },
     { n: "Gems & jewellery",                           v: "$26B",  pct: 5.5,  cat: "Luxury" },
@@ -348,7 +349,7 @@ var NATIONS = [
     { n: "Marine products & seafood",                  v: "$7B",   pct: 1.5,  cat: "Agri" },
     { n: "Iron & steel products",                      v: "$12B",  pct: 2.5,  cat: "Metal" },
     { n: "Rice & agricultural commodities",            v: "$12B",  pct: 2.5,  cat: "Agri" },
-    { n: "Electronic components & hardware",           v: "$10B",  pct: 2.1,  cat: "Tech" },
+    { n: "Electronics & smartphones (Jul'26: +57.4% YoY)", v: "$10B",  pct: 2.1,  cat: "Tech" },
     { n: "Auto parts & accessories",                   v: "$8B",   pct: 1.7,  cat: "Auto" },
     { n: "Organic chemicals",                          v: "$6B",   pct: 1.3,  cat: "Chemical" },
     { n: "Coffee, tea & spices",                       v: "$5B",   pct: 1.1,  cat: "Agri" },
@@ -356,7 +357,7 @@ var NATIONS = [
   ],
 
   topImports: [
-    { n: "Crude petroleum & oils",                     v: "$170B", pct: 23.0, cat: "Energy" },
+    { n: "Crude petroleum & oils (>50% Russian by mid-2026)", v: "$170B", pct: 23.0, cat: "Energy" },
     { n: "Electronic components & integrated circuits",v: "$74B",  pct: 10.0, cat: "Tech" },
     { n: "Machinery & industrial equipment",           v: "$60B",  pct: 8.1,  cat: "Machinery" },
     { n: "Gold & precious metals",                     v: "$58B",  pct: 7.8,  cat: "Precious" },
@@ -570,11 +571,11 @@ function PartnersTab(props) {
   }
   return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "1.5rem" } },
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT DESTINATIONS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT DESTINATIONS — 2025 SHARES · 2026 MOVEMENT IN NOTES"),
       ce(PartnerList, { partners: n.expPartners, valueColor: C.goldL, barColor: C.gold })
     ),
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT SOURCES"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT SOURCES — 2025 SHARES · 2026 MOVEMENT IN NOTES"),
       ce(PartnerList, { partners: n.impPartners, valueColor: C.red, barColor: C.red })
     )
   );
@@ -587,13 +588,13 @@ function SectorsTab(props) {
   var maxImp = Math.max.apply(null, n.topImports.map(function(e) { return e.pct; }));
   return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" } },
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT COMMODITIES & SECTORS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT COMMODITIES & SECTORS — 2025 FULL-YEAR COMPOSITION"),
       n.topExports.map(function(item, i) {
         return ce(SectorBar, { key: i, item: item, max: maxExp });
       })
     ),
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT COMMODITIES & SECTORS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT COMMODITIES & SECTORS — 2025 FULL-YEAR COMPOSITION"),
       n.topImports.map(function(item, i) {
         return ce(SectorBar, { key: i, item: item, max: maxImp });
       })
