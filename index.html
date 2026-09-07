@@ -2,795 +2,899 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<meta name="theme-color" content="#05070d">
-<meta name="description" content="Global Trade Intelligence, current to 7 September 2026: world trade flows, the Supreme Court IEEPA tariff ruling, the Strait of Hormuz energy shock, sector performance and geopolitical intelligence for the USA, China and India.">
-<title>Global Trade Intelligence — September 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f1a">
+<title>Global Trade Intelligence, Open Research, September 2026</title>
+<meta name="description" content="Open research on world trade, September 2026. How a Supreme Court ruling, a closed Strait of Hormuz and an AI export boom rewrote trade for the United States, China and India. Every figure sourced.">
+<meta property="og:title" content="Global Trade Intelligence, Open Research, September 2026">
+<meta property="og:description" content="Three shocks rewrote world trade in 2026. The full research, opened to the public, with every figure sourced.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 16px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; overflow-y: scroll; }
-body { background: #05070d; font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #a8bccf; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
-@media (max-width: 480px) { html { font-size: 14px; } }
-@media (min-width: 481px) and (max-width: 768px) { html { font-size: 15px; } }
-:focus-visible { outline: 2px solid #d4a843; outline-offset: 2px; }
-button { cursor: pointer; border: none; font-family: inherit; }
-::-webkit-scrollbar { display: none; }
+/* ═══════════ TOKENS ═══════════
+   Categorical hues validated with dataviz validate_palette.js (dark mode,
+   surface #0a0f1a): lightness band PASS, chroma floor PASS, CVD separation
+   PASS (worst adjacent dE 9.4 deutan), normal-vision PASS (dE 26.5),
+   contrast PASS. Text colors checked to WCAG: body 12.77:1, muted 7.56:1. */
+:root{
+  --surface-0:#0a0f1a; --surface-1:#0f1524; --surface-2:#161d2f; --surface-3:#1d2740;
+  --border:#1f2940; --border-lit:#2c3a5a;
+  --ink:#e8eef7; --ink-body:#c8d4e4; --ink-muted:#93a4bd;
+  --accent:#f0b429;
+  --usa:#3987e5; --china:#d95926; --india:#199e70;
+  --pos:#33b985; --neg:#e66767;
+  --display:'Libre Bodoni',Georgia,'Times New Roman',serif;
+  --body:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --e:cubic-bezier(.22,.61,.36,1);
+  --z-nav:50; --z-tip:80;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body{background:var(--surface-0);color:var(--ink-body);font-family:var(--body);
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (max-width:600px){body{font-size:16px}}
+img,svg{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s var(--e)}
+a:hover{border-bottom-color:var(--accent)}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#0a0f1a;padding:.75rem 1.25rem;font-weight:600;z-index:100}
+.skip:focus{left:0}
+
+/* ═══════════ TYPE ═══════════ */
+h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.12;font-weight:600;letter-spacing:-.015em}
+h1{font-size:clamp(2.4rem,6.5vw,4.6rem)}
+h2{font-size:clamp(1.9rem,4.2vw,3rem)}
+h3{font-size:clamp(1.15rem,2.2vw,1.5rem)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.lede{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--ink-body);max-width:62ch;line-height:1.7}
+.muted{color:var(--ink-muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+/* ═══════════ NAV ═══════════ */
+.nav{position:fixed;top:.9rem;left:.9rem;right:.9rem;z-index:var(--z-nav);display:flex;
+  align-items:center;justify-content:space-between;gap:1rem;padding:.6rem .9rem;
+  background:rgba(15,21,36,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--border);border-radius:10px;transition:transform .35s var(--e),opacity .35s var(--e)}
+.nav[data-hidden="true"]{transform:translateY(-130%);opacity:0}
+.nav-brand{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.nav-brand b{color:var(--accent);font-weight:500}
+.nav-links{display:flex;gap:.25rem;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-muted);padding:.6rem .7rem;border:0;border-radius:6px;min-height:44px;display:flex;align-items:center;
+  transition:color .2s var(--e),background .2s var(--e)}
+.nav-links a:hover{color:var(--ink);background:var(--surface-2)}
+@media (max-width:780px){.nav-links a[data-opt]{display:none}}
+
+/* ═══════════ HERO / DATA FILM ═══════════ */
+.film{position:relative;height:460vh}
+.film-stage{position:sticky;top:0;height:100vh;display:grid;place-items:center;overflow:hidden}
+.film-svg{width:min(94vw,1000px);height:min(62vh,540px)}
+.film-copy{position:absolute;left:0;right:0;bottom:clamp(2rem,9vh,5rem);text-align:center;padding:0 1.2rem;pointer-events:none}
+.act-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.act-title{font-family:var(--display);font-size:clamp(1.5rem,4.4vw,2.9rem);color:var(--ink);line-height:1.14;
+  text-shadow:0 0 32px rgba(10,15,26,.95),0 2px 10px rgba(10,15,26,.9)}
+.act-sub{margin-top:.7rem;font-size:clamp(.92rem,1.7vw,1.08rem);color:var(--ink-body);max-width:56ch;margin-inline:auto;
+  text-shadow:0 0 24px rgba(10,15,26,.95)}
+.film-intro{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 1.2rem;background:var(--surface-0);
+  transition:opacity .5s var(--e)}
+.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:var(--mono);
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);display:flex;
+  flex-direction:column;align-items:center;gap:.5rem}
+.scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--accent),transparent);animation:cue 2.1s var(--e) infinite}
+@keyframes cue{0%{opacity:0;transform:scaleY(.3)}50%{opacity:1}100%{opacity:0;transform:scaleY(1)}}
+.film-progress{position:absolute;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:2;transition:width .1s linear}
+
+/* ═══════════ SECTIONS ═══════════ */
+section{position:relative}
+.band{padding:clamp(4rem,11vh,7.5rem) 0;border-top:1px solid var(--border)}
+.band-head{max-width:64ch;margin-bottom:clamp(2rem,5vh,3.2rem)}
+.band-head h2{margin-bottom:1rem}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--e),transform .7s var(--e)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* findings */
+.findings{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.finding{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:1.6rem 1.5rem;
+  position:relative;overflow:hidden;transition:border-color .25s var(--e),transform .25s var(--e)}
+.finding:hover{border-color:var(--border-lit);transform:translateY(-3px)}
+.finding::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--c,var(--accent));opacity:.85}
+.finding-n{font-family:var(--mono);font-size:clamp(2rem,5vw,2.9rem);font-weight:500;color:var(--c,var(--accent));
+  line-height:1;letter-spacing:-.02em;margin-bottom:.5rem;font-variant-numeric:tabular-nums}
+.finding-k{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.85rem}
+.finding-d{font-size:.95rem;color:var(--ink-body);line-height:1.6}
+.finding-s{margin-top:.9rem;font-family:var(--mono);font-size:.68rem;color:var(--ink-muted)}
+
+/* ═══════════ EXPLORER ═══════════ */
+.picker{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.picker button{display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.6rem 1.05rem;
+  background:var(--surface-1);border:1px solid var(--border);border-radius:8px;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);
+  transition:color .2s var(--e),border-color .2s var(--e),background .2s var(--e)}
+.picker button:hover{color:var(--ink);border-color:var(--border-lit)}
+.picker button[aria-selected="true"]{color:var(--ink);border-color:var(--c);background:var(--surface-2)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
+
+.panel{background:var(--surface-1);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.panel-head{padding:clamp(1.4rem,3vw,2rem);border-bottom:1px solid var(--border);
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:space-between}
+.panel-title{display:flex;align-items:center;gap:.85rem}
+.panel-title h3{font-size:clamp(1.35rem,3vw,1.9rem)}
+.panel-rank{font-family:var(--mono);font-size:.7rem;color:var(--ink-muted);letter-spacing:.14em}
+.badge{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.42rem .7rem;border-radius:6px;border:1px solid;white-space:nowrap}
+.badge.up{color:var(--pos);border-color:color-mix(in srgb,var(--pos) 45%,transparent);background:color-mix(in srgb,var(--pos) 11%,transparent)}
+.badge.down{color:var(--neg);border-color:color-mix(in srgb,var(--neg) 45%,transparent);background:color-mix(in srgb,var(--neg) 11%,transparent)}
+.panel-lede{padding:0 clamp(1.4rem,3vw,2rem) clamp(1.4rem,3vw,2rem);font-size:1rem;color:var(--ink-body);
+  border-bottom:1px solid var(--border)}
+.panel-lede>span{display:block;max-width:74ch}
+
+.tabs{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--border);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{position:relative;min-height:48px;padding:.85rem 1.15rem;white-space:nowrap;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-muted);
+  transition:color .2s var(--e)}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink)}
+.tabs button[aria-selected="true"]::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:-1px;height:2px;background:var(--c)}
+.tabpanel{padding:clamp(1.4rem,3vw,2rem)}
+
+/* vitals */
+.vitals{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fill,minmax(212px,1fr))}
+.vital{background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:.95rem 1rem;
+  transition:border-color .2s var(--e)}
+.vital:hover{border-color:var(--border-lit)}
+.vital-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.35rem}
+.vital-v{font-family:var(--mono);font-size:1.32rem;color:var(--ink);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.vital-s{font-size:.8rem;color:var(--ink-muted);margin-top:.3rem;line-height:1.45}
+.vital-d{display:inline-block;margin-top:.45rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;
+  color:var(--ink-muted);padding:.2rem .45rem;border:1px solid var(--border);border-radius:4px}
+
+/* charts */
+.chart-head{display:flex;flex-wrap:wrap;gap:.8rem;align-items:baseline;justify-content:space-between;margin-bottom:.5rem}
+.chart-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-muted)}
+.legend{display:flex;gap:1rem;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.7rem;color:var(--ink-muted)}
+.legend i{width:10px;height:10px;border-radius:2px;display:block}
+.chart-wrap{position:relative;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart{width:100%;min-width:440px;height:280px;overflow:visible}
+.chart .grid{stroke:var(--border);stroke-width:1}
+.chart .axis{fill:var(--ink-muted);font-family:'IBM Plex Mono',monospace;font-size:11px}
+.chart .bar{transition:opacity .18s var(--e)}
+.chart .hit{fill:transparent;cursor:pointer}
+.chart.dim .bar:not(.on){opacity:.34}
+.tip{position:absolute;z-index:var(--z-tip);pointer-events:none;opacity:0;transform:translate(-50%,-118%);
+  background:var(--surface-3);border:1px solid var(--border-lit);border-radius:8px;padding:.6rem .75rem;
+  font-family:var(--mono);font-size:.74rem;color:var(--ink);white-space:nowrap;box-shadow:0 10px 32px rgba(0,0,0,.55);
+  transition:opacity .14s var(--e)}
+.tip[data-on="true"]{opacity:1}
+.tip b{color:var(--accent);font-weight:500}
+.tip i{display:block;font-style:normal;color:var(--ink-muted);font-size:.7rem;margin-top:.25rem}
+
+/* bars / partners / sectors */
+.rows{display:flex;flex-direction:column;gap:.85rem}
+.row-top{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem;margin-bottom:.35rem}
+.row-name{font-size:.93rem;color:var(--ink-body)}
+.row-val{font-family:var(--mono);font-size:.83rem;color:var(--ink);flex:none;font-variant-numeric:tabular-nums}
+.track{height:6px;background:var(--surface-3);border-radius:3px;overflow:hidden}
+.fill{height:100%;border-radius:3px;width:0;transition:width .9s var(--e)}
+.row-note{font-size:.79rem;color:var(--ink-muted);margin-top:.35rem;line-height:1.5}
+.tag{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.07em;padding:.14rem .4rem;
+  border-radius:3px;border:1px solid;margin-left:.4rem;vertical-align:middle}
+
+/* timeline */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;
+  background:linear-gradient(var(--accent),var(--border) 60%,transparent)}
+.tl-item{position:relative;padding-bottom:2rem}
+.tl-item::before{content:"";position:absolute;left:-1.7rem;top:.42rem;width:11px;height:11px;border-radius:50%;
+  background:var(--surface-0);border:2px solid var(--c,var(--accent))}
+.tl-when{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.tl-what{font-size:.97rem;color:var(--ink-body);max-width:72ch;line-height:1.65}
+
+/* prose + method */
+.prose p{max-width:74ch;margin-bottom:1.1rem;font-size:1rem;line-height:1.75}
+.prose p:last-child{margin-bottom:0}
+.split{display:grid;gap:clamp(1.5rem,4vw,2.75rem);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:clamp(1.3rem,3vw,1.8rem)}
+.card h3{margin-bottom:.85rem;font-size:1.15rem}
+.srclist{list-style:none;display:grid;gap:.55rem}
+.srclist li{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--ink-body);line-height:1.55}
+.srclist .num{color:var(--accent);flex:none;font-size:.78rem;padding-top:.15rem}
+details{border:1px solid var(--border);border-radius:9px;background:var(--surface-1);margin-bottom:.7rem}
+summary{padding:.95rem 1.1rem;cursor:pointer;font-weight:500;color:var(--ink);min-height:44px;display:flex;align-items:center;
+  list-style:none;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.15rem;flex:none}
+details[open] summary::after{content:"–"}
+details .body{padding:0 1.1rem 1.1rem;font-size:.94rem;color:var(--ink-body);line-height:1.7}
+
+/* data table (a11y alternative) */
+.tablewrap{overflow-x:auto;margin-top:1.1rem;border:1px solid var(--border);border-radius:9px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:.85rem}
+caption{text-align:left;padding:.8rem 1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-muted);border-bottom:1px solid var(--border)}
+th,td{padding:.6rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
+th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);font-weight:400}
+td{color:var(--ink-body)}
+td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+
+/* CTA + footer */
+.cta{text-align:center;padding:clamp(3.5rem,10vh,6rem) 0}
+.cta h2{margin-bottom:1rem}
+.cta p{max-width:56ch;margin:0 auto 2rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:48px;padding:.85rem 1.7rem;border-radius:9px;
+  background:var(--accent);color:#0a0f1a;font-weight:600;font-size:.95rem;border:0;
+  transition:transform .2s var(--e),box-shadow .2s var(--e)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(240,180,41,.24);border-bottom-color:transparent}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--border-lit)}
+.btn.ghost:hover{background:var(--surface-2);box-shadow:none}
+.btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--border);padding:2.5rem 0 3.5rem;font-size:.83rem;color:var(--ink-muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:flex-start}
+.foot-note{max-width:62ch;line-height:1.7}
+.updated{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 </style>
 </head>
 <body>
-<div id="root" style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'DM Mono',monospace;color:#d4a843;font-size:max(11px,1vw);letter-spacing:3px">LOADING TRADE INTELLIGENCE...</div>
+<a class="skip" href="#main">Skip to content</a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/umd/Recharts.js"></script>
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="nav-brand">GLOBAL TRADE <b>INTELLIGENCE</b></div>
+  <div class="nav-links">
+    <a href="#findings">Findings</a>
+    <a href="#explore">Explore</a>
+    <a href="#timeline" data-opt>Timeline</a>
+    <a href="#method" data-opt>Method</a>
+  </div>
+</nav>
 
+<!-- ═══════════ THE DATA FILM ═══════════ -->
+<div class="film" id="film">
+  <div class="film-progress" id="filmBar"></div>
+  <div class="film-stage">
+    <svg class="film-svg" id="filmSvg" viewBox="0 0 1000 540" role="img"
+         aria-label="Animated sequence showing three shocks to world trade in 2026: the Supreme Court voiding emergency tariffs, the closure of the Strait of Hormuz driving oil up 65 percent, and trade flows rerouting from the United States to ASEAN.">
+      <defs>
+        <linearGradient id="gWall" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#e66767" stop-opacity=".25"/><stop offset="100%" stop-color="#e66767" stop-opacity=".9"/>
+        </linearGradient>
+        <linearGradient id="gOil" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#f0b429" stop-opacity="0"/><stop offset="100%" stop-color="#f0b429" stop-opacity=".55"/>
+        </linearGradient>
+        <radialGradient id="gGlow"><stop offset="0%" stop-color="#f0b429" stop-opacity=".5"/><stop offset="100%" stop-color="#f0b429" stop-opacity="0"/></radialGradient>
+      </defs>
+
+      <!-- fixed environment layer -->
+      <g id="envLayer" opacity=".5">
+        <line class="env" x1="60" y1="450" x2="940" y2="450" stroke="#1f2940" stroke-width="1"/>
+        <line class="env" x1="60" y1="340" x2="940" y2="340" stroke="#1f2940" stroke-width="1" stroke-dasharray="3 8"/>
+        <line class="env" x1="60" y1="230" x2="940" y2="230" stroke="#1f2940" stroke-width="1" stroke-dasharray="3 8"/>
+        <line class="env" x1="60" y1="120" x2="940" y2="120" stroke="#1f2940" stroke-width="1" stroke-dasharray="3 8"/>
+      </g>
+
+      <!-- ACT 1 : the tariff wall and its collapse -->
+      <g id="act1" opacity="0">
+        <g id="wallBars"></g>
+        <text id="wallPct" x="500" y="96" text-anchor="middle" fill="#e66767"
+              font-family="IBM Plex Mono, monospace" font-size="46" font-variant-numeric="tabular-nums">0%</text>
+        <text x="500" y="126" text-anchor="middle" fill="#93a4bd" font-family="IBM Plex Mono, monospace"
+              font-size="12" letter-spacing="3">EFFECTIVE US TARIFF ON CHINA</text>
+        <g id="gavel" opacity="0">
+          <circle cx="500" cy="248" r="150" fill="url(#gGlow)"/>
+          <rect x="322" y="196" width="356" height="104" rx="10" fill="#0a0f1a" opacity=".93"
+                stroke="#f0b429" stroke-opacity=".45"/>
+          <text x="500" y="248" text-anchor="middle" fill="#f0b429" font-family="Libre Bodoni, serif" font-size="46">6&#8211;3</text>
+          <text x="500" y="282" text-anchor="middle" fill="#e8eef7" font-family="IBM Plex Mono, monospace"
+                font-size="12.5" letter-spacing="3">IEEPA STRUCK DOWN</text>
+        </g>
+      </g>
+
+      <!-- ACT 2 : Hormuz closes, Brent spikes -->
+      <g id="act2" opacity="0">
+        <path id="oilArea" fill="url(#gOil)" d=""/>
+        <path id="oilLine" fill="none" stroke="#f0b429" stroke-width="2.5" stroke-linecap="round" d=""/>
+        <circle id="oilDot" r="6" fill="#f0b429" cx="0" cy="0" opacity="0"/>
+        <text id="oilPx" x="500" y="86" text-anchor="middle" fill="#f0b429"
+              font-family="IBM Plex Mono, monospace" font-size="44" font-variant-numeric="tabular-nums">$0</text>
+        <text x="500" y="116" text-anchor="middle" fill="#93a4bd" font-family="IBM Plex Mono, monospace"
+              font-size="12" letter-spacing="3">BRENT CRUDE, PER BARREL</text>
+        <g id="strait" opacity="0">
+          <line x1="330" y1="470" x2="670" y2="470" stroke="#1f2940" stroke-width="16" stroke-linecap="round"/>
+          <line id="straitFlow" x1="330" y1="470" x2="670" y2="470" stroke="#199e70" stroke-width="16"
+                stroke-linecap="round" stroke-dasharray="340" stroke-dashoffset="0"/>
+          <text x="500" y="504" text-anchor="middle" fill="#93a4bd" font-family="IBM Plex Mono, monospace"
+                font-size="11" letter-spacing="3">STRAIT OF HORMUZ · ~20 MB/D</text>
+        </g>
+      </g>
+
+      <!-- ACT 3 : flows reroute -->
+      <g id="act3" opacity="0">
+        <g id="flows"></g>
+        <g id="nodes">
+          <circle cx="180" cy="300" r="7" fill="#d95926"/>
+          <text x="180" y="330" text-anchor="middle" fill="#d95926" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">CHINA</text>
+          <circle cx="820" cy="170" r="7" fill="#3987e5"/>
+          <text x="820" y="150" text-anchor="middle" fill="#3987e5" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">USA</text>
+          <circle cx="820" cy="420" r="7" fill="#199e70"/>
+          <text x="820" y="452" text-anchor="middle" fill="#199e70" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">ASEAN</text>
+        </g>
+        <text id="shareUS" x="880" y="196" text-anchor="middle" fill="#93a4bd" font-family="IBM Plex Mono, monospace" font-size="16">11%</text>
+        <text id="shareAS" x="880" y="400" text-anchor="middle" fill="#93a4bd" font-family="IBM Plex Mono, monospace" font-size="16">18%</text>
+      </g>
+    </svg>
+
+    <div class="film-copy" id="filmCopy" aria-live="polite">
+      <div class="act-label" id="actLabel">Act one</div>
+      <div class="act-title" id="actTitle">A tariff wall, built in months</div>
+      <p class="act-sub" id="actSub">By April 2025 the effective US tariff on Chinese goods hit 145 percent.</p>
+    </div>
+
+    <div class="film-intro" id="filmIntro">
+      <div class="wrap">
+        <p class="eyebrow">Open research · September 2026</p>
+        <h1>Three shocks that<br>rewrote world trade</h1>
+        <p class="lede" style="margin:1.5rem auto 0">A court ruling, a closed strait, and an AI export boom. We opened the whole research file. Every figure below is sourced and dated.</p>
+      </div>
+      <div class="scroll-cue"><span></span>Scroll</div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<!-- ═══════════ FINDINGS ═══════════ -->
+<section class="band" id="findings">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">What we found</p>
+      <h2>The deficit fell. Almost nobody meant it to.</h2>
+      <p class="lede">Three numbers carry the year. Each one contradicts the story people were telling in 2025.</p>
+    </div>
+    <div class="findings">
+      <div class="finding reveal" style="--c:var(--pos)">
+        <div class="finding-k">US trade gap · Jan–Jul 2026</div>
+        <div class="finding-n">−29.6%</div>
+        <p class="finding-d">The goods and services gap fell by $188.4bn against the same months of 2025. Exports rose 12.0 percent while imports moved just 1.9 percent.</p>
+        <p class="finding-s">BEA, released 3 Sep 2026</p>
+      </div>
+      <div class="finding reveal" style="--c:var(--accent)">
+        <div class="finding-k">Brent crude · 6 Sep 2026</div>
+        <div class="finding-n">$96.82</div>
+        <p class="finding-d">Up about 47 percent on the year. The Strait of Hormuz closed in late February and Gulf output was cut by at least 10 million barrels a day.</p>
+        <p class="finding-s">IEA and World Bank commodity data</p>
+      </div>
+      <div class="finding reveal" style="--c:var(--china)">
+        <div class="finding-k">China exports · Jan–Jul 2026</div>
+        <div class="finding-n">+18.5%</div>
+        <p class="finding-d">Semiconductor export value nearly doubled. ASEAN overtook America as the top destination, at 18 percent of exports against 11.</p>
+        <p class="finding-s">China General Administration of Customs</p>
+      </div>
+    </div>
+    <div class="prose reveal" style="margin-top:2.6rem">
+      <p>Put together, they describe something other than a policy win. The tariffs that were supposed to close the American deficit were <strong>voided by the Supreme Court on 20 February 2026</strong>, six votes to three, on the ground that emergency powers never granted the tariff authority in the first place. What actually narrowed the gap was a war: with the Gulf shut in, the United States sold energy into a panicked market, and exports did the work that duties could not.</p>
+      <p>China, meanwhile, did not stop exporting. It changed address. Roughly $77bn of American-bound goods were rerouted through Southeast Asia from April onward, and the export mix moved up the value chain into chips and AI hardware even as shipments to the United States fell.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EXPLORER ═══════════ -->
+<section class="band" id="explore">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Explore the file</p>
+      <h2>Three economies, opened up</h2>
+      <p class="lede">Pick a country and move through its numbers. Charts respond to hover and to keyboard. Every table has a text version underneath.</p>
+    </div>
+
+    <div class="picker reveal" role="tablist" aria-label="Choose an economy" id="picker"></div>
+
+    <div class="panel reveal" id="panel">
+      <div class="panel-head">
+        <div class="panel-title">
+          <span class="dot" id="pDot"></span>
+          <div>
+            <h3 id="pName">United States</h3>
+            <div class="panel-rank" id="pRank"></div>
+          </div>
+        </div>
+        <span class="badge" id="pBadge"></span>
+      </div>
+      <p class="panel-lede"><span id="pLede"></span></p>
+      <div class="tabs" role="tablist" aria-label="Data view" id="tabs"></div>
+      <div class="tabpanel" id="tabpanel" role="tabpanel" tabindex="0"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TIMELINE ═══════════ -->
+<section class="band" id="timeline">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">How 2026 happened</p>
+      <h2>The year in order</h2>
+      <p class="lede">Each entry is a dated event with a consequence you can trace in the numbers above.</p>
+    </div>
+    <div class="tl reveal" id="tl"></div>
+  </div>
+</section>
+
+<!-- ═══════════ METHOD ═══════════ -->
+<section class="band" id="method">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Method and limits</p>
+      <h2>How to read this, and where it stops</h2>
+      <p class="lede">Research you cannot check is marketing. Here is what we did, and what we deliberately did not do.</p>
+    </div>
+    <div class="split">
+      <div class="reveal">
+        <div class="card" style="margin-bottom:1rem">
+          <h3>What is in here</h3>
+          <p style="font-size:.95rem;line-height:1.7;color:var(--ink-body)">Official releases only, each one dated. United States trade through July 2026 from the BEA release of 3 September. China trade through July 2026 from the General Administration of Customs. India through July 2026 from the Ministry of Commerce, with GDP from MoSPI and reserves from the RBI. Reserve currency shares from IMF COFER, Q1 2026.</p>
+        </div>
+        <div class="card">
+          <h3>What is not</h3>
+          <p style="font-size:.95rem;line-height:1.7;color:var(--ink-body)">No forecasts dressed as data. No annualised part-years. The bar charts stop at 2025 because that is the last complete year; 2026 appears only as year to date, labelled as such. Where a number is an estimate, it says so next to the number rather than in a footnote.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 style="margin-bottom:1rem;font-size:1.15rem">Honest caveats</h3>
+        <details>
+          <summary>Sector tables are 2025 composition, not 2026</summary>
+          <div class="body">Commodity-level detail is not published mid-year at this granularity. Rather than fill 90 line items with guesses, the tables keep complete 2025 full-year values and say so in the heading. Where 2026 movement is verified for a specific line, it is named on that line.</div>
+        </details>
+        <details>
+          <summary>Partner shares are 2025; 2026 movement sits in the notes</summary>
+          <div class="body">Mixing 2026 year-to-date values into a 2025 share table would produce percentages that do not sum and rankings that mislead. The quantitative columns stay on one consistent basis and each note carries the verified 2026 change.</div>
+        </details>
+        <details>
+          <summary>India's GDP ranking is contested in public commentary</summary>
+          <div class="body">India is the world's sixth largest economy at $4.15tn on the IMF's April 2026 count, behind Japan at $4.38tn and the United Kingdom at $4.27tn. Widely repeated claims that it holds fourth place date from 2025 estimates made before an 11 percent rupee depreciation and the MoSPI base-year revision. Neither is a growth slowdown.</div>
+        </details>
+        <details>
+          <summary>Figures get revised</summary>
+          <div class="body">Trade statistics are routinely restated for months after first publication. Every figure here carries its release date so you can check it against the current print rather than trusting this page.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:2rem">
+      <h3>Primary sources</h3>
+      <ol class="srclist">
+        <li><span class="num">01</span><span>US Bureau of Economic Analysis and Census Bureau, <em>International Trade in Goods and Services</em>, July 2026, released 3 September 2026.</span></li>
+        <li><span class="num">02</span><span>Supreme Court of the United States, IEEPA tariff ruling, 20 February 2026 (6–3). Court of International Trade reliquidation order, 4 March 2026.</span></li>
+        <li><span class="num">03</span><span>General Administration of Customs of China, monthly trade release, July 2026.</span></li>
+        <li><span class="num">04</span><span>National Bureau of Statistics of China, first-half GDP, 15 July 2026.</span></li>
+        <li><span class="num">05</span><span>India Ministry of Commerce and Industry, monthly trade release, July 2026; MoSPI quarterly GDP, Q1 FY2026-27.</span></li>
+        <li><span class="num">06</span><span>Reserve Bank of India, weekly statistical supplement, week ended 21 August 2026.</span></li>
+        <li><span class="num">07</span><span>IMF, <em>World Economic Outlook</em> April 2026, and COFER Q1 2026, published 30 June 2026.</span></li>
+        <li><span class="num">08</span><span>IEA <em>Oil Market Report</em>, March 2026, and World Bank commodity analysis on the Strait of Hormuz disruption.</span></li>
+        <li><span class="num">09</span><span>WTO <em>Global Trade Outlook and Statistics</em>, March 2026, and Q1 2026 goods trade update, 31 July 2026.</span></li>
+        <li><span class="num">10</span><span>Penn Wharton Budget Model, effective tariff rates and revenues, updated 10 August 2026.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="band cta" id="cta">
+  <div class="wrap">
+    <p class="eyebrow reveal">Use it</p>
+    <h2 class="reveal">The file is open. Take it.</h2>
+    <p class="reveal">Every figure here is sourced and dated so you can check it, argue with it, or build on it. If you find something wrong, that is worth more to us than agreement.</p>
+    <div class="btns reveal">
+      <a class="btn" href="#explore">Explore the data</a>
+      <a class="btn ghost" href="https://github.com/psychologymatters561-design/Global-Trade-cashflow-" rel="noopener">View the source</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <p class="updated">Data current to 7 September 2026</p>
+      <p class="foot-note" style="margin-top:.6rem">Latest hard data: US and China trade through July 2026, India trade through July 2026, India GDP through Q1 FY2026-27, IMF COFER through Q1 2026. Annual charts show completed years to 2025; 2026 is reported as year to date, never annualised.</p>
+    </div>
+    <div class="foot-note" style="max-width:34ch">
+      <p>Independent research. Official and partner-reported statistics, subject to revision. Not investment advice.</p>
+    </div>
+  </div>
+</footer>
 <script>
 "use strict";
+var RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-var useState = React.useState;
-var _R = (typeof Recharts !== "undefined" && Recharts) ? Recharts : null;
-var CHARTS_OK = !!(_R && _R.ResponsiveContainer && _R.BarChart);
-var ResponsiveContainer = _R && _R.ResponsiveContainer;
-var BarChart = _R && _R.BarChart;
-var Bar = _R && _R.Bar;
-var XAxis = _R && _R.XAxis;
-var YAxis = _R && _R.YAxis;
-var Tooltip = _R && _R.Tooltip;
+/* ═══════════ DATA ═══════════ */
+var N = [
+{id:"usa",name:"United States",c:"var(--usa)",hex:"#3987e5",rank:"World #1 economy · $30.8tn",
+ badge:{t:"Trade gap −29.6% YTD",k:"up"},
+ lede:"The tariff architecture of 2025 was dismantled in court, not at the negotiating table. On 20 February 2026 the Supreme Court ruled 6–3 that emergency powers never conferred tariff authority, voiding the duties and forcing refunds. Washington rebuilt on other statutes, landing near a 7.1 percent average effective rate. Combined with an energy windfall from the Hormuz war, the goods and services gap fell 29.6 percent in the first seven months.",
+ vitals:[
+  {k:"Trade gap 7M-2026",v:"−29.6%",s:"−$188.4bn vs Jan–Jul 2025",d:"Record narrowing"},
+  {k:"Exports 7M-2026",v:"+12.0%",s:"+$237.2bn; energy and AI goods",d:"Boom"},
+  {k:"Imports 7M-2026",v:"+1.9%",s:"+$48.8bn; tariff-suppressed",d:"Near-flat"},
+  {k:"July 2026 deficit",v:"−$88.6bn",s:"Widened from $71.2bn in June",d:"+$17.4bn M/M"},
+  {k:"July services surplus",v:"+$31.0bn",s:"IP, finance, cloud, education",d:"+$0.2bn M/M"},
+  {k:"GDP growth Q2'26",v:"+1.5%",s:"Annualised; 2.1% in Q1",d:"Oil-shock drag"},
+  {k:"Avg effective tariff",v:"~7.1%",s:"Rebuilt post-IEEPA on §122/§232/§301",d:"Court-reset"},
+  {k:"Tariff on China",v:"~37.5%",s:"12.5% reciprocal + 25% §301",d:"Truce to Nov'26"},
+  {k:"USD reserve share",v:"57.13%",s:"IMF COFER Q1'26; EUR 20.03%",d:"+0.71pp Q/Q"},
+  {k:"Customs duties CY25",v:"$287bn",s:"+192% YoY; refunds now offsetting",d:"Under appeal"},
+  {k:"LNG exports H1'26",v:"17.4 bcf/d",s:"Record; fastest growth since 2016",d:"+23% YoY"},
+  {k:"Goods deficit 2025",v:"−$1.24tn",s:"Record baseline year",d:"Now shrinking"}],
+ trade:[["2019",1645,2524],["2020",1431,2330],["2021",1751,2853],["2022",2067,3176],["2023",2019,3115],["2024",2100,3200],["2025",2170,3410]],
+ exp:[["EU-27",17.8,"$365bn","Services and aircraft; energy exports surging on Hormuz"],["Canada",17.1,"$351bn","USMCA; about $145.4bn of US exports Jan–May 2026"],["Mexico",15.4,"$334bn","Top destination, $162.2bn Jan–May 2026, from $139.8bn"],["China",6.6,"$143.5bn","Tariff-war effect; ~37.5% blended rate on the return leg"],["UK",4.1,"$84bn","US–UK deal May 2025; a top-5 US LNG destination in 2026"],["Japan",3.8,"$78bn","Asia overtook Europe for US LNG in June 2026"],["S. Korea",2.9,"$60bn","Semiconductor partner; AI supply-chain linked"],["India",2.7,"$55bn","Fastest-rising partner; 18% US tariff since Feb 2026"]],
+ imp:[["EU-27",18.2,"$614bn","Vehicles, pharmaceuticals, machinery"],["Mexico",14.8,"$505.9bn","Top source, $242.9bn YTD 2026; autos, electronics"],["China",12.9,"$438.9bn","Slipped to 4th in 2026, $104.2bn YTD, −$97.1bn YoY"],["Canada",12.1,"$412.7bn","Energy, autos, lumber, $163.0bn YTD 2026"],["Taiwan",5.6,"$176.7bn","Overtook China in 2026 on AI servers; advanced systems +93.5%"],["Japan",4.6,"$155bn","Vehicles, precision machinery"],["Germany",4.3,"$145bn","Vehicles, pharmaceuticals, chemicals"],["Vietnam",4.2,"$142bn","$55.9bn YTD 2026, closing on China's share"]],
+ sec:[["Refined petroleum (record export year)","$171bn",8.3],["IP royalties and licensing","$145bn",7.1],["Financial and insurance services","$135bn",6.6],["Travel and education","$128bn",6.2],["Cloud and digital services","$110bn",5.4],["Civilian aircraft and parts","$105bn",5.1],["Pharmaceutical preparations","$70bn",3.4],["Semiconductors","$63bn",3.1],["LNG, record 17.4 bcf/d in H1'26","$56bn",2.7],["Motor vehicles","$58bn",2.8]],
+ intel:"The deficit is narrowing, but read why before calling it a policy win. Three forces did the work and only one was intentional. The courts voided the emergency tariffs and forced refunds that in May exceeded collections for the month. The Hormuz war turned America's position as a net energy exporter into an export windfall, which is most of the 12 percent export growth. Tariffs did suppress imports, but to plus 1.9 percent, not negative. The goods still arrive, they just cost more. The invisible surplus remains the real moat: IP licensing, finance and cloud clear roughly $390bn a year, and the dollar's reserve share actually rose to 57.13 percent.",
+ risk:"The improvement is borrowed, not earned. Strip out the energy windfall and the underlying goods gap is intact. A Hormuz de-escalation returning Brent to the $60s would reverse much of the narrowing within two quarters. Legal exposure from the IEEPA ruling is open-ended, and trade policy now moves at the speed of the courts. Leading-edge chip production stays 55 to 60 percent Taiwan-concentrated through 2027. And the China truce expires on 10 November 2026."},
 
-/* ─── THEME ─── */
-var C = {
-  bg: "#05070d", bg2: "#090c15", bg3: "#0e1220", bg4: "#131828",
-  border: "#1c2640", gold: "#d4a843", goldL: "#f0c660", goldD: "#a07828",
-  green: "#28a968", red: "#c43c3c", blue: "#2d7dd2",
-  dim: "#445068", muted: "#6b7f9a", text: "#a8bccf", bright: "#ddeaf5", white: "#f0f6ff"
-};
+{id:"china",name:"China",c:"var(--china)",hex:"#d95926",rank:"World #2 economy · $20.0tn",
+ badge:{t:"Surplus $687.4bn in 7M 2026",k:"up"},
+ lede:"China is exporting harder than ever into a market that no longer wants it. Through July exports ran 18.5 percent ahead of last year and imports 26.7 percent ahead, holding the surplus at $687.4bn. The composition is what changed: semiconductor exports nearly doubled in value while shipments to the United States fell 10 percent and ASEAN became the primary destination. Domestically the picture is weaker. Q2 GDP grew just 4.3 percent, the slowest since late 2022.",
+ vitals:[
+  {k:"Exports 7M-2026",v:"+18.5%",s:"Jan–Jul YoY; AI and chip-led",d:"Booming"},
+  {k:"Imports 7M-2026",v:"+26.7%",s:"Jan–Jul YoY; energy cost surge",d:"Outpacing exports"},
+  {k:"Surplus 7M-2026",v:"+$687.4bn",s:"Versus $683.5bn a year earlier",d:"Roughly flat"},
+  {k:"July 2026 exports",v:"$397.9bn",s:"Monthly record; +23.9% YoY",d:"Beat forecast"},
+  {k:"July 2026 surplus",v:"+$112.5bn",s:"Versus $97.7bn in July 2025",d:"+15% YoY"},
+  {k:"GDP growth Q2'26",v:"+4.3%",s:"Slowest since Q4 2022; Q1 was 5.0%",d:"H1: +4.7%"},
+  {k:"High-tech exports",v:"+40.7%",s:"Semiconductor value nearly doubled",d:"New engine"},
+  {k:"NEV exports H1'26",v:"2.36m units",s:"46.2% of all vehicle exports",d:"+120% YoY"},
+  {k:"Exports to USA",v:"−10%",s:"US share down to 11% of exports",d:"Structural loss"},
+  {k:"Exports to ASEAN",v:"+19%",s:"Now 18% of exports, the top market",d:"Rerouting hub"},
+  {k:"US tariff rate",v:"~37.5%",s:"12.5% reciprocal + 25% §301",d:"Truce to Nov'26"},
+  {k:"Trade surplus 2025",v:"+$1.19tn",s:"Record baseline; first above $1tn",d:"+20% YoY"}],
+ trade:[["2019",2499,2077],["2020",2723,2059],["2021",3364,2688],["2022",3594,2716],["2023",3380,2557],["2024",3577,2590],["2025",3770,2580]],
+ exp:[["ASEAN",17.2,"$645bn","Top partner, ¥5.14tn in 7M 2026, +20%; ~$77bn US-bound rerouted"],["EU-27",15.8,"$593bn","¥3.67tn in 7M 2026, +9.5%; 35–48% EV tariff since 2024"],["USA",11.1,"$421bn","¥2.38tn in 7M 2026, −1.6%; US down to ~11% of exports"],["Hong Kong",8.3,"$311bn","Re-export and financial gateway"],["Japan",4.8,"$180bn","Exports to Japan +14.0% YoY in July 2026"],["S. Korea",4.5,"$169bn","Exports +46.6% YoY in July, AI chip supply chain"],["India",3.8,"$143bn","China's second-largest bilateral surplus"],["Russia",3.2,"$120bn","Post-sanctions pivot; machinery, autos"]],
+ imp:[["ASEAN",16.3,"$440bn","Intermediate goods +24.5%, two-thirds of China–ASEAN trade"],["S. Korea",9.2,"$248bn","Memory chips; HBM for AI accelerators"],["Japan",7.8,"$211bn","Precision machinery, process tools"],["Taiwan",7.5,"$203bn","Semiconductors; critical foundry inputs"],["Australia",7.2,"$194bn","Iron ore, about 80% of supply"],["Russia",6.1,"$165bn","Discounted oil and gas, avoids Hormuz, safer in 2026"],["Brazil",5.3,"$143bn","Soybeans and iron ore, displaced US soy"],["Saudi Arabia",5.0,"$135bn","Top crude supplier, Hormuz closure repriced 2026 imports"]],
+ sec:[["Electrical machinery and parts","$978bn",26.1],["Industrial machinery","$598bn",15.9],["Integrated circuits (2026 value ~doubled)","$195bn",5.2],["Textiles and apparel","$158bn",4.2],["Plastics and articles","$84bn",2.2],["Steel and iron products","$80bn",2.1],["Optical and precision instruments","$78bn",2.1],["Solar panels and PV modules","$65bn",1.7],["Auto parts","$64bn",1.7],["New-energy vehicles (2.36m units H1'26)","$37bn",1.0]],
+ intel:"The headline hides the story. The surplus is roughly flat year on year, but that flatness is the product of two violent opposing forces. Exports are up 18.5 percent and imports up 26.7 percent, and the import surge is overwhelmingly the Hormuz energy bill, a direct transfer of Chinese industrial margin to oil exporters. The export mix transformed: the country that spent a decade as the world's assembly floor now sells the AI supply chain's components. The geography flipped too, with America down to 11 percent of exports and ASEAN at 18. Tariffs did not stop the machine. They changed its address.",
+ risk:"The growth engine is stalling underneath a strong export headline. Q2 GDP of 4.3 percent is the weakest since 2022, with property debt above $6tn still compressing domestic demand. Energy exposure is acute: China is the largest buyer of Gulf crude, and every month Brent holds near $97 transfers margin out of Chinese industry. Semiconductor independence remains two to three generations behind, and leaning the export mix on chips makes the tooling dependency more dangerous, not less. The ASEAN rerouting that saved 2026 is the obvious target of the next enforcement round."},
 
-function ce() {
-  return React.createElement.apply(React, Array.prototype.slice.call(arguments));
-}
+{id:"india",name:"India",c:"var(--india)",hex:"#199e70",rank:"World #6 economy · $4.15tn",
+ badge:{t:"Merch. deficit −$32.0bn in July",k:"down"},
+ lede:"India is the world's sixth largest economy, not the fourth. The IMF's April 2026 count puts nominal GDP at $4.15tn, behind Japan at $4.38tn and the UK at $4.27tn, after an 11 percent rupee slide and a base-year revision. It is running the fastest growth of any major economy and the widest trade gap in its history at the same time: Q1 FY2026-27 GDP came in at 7.8 percent while the Hormuz war repriced the import bill and pushed Russian crude past half of all oil imports.",
+ vitals:[
+  {k:"Nominal GDP 2026",v:"$4.15tn",s:"IMF Apr'26, world #6, behind UK and Japan",d:"Not 4th"},
+  {k:"GDP growth Q1 FY27",v:"+7.8%",s:"Apr–Jun 2026; beat 7.1% consensus",d:"Fastest major"},
+  {k:"Fixed investment",v:"+11.9%",s:"GFCF, versus 5.8% a year earlier",d:"Investment-led"},
+  {k:"July merch. exports",v:"$44.2bn",s:"Highest-ever July; +19.6% YoY",d:"Record"},
+  {k:"July merch. imports",v:"$76.2bn",s:"+17.5% YoY on energy repricing",d:"Record"},
+  {k:"July overall gap",v:"−$15.0bn",s:"Goods plus services; +31.5% YoY",d:"Widening"},
+  {k:"Services exports",v:"$421.3bn",s:"FY25-26, from $387.5bn in FY25",d:"+8.7% YoY"},
+  {k:"Remittances FY25-26",v:"$144.8bn",s:"Record net private transfers",d:"+16.2% YoY"},
+  {k:"FX reserves",v:"$729.3bn",s:"All-time high, week to 21 Aug 2026",d:"+$12.4bn in a week"},
+  {k:"Rupee vs USD",v:"~94.4",s:"Off the 96.79 low of 20 May 2026",d:"Stabilising"},
+  {k:"Russian oil share",v:">50%",s:"Jun–Jul peak, from 23% in Jan'26",d:"Hormuz-driven"},
+  {k:"US tariff rate",v:"18%",s:"Beats Vietnam and Bangladesh at 20%",d:"Deal unfinished"}],
+ trade:[["2019",330,514],["2020",291,394],["2021",395,570],["2022",450,714],["2023",437,677],["2024",438,721],["2025",442,775]],
+ exp:[["USA",17.9,"$85bn","Top destination; 18% US tariff since Feb 2026"],["UAE",6.8,"$32bn","Gold re-export hub; diaspora corridor"],["China",4.4,"$19.5bn","+36.7%; among Apr–Jul 2026's fastest-growing destinations"],["Netherlands",4.2,"$20bn","EU entry port for Indian goods"],["Bangladesh",3.3,"$16bn","Textile inputs; ready-made garments"],["UK",2.9,"$14bn","India–UK CETA in force 15 Jul 2026, ~99% zero-duty access"],["Singapore",2.8,"$13bn","Now a top-three destination in Apr–Jul 2026"],["Germany",2.4,"$11bn","Machinery and auto components"]],
+ imp:[["China",14.6,"$113bn","+27.9% in Apr–Jun 2026; still the top import source"],["Russia",8.7,"$67bn","+52.7% Apr–Jun; above 50% of oil imports at the Jun–Jul peak"],["UAE",8.6,"$66bn","Gold, petroleum, re-exports; Oman up 221.8% alongside"],["USA",6.7,"$50bn","Machinery, defence, coal; +23.8% in Apr–Jun 2026"],["Iraq",4.8,"$36bn","Crude oil, ships through Hormuz"],["Saudi Arabia",4.5,"$33bn","Crude and LPG; Hormuz-exposed"],["Switzerland",4.0,"$30bn","Gold and silver; Brazil up 174.7% as sourcing diversifies"],["South Korea",2.8,"$21bn","Electronics, chips, steel"]],
+ sec:[["IT software, BPO and cloud services","$185bn",38.9],["Refined petroleum (Jul'26 +67.6% YoY)","$75bn",15.8],["Engineering goods and machinery","$32bn",6.7],["Pharmaceutical generics","$28bn",5.9],["Gems and jewellery","$26bn",5.5],["Chemicals, dyes and organics","$22bn",4.6],["Textiles and apparel","$18bn",3.8],["Iron and steel products","$12bn",2.5],["Rice and agricultural commodities","$12bn",2.5],["Electronics and smartphones (Jul'26 +57.4%)","$10bn",2.1]],
+ intel:"India is the clearest case in the world of a strong economy with a fragile external account. Growth is genuine and improving in quality: 7.8 percent with fixed investment up 11.9 percent against consumption at 7.1. Investment, not spending, is leading, which is what durable industrialisation looks like. The external account went the other way. Hormuz hit India harder than almost any large economy because its crude comes overwhelmingly from Iraq, Saudi Arabia and the UAE, all shipping through the Strait. The response was the sharpest geopolitical pivot of the year: Russian crude went from 23 percent of oil imports in January to over half by June. India signed a February deal promising to reduce Russian purchases, then more than doubled them, because Russian barrels avoid both Hormuz and the Red Sea.",
+ risk:"Energy import dependence is the binding constraint. India imports over 85 percent of its crude, and every $10 on Brent costs roughly $15bn a year in foreign exchange. The Russian workaround is a mitigation, not a fix, and it is already eroding. That workaround is itself the diplomatic risk: the February deal traded a tariff cut for a promise India has not kept, and the 18 percent rate is a policy choice reversible in a day. Pharmaceutical ingredient concentration in China remains a systemic global risk routed through Indian supply chains. And the rupee needed $74bn of engineered deposit inflows to stabilise near 94 after touching 96.79 in May."}];
 
-/* ─── TICKER DATA ─── */
-var TICKER = [
-  { label: "USA: TRADE GAP — 7M 2026", value: "−29.6% YoY", note: "Goods+services deficit down $188.4B YTD (BEA, Jul)", col: C.green },
-  { label: "CHINA: SURPLUS — 7M 2026", value: "$687.4B", note: "Jan–Jul; exports +18.5%, imports +26.7%", col: C.green },
-  { label: "INDIA: GDP RANK", value: "#6 · $4.15T", note: "IMF Apr'26 — NOT 4th; behind UK & Japan", col: C.gold },
-  { label: "INDIA: Q1 FY26-27 GDP", value: "+7.8%", note: "Apr–Jun 2026; fastest major economy", col: C.gold },
-  { label: "BRENT CRUDE", value: "$96.82/bbl", note: "Sep 6 2026; +47% YoY on Hormuz war", col: C.red },
-  { label: "IEEPA TARIFFS STRUCK DOWN", value: "6–3 SCOTUS", note: "Feb 20 2026; refunds ordered to importers", col: C.blue },
-  { label: "US EFFECTIVE TARIFF", value: "~7.1%", note: "Jun 2026; rebuilt on §122/§232/§301", col: C.red },
-  { label: "CHINA NEV EXPORTS", value: "2.36M units", note: "H1 2026; +120% YoY, 46.2% of car exports", col: C.green },
-  { label: "INDIA FX RESERVES", value: "$729.3B", note: "All-time record, week to Aug 21 2026", col: C.gold },
-  { label: "INDIA RUSSIAN CRUDE", value: ">50%", note: "Of oil imports, Jun–Jul 2026 peak", col: C.gold },
-  { label: "USD RESERVE SHARE", value: "57.13%", note: "IMF COFER Q1 2026; up from 56.42%", col: C.muted }
-];
+var TL=[
+ {w:"2025 · November",c:"var(--usa)",t:"A Geneva-brokered truce extends the US–China tariff reduction to 10 November 2026, cutting the headline reciprocal rate from its 145 percent peak. Disputes over semiconductors and rare earths stay unresolved."},
+ {w:"2026 · 20 February",c:"var(--accent)",t:"THE COURT RULING. The Supreme Court holds 6–3, Chief Justice Roberts writing, that emergency economic powers do not authorise tariffs. The duties are voided and billions in collected revenue become refundable. On the same footing, a US–India deal cuts Indian tariffs from a 50 percent peak to 18."},
+ {w:"2026 · Late February",c:"var(--neg)",t:"THE STRAIT CLOSES. US and Israeli operations against Iran trigger attacks on commercial shipping and the effective closure of the Strait of Hormuz. Flows collapse from about 20 million barrels a day to a trickle; Gulf producers cut at least 10 million. Brent rises about 65 percent by end-March, the largest monthly gain ever recorded."},
+ {w:"2026 · March",c:"var(--usa)",t:"The Court of International Trade orders reliquidation without the voided duties. Washington rebuilds on other statutes: a 10 percent global baseline, sectoral duties of 25 to 50 percent, and China-specific measures. The average effective rate settles near 7.1 percent."},
+ {w:"2026 · May",c:"var(--neg)",t:"Refunds accelerate to the point that the Treasury pays out more in customs refunds than it collects for the month. The oil spike pushes headline US inflation above 4 percent. The rupee touches 96.79, its weakest of the year."},
+ {w:"2026 · June–July",c:"var(--india)",t:"India's Russian crude share passes 50 percent, up from 23 in January, because those barrels avoid both Hormuz and the Red Sea. India–UK CETA enters into force on 15 July with about 99 percent zero-duty access."},
+ {w:"2026 · July",c:"var(--china)",t:"China's exports jump 23.9 percent to a monthly record $397.9bn; semiconductor export value nearly doubles. A fresh 12.5 percent forced-labour tariff lifts the blended US rate on Chinese goods to roughly 37.5 percent."},
+ {w:"2026 · August",c:"var(--india)",t:"India's FX reserves hit an all-time $729.33bn in the week to 21 August, jumping $12.4bn in seven days as special deposit schemes pull in some $74bn."},
+ {w:"2026 · 3 September",c:"var(--pos)",t:"The July US trade release confirms the structural shift: the goods and services deficit is down $188.4bn, or 29.6 percent, year to date. Exports up 12.0 percent against imports up 1.9."}];
 
-/* ─── NATIONS DATA ─── */
-var NATIONS = [
+/* ═══════════ HELPERS ═══════════ */
+var $=function(s,r){return (r||document).querySelector(s)};
+var el=function(t,a,h){var n=document.createElementNS("http://www.w3.org/2000/svg",t);
+  for(var k in a)n.setAttribute(k,a[k]); if(h!=null)n.textContent=h; return n};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+var clamp=function(v,a,b){return v<a?a:v>b?b:v};
+var lerp=function(a,b,t){return a+(b-a)*t};
+var ease=function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
 
-/* ══════════════════ USA ══════════════════ */
-{
-  id: "usa", flag: "🇺🇸", name: "United States", short: "USA", no: "01", col: "#3d7fd4",
-  gdp: "$30.8T", tradeBalance: "deficit", balLabel: "TRADE GAP −29.6% YTD — SHARPEST NARROWING ON RECORD",
-  headline: "The tariff architecture of 2025 was dismantled in court, not at the negotiating table: on February 20, 2026 the Supreme Court ruled 6–3 that IEEPA gives no president tariff power, voiding the emergency duties and forcing refunds. Washington rebuilt the wall on §122, §232 and §301 authorities, leaving an average effective rate near 7.1%. Combined with an energy-export windfall from the Hormuz war, the result is the sharpest deficit narrowing on record — the goods-and-services gap fell $188.4B, or 29.6%, in the first seven months of 2026 as exports rose 12.0% against just 1.9% import growth.",
+/* ═══════════ THE DATA FILM ═══════════ */
+(function(){
+  var film=$("#film"),svg=$("#filmSvg"),bar=$("#filmBar"),intro=$("#filmIntro");
+  if(!film||!svg)return;
+  var a1=$("#act1"),a2=$("#act2"),a3=$("#act3");
+  var wallBars=$("#wallBars"),wallPct=$("#wallPct"),gavel=$("#gavel");
+  var oilLine=$("#oilLine"),oilArea=$("#oilArea"),oilDot=$("#oilDot"),oilPx=$("#oilPx"),
+      strait=$("#strait"),straitFlow=$("#straitFlow");
+  var flows=$("#flows"),shareUS=$("#shareUS"),shareAS=$("#shareAS");
+  var lab=$("#actLabel"),tit=$("#actTitle"),sub=$("#actSub");
 
-  vitals: [
-    { k: "GDP Growth Q2'26",  v: "+1.5%",    s: "Annualised; slowed from 2.1% Q1",   d: "Oil shock drag" },
-    { k: "Trade Gap 7M-2026", v: "−29.6%",   s: "−$188.4B vs Jan–Jul 2025 (BEA)",    d: "Record narrowing" },
-    { k: "Exports 7M-2026",   v: "+12.0%",   s: "+$237.2B YTD; energy + AI goods",   d: "Boom" },
-    { k: "Imports 7M-2026",   v: "+1.9%",    s: "+$48.8B YTD; tariff-suppressed",    d: "Near-flat" },
-    { k: "Jul 2026 Deficit",  v: "−$88.6B",  s: "Widened from $71.2B in June",       d: "+$17.4B M/M" },
-    { k: "Jul Goods Deficit", v: "−$119.6B", s: "Monthly; imports $399.3B",          d: "+$17.6B M/M" },
-    { k: "Jul Services Surp.",v: "+$31.0B",  s: "IP, finance, cloud, edu",           d: "+$0.2B M/M" },
-    { k: "USD Reserve Share", v: "57.13%",   s: "IMF COFER Q1'26; EUR 20.03%",       d: "+0.71pp Q/Q" },
-    { k: "Avg Effective Tariff",v: "~7.1%",  s: "Jun'26; §122/§232/§301 post-IEEPA", d: "Court-reset" },
-    { k: "China Tariff Rate", v: "~37.5%",   s: "12.5% reciprocal + 25% §301",       d: "Truce to Nov'26" },
-    { k: "Customs Duties CY25",v: "$287B",   s: "+192% YoY; refunds now offsetting", d: "Under appeal" },
-    { k: "Goods Deficit 2025",v: "−$1.24T",  s: "Record baseline year (Census)",     d: "Now shrinking" }
-  ],
-
-  trade6: [
-    { y: "2019", x: 1645, m: 2524 }, { y: "2020", x: 1431, m: 2330 },
-    { y: "2021", x: 1751, m: 2853 }, { y: "2022", x: 2067, m: 3176 },
-    { y: "2023", x: 2019, m: 3115 }, { y: "2024", x: 2100, m: 3200 },
-    { y: "2025", x: 2170, m: 3410 }
-  ],
-
-  expPartners: [
-    { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft; energy exports surging on Hormuz" },
-    { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA; ~$145.4B of US exports Jan–May 2026" },
-    { c: "Mexico",   p: 15.4, v: "$334B", note: "#1 destination — $162.2B Jan–May 2026, from $139.8B" },
-    { c: "China",    p: 6.6,  v: "$143.5B", note: "Tariff-war effect; ~37.5% blended rate on the return leg" },
-    { c: "UK",       p: 4.1,  v: "$84B",  note: "US–UK deal May 2025; a top-5 US LNG destination in 2026" },
-    { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally; Asia overtook Europe for US LNG Jun'26" },
-    { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner; AI supply-chain linked" },
-    { c: "India",    p: 2.7,  v: "$55B",  note: "Fastest-rising partner; 18% US tariff since Feb 2026" }
-  ],
-
-  impPartners: [
-    { c: "EU-27",    p: 18.2, v: "$614B",  note: "Vehicles, pharma, machinery" },
-    { c: "Mexico",   p: 14.8, v: "$505.9B", note: "#1 source — $242.9B YTD 2026; auto, electronics" },
-    { c: "China",    p: 12.9, v: "$438.9B", note: "Slipped to 4th in 2026 — $104.2B YTD, −$97.1B YoY; ~37.5% blended" },
-    { c: "Canada",   p: 12.1, v: "$412.7B", note: "Energy, autos, lumber — $163.0B YTD 2026" },
-    { c: "Taiwan",   p: 5.6,  v: "$176.7B", note: "OVERTOOK CHINA IN 2026 — AI servers; advanced systems +93.5%" },
-    { c: "Japan",    p: 4.6,  v: "$155B",  note: "Vehicles, precision machinery" },
-    { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "$55.9B YTD 2026 — closing on China's share" },
-    { c: "Germany",  p: 4.3,  v: "$145B",  note: "Vehicles, pharma, chemicals" },
-    { c: "India",    p: 2.8,  v: "$95B",   note: "Pharma, textiles, gems; 18% US tariff since Feb 2026" }
-  ],
-
-  topExports: [
-    { n: "IP Royalties & licensing fees",         v: "$145B+", pct: 7.1, cat: "Services" },
-    { n: "Financial & insurance services",        v: "$135B",  pct: 6.6, cat: "Services" },
-    { n: "Travel & education services",           v: "$128B",  pct: 6.2, cat: "Services" },
-    { n: "Refined petroleum products (record 2026 export year)", v: "$171B",  pct: 8.3, cat: "Energy" },
-    { n: "Cloud computing & digital services",    v: "$110B",  pct: 5.4, cat: "Services" },
-    { n: "Civilian aircraft, engines & parts",    v: "$105B",  pct: 5.1, cat: "Aerospace" },
-    { n: "Pharmaceutical preparations",           v: "$70B",   pct: 3.4, cat: "Pharma" },
-    { n: "Semiconductors & integrated circuits",  v: "$63B",   pct: 3.1, cat: "Tech" },
-    { n: "Natural gas (LNG — record 17.4 Bcf/d H1'26, +23%)", v: "$56B",   pct: 2.7, cat: "Energy" },
-    { n: "Motor vehicles & passenger cars",       v: "$58B",   pct: 2.8, cat: "Auto" },
-    { n: "Industrial machinery & equipment",      v: "$53B",   pct: 2.6, cat: "Machinery" },
-    { n: "Medical instruments & devices",         v: "$48B",   pct: 2.3, cat: "Medical" },
-    { n: "Plastics & chemical articles",          v: "$24B",   pct: 1.2, cat: "Chemical" },
-    { n: "Soybeans (agriculture)",                v: "$26B",   pct: 1.3, cat: "Agri" },
-    { n: "Corn (maize)",                          v: "$16B",   pct: 0.8, cat: "Agri" }
-  ],
-
-  topImports: [
-    { n: "Agricultural products (total)",         v: "$220B",  pct: 6.5, cat: "Agri" },
-    { n: "Passenger vehicles & cars",             v: "$228B",  pct: 6.7, cat: "Auto" },
-    { n: "Industrial machinery & equipment",      v: "$175B",  pct: 5.2, cat: "Machinery" },
-    { n: "Crude petroleum (repriced by Hormuz war)", v: "$165B",  pct: 4.9, cat: "Energy" },
-    { n: "Pharmaceutical preparations",           v: "$128B",  pct: 3.8, cat: "Pharma" },
-    { n: "Cell phones & smartphones",             v: "$115B",  pct: 3.4, cat: "Tech" },
-    { n: "Apparel & clothing",                    v: "$88B",   pct: 2.6, cat: "Textile" },
-    { n: "Computers & AI servers (Taiwan-led 2026)", v: "$85B",   pct: 2.5, cat: "Tech" },
-    { n: "Motor vehicle parts",                   v: "$72B",   pct: 2.1, cat: "Auto" },
-    { n: "Computer accessories & peripherals",    v: "$62B",   pct: 1.8, cat: "Tech" },
-    { n: "Furniture & household goods",           v: "$33B",   pct: 1.0, cat: "Consumer" },
-    { n: "Steel & iron products",                 v: "$32B",   pct: 1.0, cat: "Metal" },
-    { n: "Footwear",                              v: "$26B",   pct: 0.8, cat: "Consumer" },
-    { n: "Toys, games & sporting goods",          v: "$21B",   pct: 0.6, cat: "Consumer" },
-    { n: "Televisions & displays",                v: "$19B",   pct: 0.6, cat: "Tech" }
-  ],
-
-  events: [
-    { y: "2019",     t: "Phase 1 US–China deal signed. $360B tariffs remain in place. Services surplus peaks at $270B. US imposes Huawei entity-list restrictions. Trade war enters managed-pause mode." },
-    { y: "2020",     t: "COVID-19: goods exports fall −13%. Supply chain fragility exposed globally. Goods deficit briefly narrows to $920B. Port backlogs in LA/Long Beach begin. Chip shortage early signs." },
-    { y: "2021",     t: "Container freight costs hit 5× pre-pandemic levels. Chip shortage costs US auto sector ~$210B in lost output. American Rescue Plan $1.9T drives import surge. Ports at record congestion." },
-    { y: "2022",     t: "CHIPS Act ($52.7B) enacted. Inflation Reduction Act ($369B clean energy). Goods imports hit record $3.17T. Goods deficit reaches $1.19T. Fed begins aggressive rate hike cycle (+4.25pp)." },
-    { y: "2023",     t: "Mexico overtakes China as the #1 source of US imports for the first time in 20 years — structural nearshoring, not cyclical. Vietnam rises to 4th. US restricts advanced AI chip exports to China." },
-    { y: "2024",     t: "Trump 2.0 wins November election. Pre-tariff import front-running begins Q4. TSMC Arizona Fab 1 starts producing chips. US goods deficit: $1.10T. AI boom: Nvidia revenue up 122%." },
-    { y: "2025 Q1",  t: "Executive orders impose 145% tariff on Chinese goods, 25% on Canada and Mexico (then paused). Goods deficit spikes to record $1.33T annualised rate as companies rush imports ahead of tariff deadlines." },
-    { y: "2025 Q2",  t: "US–UK trade deal framework announced May 8 (first post-Brexit deal). 90-day tariff pause granted to most nations (excluding China). Golden Dome missile defence initiative launched. US–India trade talks intensify." },
-    { y: "2025 Q3–Q4", t: "Tariff revenues exceed $300B/yr for first time. US manufacturing investment announcements surge to record $860B+. TSMC Arizona begins 3nm production. Full-year goods deficit lands at a record $1.24T; services surplus rises to $339.5B (+8.9%)." },
-    { y: "2025 Nov",  t: "US and China agree a one-year tariff-reduction extension (to Nov 10, 2026) after a Geneva-brokered truce cuts the headline reciprocal tariff from its 145% peak. Blended effective China rate settles in the 30s once Section 301, IEEPA and MFN layers are combined." },
-    { y: "2026 Feb",  t: "SUPREME COURT VOIDS THE TARIFF REGIME: on February 20 the Court rules 6–3 (Roberts writing) that IEEPA does not authorise the president to impose tariffs, affirming the Federal Circuit. The emergency duties are revoked and billions in collected revenue become refundable. Separately, a US–India interim deal cuts the tariff on Indian goods from a 50% peak to 18%." },
-    { y: "2026 Feb–Mar", t: "HORMUZ WAR: US and Israeli operations against Iran in late February trigger Iranian attacks on commercial shipping and the effective closure of the Strait of Hormuz. Crude and product flows through the Strait collapse from ~20 mb/d to a trickle; Gulf producers cut at least 10 mb/d. Brent rises ~65% ($46/bbl) by end-March — the largest monthly gain ever recorded." },
-    { y: "2026 Mar",  t: "The Court of International Trade orders CBP to liquidate and reliquidate entries without IEEPA duties. Washington rebuilds tariffs on other authorities: a 10% §122 global baseline, §232 duties of 25–50% on steel, aluminium, copper, autos, semiconductors and lumber, and §301 duties of 7.5–100% on China. Average effective rate settles near 7.1%." },
-    { y: "2026 May",  t: "IEEPA refunds accelerate to the point that Treasury pays out more in customs refunds than it collects for the month. The spring oil spike pushes headline inflation above 4% before easing; Q2 GDP growth slows to 1.5% annualised from 2.1% in Q1." },
-    { y: "2026 Jul",  t: "USTR imposes a fresh 12.5% forced-labor tariff on Chinese goods on July 23, lifting the blended China rate to roughly 37.5% on most consumer electronics and machinery even as the broader truce holds. FY2026 customs duties reach $154.5B through July, +13.8% YoY despite the refunds." },
-    { y: "2026 Sep",  t: "July trade data (released Sep 3) confirms the structural shift: the goods-and-services deficit is down $188.4B, or 29.6%, year-to-date — exports +12.0% against imports +1.9%. Brent trades near $96.82 as US–Iran strikes resume, keeping the energy-export windfall and the inflation risk running together." }
-  ],
-
-  intel: "The deficit is finally narrowing — but read why before you call it a policy win. Three forces did the work, and only one was intentional. First, the courts: the Supreme Court's 6–3 ruling on February 20, 2026 held that IEEPA confers no tariff power at all, voiding the emergency duties and forcing refunds that in May exceeded collections for the month. Washington rebuilt the wall on §122, §232 and §301 — sturdier legally, narrower in reach, and averaging ~7.1% rather than the headline rates of 2025. Second, the Hormuz war: with Gulf supply down 10 mb/d and Brent up roughly 47% year-over-year, America's position as a net energy exporter turned a global catastrophe into an export windfall. That is most of the +12.0% export growth. Third, tariffs did suppress imports — but to +1.9%, not negative; the physical goods still come, they just cost more. The invisible surplus remains the real moat: IP licensing, finance and cloud together clear roughly $390B a year, and the dollar's COFER share actually rose to 57.13% in Q1 2026. A narrowing deficit built on a war premium and a court ruling is not the same as a rebalanced economy.",
-
-  risk: "PRIMARY RISK: the deficit improvement is borrowed, not earned. Strip out the energy-price windfall and the import suppression, and the underlying goods gap is intact — a Hormuz de-escalation that returns Brent to the $60s would reverse much of the 29.6% narrowing within two quarters. SECONDARY: legal exposure from the IEEPA ruling is still open-ended; refund liability runs to the tens of billions, the §122 baseline carried a statutory expiry, and every replacement authority invites its own litigation — trade policy now moves at the speed of the courts, not the executive. THIRD: TSMC dependency is diminishing but unresolved. Arizona handles legacy and mid-range nodes, yet 2nm leading-edge output stays 55–60% Taiwan-concentrated through 2027; a Strait event still means 6–9 months of acute global semiconductor disruption. FOURTH: the oil shock pushed headline inflation above 4% in the spring and Q2 growth slowed to 1.5% — a second energy leg with federal debt/GDP near 125% is the stagflation scenario. WILDCARD: the China truce expires November 10, 2026, and the July forced-labor tariff shows de-escalation is not linear; a breakdown re-spikes the blended rate well above the current ~37.5%."
-},
-
-/* ══════════════════ CHINA ══════════════════ */
-{
-  id: "china", flag: "🇨🇳", name: "China", short: "CHINA", no: "02", col: "#c43c3c",
-  gdp: "$20.0T", tradeBalance: "surplus", balLabel: "SURPLUS +$687.4B IN 7M 2026 — EXPORTS +18.5%",
-  headline: "China is exporting harder than ever into a market that no longer wants it. Through July 2026 exports ran 18.5% ahead of last year and imports 26.7% ahead, holding the surplus at $687.4B for seven months. The composition is what changed: semiconductor exports nearly doubled in value and high-tech shipments rose 40.7%, while exports to the United States fell 10% and ASEAN — now 18% of China's goods exports against America's 11% — became the primary destination. Domestically the picture is weaker: Q2 GDP grew just 4.3%, the slowest since late 2022.",
-
-  vitals: [
-    { k: "GDP Growth Q2'26",  v: "+4.3%",    s: "Slowest since Q4 2022; Q1 was 5.0%", d: "H1: +4.7%" },
-    { k: "Exports 7M-2026",   v: "+18.5%",   s: "Jan–Jul YoY; AI and chip-led",     d: "Booming" },
-    { k: "Imports 7M-2026",   v: "+26.7%",   s: "Jan–Jul YoY; energy cost surge",   d: "Outpacing exports" },
-    { k: "Surplus 7M-2026",   v: "+$687.4B", s: "Vs $683.5B a year earlier",        d: "Roughly flat" },
-    { k: "Jul 2026 Exports",  v: "$397.9B",  s: "Monthly record; +23.9% YoY",       d: "Beat forecast" },
-    { k: "Jul 2026 Surplus",  v: "+$112.5B", s: "Vs $97.7B in Jul 2025",            d: "+15% YoY" },
-    { k: "High-Tech Exports", v: "+40.7%",   s: "Semiconductors nearly doubled",    d: "New export engine" },
-    { k: "NEV Exports H1'26", v: "2.36M units", s: "46.2% of all vehicle exports",  d: "+120% YoY" },
-    { k: "Exports to USA",    v: "−10%",     s: "US share down to 11% of exports",  d: "Structural loss" },
-    { k: "Exports to ASEAN",  v: "+19%",     s: "Now 18% of exports — #1 market",   d: "Rerouting hub" },
-    { k: "US Tariff Rate",    v: "~37.5%",   s: "12.5% reciprocal + 25% §301",      d: "Truce to Nov'26" },
-    { k: "Trade Surplus 2025",v: "+$1.19T",  s: "Record baseline; first above $1T", d: "+20% YoY" }
-  ],
-
-  trade6: [
-    { y: "2019", x: 2499, m: 2077 }, { y: "2020", x: 2723, m: 2059 },
-    { y: "2021", x: 3364, m: 2688 }, { y: "2022", x: 3594, m: 2716 },
-    { y: "2023", x: 3380, m: 2557 }, { y: "2024", x: 3577, m: 2590 },
-    { y: "2025", x: 3770, m: 2580 }
-  ],
-
-  expPartners: [
-    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "#1 partner — ¥5.14T in 7M 2026, +20%; ~$77B US-bound rerouted" },
-    { c: "EU-27",     p: 15.8, v: "$593B",  note: "¥3.67T in 7M 2026, +9.5%; 35–48% EV tariff since 2024" },
-    { c: "USA",       p: 11.1, v: "$421B",  note: "¥2.38T in 7M 2026, −1.6%; US down to ~11% of exports" },
-    { c: "Hong Kong", p: 8.3,  v: "$311B",  note: "Re-export and financial gateway" },
-    { c: "Japan",     p: 4.8,  v: "$180B",  note: "Exports to Japan +14.0% YoY in July 2026" },
-    { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Exports +46.6% YoY in Jul'26 — AI chip supply chain" },
-    { c: "India",     p: 3.8,  v: "$143B",  note: "China's 2nd-largest bilateral surplus; India's #1 source" },
-    { c: "Russia",    p: 3.2,  v: "$120B",  note: "Post-sanctions pivot; machinery, autos, electronics" }
-  ],
-
-  impPartners: [
-    { c: "ASEAN",       p: 16.3, v: "$440B",  note: "Intermediate goods +24.5% — two-thirds of China–ASEAN trade" },
-    { c: "S. Korea",    p: 9.2,  v: "$248B",  note: "Memory chips; HBM for AI accelerators — flows +46.6% Jul'26" },
-    { c: "Japan",       p: 7.8,  v: "$211B",  note: "Precision machinery, process tools" },
-    { c: "Taiwan",      p: 7.5,  v: "$203B",  note: "Semiconductors; TSMC critical inputs" },
-    { c: "Australia",   p: 7.2,  v: "$194B",  note: "Iron ore — ~80% of supply" },
-    { c: "Russia",      p: 6.1,  v: "$165B",  note: "Discounted oil & gas — avoids Hormuz, safer in 2026" },
-    { c: "Brazil",      p: 5.3,  v: "$143B",  note: "Soybeans, iron ore — displaced US soy" },
-    { c: "Saudi Arabia",p: 5.0,  v: "$135B",  note: "Top crude supplier — Hormuz closure repriced 2026 imports" }
-  ],
-
-  topExports: [
-    { n: "Electrical machinery, equipment & parts",      v: "$978B",  pct: 26.1, cat: "Electronics" },
-    { n: "Industrial machinery & mechanical appliances", v: "$598B",  pct: 15.9, cat: "Machinery" },
-    { n: "Integrated circuits (2026: export value ~doubled)", v: "$195B",  pct: 5.2,  cat: "Tech" },
-    { n: "Textiles, apparel & garments",                 v: "$158B",  pct: 4.2,  cat: "Textile" },
-    { n: "New-energy vehicles (2.36M units in H1 2026)",  v: "~$37B",  pct: 1.0,  cat: "Auto" },
-    { n: "Plastics & plastic articles",                  v: "$84B",   pct: 2.2,  cat: "Chemical" },
-    { n: "Steel & iron products",                        v: "$80B",   pct: 2.1,  cat: "Metal" },
-    { n: "Optical & precision instruments",              v: "$78B",   pct: 2.1,  cat: "Tech" },
-    { n: "Organic chemicals",                            v: "$78B",   pct: 2.1,  cat: "Chemical" },
-    { n: "Solar panels & photovoltaic modules",          v: "$65B",   pct: 1.7,  cat: "Energy" },
-    { n: "Furniture, bedding & lighting",                v: "$68B",   pct: 1.8,  cat: "Consumer" },
-    { n: "Auto parts & accessories",                     v: "$64B",   pct: 1.7,  cat: "Auto" },
-    { n: "Lithium-ion batteries (non-EV)",               v: "$48B",   pct: 1.3,  cat: "Energy" },
-    { n: "Ships & marine vessels",                       v: "$38B",   pct: 1.0,  cat: "Transport" },
-    { n: "Rubber & rubber products",                     v: "$28B",   pct: 0.7,  cat: "Material" }
-  ],
-
-  topImports: [
-    { n: "Crude petroleum & oils (repriced by Hormuz war)", v: "$430B+", pct: 15.9, cat: "Energy" },
-    { n: "Semiconductors & integrated circuits",         v: "$310B+", pct: 11.5, cat: "Tech" },
-    { n: "Iron ore & concentrates",                      v: "$125B+", pct: 4.6,  cat: "Metal" },
-    { n: "Natural gas (LNG + pipeline from Russia)",     v: "$68B",   pct: 2.5,  cat: "Energy" },
-    { n: "Soybean & agricultural commodities",           v: "$55B",   pct: 2.0,  cat: "Agri" },
-    { n: "Mechanical equipment components",              v: "$45B",   pct: 1.7,  cat: "Machinery" },
-    { n: "Copper ore & concentrates",                    v: "$40B",   pct: 1.5,  cat: "Metal" },
-    { n: "Coal (coking + thermal)",                      v: "$38B",   pct: 1.4,  cat: "Energy" },
-    { n: "Pharmaceutical preparations",                  v: "$28B",   pct: 1.0,  cat: "Pharma" },
-    { n: "Gold (non-monetary)",                          v: "$22B",   pct: 0.8,  cat: "Precious" },
-    { n: "Passenger cars & vehicles",                    v: "$25B",   pct: 0.9,  cat: "Auto" },
-    { n: "Aircraft & space vehicles",                    v: "$20B",   pct: 0.7,  cat: "Aerospace" },
-    { n: "Optical instruments & lenses",                 v: "$15B",   pct: 0.6,  cat: "Tech" },
-    { n: "Diamonds & precious stones",                   v: "$18B",   pct: 0.7,  cat: "Luxury" },
-    { n: "Pulp, paper & paperboard",                     v: "$12B",   pct: 0.4,  cat: "Material" }
-  ],
-
-  events: [
-    { y: "2019",       t: "Phase 1 US–China deal signed. China commits to $200B additional US purchases — target missed. $360B US tariffs remain. China's surplus $421B. Huawei placed on US entity list; global 5G battle begins." },
-    { y: "2020",       t: "COVID originates from Wuhan. China rebounds sharply by Q3 — exports surge +21% as world buys PPE, electronics, and WFH equipment from China. Surplus widens to $535B. China is the only major economy with positive GDP growth in 2020." },
-    { y: "2021",       t: "China exports record $3.36T. RCEP signed (November) — world's largest trade bloc covering 30% of global GDP. Global chip shortage delays some Chinese exports but electronics boom continues. BRI decade review: 140+ partner nations." },
-    { y: "2022",       t: "Russia invades Ukraine: China–Russia trade surges +30% as China buys sanctioned Russian oil at $20–30/barrel discount. Zero-COVID weighs on Q2. Evergrande default ($300B+ debt). Property crisis spreads. Surplus reaches record $878B." },
-    { y: "2023",       t: "BRI Forum: 150+ nations. BRICS expands to include Saudi Arabia, UAE, Ethiopia, Iran, Egypt, Argentina. Huawei Mate 60 Pro shipped — evidence of domestic 7nm chip capability. EV exports +70% YoY; BYD overtakes Tesla in EV units sold globally." },
-    { y: "2024",       t: "EV exports reach $90B — BYD dominates. EU imposes 35–48% tariffs on Chinese EVs. China surplus hits $987B — near $1T. Apple revenue in China −11%. China retaliates to US chip curbs: restricts gallium, germanium, graphite exports critical for chip-making." },
-    { y: "2025 Q1–Q2", t: "US imposes 145% peak tariff on Chinese goods. China retaliates with 125% tariff on US goods. Goods rerouted through Vietnam, Malaysia, and Mexico — 40% of 'Vietnam exports' to US contain Chinese components (audited)." },
-    { y: "2025 Q3–Q4", t: "BRICS+ settles 28% of cross-border transactions in non-dollar currencies. SMIC advances to 5nm (domestic). PBoC injects $400B+ stimulus for property sector. Full-year data: exports $3.77T (+5.5%), imports flat at $2.58T — surplus surges 20% to a record $1.19T." },
-    { y: "2025 Nov",   t: "Geneva-brokered US–China tariff truce extended one year (to Nov 10, 2026): headline reciprocal tariff cut from its 145% peak. Disputes over semiconductors and rare earths remain unresolved." },
-    { y: "2026 Feb",   t: "The US Supreme Court voids the IEEPA tariffs 6–3, collapsing the legal basis for the emergency duties on Chinese goods. Washington rebuilds using Section 301 and Section 232 instead — narrower authorities, but ones China cannot litigate away. Effective rates fall, then climb again through the year." },
-    { y: "2026 Feb–Mar", t: "The Hormuz closure hits China harder than any other major economy: it is the largest buyer of Gulf crude, and roughly a quarter of seaborne oil transits the Strait. Import values surge 26.7% YTD largely on price, not volume — a direct transfer of Chinese industrial margin to energy exporters, and the main reason the surplus stopped growing." },
-    { y: "2026 H1",    t: "NEV exports reach 2.355M units, up 120% year-on-year and 46.2% of all vehicle exports; in June monthly vehicle exports top 1 million for the first time and NEVs exceed half of them. Pure-electric passenger car exports hit $24.9B, +56.5% in value. BYD\'s Thailand and Mexico plants run at scale, converting export volume into local assembly." },
-    { y: "2026 Jul",   t: "Exports jump 23.9% YoY to a monthly record $397.9B; semiconductor export value nearly doubles and high-tech shipments rise 40.7%. USTR adds a 12.5% forced-labor tariff on July 23, lifting the blended US rate to roughly 37.5%. Q2 GDP comes in at 4.3% — the weakest since 2022 — as domestic demand and investment stay soft." },
-    { y: "2026 Sep",   t: "The rerouting is now measurable: about $77B of US-bound Chinese goods have been redirected through ASEAN since April, exports to the US are down 10% for the year, and ASEAN at 18% of China\'s exports has decisively overtaken America at 11%. The export machine did not shrink — it changed address." }
-  ],
-
-  intel: "The headline number hides the real story. China's surplus is roughly flat year-on-year — $687.4B over seven months against $683.5B — but that flatness is the product of two violent opposing forces, not calm. Exports are up 18.5% and imports up 26.7%; the import surge is overwhelmingly the Hormuz energy bill, a direct transfer of Chinese industrial margin to oil exporters. Meanwhile the export mix has transformed: semiconductor export value nearly doubled and high-tech shipments rose 40.7%, so the country that spent a decade as the world's assembly floor is now selling the AI supply chain's components. The geography flipped too. Exports to the US are down 10% and America is now just 11% of Chinese exports, while ASEAN at 18% has become the primary market — roughly $77B of US-bound goods rerouted through Southeast Asia since April alone. Tariffs did not stop the machine; they changed its address. The vulnerability is domestic, not external: Q2 GDP grew 4.3%, the slowest since 2022, because a country that exports its overproduction cannot consume its way out when the world starts taxing the outlet valve.",
-
-  risk: "PRIMARY RISK: the growth engine is stalling underneath a strong export headline — Q2 GDP of 4.3% is the weakest since 2022, with property debt above $6T still compressing domestic demand and steel, cement and glass demand down 15–20% from peak. An export boom cannot offset a consumption economy that will not start. SECONDARY: energy exposure is now acute. China is the largest buyer of Gulf crude and the Hormuz closure drove imports up 26.7% on price alone; every month Brent holds near $97 is a margin transfer out of Chinese industry, and a prolonged closure is a far graver threat than any tariff. THIRD: semiconductor independence remains the stated 2027 goal — SMIC has reached 5nm but sits two to three generations behind TSMC, and EUV, KLA and Applied Materials tools are fully sanctioned. That the export mix now leans on chips makes the tooling dependency more dangerous, not less. FOURTH: the ASEAN rerouting that saved 2026 is the obvious target of the next enforcement round; transshipment rules would strand roughly $77B of redirected trade. WILDCARD: Taiwan Strait action stays economically suicidal — China's export machine depends on the very Pacific lanes a conflict would close, and with Hormuz already shut it would face simultaneous chokepoints on both energy in and goods out."
-},
-
-/* ══════════════════ INDIA ══════════════════ */
-{
-  id: "india", flag: "🇮🇳", name: "India", short: "INDIA", no: "03", col: "#f97316",
-  gdp: "$4.15T", tradeBalance: "deficit", balLabel: "MERCH. DEFICIT −$32.0B IN JULY 2026 — RECORD IMPORTS",
-  headline: "India is the world\'s 6th largest economy, not the 4th: the IMF\'s April 2026 count puts nominal GDP at $4.15T, behind Japan ($4.38T) and the UK ($4.27T), after an 11% rupee slide and a MoSPI base-year revision. It is running the fastest growth of any major economy and the widest trade gap of its history at the same time. Q1 FY2026-27 GDP came in at 7.8%, led by an 11.9% surge in fixed investment. Exports set records — $44.24B of merchandise in July, the best July ever — but the Hormuz war repriced the import bill, driving merchandise imports to $76.22B and pushing Russian crude from 23% of oil imports in January to above 50% by June. Services exports ($421.3B) and record remittances ($144.8B) still carry the external account, and FX reserves hit an all-time $729.3B in August.",
-
-  vitals: [
-    { k: "Nominal GDP 2026",   v: "$4.15T",  s: "IMF Apr'26 — WORLD #6, behind UK & Japan", d: "Not 4th" },
-    { k: "GDP Growth Q1 FY27", v: "+7.8%",   s: "Apr–Jun 2026; beat 7.1% consensus", d: "Fastest major" },
-    { k: "Fixed Investment",   v: "+11.9%",  s: "GFCF, Q1 FY26-27 vs 5.8% a year on", d: "Investment-led" },
-    { k: "Jul'26 Merch Exports",v: "$44.2B", s: "Highest-ever July; +19.6% YoY",     d: "Record" },
-    { k: "Jul'26 Merch Imports",v: "$76.2B", s: "+17.5% YoY on energy repricing",    d: "Record" },
-    { k: "Jul'26 Overall Gap",  v: "−$15.0B",s: "Goods+services; +31.5% YoY",        d: "Widening" },
-    { k: "Services Exports",    v: "$421.3B",s: "FY25-26, from $387.5B in FY25",     d: "+8.7% YoY" },
-    { k: "Remittances FY25-26", v: "$144.8B",s: "Record net private transfers",      d: "+16.2% YoY" },
-    { k: "FX Reserves",         v: "$729.3B",s: "All-time high, week to Aug 21 2026", d: "+$12.4B in a week" },
-    { k: "Rupee vs USD",        v: "~94.4",  s: "Off the 96.79 low of May 20 2026",  d: "Stabilising" },
-    { k: "Russian Oil Share",   v: ">50%",   s: "Jun–Jul peak, from 23% in Jan'26",  d: "Hormuz-driven" },
-    { k: "US Tariff Rate",      v: "18%",    s: "Beats Vietnam/Bangladesh at 20%",   d: "Deal unfinished" },
-    { k: "Merch. Deficit FY26", v: "−$333.2B",s: "FY25-26 baseline; exports $441.8B", d: "Widening again" }
-  ],
-
-  trade6: [
-    { y: "2019", x: 330, m: 514 }, { y: "2020", x: 291, m: 394 },
-    { y: "2021", x: 395, m: 570 }, { y: "2022", x: 450, m: 714 },
-    { y: "2023", x: 437, m: 677 }, { y: "2024", x: 438, m: 721 },
-    { y: "2025", x: 442, m: 775 }
-  ],
-
-  expPartners: [
-    { c: "USA",         p: 17.9, v: "$85B",  note: "#1 destination; 18% US tariff since Feb 2026" },
-    { c: "UAE",         p: 6.8,  v: "$32B",  note: "Gold re-export hub; diaspora" },
-    { c: "Netherlands", p: 4.2,  v: "$20B",  note: "EU entry port for Indian goods" },
-    { c: "China",       p: 4.4,  v: "$19.5B", note: "+36.7%; among Apr–Jul 2026's fastest-growing destinations" },
-    { c: "Bangladesh",  p: 3.3,  v: "$16B",  note: "Textile inputs; RMG sector" },
-    { c: "UK",          p: 2.9,  v: "$14B",  note: "India–UK CETA in force 15 Jul 2026 — ~99% zero-duty access" },
-    { c: "Singapore",   p: 2.8,  v: "$13B",  note: "Now a top-3 destination in Apr–Jul 2026" },
-    { c: "Germany",     p: 2.4,  v: "$11B",  note: "Machinery + auto components" }
-  ],
-
-  impPartners: [
-    { c: "China",        p: 14.6, v: "$113B", note: "+27.9% in Apr–Jun 2026; still India's top import source" },
-    { c: "Russia",       p: 8.7,  v: "$67B",  note: "+52.7% Apr–Jun; above 50% of oil imports at the Jun–Jul peak" },
-    { c: "UAE",          p: 8.6,  v: "$66B",  note: "Gold, petroleum, re-exports; Oman up 221.8% alongside" },
-    { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal; +23.8% in Apr–Jun 2026" },
-    { c: "Iraq",         p: 4.8,  v: "$36B",  note: "Crude oil — ships through Hormuz" },
-    { c: "Saudi Arabia", p: 4.5,  v: "$33B",  note: "Crude oil + LPG; Hormuz-exposed" },
-    { c: "Switzerland",  p: 4.0,  v: "$30B",  note: "Gold & silver; Brazil up 174.7% as sourcing diversifies" },
-    { c: "South Korea",  p: 2.8,  v: "$21B",  note: "Electronics, chips, steel" }
-  ],
-
-  topExports: [
-    { n: "IT software, BPO & cloud services",          v: "$185B", pct: 38.9, cat: "Services" },
-    { n: "Refined petroleum (Jul'26: $6.92B, +67.6% YoY)", v: "$75B",  pct: 15.8, cat: "Energy" },
-    { n: "Engineering goods & machinery",              v: "$32B",  pct: 6.7,  cat: "Machinery" },
-    { n: "Pharmaceutical preparations (generics)",     v: "$28B",  pct: 5.9,  cat: "Pharma" },
-    { n: "Gems & jewellery",                           v: "$26B",  pct: 5.5,  cat: "Luxury" },
-    { n: "Chemicals, dyes & organics",                 v: "$22B",  pct: 4.6,  cat: "Chemical" },
-    { n: "Textiles & apparel",                         v: "$18B",  pct: 3.8,  cat: "Textile" },
-    { n: "Marine products & seafood",                  v: "$7B",   pct: 1.5,  cat: "Agri" },
-    { n: "Iron & steel products",                      v: "$12B",  pct: 2.5,  cat: "Metal" },
-    { n: "Rice & agricultural commodities",            v: "$12B",  pct: 2.5,  cat: "Agri" },
-    { n: "Electronics & smartphones (Jul'26: +57.4% YoY)", v: "$10B",  pct: 2.1,  cat: "Tech" },
-    { n: "Auto parts & accessories",                   v: "$8B",   pct: 1.7,  cat: "Auto" },
-    { n: "Organic chemicals",                          v: "$6B",   pct: 1.3,  cat: "Chemical" },
-    { n: "Coffee, tea & spices",                       v: "$5B",   pct: 1.1,  cat: "Agri" },
-    { n: "Leather & leather products",                 v: "$5B",   pct: 1.1,  cat: "Consumer" }
-  ],
-
-  topImports: [
-    { n: "Crude petroleum & oils (>50% Russian by mid-2026)", v: "$170B", pct: 23.0, cat: "Energy" },
-    { n: "Electronic components & integrated circuits",v: "$74B",  pct: 10.0, cat: "Tech" },
-    { n: "Machinery & industrial equipment",           v: "$60B",  pct: 8.1,  cat: "Machinery" },
-    { n: "Gold & precious metals",                     v: "$58B",  pct: 7.8,  cat: "Precious" },
-    { n: "Coal (coking + thermal)",                    v: "$38B",  pct: 5.1,  cat: "Energy" },
-    { n: "Vegetable oils (palm, soybean)",             v: "$14B",  pct: 1.9,  cat: "Agri" },
-    { n: "Defence equipment & systems",                v: "$13B",  pct: 1.8,  cat: "Defence" },
-    { n: "Natural gas (LNG)",                          v: "$12B",  pct: 1.6,  cat: "Energy" },
-    { n: "Pharmaceutical APIs & chemicals",            v: "$12B",  pct: 1.6,  cat: "Pharma" },
-    { n: "Aircraft & aviation parts",                  v: "$10B",  pct: 1.4,  cat: "Aerospace" },
-    { n: "Steel & iron raw materials",                 v: "$8B",   pct: 1.1,  cat: "Metal" },
-    { n: "Fertilizers",                                v: "$8B",   pct: 1.1,  cat: "Agri" },
-    { n: "Plastic raw materials",                      v: "$7B",   pct: 0.9,  cat: "Chemical" },
-    { n: "Copper & copper products",                   v: "$6B",   pct: 0.8,  cat: "Metal" },
-    { n: "Animal fats & oils",                         v: "$5B",   pct: 0.7,  cat: "Agri" }
-  ],
-
-  events: [
-    { y: "2019",       t: "India–US trade dispute: India removes GSP beneficiary status after US revokes preferences. Rupee weakens to 71. IT exports resilient +10% YoY. Modi–Trump tariff negotiations stall on Harley-Davidson duties." },
-    { y: "2020",       t: "COVID lockdowns among world's strictest (April–May). IT sector pivots entirely to remote — boom continues. Remittances hold at $83B. Gold imports surge as safe-haven demand spikes. RBI cuts rates to 4%." },
-    { y: "2021",       t: "India–Russia defence deal ($5.4B S-400 missiles). PLI (Production Linked Incentive) scheme ₹1.97L crore launched — mobile phones, pharma, auto. Trade deficit widens to $190B. Quad security grouping reinvigorated." },
-    { y: "2022",       t: "Russia invades Ukraine: India becomes world's #1 buyer of discounted Russian crude — from 2% to 22% of total imports in 6 months. Energy crisis avoided; India captures $10–14B in refining margin. Rupee hits 82 vs USD. WPI inflation peaks at 15%." },
-    { y: "2023",       t: "India becomes world's most populous nation (1.44B, surpasses China officially). G20 presidency — New Delhi Summit September 2023. FDI boom: Apple moves 14% of iPhone production to India (Foxconn + Tata). Rupee stabilises 82–83. PLI electronics shows results." },
-    { y: "2024",       t: "Modi wins 3rd term (NDA coalition). India–Middle East–Europe Economic Corridor (IMEC) framework. Russian oil imports reach 38% of crude. IT/AI exports +15% YoY. Remittances record $129B. GDP growth 7.2% — fastest major economy." },
-    { y: "2025 Q1–Q2", t: "India briefly reported as world's 4th largest economy (~$4.1T, mid-2025 estimate). US tariffs on India escalate in stages to a 50% peak amid a standoff over Russian oil purchases. Apple and Samsung announce major India expansion. Semiconductor PLI begins — Tata Electronics + PSMC fab breaks ground in Gujarat." },
-    { y: "2025 Q3–Q4", t: "India joins Quad semiconductor technology working group. PLI pharma clusters open in Gujarat + Hyderabad. Full-year FY25-26 trade data: merchandise exports $441.8B, imports $775.0B, merchandise deficit widens to $333.2B; services exports reach $421.3B (from $387.5B in FY25)." },
-    { y: "2026 Feb",   t: "US–India interim trade deal cuts the tariff on most Indian goods from a 50% peak to 18% — the reciprocal rate drops 25% to 18% and the 25% punitive duty is dropped outright, in recognition of an Indian commitment to wind down Russian oil purchases. Within four months the Hormuz war makes that commitment impossible to keep." },
-    { y: "2026 Feb–Mar", t: "The Strait of Hormuz closes. India — which sources the bulk of its crude from Iraq, Saudi Arabia and the UAE, all shipping through the Strait — faces the sharpest energy shock of any large importer. Brent rises about 65% in a month. The rupee slides toward 96/USD and the import bill reprices overnight." },
-    { y: "2026 Apr",   t: "IMF WEO puts India\'s nominal GDP at $4.15T and RANKS IT 6TH, not 4th — behind Japan ($4.38T) and the UK ($4.27T). Two technical factors did it: an 11% rupee depreciation, and the MoSPI base-year revision (2011-12 to 2022-23) that cut FY26 GDP from ₹357T to ₹345T. Neither is a growth slowdown — India is still the fastest-growing major economy and is forecast to regain 4th place by 2027." },
-    { y: "2026 May–Jul", t: "The Russian-crude pivot goes vertical: Moscow\'s share of Indian oil imports climbs from 23% in January to above 50% in June and July, a record. Russian barrels avoid both Hormuz and Bab el-Mandeb, making them cheaper and physically safer to land. India rejects the notion that it needs Washington\'s permission for its energy sourcing." },
-    { y: "2026 Aug",   t: "FX reserves hit an all-time $729.33B in the week to August 21, jumping $12.4B in seven days — foreign currency assets $591.3B, gold $114.2B — as RBI special deposit schemes for non-resident Indians pull in some $74B. Russian crude intake eases from July\'s record as Ukrainian strikes on Russian export infrastructure and Chinese competition bite." },
-    { y: "2026 Sep",   t: "Q1 FY2026-27 GDP prints at 7.8% with fixed investment up 11.9% — growth is now investment-led rather than consumption-led. India holds out on finalising the US trade deal, seeking terms that beat Vietnam and Bangladesh (20%) rather than merely matching; at 18% it already undercuts both, and Pakistan at 19%." }
-  ],
-
-  intel: "First, kill the zombie statistic: India did NOT stay the 4th largest economy after passing the UK. The IMF\'s April 2026 WEO puts it 6th at $4.15T, behind Japan ($4.38T) and the UK ($4.27T) — an 11% rupee depreciation and the MoSPI base-year revision (₹357T to ₹345T for FY26) reversed the ranking without touching the growth rate. India is the clearest case in the world of a strong economy with a fragile external account, and 2026 widened the gap between the two. Growth is genuine and improving in quality: 7.8% in Q1 FY2026-27 with gross fixed capital formation up 11.9% against consumption at 7.1% — investment, not spending, is now leading, which is what durable industrialisation actually looks like. The external account went the other way. The Hormuz closure hit India harder than almost any large economy because its crude comes overwhelmingly from Iraq, Saudi Arabia and the UAE, all of which ship through the Strait. July merchandise imports of $76.2B against record exports of $44.2B is an energy story, not a competitiveness story. The response was the sharpest geopolitical pivot of the year: Russian crude went from 23% of oil imports in January to over 50% by June — India signed a February deal promising to reduce Russian purchases, then more than doubled them, because Russian barrels avoid both Hormuz and the Red Sea. Washington has not reimposed the penalty. The cushions are real and growing: services exports at $421.3B, record remittances of $144.8B, a Q4 current account surplus of $7.1B, and FX reserves at an all-time $729.3B. India is buying its industrial future with a currency it must constantly defend.",
-
-  risk: "PRIMARY RISK: energy import dependence is now the binding constraint. India imports over 85% of its crude, and the Hormuz closure repriced that bill in weeks — every $10 on Brent costs roughly $15B a year in foreign exchange. The Russian workaround is a mitigation, not a fix, and it is already eroding as Ukrainian strikes on Russian export infrastructure and Chinese competition for the same barrels bite. SECONDARY: that workaround is itself the diplomatic risk. The February deal traded a tariff cut for a promise to reduce Russian oil; India instead pushed it above 50%. Washington has not moved, but the 18% rate is a policy choice that can be reversed in a day, and the full trade agreement remains unsigned as India holds out for terms better than Vietnam and Bangladesh. THIRD: pharma API concentration — a majority of active pharmaceutical ingredients come from China. India supplies roughly a fifth of the world's generic medicines, so a US–China rupture or export-control shock is a systemic global risk routed through Indian supply chains. FOURTH: the rupee needed $74B of engineered NRI deposit inflows to stabilise near 94 after touching 96.79 in May. Reserves at a record $729.3B look like strength; the mechanism that built them looks like defence. WILDCARD: China remains India's largest import source and, on combined trade, its largest partner — the bilateral deficit reflects an inability to compete in manufactured goods that tariffs protect against but cannot solve."
-}
-
-]; /* end NATIONS */
-
-/* ─── CAT COLORS ─── */
-var CAT_COLORS = {
-  Services:    C.blue,
-  Energy:      "#f97316",
-  Tech:        "#8b5cf6",
-  Pharma:      "#22c55e",
-  Aerospace:   "#06b6d4",
-  Auto:        "#ec4899",
-  Agri:        "#84cc16",
-  Machinery:   C.gold,
-  Chemical:    "#f59e0b",
-  Metal:       "#94a3b8",
-  Textile:     "#fb923c",
-  Consumer:    "#a3e635",
-  Medical:     "#34d399",
-  Luxury:      "#fcd34d",
-  Defence:     "#ef4444",
-  Transport:   "#60a5fa",
-  Material:    "#9ca3af",
-  Precious:    "#fbbf24"
-};
-
-/* ─── TICKER BAR ─── */
-function TickerBar() {
-  return ce("div", {
-    style: {
-      background: C.bg2,
-      borderBottom: "1px solid " + C.border,
-      padding: "0.875rem clamp(1rem, 5vw, 2.5rem)",
-      display: "flex",
-      gap: "clamp(1.25rem, 3vw, 2.5rem)",
-      overflowX: "auto",
-      scrollbarWidth: "none",
-      WebkitOverflowScrolling: "touch",
-      flexWrap: "wrap"
-    }
-  }, TICKER.map(function(item, i) {
-    return ce("div", { key: i, style: { display: "flex", flexDirection: "column", minWidth: 130, flexShrink: 0 } },
-      ce("div", { style: { fontSize: "0.58rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: 3, fontFamily: "'DM Mono', monospace" } }, item.label),
-      ce("div", { style: { fontSize: "1.2rem", fontFamily: "'DM Mono', monospace", color: item.col, fontWeight: 700, lineHeight: 1.2 } }, item.value),
-      item.note && ce("div", { style: { fontSize: "0.62rem", color: C.dim, marginTop: 2 } }, item.note)
-    );
-  }));
-}
-
-/* ─── SECTOR BAR ROW ─── */
-function SectorBar(props) {
-  var item = props.item;
-  var max = props.max || 1;
-  var barColor = CAT_COLORS[item.cat] || C.gold;
-  var barWidth = Math.max(2, Math.round((item.pct / max) * 100));
-  return ce("div", { style: { marginBottom: "0.625rem" } },
-    ce("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.2rem", gap: "0.5rem" } },
-      ce("span", { style: { fontSize: "0.8rem", color: C.text, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, item.n),
-      ce("div", { style: { display: "flex", gap: "0.5rem", alignItems: "center", flexShrink: 0 } },
-        ce("span", { style: { fontSize: "0.75rem", color: C.muted, fontFamily: "'DM Mono', monospace" } }, item.v),
-        ce("span", { style: { fontSize: "0.6rem", background: C.bg3, color: barColor, padding: "1px 5px", borderRadius: 2, fontFamily: "'DM Mono', monospace", border: "1px solid " + barColor + "44" } }, item.cat)
-      )
-    ),
-    ce("div", { style: { height: 4, background: C.bg3, borderRadius: 2 } },
-      ce("div", { style: { height: "100%", width: barWidth + "%", background: barColor, borderRadius: 2 } })
-    )
-  );
-}
-
-/* ─── TAB NAV ─── */
-var TABS = [
-  { id: "overview",      label: "OVERVIEW" },
-  { id: "partners",      label: "PARTNERS" },
-  { id: "sectors",       label: "SECTORS" },
-  { id: "events",        label: "EVENTS" },
-  { id: "intelligence",  label: "INTELLIGENCE" }
-];
-
-function TabNav(props) {
-  var active = props.active;
-  var onChange = props.onChange;
-  return ce("div", {
-    style: {
-      display: "flex",
-      borderBottom: "1px solid " + C.border,
-      marginBottom: "1.5rem",
-      overflowX: "auto",
-      scrollbarWidth: "none"
-    }
-  }, TABS.map(function(tab) {
-    var isActive = active === tab.id;
-    return ce("button", {
-      key: tab.id,
-      onClick: function() { onChange(tab.id); },
-      style: {
-        background: "none",
-        border: "none",
-        borderBottom: isActive ? "2px solid " + C.gold : "2px solid transparent",
-        color: isActive ? C.gold : C.muted,
-        padding: "0.75rem clamp(0.6rem, 2vw, 1.1rem)",
-        fontSize: "0.65rem",
-        letterSpacing: "2px",
-        textTransform: "uppercase",
-        fontFamily: "'DM Mono', monospace",
-        cursor: "pointer",
-        minHeight: 0,
-        whiteSpace: "nowrap",
-        transition: "color 0.2s"
-      }
-    }, tab.label);
-  }));
-}
-
-/* ─── OVERVIEW TAB ─── */
-function OverviewTab(props) {
-  var n = props.nation;
-  return ce(React.Fragment, null,
-    ce("div", { style: { marginBottom: "1.5rem" } },
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "KEY TRADE VITALS — LATEST 2026 DATA"),
-      ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(175px, 1fr))", gap: "0.5rem" } },
-        n.vitals.map(function(v, i) {
-          var dColor = v.d && v.d.charAt(0) === "+" ? C.green : v.d && (v.d.charAt(0) === "−" || v.d.charAt(0) === "-") ? C.red : C.dim;
-          return ce("div", { key: i, style: { background: C.bg3, border: "1px solid " + C.border, borderRadius: 4, padding: "0.75rem" } },
-            ce("div", { style: { fontSize: "0.6rem", color: C.muted, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "0.25rem", fontFamily: "'DM Mono', monospace" } }, v.k),
-            ce("div", { style: { fontSize: "1.3rem", color: C.goldL, fontFamily: "'DM Mono', monospace", fontWeight: 700, lineHeight: 1.2 } }, v.v),
-            ce("div", { style: { fontSize: "0.68rem", color: C.text, marginTop: "0.2rem" } }, v.s),
-            ce("div", { style: { fontSize: "0.65rem", color: dColor, marginTop: "0.15rem", fontFamily: "'DM Mono', monospace" } }, v.d)
-          );
-        })
-      )
-    ),
-    ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TRADE VOLUME 2019–2025 (USD BILLIONS) — GOLD: EXPORTS · RED: IMPORTS · 2026 IS PART-YEAR, SEE VITALS"),
-      (!CHARTS_OK
-        ? ce("div", { style: { padding: "1.25rem", border: "1px dashed " + C.border, borderRadius: 4, color: C.muted, fontSize: "0.8rem", fontFamily: "'DM Mono', monospace" } },
-            "Chart library unavailable — trade volumes for " + n.short + ": " +
-            n.trade6.map(function(d){ return d.y + " exports $" + d.x + "B / imports $" + d.m + "B"; }).join(" · "))
-        : ce(ResponsiveContainer, { width: "100%", height: 260 },
-        ce(BarChart, { data: n.trade6, margin: { top: 10, right: 20, left: 0, bottom: 10 } },
-          ce(XAxis, { dataKey: "y", stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
-          ce(YAxis, { stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
-          ce(Tooltip, {
-            contentStyle: { background: C.bg4, border: "1px solid " + C.border, borderRadius: 4, color: C.text, fontSize: "0.8rem" },
-            formatter: function(value, name) { return ["$" + value + "B", name === "x" ? "Exports" : "Imports"]; }
-          }),
-          ce(Bar, { dataKey: "x", fill: C.gold,      radius: [2,2,0,0], name: "Exports" }),
-          ce(Bar, { dataKey: "m", fill: C.red, opacity: 0.8, radius: [2,2,0,0], name: "Imports" })
-        )
-      ))
-    )
-  );
-}
-
-/* ─── PARTNERS TAB ─── */
-function PartnersTab(props) {
-  var n = props.nation;
-  function PartnerList(pProps) {
-    var partners = pProps.partners;
-    var valueColor = pProps.valueColor || C.goldL;
-    var barColor = pProps.barColor || C.gold;
-    return ce("div", null,
-      partners.map(function(p, i) {
-        var barPct = Math.min(100, p.p || 10);
-        return ce("div", { key: i, style: { display: "flex", alignItems: "flex-start", gap: "0.75rem", padding: "0.5rem 0", borderBottom: "1px solid " + C.border + "88" } },
-          ce("div", { style: { fontSize: "0.65rem", color: C.muted, fontFamily: "'DM Mono', monospace", width: 20, textAlign: "right", flexShrink: 0, paddingTop: 3 } }, i + 1),
-          ce("div", { style: { flex: 1, minWidth: 0 } },
-            ce("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: 4 } },
-              ce("span", { style: { fontSize: "0.875rem", color: C.bright, fontWeight: 600 } }, p.c),
-              ce("span", { style: { fontSize: "0.78rem", color: valueColor, fontFamily: "'DM Mono', monospace" } }, p.v)
-            ),
-            ce("div", { style: { height: 3, background: C.bg3, borderRadius: 2, marginBottom: 3 } },
-              ce("div", { style: { height: "100%", width: barPct + "%", background: barColor, borderRadius: 2, opacity: 0.7 } })
-            ),
-            ce("div", { style: { fontSize: "0.63rem", color: C.dim } }, p.note + (p.p ? " · " + p.p + "% share" : ""))
-          )
-        );
-      })
-    );
+  /* build wall bars once */
+  var NB=14,bw=44,gap=8,x0=500-(NB*(bw+gap)-gap)/2, rects=[];
+  for(var i=0;i<NB;i++){
+    var r=el("rect",{x:x0+i*(bw+gap),y:450,width:bw,height:0,fill:"url(#gWall)",rx:3});
+    wallBars.appendChild(r); rects.push(r);
   }
-  return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "1.5rem" } },
-    ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT DESTINATIONS — 2025 SHARES · 2026 MOVEMENT IN NOTES"),
-      ce(PartnerList, { partners: n.expPartners, valueColor: C.goldL, barColor: C.gold })
-    ),
-    ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT SOURCES — 2025 SHARES · 2026 MOVEMENT IN NOTES"),
-      ce(PartnerList, { partners: n.impPartners, valueColor: C.red, barColor: C.red })
-    )
-  );
-}
-
-/* ─── SECTORS TAB ─── */
-function SectorsTab(props) {
-  var n = props.nation;
-  var maxExp = Math.max.apply(null, n.topExports.map(function(e) { return e.pct; }));
-  var maxImp = Math.max.apply(null, n.topImports.map(function(e) { return e.pct; }));
-  return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" } },
-    ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT COMMODITIES & SECTORS — 2025 FULL-YEAR COMPOSITION"),
-      n.topExports.map(function(item, i) {
-        return ce(SectorBar, { key: i, item: item, max: maxExp });
-      })
-    ),
-    ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT COMMODITIES & SECTORS — 2025 FULL-YEAR COMPOSITION"),
-      n.topImports.map(function(item, i) {
-        return ce(SectorBar, { key: i, item: item, max: maxImp });
-      })
-    )
-  );
-}
-
-/* ─── EVENTS TAB ─── */
-function EventsTab(props) {
-  var n = props.nation;
-  return ce("div", { style: { position: "relative", paddingLeft: "1.75rem" } },
-    ce("div", { style: { position: "absolute", left: 6, top: 8, bottom: 8, width: 1, background: C.border } }),
-    n.events.map(function(ev, i) {
-      return ce("div", { key: i, style: { position: "relative", paddingBottom: "1.375rem" } },
-        ce("div", { style: { position: "absolute", left: "-1.85rem", top: 5, width: 9, height: 9, borderRadius: "50%", background: C.gold, border: "2px solid " + C.bg, boxShadow: "0 0 6px " + C.gold + "66" } }),
-        ce("div", { style: { fontSize: "0.68rem", fontFamily: "'DM Mono', monospace", color: C.goldL, letterSpacing: "2px", marginBottom: "0.3rem", textTransform: "uppercase" } }, ev.y),
-        ce("div", { style: { fontSize: "0.875rem", color: C.text, lineHeight: 1.7 } }, ev.t)
-      );
-    })
-  );
-}
-
-/* ─── INTELLIGENCE TAB ─── */
-function IntelTab(props) {
-  var n = props.nation;
-  return ce(React.Fragment, null,
-    ce("div", {
-      style: {
-        background: "linear-gradient(135deg, " + C.bg3 + " 0%, " + C.bg4 + " 100%)",
-        border: "1px solid " + C.border,
-        borderLeft: "3px solid " + C.gold,
-        borderRadius: 4,
-        padding: "1.125rem",
-        marginBottom: "1rem"
-      }
-    },
-      ce("div", { style: { fontSize: "0.58rem", letterSpacing: "3px", color: C.gold, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "⬡ MONEY FLOW INTELLIGENCE — " + n.short),
-      ce("p", { style: { color: C.text, lineHeight: 1.85, fontSize: "0.88rem" } }, n.intel)
-    ),
-    ce("div", {
-      style: {
-        background: "rgba(196,60,60,0.06)",
-        border: "1px solid " + C.red + "55",
-        borderLeft: "3px solid " + C.red,
-        borderRadius: 4,
-        padding: "1.125rem"
-      }
-    },
-      ce("div", { style: { fontSize: "0.58rem", letterSpacing: "3px", color: C.red, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "⚠ RISK ASSESSMENT — " + n.short),
-      ce("p", { style: { color: C.text, lineHeight: 1.85, fontSize: "0.88rem" } }, n.risk)
-    )
-  );
-}
-
-/* ─── NATION CARD ─── */
-function NationCard(props) {
-  var n = props.nation;
-  var tabState = useState("overview");
-  var activeTab = tabState[0];
-  var setTab = tabState[1];
-
-  var tabContent = null;
-  if (activeTab === "overview")     tabContent = ce(OverviewTab,  { nation: n });
-  if (activeTab === "partners")     tabContent = ce(PartnersTab,  { nation: n });
-  if (activeTab === "sectors")      tabContent = ce(SectorsTab,   { nation: n });
-  if (activeTab === "events")       tabContent = ce(EventsTab,    { nation: n });
-  if (activeTab === "intelligence") tabContent = ce(IntelTab,     { nation: n });
-
-  var isSurplus = n.tradeBalance === "surplus";
-
-  return ce("div", {
-    style: {
-      background: C.bg2,
-      border: "1px solid " + C.border,
-      borderRadius: 6,
-      marginBottom: "2rem",
-      overflow: "hidden",
-      boxShadow: "0 4px 24px rgba(0,0,0,0.4)"
+  /* oil price series: calm then the spike */
+  var OIL=[64,66,63,65,67,66,68,72,88,104,112,101,96,94,97],OW=760,OX=120;
+  function oilPath(p){
+    var n=Math.max(2,Math.round(OIL.length*p)),d="",a="";
+    for(var i=0;i<n;i++){
+      var x=OX+(i/(OIL.length-1))*OW, y=470-((OIL[i]-55)/70)*280;
+      d+=(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1);
     }
-  },
-    /* ── Nation Header ── */
-    ce("div", { style: { padding: "1.5rem clamp(1rem, 4vw, 1.75rem)", borderBottom: "1px solid " + C.border } },
-      ce("div", { style: { display: "flex", alignItems: "flex-start", gap: "1rem", flexWrap: "wrap" } },
-        /* Flag + number + name */
-        ce("div", { style: { display: "flex", alignItems: "center", gap: "0.875rem", flex: 1, minWidth: 0 } },
-          ce("span", { style: { fontSize: "clamp(1.5rem, 5vw, 2.5rem)", lineHeight: 1, flexShrink: 0 } }, n.flag),
-          ce("div", { style: { minWidth: 0 } },
-            ce("div", { style: { display: "flex", alignItems: "baseline", gap: "0.5rem", flexWrap: "wrap" } },
-              ce("span", { style: { fontSize: "clamp(1.25rem, 4vw, 2rem)", fontFamily: "'DM Mono', monospace", color: C.goldD, opacity: 0.7, lineHeight: 1, fontWeight: 700 } }, n.no),
-              ce("h2", { style: { fontSize: "clamp(1.2rem, 4vw, 1.875rem)", fontFamily: "'Playfair Display', serif", color: C.white, margin: 0, lineHeight: 1.15 } }, n.name)
-            ),
-            ce("div", { style: { fontSize: "0.75rem", color: C.muted, marginTop: "0.25rem", fontFamily: "'DM Mono', monospace" } }, n.gdp + " GDP — " + n.short)
-          )
-        ),
-        /* Balance badge */
-        ce("div", {
-          style: {
-            background: isSurplus ? "rgba(40,169,104,0.12)" : "rgba(196,60,60,0.12)",
-            border: "1px solid " + (isSurplus ? C.green : C.red),
-            borderRadius: 3,
-            padding: "0.35rem 0.75rem",
-            fontSize: "0.6rem",
-            letterSpacing: "1.5px",
-            color: isSurplus ? C.green : C.red,
-            fontFamily: "'DM Mono', monospace",
-            whiteSpace: "nowrap",
-            alignSelf: "flex-start",
-            flexShrink: 0
-          }
-        }, (isSurplus ? "▲ " : "▼ ") + n.balLabel)
-      ),
-      /* Headline */
-      n.headline && ce("p", {
-        style: {
-          fontSize: "clamp(0.85rem, 2.5vw, 0.95rem)",
-          color: C.text,
-          marginTop: "1rem",
-          lineHeight: 1.75,
-          fontStyle: "italic",
-          borderLeft: "2px solid " + C.goldD,
-          paddingLeft: "0.875rem",
-          maxWidth: 820
-        }
-      }, n.headline)
-    ),
+    var lx=OX+((n-1)/(OIL.length-1))*OW, ly=470-((OIL[n-1]-55)/70)*280;
+    a=d+"L"+lx.toFixed(1)+" 470L"+OX+" 470Z";
+    return {d:d,a:a,x:lx,y:ly,v:OIL[n-1]};
+  }
+  /* flow arcs */
+  var arcs=[];
+  for(var j=0;j<7;j++){
+    var p=el("path",{fill:"none","stroke-width":2,"stroke-linecap":"round",opacity:0});
+    flows.appendChild(p); arcs.push(p);
+  }
+  var ACTS=[
+    {l:"Act one",t:"A tariff wall, built in months",s:"By April 2025 the effective US tariff on Chinese goods reached 145 percent."},
+    {l:"Act one",t:"Struck down, six votes to three",s:"On 20 February 2026 the Supreme Court ruled that emergency powers never granted tariff authority. The wall came down in a morning."},
+    {l:"Act two",t:"Then the Strait closed",s:"Late February. Hormuz shuts, Gulf output falls by at least 10 million barrels a day, and Brent posts its largest monthly rise ever recorded."},
+    {l:"Act three",t:"So the trade went somewhere else",s:"China's exports to America fell 10 percent. ASEAN took its place, at 18 percent of Chinese exports against America's 11."},
+    {l:"The result",t:"A deficit that fell for the wrong reasons",s:"Down 29.6 percent year to date, carried by an energy windfall and a court ruling, not by tariffs."}
+  ];
+  var cur=-1;
+  function setCopy(i){ if(i===cur)return; cur=i; var a=ACTS[i];
+    lab.textContent=a.l; tit.textContent=a.t; sub.textContent=a.s; }
 
-    /* ── Tabs ── */
-    ce("div", { style: { padding: "1rem clamp(1rem, 4vw, 1.75rem) 1.75rem" } },
-      ce(TabNav, { active: activeTab, onChange: setTab }),
-      tabContent
-    )
-  );
-}
+  var target=0,shown=0,raf=0;
+  function draw(p){
+    bar.style.width=(p*100).toFixed(2)+"%";
+    if(intro) intro.style.opacity = p>.02 ? 0 : 1;
+    if(intro) intro.style.pointerEvents = p>.02 ? "none" : "auto";
 
-/* ─── APP ─── */
-function App() {
-  return ce("div", { style: { background: C.bg, minHeight: "100vh" } },
-
-    /* ── Site Header ── */
-    ce("div", { style: { background: C.bg2, borderBottom: "1px solid " + C.border, padding: "1.5rem clamp(1rem, 5vw, 2.5rem)" } },
-      ce("div", { style: { maxWidth: 1200, margin: "0 auto" } },
-        ce("div", { style: { fontSize: "0.6rem", letterSpacing: "4px", color: C.goldD, textTransform: "uppercase", marginBottom: "0.3rem", fontFamily: "'DM Mono', monospace" } }, "// TRADE INTELLIGENCE BRIEF — DATA CURRENT TO 7 SEPTEMBER 2026"),
-        ce("h1", { style: { fontSize: "clamp(1.5rem, 5vw, 2.75rem)", fontFamily: "'Playfair Display', serif", color: C.goldL, letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: "0.5rem" } }, "Global Trade Intelligence"),
-        ce("p", { style: { fontSize: "0.875rem", color: C.muted, maxWidth: 720, lineHeight: 1.65 } },
-          "Comprehensive analysis of world trade flows, tariff shocks, sector performance, cashflow intelligence, and geopolitical risk — current to 7 September 2026, incorporating trade data through July 2026, the Supreme Court’s IEEPA ruling, and the Strait of Hormuz energy shock. Covering the world’s 3 largest trading economies: United States · China · India."
-        )
-      )
-    ),
-
-    /* ── Ticker ── */
-    ce(TickerBar, null),
-
-    /* ── Nations ── */
-    ce("div", { style: { maxWidth: 1200, margin: "0 auto", padding: "2rem clamp(1rem, 5vw, 2rem)" } },
-      NATIONS.map(function(n) {
-        return ce(NationCard, { key: n.id, nation: n });
-      })
-    ),
-
-    /* ── Footer ── */
-    ce("div", {
-      style: {
-        borderTop: "1px solid " + C.border,
-        padding: "1.5rem clamp(1rem, 5vw, 2.5rem)",
-        textAlign: "center",
-        background: C.bg2
+    /* ACT 1 : 0 – .38  (build to .22, collapse after) */
+    var s1=clamp(p/.38,0,1); a1.setAttribute("opacity", p<.40?1:clamp((.44-p)/.04,0,1));
+    if(p<.44){
+      var build=clamp(s1/.46,0,1), fall=clamp((s1-.54)/.40,0,1);
+      var pct=lerp(0,145,ease(build))*(1-ease(fall))+7.1*ease(fall);
+      wallPct.textContent=pct.toFixed(pct<20?1:0)+"%";
+      wallPct.setAttribute("fill", fall>.5?"#33b985":"#e66767");
+      for(var i=0;i<NB;i++){
+        var d=clamp((ease(build)*NB-i)/1.4,0,1)*(1-ease(clamp((ease(fall)*(NB+3)-i)/2.2,0,1)));
+        var h=d*300; rects[i].setAttribute("height",h.toFixed(1));
+        rects[i].setAttribute("y",(450-h).toFixed(1));
       }
-    },
-      ce("p", { style: { fontSize: "0.6rem", color: C.dim, letterSpacing: "0.75px", lineHeight: 1.9, maxWidth: 900, margin: "0 auto" } },
-        "GLOBAL TRADE INTELLIGENCE REPORT · DATA SOURCES: WTO · IMF WORLD ECONOMIC OUTLOOK APR 2026 & COFER Q1 2026 · US CENSUS BUREAU / BEA (JULY 2026, REL. 3 SEP) · USTR · US SUPREME COURT (IEEPA, 20 FEB 2026) · CHINA NBS & GENERAL ADMINISTRATION OF CUSTOMS (JULY 2026) · INDIA MINISTRY OF COMMERCE, MoSPI & RBI · IEA · WORLD BANK · UNCTAD · PENN WHARTON BUDGET MODEL"
-      ),
-      ce("p", { style: { fontSize: "0.58rem", color: C.border, marginTop: "0.5rem", letterSpacing: "0.5px" } },
-        "CURRENT TO 7 SEPTEMBER 2026 · LATEST HARD DATA: US & CHINA TRADE THROUGH JULY 2026, INDIA THROUGH JULY 2026, INDIA GDP THROUGH Q1 FY2026-27 · ANNUAL BAR CHARTS SHOW COMPLETED YEARS TO 2025; 2026 IS REPORTED AS YEAR-TO-DATE, NOT ANNUALISED · ALL FIGURES ARE OFFICIAL OR PARTNER-REPORTED STATISTICS AND MAY BE REVISED"
-      )
-    )
-  );
+      gavel.setAttribute("opacity", clamp((fall-.18)/.18,0,1)*(1-clamp((s1-.94)/.06,0,1)));
+      setCopy(fall<.12?0:1);
+    }
+    /* ACT 2 : .40 – .70 */
+    var in2 = p>=.38 && p<.74;
+    a2.setAttribute("opacity", in2? clamp((p-.38)/.05,0,1)*clamp((.74-p)/.04,0,1) : 0);
+    if(in2){
+      var s2=clamp((p-.40)/.30,0,1), o=oilPath(ease(s2));
+      oilLine.setAttribute("d",o.d); oilArea.setAttribute("d",o.a);
+      oilDot.setAttribute("cx",o.x); oilDot.setAttribute("cy",o.y); oilDot.setAttribute("opacity",s2>.05?1:0);
+      oilPx.textContent="$"+o.v.toFixed(0);
+      strait.setAttribute("opacity",clamp((s2-.1)/.2,0,1));
+      straitFlow.setAttribute("stroke-dashoffset",(clamp((s2-.25)/.35,0,1)*340).toFixed(0));
+      straitFlow.setAttribute("stroke", s2>.45?"#e66767":"#199e70");
+      setCopy(2);
+    }
+    /* ACT 3 : .72 – 1 */
+    var in3=p>=.70;
+    a3.setAttribute("opacity", in3?clamp((p-.70)/.05,0,1):0);
+    if(in3){
+      var s3=clamp((p-.72)/.28,0,1);
+      for(var k=0;k<arcs.length;k++){
+        var t=k/(arcs.length-1), swing=ease(clamp((s3-t*.18)/.5,0,1));
+        var ey=lerp(170,420,swing), ex=820;
+        var cy=lerp(160,430,swing)-70+k*10;
+        arcs[k].setAttribute("d","M180 300 Q 500 "+cy.toFixed(0)+" "+ex+" "+ey.toFixed(0));
+        arcs[k].setAttribute("stroke", swing>.5?"#199e70":"#3987e5");
+        arcs[k].setAttribute("opacity", clamp(s3*2-t*.3,0,1)*.75);
+      }
+      shareUS.textContent=Math.round(lerp(19,11,ease(s3)))+"%";
+      shareAS.textContent=Math.round(lerp(12,18,ease(s3)))+"%";
+      setCopy(s3<.75?3:4);
+    }
+  }
+  function tick(){
+    shown=lerp(shown,target,.14);
+    if(Math.abs(shown-target)<.0004){shown=target;draw(shown);raf=0;return}
+    draw(shown); raf=requestAnimationFrame(tick);
+  }
+  function onScroll(){
+    var r=film.getBoundingClientRect(), tot=film.offsetHeight-window.innerHeight;
+    target=clamp(-r.top/(tot||1),0,1);
+    if(RM){shown=target;draw(shown);return}
+    if(!raf)raf=requestAnimationFrame(tick);
+  }
+  addEventListener("scroll",onScroll,{passive:true});
+  addEventListener("resize",onScroll,{passive:true});
+  onScroll(); draw(0);
+})();
+
+/* ═══════════ NAV + REVEAL ═══════════ */
+(function(){
+  var nav=$("#nav"),last=0;
+  addEventListener("scroll",function(){
+    var y=scrollY; nav.dataset.hidden = (y>last && y>420) ? "true":"false"; last=y;
+  },{passive:true});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)} });
+  },{rootMargin:"0px 0px -12% 0px",threshold:.08});
+  document.querySelectorAll(".reveal").forEach(function(n){io.observe(n)});
+})();
+
+/* ═══════════ CHART : grouped bars, hover + keyboard + table ═══════════ */
+function barChart(host,rows,labels,colors,unit){
+  var W=760,H=280,PL=54,PR=16,PT=18,PB=34, iw=W-PL-PR, ih=H-PT-PB;
+  var max=0; rows.forEach(function(r){max=Math.max(max,r[1],r[2])});
+  var step=Math.pow(10,String(Math.round(max)).length-1); var top=Math.ceil(max/step)*step;
+  var wrap=document.createElement("div"); wrap.className="chart-wrap";
+  var s=el("svg",{class:"chart",viewBox:"0 0 "+W+" "+H,role:"img",
+    "aria-label":labels[0]+" versus "+labels[1]+", "+rows[0][0]+" to "+rows[rows.length-1][0]+", in "+unit});
+  /* gridlines + y labels */
+  for(var g=0;g<=4;g++){
+    var yv=top/4*g, y=PT+ih-(yv/top)*ih;
+    s.appendChild(el("line",{class:"grid",x1:PL,y1:y,x2:W-PR,y2:y}));
+    s.appendChild(el("text",{class:"axis",x:PL-9,y:y+4,"text-anchor":"end"},
+      yv>=1000?(yv/1000).toFixed(1).replace(/\.0$/,"")+"k":String(yv)));
+  }
+  var bwid=iw/rows.length, bw=Math.min(26,bwid*.32);
+  rows.forEach(function(r,i){
+    var cx=PL+bwid*i+bwid/2;
+    [1,2].forEach(function(kk,j){
+      var v=r[kk], h=(v/top)*ih, x=cx-bw-2+j*(bw+4), y=PT+ih-h;
+      var rect=el("rect",{class:"bar",x:x,y:y,width:bw,height:Math.max(2,h),fill:colors[j],rx:4,
+        "data-i":i,"data-j":j});
+      s.appendChild(rect);
+    });
+    s.appendChild(el("text",{class:"axis",x:cx,y:H-12,"text-anchor":"middle"},r[0]));
+    /* one hit target per year */
+    var hit=el("rect",{class:"hit",x:PL+bwid*i,y:PT,width:bwid,height:ih,tabindex:0,role:"button",
+      "aria-label":r[0]+": "+labels[0]+" "+r[1]+" "+unit+", "+labels[1]+" "+r[2]+" "+unit});
+    hit.dataset.i=i; s.appendChild(hit);
+  });
+  wrap.appendChild(s);
+  var tip=document.createElement("div"); tip.className="tip"; wrap.appendChild(tip);
+  function show(i,cx,cy){
+    var r=rows[i];
+    tip.innerHTML="<b>"+esc(r[0])+"</b><i>"+esc(labels[0])+" "+r[1]+" "+esc(unit)+
+      "</i><i>"+esc(labels[1])+" "+r[2]+" "+esc(unit)+"</i><i>Balance "+(r[1]-r[2]>0?"+":"")+(r[1]-r[2])+" "+esc(unit)+"</i>";
+    tip.style.left=cx+"px"; tip.style.top=cy+"px"; tip.dataset.on="true";
+    s.classList.add("dim");
+    s.querySelectorAll(".bar").forEach(function(b){b.classList.toggle("on",b.dataset.i==i)});
+  }
+  function hide(){tip.dataset.on="false";s.classList.remove("dim");
+    s.querySelectorAll(".bar").forEach(function(b){b.classList.remove("on")})}
+  s.querySelectorAll(".hit").forEach(function(h){
+    function at(){var br=h.getBoundingClientRect(),wr=wrap.getBoundingClientRect();
+      return [br.left-wr.left+br.width/2, br.top-wr.top+20]}
+    h.addEventListener("mouseenter",function(){var p=at();show(h.dataset.i,p[0],p[1])});
+    h.addEventListener("focus",function(){var p=at();show(h.dataset.i,p[0],p[1])});
+    h.addEventListener("mouseleave",hide); h.addEventListener("blur",hide);
+  });
+  wrap.addEventListener("mouseleave",hide);
+  host.appendChild(wrap);
+  /* table alternative */
+  var tw=document.createElement("div"); tw.className="tablewrap";
+  var th="<table><caption>Same data as a table</caption><thead><tr><th>Year</th><th>"+esc(labels[0])+
+    " ("+esc(unit)+")</th><th>"+esc(labels[1])+" ("+esc(unit)+")</th><th>Balance</th></tr></thead><tbody>";
+  rows.forEach(function(r){th+="<tr><td>"+esc(r[0])+"</td><td class='n'>"+r[1]+"</td><td class='n'>"+r[2]+
+    "</td><td class='n'>"+(r[1]-r[2]>0?"+":"")+(r[1]-r[2])+"</td></tr>"});
+  tw.innerHTML=th+"</tbody></table>"; host.appendChild(tw);
 }
 
-/* ─── MOUNT ─── */
-try {
-  var root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(React.createElement(App, null));
-} catch (err) {
-  document.getElementById("root").innerHTML =
-    '<div style="padding:2rem;max-width:640px;margin:0 auto;font-family:monospace;color:#c43c3c;line-height:1.7">'
-    + '<strong>Report failed to render.</strong><br>' + String(err && err.message ? err.message : err)
-    + '<br><br><span style="color:#6b7f9a">This usually means a script blocked by the network. Reload, or try a different network.</span></div>';
-}
+/* ═══════════ EXPLORER ═══════════ */
+(function(){
+  var picker=$("#picker"),panel=$("#panel"),tabsEl=$("#tabs"),body=$("#tabpanel");
+  var TABS=[["overview","Overview"],["trade","Trade flows"],["partners","Partners"],["sectors","Sectors"],["analysis","Analysis"]];
+  var ni=0,ti=0;
+
+  N.forEach(function(n,i){
+    var b=document.createElement("button");
+    b.type="button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected",i===0);
+    b.style.setProperty("--c",n.c);
+    b.innerHTML='<span class="dot"></span>'+esc(n.name);
+    b.addEventListener("click",function(){ni=i;ti=0;render()});
+    picker.appendChild(b);
+  });
+  TABS.forEach(function(t,i){
+    var b=document.createElement("button");
+    b.type="button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected",i===0);
+    b.textContent=t[1];
+    b.addEventListener("click",function(){ti=i;render()});
+    tabsEl.appendChild(b);
+  });
+  tabsEl.addEventListener("keydown",function(e){
+    if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
+    e.preventDefault(); ti=(ti+(e.key==="ArrowRight"?1:TABS.length-1))%TABS.length; render();
+    tabsEl.children[ti].focus();
+  });
+
+  function rows(list,color,valIdx,noteIdx){
+    var max=0; list.forEach(function(r){max=Math.max(max,r[1])});
+    var h='<div class="rows">';
+    list.forEach(function(r){
+      h+='<div><div class="row-top"><span class="row-name">'+esc(r[0])+'</span>'+
+         '<span class="row-val">'+esc(r[valIdx])+' · '+r[1]+'%</span></div>'+
+         '<div class="track"><div class="fill" data-w="'+(r[1]/max*100).toFixed(1)+
+         '" style="background:'+color+'"></div></div>'+
+         '<p class="row-note">'+esc(r[noteIdx])+'</p></div>';
+    });
+    return h+'</div>';
+  }
+
+  function render(){
+    var n=N[ni];
+    panel.style.setProperty("--c",n.c);
+    Array.prototype.forEach.call(picker.children,function(b,i){b.setAttribute("aria-selected",i===ni)});
+    Array.prototype.forEach.call(tabsEl.children,function(b,i){b.setAttribute("aria-selected",i===ti)});
+    $("#pDot").style.background=n.c;
+    $("#pName").textContent=n.name;
+    $("#pRank").textContent=n.rank;
+    $("#pLede").textContent=n.lede;
+    var bd=$("#pBadge"); bd.textContent=n.badge.t; bd.className="badge "+n.badge.k;
+    body.setAttribute("aria-label",n.name+", "+TABS[ti][1]);
+
+    var t=TABS[ti][0],h="";
+    if(t==="overview"){
+      h='<div class="vitals">';
+      n.vitals.forEach(function(v){
+        h+='<div class="vital"><div class="vital-k">'+esc(v.k)+'</div><div class="vital-v">'+esc(v.v)+
+           '</div><div class="vital-s">'+esc(v.s)+'</div><span class="vital-d">'+esc(v.d)+'</span></div>';
+      });
+      h+='</div>'; body.innerHTML=h;
+    } else if(t==="trade"){
+      body.innerHTML='<div class="chart-head"><span class="chart-title">Goods trade 2019–2025 · US$ billions</span>'+
+        '<span class="legend"><span><i style="background:'+n.hex+'"></i>Exports</span>'+
+        '<span><i style="background:#93a4bd"></i>Imports</span></span></div>'+
+        '<p class="row-note" style="margin-bottom:.9rem">Complete years only. 2026 is part-year and appears in Overview, never annualised here.</p>'+
+        '<div id="chartHost"></div>';
+      barChart($("#chartHost"),n.trade,["Exports","Imports"],[n.hex,"#93a4bd"],"US$bn");
+    } else if(t==="partners"){
+      body.innerHTML='<div class="chart-head"><span class="chart-title">Top export destinations · 2025 shares, 2026 movement in notes</span></div>'+
+        rows(n.exp,n.c,2,3)+
+        '<div class="chart-head" style="margin-top:2.2rem"><span class="chart-title">Top import sources · 2025 shares, 2026 movement in notes</span></div>'+
+        rows(n.imp,"var(--ink-muted)",2,3);
+    } else if(t==="sectors"){
+      var max=0; n.sec.forEach(function(r){max=Math.max(max,r[2])});
+      h='<div class="chart-head"><span class="chart-title">Leading export sectors · 2025 full-year composition</span></div>'+
+        '<p class="row-note" style="margin-bottom:1rem">Commodity detail is not published mid-year at this granularity, so these stay on complete 2025 values. Verified 2026 movement is named on the line.</p><div class="rows">';
+      n.sec.forEach(function(r){
+        h+='<div><div class="row-top"><span class="row-name">'+esc(r[0])+'</span>'+
+           '<span class="row-val">'+esc(r[1])+'</span></div>'+
+           '<div class="track"><div class="fill" data-w="'+(r[2]/max*100).toFixed(1)+
+           '" style="background:'+n.c+'"></div></div></div>';
+      });
+      body.innerHTML=h+'</div>';
+    } else {
+      body.innerHTML='<div class="prose"><h3 style="margin-bottom:.9rem">What the numbers mean</h3><p>'+
+        esc(n.intel)+'</p><h3 style="margin:1.8rem 0 .9rem">Where it could break</h3><p>'+esc(n.risk)+'</p></div>';
+    }
+    requestAnimationFrame(function(){
+      body.querySelectorAll(".fill").forEach(function(f){f.style.width=f.dataset.w+"%"});
+    });
+  }
+  render();
+})();
+
+/* ═══════════ TIMELINE ═══════════ */
+(function(){
+  var h="";
+  TL.forEach(function(e){
+    h+='<div class="tl-item" style="--c:'+e.c+'"><div class="tl-when">'+esc(e.w)+
+       '</div><p class="tl-what">'+esc(e.t)+'</p></div>';
+  });
+  $("#tl").innerHTML=h;
+})();
 </script>
 </body>
 </html>
