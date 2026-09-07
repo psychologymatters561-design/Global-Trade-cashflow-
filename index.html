@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <meta name="theme-color" content="#05070d">
-<meta name="description" content="Global Trade Intelligence May 2026: Comprehensive analysis of world trade flows, tariff impacts, sector performance and geopolitical intelligence for USA, China and India.">
-<title>Global Trade Intelligence — May 2026</title>
+<meta name="description" content="Global Trade Intelligence, current to 7 September 2026: world trade flows, the Supreme Court IEEPA tariff ruling, the Strait of Hormuz energy shock, sector performance and geopolitical intelligence for the USA, China and India.">
+<title>Global Trade Intelligence — September 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
@@ -54,16 +54,17 @@ function ce() {
 
 /* ─── TICKER DATA ─── */
 var TICKER = [
-  { label: "USA: GOODS DEFICIT — RECORD", value: "$1.33T/yr", note: "All-time high 2025", col: C.red },
-  { label: "CHINA: SURPLUS — RECORD", value: "$1.05T/yr", note: "First $1T+ surplus in history", col: C.green },
-  { label: "INDIA: 4TH ECONOMY", value: "$4.1T", note: "Surpassed UK mid-2025", col: C.gold },
-  { label: "US-CHINA TARIFF", value: "145%", note: "Effective April 2025", col: C.red },
-  { label: "KOREAN HBM AI CHIPS", value: "90%", note: "Of Nvidia GPU memory", col: C.blue },
-  { label: "INDIA IT EXPORTS", value: "$310B+", note: "+10.3% YoY", col: C.gold },
-  { label: "CHINA EV EXPORTS", value: "$120B+", note: "+33% YoY; BYD global leader", col: C.green },
-  { label: "GLOBAL TRADE 2025E", value: "~$32.5T", note: "Despite tariff fragmentation", col: C.blue },
-  { label: "INDIA REMITTANCES", value: "$129B", note: "World #1 recipient 2025", col: C.gold },
-  { label: "USD RESERVE SHARE", value: "57%", note: "Down from 73% in 2001", col: C.muted }
+  { label: "USA: TRADE GAP — 7M 2026", value: "−29.6% YoY", note: "Goods+services deficit down $188.4B YTD (BEA, Jul)", col: C.green },
+  { label: "CHINA: SURPLUS — 7M 2026", value: "$687.4B", note: "Jan–Jul; exports +18.5%, imports +26.7%", col: C.green },
+  { label: "INDIA: GDP RANK", value: "#6 · $4.15T", note: "IMF Apr'26 — NOT 4th; behind UK & Japan", col: C.gold },
+  { label: "INDIA: Q1 FY26-27 GDP", value: "+7.8%", note: "Apr–Jun 2026; fastest major economy", col: C.gold },
+  { label: "BRENT CRUDE", value: "$96.82/bbl", note: "Sep 6 2026; +47% YoY on Hormuz war", col: C.red },
+  { label: "IEEPA TARIFFS STRUCK DOWN", value: "6–3 SCOTUS", note: "Feb 20 2026; refunds ordered to importers", col: C.blue },
+  { label: "US EFFECTIVE TARIFF", value: "~7.1%", note: "Jun 2026; rebuilt on §122/§232/§301", col: C.red },
+  { label: "CHINA NEV EXPORTS", value: "2.36M units", note: "H1 2026; +120% YoY, 46.2% of car exports", col: C.green },
+  { label: "INDIA FX RESERVES", value: "$729.3B", note: "All-time record, week to Aug 21 2026", col: C.gold },
+  { label: "INDIA RUSSIAN CRUDE", value: ">50%", note: "Of oil imports, Jun–Jul 2026 peak", col: C.gold },
+  { label: "USD RESERVE SHARE", value: "57.13%", note: "IMF COFER Q1 2026; up from 56.42%", col: C.muted }
 ];
 
 /* ─── NATIONS DATA ─── */
@@ -72,63 +73,64 @@ var NATIONS = [
 /* ══════════════════ USA ══════════════════ */
 {
   id: "usa", flag: "🇺🇸", name: "United States", short: "USA", no: "01", col: "#3d7fd4",
-  gdp: "$29.7T", tradeBalance: "deficit", balLabel: "GOODS DEFICIT −$1.33T/yr (RECORD)",
-  headline: "Trump tariff shock reshaped global trade in 2025. The goods deficit hit a record $1.33T as import front-running surged in Q1 before tariffs landed. Mexico is now the #1 import source. The era of frictionless globalisation is over.",
+  gdp: "$30.8T", tradeBalance: "deficit", balLabel: "TRADE GAP −29.6% YTD — SHARPEST NARROWING ON RECORD",
+  headline: "The tariff architecture of 2025 was dismantled in court, not at the negotiating table: on February 20, 2026 the Supreme Court ruled 6–3 that IEEPA gives no president tariff power, voiding the emergency duties and forcing refunds. Washington rebuilt the wall on §122, §232 and §301 authorities, leaving an average effective rate near 7.1%. Combined with an energy-export windfall from the Hormuz war, the result is the sharpest deficit narrowing on record — the goods-and-services gap fell $188.4B, or 29.6%, in the first seven months of 2026 as exports rose 12.0% against just 1.9% import growth.",
 
   vitals: [
-    { k: "GDP 2025",          v: "$29.7T",   s: "World #1 economy",             d: "+2.4% real" },
-    { k: "Goods Exports",     v: "$2.05T",   s: "2025 estimate",                d: "−2.4% YoY" },
-    { k: "Goods Imports",     v: "$3.38T",   s: "World #1 importer — record",   d: "+5.6% YoY" },
-    { k: "Services Exports",  v: "$995B",    s: "IP, finance, cloud, edu",      d: "+7.5% YoY" },
-    { k: "Services Surplus",  v: "+$300B",   s: "Partially offsets goods gap",  d: "Structural" },
-    { k: "Goods Deficit",     v: "−$1.33T",  s: "All-time record 2025",         d: "↑ from $1.1T" },
-    { k: "USD Reserve Share", v: "57%",      s: "Down from 59% in 2024",        d: "−0.7pp/yr" },
-    { k: "FDI Inflows 2025",  v: "$340B",    s: "Nearshoring + CHIPS Act",      d: "+9% YoY" },
-    { k: "IP Royalties",      v: "$145B+",   s: "Invisible export powerhouse",  d: "+8% YoY" },
-    { k: "China Tariff Rate", v: "145%",     s: "Effective Apr 2025",           d: "Historic high" },
-    { k: "AI/Cloud Surplus",  v: "~$320B",   s: "Services trade surplus est.",  d: "Widening fast" },
-    { k: "Trade/GDP Ratio",   v: "~27%",     s: "Relatively self-contained",    d: "Stable" }
+    { k: "GDP Growth Q2'26",  v: "+1.5%",    s: "Annualised; slowed from 2.1% Q1",   d: "Oil shock drag" },
+    { k: "Trade Gap 7M-2026", v: "−29.6%",   s: "−$188.4B vs Jan–Jul 2025 (BEA)",    d: "Record narrowing" },
+    { k: "Exports 7M-2026",   v: "+12.0%",   s: "+$237.2B YTD; energy + AI goods",   d: "Boom" },
+    { k: "Imports 7M-2026",   v: "+1.9%",    s: "+$48.8B YTD; tariff-suppressed",    d: "Near-flat" },
+    { k: "Jul 2026 Deficit",  v: "−$88.6B",  s: "Widened from $71.2B in June",       d: "+$17.4B M/M" },
+    { k: "Jul Goods Deficit", v: "−$119.6B", s: "Monthly; imports $399.3B",          d: "+$17.6B M/M" },
+    { k: "Jul Services Surp.",v: "+$31.0B",  s: "IP, finance, cloud, edu",           d: "+$0.2B M/M" },
+    { k: "USD Reserve Share", v: "57.13%",   s: "IMF COFER Q1'26; EUR 20.03%",       d: "+0.71pp Q/Q" },
+    { k: "Avg Effective Tariff",v: "~7.1%",  s: "Jun'26; §122/§232/§301 post-IEEPA", d: "Court-reset" },
+    { k: "China Tariff Rate", v: "~37.5%",   s: "12.5% reciprocal + 25% §301",       d: "Truce to Nov'26" },
+    { k: "Customs Duties CY25",v: "$287B",   s: "+192% YoY; refunds now offsetting", d: "Under appeal" },
+    { k: "Goods Deficit 2025",v: "−$1.24T",  s: "Record baseline year (Census)",     d: "Now shrinking" }
   ],
 
   trade6: [
     { y: "2019", x: 1645, m: 2524 }, { y: "2020", x: 1431, m: 2330 },
     { y: "2021", x: 1751, m: 2853 }, { y: "2022", x: 2067, m: 3176 },
     { y: "2023", x: 2019, m: 3115 }, { y: "2024", x: 2100, m: 3200 },
-    { y: "2025", x: 2050, m: 3380 }
+    { y: "2025", x: 2170, m: 3410 }
   ],
 
   expPartners: [
-    { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft dominant" },
-    { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA integration" },
-    { c: "Mexico",   p: 15.3, v: "$314B", note: "Nearshoring hub" },
-    { c: "China",    p: 6.5,  v: "$133B", note: "145% tariff effect; down from 7.3%" },
-    { c: "UK",       p: 4.1,  v: "$84B",  note: "US-UK trade deal May 2025" },
-    { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally" },
-    { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner" },
-    { c: "India",    p: 2.7,  v: "$55B",  note: "Fastest-rising partner" }
+    { c: "EU-27",    p: 17.8, v: "$365B", note: "Services + aircraft; energy exports surging on Hormuz" },
+    { c: "Canada",   p: 17.1, v: "$351B", note: "USMCA; ~$145.4B of US exports Jan–May 2026" },
+    { c: "Mexico",   p: 15.4, v: "$334B", note: "#1 destination — $162.2B Jan–May 2026, from $139.8B" },
+    { c: "China",    p: 6.6,  v: "$143.5B", note: "Tariff-war effect; ~37.5% blended rate on the return leg" },
+    { c: "UK",       p: 4.1,  v: "$84B",  note: "US–UK deal May 2025; a top-5 US LNG destination in 2026" },
+    { c: "Japan",    p: 3.8,  v: "$78B",  note: "Security + tech ally; Asia overtook Europe for US LNG Jun'26" },
+    { c: "S. Korea", p: 2.9,  v: "$60B",  note: "Semiconductor partner; AI supply-chain linked" },
+    { c: "India",    p: 2.7,  v: "$55B",  note: "Fastest-rising partner; 18% US tariff since Feb 2026" }
   ],
 
   impPartners: [
     { c: "EU-27",    p: 18.2, v: "$614B",  note: "Vehicles, pharma, machinery" },
-    { c: "Mexico",   p: 14.1, v: "$476B",  note: "#1 goods source; auto, electronics" },
-    { c: "China",    p: 13.4, v: "$452B",  note: "Down from 16.5%; tariff-rerouted" },
-    { c: "Canada",   p: 12.5, v: "$422B",  note: "Energy, autos, lumber" },
+    { c: "Mexico",   p: 14.8, v: "$505.9B", note: "#1 source — $242.9B YTD 2026; auto, electronics" },
+    { c: "China",    p: 12.9, v: "$438.9B", note: "Slipped to 4th in 2026 — $104.2B YTD, −$97.1B YoY; ~37.5% blended" },
+    { c: "Canada",   p: 12.1, v: "$412.7B", note: "Energy, autos, lumber — $163.0B YTD 2026" },
+    { c: "Taiwan",   p: 5.6,  v: "$176.7B", note: "OVERTOOK CHINA IN 2026 — AI servers; advanced systems +93.5%" },
     { c: "Japan",    p: 4.6,  v: "$155B",  note: "Vehicles, precision machinery" },
-    { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "China+1 routing; up +18% YoY" },
+    { c: "Vietnam",  p: 4.2,  v: "$142B",  note: "$55.9B YTD 2026 — closing on China's share" },
     { c: "Germany",  p: 4.3,  v: "$145B",  note: "Vehicles, pharma, chemicals" },
-    { c: "India",    p: 2.8,  v: "$95B",   note: "Pharma, textiles, gems" }
+    { c: "India",    p: 2.8,  v: "$95B",   note: "Pharma, textiles, gems; 18% US tariff since Feb 2026" }
   ],
 
   topExports: [
     { n: "IP Royalties & licensing fees",         v: "$145B+", pct: 7.1, cat: "Services" },
     { n: "Financial & insurance services",        v: "$135B",  pct: 6.6, cat: "Services" },
     { n: "Travel & education services",           v: "$128B",  pct: 6.2, cat: "Services" },
-    { n: "Refined petroleum products",            v: "$171B",  pct: 8.3, cat: "Energy" },
+    { n: "Refined petroleum products (record 2026 export year)", v: "$171B",  pct: 8.3, cat: "Energy" },
     { n: "Cloud computing & digital services",    v: "$110B",  pct: 5.4, cat: "Services" },
     { n: "Civilian aircraft, engines & parts",    v: "$105B",  pct: 5.1, cat: "Aerospace" },
     { n: "Pharmaceutical preparations",           v: "$70B",   pct: 3.4, cat: "Pharma" },
     { n: "Semiconductors & integrated circuits",  v: "$63B",   pct: 3.1, cat: "Tech" },
-    { n: "Natural gas (LNG — world #2 exporter)", v: "$56B",   pct: 2.7, cat: "Energy" },
+    { n: "Natural gas (LNG — record 17.4 Bcf/d H1'26, +23%)", v: "$56B",   pct: 2.7, cat: "Energy" },
     { n: "Motor vehicles & passenger cars",       v: "$58B",   pct: 2.8, cat: "Auto" },
     { n: "Industrial machinery & equipment",      v: "$53B",   pct: 2.6, cat: "Machinery" },
     { n: "Medical instruments & devices",         v: "$48B",   pct: 2.3, cat: "Medical" },
@@ -141,11 +143,11 @@ var NATIONS = [
     { n: "Agricultural products (total)",         v: "$220B",  pct: 6.5, cat: "Agri" },
     { n: "Passenger vehicles & cars",             v: "$228B",  pct: 6.7, cat: "Auto" },
     { n: "Industrial machinery & equipment",      v: "$175B",  pct: 5.2, cat: "Machinery" },
-    { n: "Crude petroleum oil",                   v: "$165B",  pct: 4.9, cat: "Energy" },
+    { n: "Crude petroleum (repriced by Hormuz war)", v: "$165B",  pct: 4.9, cat: "Energy" },
     { n: "Pharmaceutical preparations",           v: "$128B",  pct: 3.8, cat: "Pharma" },
     { n: "Cell phones & smartphones",             v: "$115B",  pct: 3.4, cat: "Tech" },
     { n: "Apparel & clothing",                    v: "$88B",   pct: 2.6, cat: "Textile" },
-    { n: "Computers & laptops",                   v: "$85B",   pct: 2.5, cat: "Tech" },
+    { n: "Computers & AI servers (Taiwan-led 2026)", v: "$85B",   pct: 2.5, cat: "Tech" },
     { n: "Motor vehicle parts",                   v: "$72B",   pct: 2.1, cat: "Auto" },
     { n: "Computer accessories & peripherals",    v: "$62B",   pct: 1.8, cat: "Tech" },
     { n: "Furniture & household goods",           v: "$33B",   pct: 1.0, cat: "Consumer" },
@@ -164,71 +166,77 @@ var NATIONS = [
     { y: "2024",     t: "Trump 2.0 wins November election. Pre-tariff import front-running begins Q4. TSMC Arizona Fab 1 starts producing chips. US goods deficit: $1.10T. AI boom: Nvidia revenue up 122%." },
     { y: "2025 Q1",  t: "Executive orders impose 145% tariff on Chinese goods, 25% on Canada and Mexico (then paused). Goods deficit spikes to record $1.33T annualised rate as companies rush imports ahead of tariff deadlines." },
     { y: "2025 Q2",  t: "US–UK trade deal framework announced May 8 (first post-Brexit deal). 90-day tariff pause granted to most nations (excluding China). Golden Dome missile defence initiative launched. US–India trade talks intensify." },
-    { y: "2025 Q3–Q4", t: "Tariff revenues exceed $300B/yr for first time. US manufacturing investment announcements surge to record $860B+. TSMC Arizona begins 3nm production. Dollar remains reserve currency at 57% — stable despite pressure." },
-    { y: "2026",     t: "US reshoring accelerates: 40+ announced semiconductor, EV battery, and pharma facilities. AI/cloud services export surplus widens to ~$320B. Goods deficit begins narrowing slowly from record as tariff effects compound. Trade architecture shifting from bilateral to bloc-based." }
+    { y: "2025 Q3–Q4", t: "Tariff revenues exceed $300B/yr for first time. US manufacturing investment announcements surge to record $860B+. TSMC Arizona begins 3nm production. Full-year goods deficit lands at a record $1.24T; services surplus rises to $339.5B (+8.9%)." },
+    { y: "2025 Nov",  t: "US and China agree a one-year tariff-reduction extension (to Nov 10, 2026) after a Geneva-brokered truce cuts the headline reciprocal tariff from its 145% peak. Blended effective China rate settles in the 30s once Section 301, IEEPA and MFN layers are combined." },
+    { y: "2026 Feb",  t: "SUPREME COURT VOIDS THE TARIFF REGIME: on February 20 the Court rules 6–3 (Roberts writing) that IEEPA does not authorise the president to impose tariffs, affirming the Federal Circuit. The emergency duties are revoked and billions in collected revenue become refundable. Separately, a US–India interim deal cuts the tariff on Indian goods from a 50% peak to 18%." },
+    { y: "2026 Feb–Mar", t: "HORMUZ WAR: US and Israeli operations against Iran in late February trigger Iranian attacks on commercial shipping and the effective closure of the Strait of Hormuz. Crude and product flows through the Strait collapse from ~20 mb/d to a trickle; Gulf producers cut at least 10 mb/d. Brent rises ~65% ($46/bbl) by end-March — the largest monthly gain ever recorded." },
+    { y: "2026 Mar",  t: "The Court of International Trade orders CBP to liquidate and reliquidate entries without IEEPA duties. Washington rebuilds tariffs on other authorities: a 10% §122 global baseline, §232 duties of 25–50% on steel, aluminium, copper, autos, semiconductors and lumber, and §301 duties of 7.5–100% on China. Average effective rate settles near 7.1%." },
+    { y: "2026 May",  t: "IEEPA refunds accelerate to the point that Treasury pays out more in customs refunds than it collects for the month. The spring oil spike pushes headline inflation above 4% before easing; Q2 GDP growth slows to 1.5% annualised from 2.1% in Q1." },
+    { y: "2026 Jul",  t: "USTR imposes a fresh 12.5% forced-labor tariff on Chinese goods on July 23, lifting the blended China rate to roughly 37.5% on most consumer electronics and machinery even as the broader truce holds. FY2026 customs duties reach $154.5B through July, +13.8% YoY despite the refunds." },
+    { y: "2026 Sep",  t: "July trade data (released Sep 3) confirms the structural shift: the goods-and-services deficit is down $188.4B, or 29.6%, year-to-date — exports +12.0% against imports +1.9%. Brent trades near $96.82 as US–Iran strikes resume, keeping the energy-export windfall and the inflation risk running together." }
   ],
 
-  intel: "The USA runs a structural goods deficit by design — it exports dollars, IP, and digital services, and imports physical goods. The real power is invisible: IP licensing ($145B+), financial services ($135B), and cloud computing ($110B) generate a combined ~$390B/yr invisible surplus that offsets much of the goods gap. The 2025 tariff shock did NOT reduce the deficit in Year 1 — it temporarily inflated imports as companies front-ran tariffs, causing the record $1.33T gap. This is the paradox of tariff policy: announcing tariffs causes the exact behaviour they are meant to prevent. Mexico, not China, is now structurally the #1 US import source — supply chains have physically moved. TSMC Arizona is producing at scale (5nm in 2024, 3nm starting 2026), reducing but not eliminating chip dependency. The real US competitive moat remains: it sets the global standards for AI, cloud, finance, and IP — and every global business pays rent to that system.",
+  intel: "The deficit is finally narrowing — but read why before you call it a policy win. Three forces did the work, and only one was intentional. First, the courts: the Supreme Court's 6–3 ruling on February 20, 2026 held that IEEPA confers no tariff power at all, voiding the emergency duties and forcing refunds that in May exceeded collections for the month. Washington rebuilt the wall on §122, §232 and §301 — sturdier legally, narrower in reach, and averaging ~7.1% rather than the headline rates of 2025. Second, the Hormuz war: with Gulf supply down 10 mb/d and Brent up roughly 47% year-over-year, America's position as a net energy exporter turned a global catastrophe into an export windfall. That is most of the +12.0% export growth. Third, tariffs did suppress imports — but to +1.9%, not negative; the physical goods still come, they just cost more. The invisible surplus remains the real moat: IP licensing, finance and cloud together clear roughly $390B a year, and the dollar's COFER share actually rose to 57.13% in Q1 2026. A narrowing deficit built on a war premium and a court ruling is not the same as a rebalanced economy.",
 
-  risk: "PRIMARY RISK: TSMC dependency is diminishing but not resolved — Arizona fabs handle legacy and mid-range nodes, but 2nm leading-edge production remains 55–60% Taiwan-concentrated through 2027. A Taiwan Strait military event still causes 6–9 months of acute semiconductor disruption globally. SECONDARY: Record $1.33T goods deficit combined with federal debt/GDP at ~125% creates dollar credibility risk if the Fed loses inflation control or foreign holders reduce Treasury exposure. THIRD: Tariff retaliation has cost US agricultural exporters ~$18B in lost annual sales; soybean exports to China down 30% from 2018 peak; corn and pork sectors also impacted. WILDCARD: AI/cloud infrastructure concentration — four US firms (AWS, Azure, Google, Oracle) control ~65% of global cloud capacity; any major cyberattack, regulatory fragmentation (EU AI Act enforcement), or geopolitical access denial creates cascading trade disruption."
+  risk: "PRIMARY RISK: the deficit improvement is borrowed, not earned. Strip out the energy-price windfall and the import suppression, and the underlying goods gap is intact — a Hormuz de-escalation that returns Brent to the $60s would reverse much of the 29.6% narrowing within two quarters. SECONDARY: legal exposure from the IEEPA ruling is still open-ended; refund liability runs to the tens of billions, the §122 baseline carried a statutory expiry, and every replacement authority invites its own litigation — trade policy now moves at the speed of the courts, not the executive. THIRD: TSMC dependency is diminishing but unresolved. Arizona handles legacy and mid-range nodes, yet 2nm leading-edge output stays 55–60% Taiwan-concentrated through 2027; a Strait event still means 6–9 months of acute global semiconductor disruption. FOURTH: the oil shock pushed headline inflation above 4% in the spring and Q2 growth slowed to 1.5% — a second energy leg with federal debt/GDP near 125% is the stagflation scenario. WILDCARD: the China truce expires November 10, 2026, and the July forced-labor tariff shows de-escalation is not linear; a breakdown re-spikes the blended rate well above the current ~37.5%."
 },
 
 /* ══════════════════ CHINA ══════════════════ */
 {
   id: "china", flag: "🇨🇳", name: "China", short: "CHINA", no: "02", col: "#c43c3c",
-  gdp: "$19.5T", tradeBalance: "surplus", balLabel: "GOODS SURPLUS +$1.05T/yr (RECORD)",
-  headline: "China's goods surplus crossed $1 trillion in 2025 — the largest ever recorded by any nation in history. The export machine runs at full capacity despite 145% US tariffs: goods are rerouted through Vietnam, Malaysia, and Mexico. EVs, solar, and batteries are the new electronics.",
+  gdp: "$20.0T", tradeBalance: "surplus", balLabel: "SURPLUS +$687.4B IN 7M 2026 — EXPORTS +18.5%",
+  headline: "China is exporting harder than ever into a market that no longer wants it. Through July 2026 exports ran 18.5% ahead of last year and imports 26.7% ahead, holding the surplus at $687.4B for seven months. The composition is what changed: semiconductor exports nearly doubled in value and high-tech shipments rose 40.7%, while exports to the United States fell 10% and ASEAN — now 18% of China's goods exports against America's 11% — became the primary destination. Domestically the picture is weaker: Q2 GDP grew just 4.3%, the slowest since late 2022.",
 
   vitals: [
-    { k: "GDP 2025",             v: "$19.5T",   s: "World #2; ~5.0% growth",          d: "+5.0% real" },
-    { k: "Goods Exports",        v: "$3.75T",   s: "World #1 — all-time record",      d: "+4.9% YoY" },
-    { k: "Goods Imports",        v: "$2.70T",   s: "World #2 importer",               d: "+4.2% YoY" },
-    { k: "Trade Surplus 2025",   v: "+$1.05T",  s: "First $1T+ surplus in history",   d: "Record high" },
-    { k: "EV Exports 2025",      v: "$120B+",   s: "#1 global EV exporter",           d: "+33% YoY" },
-    { k: "Semiconductor Imports",v: "$310B+",   s: "Biggest single vulnerability",    d: "Rising" },
-    { k: "Yuan SWIFT Share",     v: "5.1%",     s: "Up from 4.7% in 2024",           d: "+0.4pp/yr" },
-    { k: "Property Sector/GDP",  v: "~22%",     s: "Down from 25–30%; contracting",  d: "Stabilising" },
-    { k: "BRI Investment Total", v: "$1.2T+",   s: "150+ partner nations",            d: "Ongoing" },
-    { k: "FDI Inflows 2025",     v: "$148B",    s: "Down amid geopolitical risk",     d: "−9% YoY" },
-    { k: "FDI Outflows 2025",    v: "$165B",    s: "BRI + overseas acquisitions",     d: "+11% YoY" },
-    { k: "US Tariff Rate",       v: "145%",     s: "Effective April 2025",            d: "Historic max" }
+    { k: "GDP Growth Q2'26",  v: "+4.3%",    s: "Slowest since Q4 2022; Q1 was 5.0%", d: "H1: +4.7%" },
+    { k: "Exports 7M-2026",   v: "+18.5%",   s: "Jan–Jul YoY; AI and chip-led",     d: "Booming" },
+    { k: "Imports 7M-2026",   v: "+26.7%",   s: "Jan–Jul YoY; energy cost surge",   d: "Outpacing exports" },
+    { k: "Surplus 7M-2026",   v: "+$687.4B", s: "Vs $683.5B a year earlier",        d: "Roughly flat" },
+    { k: "Jul 2026 Exports",  v: "$397.9B",  s: "Monthly record; +23.9% YoY",       d: "Beat forecast" },
+    { k: "Jul 2026 Surplus",  v: "+$112.5B", s: "Vs $97.7B in Jul 2025",            d: "+15% YoY" },
+    { k: "High-Tech Exports", v: "+40.7%",   s: "Semiconductors nearly doubled",    d: "New export engine" },
+    { k: "NEV Exports H1'26", v: "2.36M units", s: "46.2% of all vehicle exports",  d: "+120% YoY" },
+    { k: "Exports to USA",    v: "−10%",     s: "US share down to 11% of exports",  d: "Structural loss" },
+    { k: "Exports to ASEAN",  v: "+19%",     s: "Now 18% of exports — #1 market",   d: "Rerouting hub" },
+    { k: "US Tariff Rate",    v: "~37.5%",   s: "12.5% reciprocal + 25% §301",      d: "Truce to Nov'26" },
+    { k: "Trade Surplus 2025",v: "+$1.19T",  s: "Record baseline; first above $1T", d: "+20% YoY" }
   ],
 
   trade6: [
     { y: "2019", x: 2499, m: 2077 }, { y: "2020", x: 2723, m: 2059 },
     { y: "2021", x: 3364, m: 2688 }, { y: "2022", x: 3594, m: 2716 },
     { y: "2023", x: 3380, m: 2557 }, { y: "2024", x: 3577, m: 2590 },
-    { y: "2025", x: 3750, m: 2700 }
+    { y: "2025", x: 3770, m: 2580 }
   ],
 
   expPartners: [
-    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "Largest bloc; major rerouting hub" },
-    { c: "EU-27",     p: 15.8, v: "$593B",  note: "35–48% EV tariff imposed 2024" },
-    { c: "USA",       p: 12.9, v: "$484B",  note: "145% tariff; routing via 3rd nations" },
+    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "#1 partner — ¥5.14T in 7M 2026, +20%; ~$77B US-bound rerouted" },
+    { c: "EU-27",     p: 15.8, v: "$593B",  note: "¥3.67T in 7M 2026, +9.5%; 35–48% EV tariff since 2024" },
+    { c: "USA",       p: 11.1, v: "$421B",  note: "¥2.38T in 7M 2026, −1.6%; US down to ~11% of exports" },
     { c: "Hong Kong", p: 8.3,  v: "$311B",  note: "Re-export and financial gateway" },
-    { c: "Japan",     p: 4.8,  v: "$180B",  note: "Declining; political tension" },
-    { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Chips trade; strategic balance" },
-    { c: "India",     p: 3.8,  v: "$143B",  note: "China's 2nd-largest bilateral surplus" },
-    { c: "Russia",    p: 3.2,  v: "$120B",  note: "Post-sanctions pivot; machinery" }
+    { c: "Japan",     p: 4.8,  v: "$180B",  note: "Exports to Japan +14.0% YoY in July 2026" },
+    { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Exports +46.6% YoY in Jul'26 — AI chip supply chain" },
+    { c: "India",     p: 3.8,  v: "$143B",  note: "China's 2nd-largest bilateral surplus; India's #1 source" },
+    { c: "Russia",    p: 3.2,  v: "$120B",  note: "Post-sanctions pivot; machinery, autos, electronics" }
   ],
 
   impPartners: [
-    { c: "ASEAN",       p: 16.3, v: "$440B",  note: "Components, parts, assembly inputs" },
-    { c: "S. Korea",    p: 9.2,  v: "$248B",  note: "Memory chips; SK Hynix, Samsung" },
+    { c: "ASEAN",       p: 16.3, v: "$440B",  note: "Intermediate goods +24.5% — two-thirds of China–ASEAN trade" },
+    { c: "S. Korea",    p: 9.2,  v: "$248B",  note: "Memory chips; HBM for AI accelerators — flows +46.6% Jul'26" },
     { c: "Japan",       p: 7.8,  v: "$211B",  note: "Precision machinery, process tools" },
     { c: "Taiwan",      p: 7.5,  v: "$203B",  note: "Semiconductors; TSMC critical inputs" },
     { c: "Australia",   p: 7.2,  v: "$194B",  note: "Iron ore — ~80% of supply" },
-    { c: "Russia",      p: 6.1,  v: "$165B",  note: "Oil & gas at 30–40% market discount" },
-    { c: "Brazil",      p: 5.3,  v: "$143B",  note: "Soybeans, iron ore, agricultural" },
-    { c: "Saudi Arabia",p: 5.0,  v: "$135B",  note: "Top crude oil supplier" }
+    { c: "Russia",      p: 6.1,  v: "$165B",  note: "Discounted oil & gas — avoids Hormuz, safer in 2026" },
+    { c: "Brazil",      p: 5.3,  v: "$143B",  note: "Soybeans, iron ore — displaced US soy" },
+    { c: "Saudi Arabia",p: 5.0,  v: "$135B",  note: "Top crude supplier — Hormuz closure repriced 2026 imports" }
   ],
 
   topExports: [
     { n: "Electrical machinery, equipment & parts",      v: "$978B",  pct: 26.1, cat: "Electronics" },
     { n: "Industrial machinery & mechanical appliances", v: "$598B",  pct: 15.9, cat: "Machinery" },
-    { n: "Integrated circuits & semiconductors",         v: "$195B",  pct: 5.2,  cat: "Tech" },
+    { n: "Integrated circuits (2026: export value ~doubled)", v: "$195B",  pct: 5.2,  cat: "Tech" },
     { n: "Textiles, apparel & garments",                 v: "$158B",  pct: 4.2,  cat: "Textile" },
-    { n: "Electric vehicles (BYD, SAIC, Geely, NIO)",   v: "$120B",  pct: 3.2,  cat: "Auto" },
+    { n: "New-energy vehicles (2.36M units in H1 2026)",  v: "~$37B",  pct: 1.0,  cat: "Auto" },
     { n: "Plastics & plastic articles",                  v: "$84B",   pct: 2.2,  cat: "Chemical" },
     { n: "Steel & iron products",                        v: "$80B",   pct: 2.1,  cat: "Metal" },
     { n: "Optical & precision instruments",              v: "$78B",   pct: 2.1,  cat: "Tech" },
@@ -242,7 +250,7 @@ var NATIONS = [
   ],
 
   topImports: [
-    { n: "Crude petroleum & oils",                       v: "$430B+", pct: 15.9, cat: "Energy" },
+    { n: "Crude petroleum & oils (repriced by Hormuz war)", v: "$430B+", pct: 15.9, cat: "Energy" },
     { n: "Semiconductors & integrated circuits",         v: "$310B+", pct: 11.5, cat: "Tech" },
     { n: "Iron ore & concentrates",                      v: "$125B+", pct: 4.6,  cat: "Metal" },
     { n: "Natural gas (LNG + pipeline from Russia)",     v: "$68B",   pct: 2.5,  cat: "Energy" },
@@ -266,69 +274,75 @@ var NATIONS = [
     { y: "2022",       t: "Russia invades Ukraine: China–Russia trade surges +30% as China buys sanctioned Russian oil at $20–30/barrel discount. Zero-COVID weighs on Q2. Evergrande default ($300B+ debt). Property crisis spreads. Surplus reaches record $878B." },
     { y: "2023",       t: "BRI Forum: 150+ nations. BRICS expands to include Saudi Arabia, UAE, Ethiopia, Iran, Egypt, Argentina. Huawei Mate 60 Pro shipped — evidence of domestic 7nm chip capability. EV exports +70% YoY; BYD overtakes Tesla in EV units sold globally." },
     { y: "2024",       t: "EV exports reach $90B — BYD dominates. EU imposes 35–48% tariffs on Chinese EVs. China surplus hits $987B — near $1T. Apple revenue in China −11%. China retaliates to US chip curbs: restricts gallium, germanium, graphite exports critical for chip-making." },
-    { y: "2025 Q1–Q2", t: "US imposes 145% tariff on Chinese goods. China retaliates with 125% tariff on US goods. Goods rerouted through Vietnam, Malaysia, and Mexico — 40% of 'Vietnam exports' to US contain Chinese components (audited). China's surplus crosses $1T for first time in history." },
-    { y: "2025 Q3–Q4", t: "BRICS+ settles 28% of cross-border transactions in non-dollar currencies. China–Saudi oil trade partially in yuan. SMIC advances to 5nm (domestic). PBoC injects $400B+ stimulus for property sector. Yuan managed at 7.18–7.25 vs USD to remain competitive." },
-    { y: "2026",       t: "China surplus remains above $1T. EV exports rerouted via SEA factories: BYD Thailand and Mexico plants now operational. AI hardware: Huawei Ascend 910C competes with Nvidia A100 domestically. Global South trade grows 22%+. US–China tech decoupling accelerates — dual global tech ecosystems forming." }
+    { y: "2025 Q1–Q2", t: "US imposes 145% peak tariff on Chinese goods. China retaliates with 125% tariff on US goods. Goods rerouted through Vietnam, Malaysia, and Mexico — 40% of 'Vietnam exports' to US contain Chinese components (audited)." },
+    { y: "2025 Q3–Q4", t: "BRICS+ settles 28% of cross-border transactions in non-dollar currencies. SMIC advances to 5nm (domestic). PBoC injects $400B+ stimulus for property sector. Full-year data: exports $3.77T (+5.5%), imports flat at $2.58T — surplus surges 20% to a record $1.19T." },
+    { y: "2025 Nov",   t: "Geneva-brokered US–China tariff truce extended one year (to Nov 10, 2026): headline reciprocal tariff cut from its 145% peak. Disputes over semiconductors and rare earths remain unresolved." },
+    { y: "2026 Feb",   t: "The US Supreme Court voids the IEEPA tariffs 6–3, collapsing the legal basis for the emergency duties on Chinese goods. Washington rebuilds using Section 301 and Section 232 instead — narrower authorities, but ones China cannot litigate away. Effective rates fall, then climb again through the year." },
+    { y: "2026 Feb–Mar", t: "The Hormuz closure hits China harder than any other major economy: it is the largest buyer of Gulf crude, and roughly a quarter of seaborne oil transits the Strait. Import values surge 26.7% YTD largely on price, not volume — a direct transfer of Chinese industrial margin to energy exporters, and the main reason the surplus stopped growing." },
+    { y: "2026 H1",    t: "NEV exports reach 2.355M units, up 120% year-on-year and 46.2% of all vehicle exports; in June monthly vehicle exports top 1 million for the first time and NEVs exceed half of them. Pure-electric passenger car exports hit $24.9B, +56.5% in value. BYD\'s Thailand and Mexico plants run at scale, converting export volume into local assembly." },
+    { y: "2026 Jul",   t: "Exports jump 23.9% YoY to a monthly record $397.9B; semiconductor export value nearly doubles and high-tech shipments rise 40.7%. USTR adds a 12.5% forced-labor tariff on July 23, lifting the blended US rate to roughly 37.5%. Q2 GDP comes in at 4.3% — the weakest since 2022 — as domestic demand and investment stay soft." },
+    { y: "2026 Sep",   t: "The rerouting is now measurable: about $77B of US-bound Chinese goods have been redirected through ASEAN since April, exports to the US are down 10% for the year, and ASEAN at 18% of China\'s exports has decisively overtaken America at 11%. The export machine did not shrink — it changed address." }
   ],
 
-  intel: "China's $1T+ goods surplus in 2025 is the largest single-nation trade surplus in world history — and it is structural, not cyclical. China produces more than its internal economy consumes, so the surplus is an outlet valve for chronic overproduction. The 145% US tariff has NOT stopped Chinese exports — it redirected them. Vietnam's exports to the US grew +18% in 2025; when audited, ~40% contained Chinese components or were fully assembled in China and transshipped. The BRI is evolving from infrastructure loans into an alternative monetary ecosystem: CIPS (Cross-Border Interbank Payment System) now handles 47% of China's yuan settlements, and the BRICS mBridge platform is being piloted. The EV wave is the new China threat: $120B in EV exports means the West's auto sector faces the same existential challenge that Japanese and Korean cars posed in the 1980s — but faster, better-capitalised, and state-backed.",
+  intel: "The headline number hides the real story. China's surplus is roughly flat year-on-year — $687.4B over seven months against $683.5B — but that flatness is the product of two violent opposing forces, not calm. Exports are up 18.5% and imports up 26.7%; the import surge is overwhelmingly the Hormuz energy bill, a direct transfer of Chinese industrial margin to oil exporters. Meanwhile the export mix has transformed: semiconductor export value nearly doubled and high-tech shipments rose 40.7%, so the country that spent a decade as the world's assembly floor is now selling the AI supply chain's components. The geography flipped too. Exports to the US are down 10% and America is now just 11% of Chinese exports, while ASEAN at 18% has become the primary market — roughly $77B of US-bound goods rerouted through Southeast Asia since April alone. Tariffs did not stop the machine; they changed its address. The vulnerability is domestic, not external: Q2 GDP grew 4.3%, the slowest since 2022, because a country that exports its overproduction cannot consume its way out when the world starts taxing the outlet valve.",
 
-  risk: "PRIMARY RISK: Property sector debt exceeds $6T; developer defaults are structurally compressing domestic demand and creating a deflationary spiral risk. Steel, cement, and glass demand are down 15–20% from peak — drag on commodity exporters globally. SECONDARY RISK: Semiconductor independence is the stated 2027 goal — SMIC has reached 5nm but remains 2–3 generations behind TSMC; advanced chipmaking tools (ASML EUV, KLA, Applied Materials) are fully sanctioned — domestic alternatives are years away. THIRD RISK: Taiwan Strait military action would be economically suicidal for China — China's entire export machine depends on Pacific shipping lanes; a conflict isolates China's trade more than Taiwan's. WILDCARD: BRICS de-dollarisation is accelerating but fragile — no BRICS currency has the liquidity depth to replace USD in commodity pricing; a failed de-dollarisation attempt could trigger EM currency crises and boomerang back onto China's $3T+ in FX reserves."
+  risk: "PRIMARY RISK: the growth engine is stalling underneath a strong export headline — Q2 GDP of 4.3% is the weakest since 2022, with property debt above $6T still compressing domestic demand and steel, cement and glass demand down 15–20% from peak. An export boom cannot offset a consumption economy that will not start. SECONDARY: energy exposure is now acute. China is the largest buyer of Gulf crude and the Hormuz closure drove imports up 26.7% on price alone; every month Brent holds near $97 is a margin transfer out of Chinese industry, and a prolonged closure is a far graver threat than any tariff. THIRD: semiconductor independence remains the stated 2027 goal — SMIC has reached 5nm but sits two to three generations behind TSMC, and EUV, KLA and Applied Materials tools are fully sanctioned. That the export mix now leans on chips makes the tooling dependency more dangerous, not less. FOURTH: the ASEAN rerouting that saved 2026 is the obvious target of the next enforcement round; transshipment rules would strand roughly $77B of redirected trade. WILDCARD: Taiwan Strait action stays economically suicidal — China's export machine depends on the very Pacific lanes a conflict would close, and with Hormuz already shut it would face simultaneous chokepoints on both energy in and goods out."
 },
 
 /* ══════════════════ INDIA ══════════════════ */
 {
   id: "india", flag: "🇮🇳", name: "India", short: "INDIA", no: "03", col: "#f97316",
-  gdp: "$4.1T", tradeBalance: "deficit", balLabel: "GOODS DEFICIT −$265B/yr",
-  headline: "India surpassed the UK in mid-2025 to become the world's 4th largest economy at $4.1T GDP. The fastest-growing major economy (6.8% real), India is the geopolitical arbitrage play of the decade: IT services booming, manufacturing scaling via PLI, and Russian oil routed through Indian refineries at a margin.",
+  gdp: "$4.15T", tradeBalance: "deficit", balLabel: "MERCH. DEFICIT −$32.0B IN JULY 2026 — RECORD IMPORTS",
+  headline: "India is the world\'s 6th largest economy, not the 4th: the IMF\'s April 2026 count puts nominal GDP at $4.15T, behind Japan ($4.38T) and the UK ($4.27T), after an 11% rupee slide and a MoSPI base-year revision. It is running the fastest growth of any major economy and the widest trade gap of its history at the same time. Q1 FY2026-27 GDP came in at 7.8%, led by an 11.9% surge in fixed investment. Exports set records — $44.24B of merchandise in July, the best July ever — but the Hormuz war repriced the import bill, driving merchandise imports to $76.22B and pushing Russian crude from 23% of oil imports in January to above 50% by June. Services exports ($421.3B) and record remittances ($144.8B) still carry the external account, and FX reserves hit an all-time $729.3B in August.",
 
   vitals: [
-    { k: "GDP 2025",             v: "$4.1T",   s: "World #4 — surpassed UK mid-2025",  d: "+6.8% real" },
-    { k: "Goods Exports",        v: "$475B",   s: "2025 estimate; record",              d: "+4.9% YoY" },
-    { k: "Goods Imports",        v: "$740B",   s: "Energy, gold, electronics heavy",   d: "+6.1% YoY" },
-    { k: "Services Exports",     v: "$310B+",  s: "World #1 IT services exporter",     d: "+10.3% YoY" },
-    { k: "Services Surplus",     v: "+$165B",  s: "IT/BPO/cloud dominant",             d: "Widening" },
-    { k: "Goods Deficit",        v: "−$265B",  s: "Persistent; energy-driven",         d: "Widening" },
-    { k: "Remittances 2025",     v: "$129B",   s: "World #1 recipient — record",       d: "+7% YoY" },
-    { k: "FDI Inflows 2025",     v: "$75B+",   s: "Manufacturing PLI + digital",       d: "+7% YoY" },
-    { k: "FX Reserves",          v: "$680B+",  s: "RBI record high April 2026",        d: "+$40B YoY" },
-    { k: "Rupee vs USD",         v: "~83.5",   s: "Stable; RBI managed float",         d: "Flat" },
-    { k: "Russian Oil Share",    v: "38%",     s: "Up from 2% pre-2022; structural",   d: "Stable" },
-    { k: "IT Exports Growth",    v: "+10.3%",  s: "AI/cloud boom driving demand",      d: "Accelerating" }
+    { k: "Nominal GDP 2026",   v: "$4.15T",  s: "IMF Apr'26 — WORLD #6, behind UK & Japan", d: "Not 4th" },
+    { k: "GDP Growth Q1 FY27", v: "+7.8%",   s: "Apr–Jun 2026; beat 7.1% consensus", d: "Fastest major" },
+    { k: "Fixed Investment",   v: "+11.9%",  s: "GFCF, Q1 FY26-27 vs 5.8% a year on", d: "Investment-led" },
+    { k: "Jul'26 Merch Exports",v: "$44.2B", s: "Highest-ever July; +19.6% YoY",     d: "Record" },
+    { k: "Jul'26 Merch Imports",v: "$76.2B", s: "+17.5% YoY on energy repricing",    d: "Record" },
+    { k: "Jul'26 Overall Gap",  v: "−$15.0B",s: "Goods+services; +31.5% YoY",        d: "Widening" },
+    { k: "Services Exports",    v: "$421.3B",s: "FY25-26, from $387.5B in FY25",     d: "+8.7% YoY" },
+    { k: "Remittances FY25-26", v: "$144.8B",s: "Record net private transfers",      d: "+16.2% YoY" },
+    { k: "FX Reserves",         v: "$729.3B",s: "All-time high, week to Aug 21 2026", d: "+$12.4B in a week" },
+    { k: "Rupee vs USD",        v: "~94.4",  s: "Off the 96.79 low of May 20 2026",  d: "Stabilising" },
+    { k: "Russian Oil Share",   v: ">50%",   s: "Jun–Jul peak, from 23% in Jan'26",  d: "Hormuz-driven" },
+    { k: "US Tariff Rate",      v: "18%",    s: "Beats Vietnam/Bangladesh at 20%",   d: "Deal unfinished" },
+    { k: "Merch. Deficit FY26", v: "−$333.2B",s: "FY25-26 baseline; exports $441.8B", d: "Widening again" }
   ],
 
   trade6: [
     { y: "2019", x: 330, m: 514 }, { y: "2020", x: 291, m: 394 },
     { y: "2021", x: 395, m: 570 }, { y: "2022", x: 450, m: 714 },
-    { y: "2023", x: 437, m: 677 }, { y: "2024", x: 453, m: 698 },
-    { y: "2025", x: 475, m: 740 }
+    { y: "2023", x: 437, m: 677 }, { y: "2024", x: 438, m: 721 },
+    { y: "2025", x: 442, m: 775 }
   ],
 
   expPartners: [
-    { c: "USA",         p: 17.9, v: "$85B",  note: "IT services + pharma + gems" },
+    { c: "USA",         p: 17.9, v: "$85B",  note: "#1 destination; 18% US tariff since Feb 2026" },
     { c: "UAE",         p: 6.8,  v: "$32B",  note: "Gold re-export hub; diaspora" },
     { c: "Netherlands", p: 4.2,  v: "$20B",  note: "EU entry port for Indian goods" },
-    { c: "China",       p: 3.5,  v: "$17B",  note: "Despite LAC border tensions" },
+    { c: "China",       p: 4.4,  v: "$19.5B", note: "+36.7%; among Apr–Jul 2026's fastest-growing destinations" },
     { c: "Bangladesh",  p: 3.3,  v: "$16B",  note: "Textile inputs; RMG sector" },
-    { c: "UK",          p: 2.9,  v: "$14B",  note: "India-UK FTA near finalisation" },
-    { c: "Singapore",   p: 2.8,  v: "$13B",  note: "ASEAN financial gateway" },
+    { c: "UK",          p: 2.9,  v: "$14B",  note: "India–UK CETA in force 15 Jul 2026 — ~99% zero-duty access" },
+    { c: "Singapore",   p: 2.8,  v: "$13B",  note: "Now a top-3 destination in Apr–Jul 2026" },
     { c: "Germany",     p: 2.4,  v: "$11B",  note: "Machinery + auto components" }
   ],
 
   impPartners: [
-    { c: "China",        p: 15.2, v: "$113B", note: "Electronics, machinery, chemicals" },
-    { c: "Russia",       p: 10.2, v: "$76B",  note: "Discounted crude oil — 38% of imports" },
-    { c: "UAE",          p: 7.4,  v: "$55B",  note: "Gold, petroleum, re-exports" },
-    { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal, aircraft" },
-    { c: "Iraq",         p: 4.8,  v: "$36B",  note: "Crude oil" },
-    { c: "Saudi Arabia", p: 4.5,  v: "$33B",  note: "Crude oil + LPG" },
-    { c: "Switzerland",  p: 4.0,  v: "$30B",  note: "Gold & silver imports" },
+    { c: "China",        p: 14.6, v: "$113B", note: "+27.9% in Apr–Jun 2026; still India's top import source" },
+    { c: "Russia",       p: 8.7,  v: "$67B",  note: "+52.7% Apr–Jun; above 50% of oil imports at the Jun–Jul peak" },
+    { c: "UAE",          p: 8.6,  v: "$66B",  note: "Gold, petroleum, re-exports; Oman up 221.8% alongside" },
+    { c: "USA",          p: 6.7,  v: "$50B",  note: "Machinery, defence, coal; +23.8% in Apr–Jun 2026" },
+    { c: "Iraq",         p: 4.8,  v: "$36B",  note: "Crude oil — ships through Hormuz" },
+    { c: "Saudi Arabia", p: 4.5,  v: "$33B",  note: "Crude oil + LPG; Hormuz-exposed" },
+    { c: "Switzerland",  p: 4.0,  v: "$30B",  note: "Gold & silver; Brazil up 174.7% as sourcing diversifies" },
     { c: "South Korea",  p: 2.8,  v: "$21B",  note: "Electronics, chips, steel" }
   ],
 
   topExports: [
     { n: "IT software, BPO & cloud services",          v: "$185B", pct: 38.9, cat: "Services" },
-    { n: "Refined petroleum products",                 v: "$75B",  pct: 15.8, cat: "Energy" },
+    { n: "Refined petroleum (Jul'26: $6.92B, +67.6% YoY)", v: "$75B",  pct: 15.8, cat: "Energy" },
     { n: "Engineering goods & machinery",              v: "$32B",  pct: 6.7,  cat: "Machinery" },
     { n: "Pharmaceutical preparations (generics)",     v: "$28B",  pct: 5.9,  cat: "Pharma" },
     { n: "Gems & jewellery",                           v: "$26B",  pct: 5.5,  cat: "Luxury" },
@@ -337,7 +351,7 @@ var NATIONS = [
     { n: "Marine products & seafood",                  v: "$7B",   pct: 1.5,  cat: "Agri" },
     { n: "Iron & steel products",                      v: "$12B",  pct: 2.5,  cat: "Metal" },
     { n: "Rice & agricultural commodities",            v: "$12B",  pct: 2.5,  cat: "Agri" },
-    { n: "Electronic components & hardware",           v: "$10B",  pct: 2.1,  cat: "Tech" },
+    { n: "Electronics & smartphones (Jul'26: +57.4% YoY)", v: "$10B",  pct: 2.1,  cat: "Tech" },
     { n: "Auto parts & accessories",                   v: "$8B",   pct: 1.7,  cat: "Auto" },
     { n: "Organic chemicals",                          v: "$6B",   pct: 1.3,  cat: "Chemical" },
     { n: "Coffee, tea & spices",                       v: "$5B",   pct: 1.1,  cat: "Agri" },
@@ -345,7 +359,7 @@ var NATIONS = [
   ],
 
   topImports: [
-    { n: "Crude petroleum & oils",                     v: "$170B", pct: 23.0, cat: "Energy" },
+    { n: "Crude petroleum & oils (>50% Russian by mid-2026)", v: "$170B", pct: 23.0, cat: "Energy" },
     { n: "Electronic components & integrated circuits",v: "$74B",  pct: 10.0, cat: "Tech" },
     { n: "Machinery & industrial equipment",           v: "$60B",  pct: 8.1,  cat: "Machinery" },
     { n: "Gold & precious metals",                     v: "$58B",  pct: 7.8,  cat: "Precious" },
@@ -369,14 +383,19 @@ var NATIONS = [
     { y: "2022",       t: "Russia invades Ukraine: India becomes world's #1 buyer of discounted Russian crude — from 2% to 22% of total imports in 6 months. Energy crisis avoided; India captures $10–14B in refining margin. Rupee hits 82 vs USD. WPI inflation peaks at 15%." },
     { y: "2023",       t: "India becomes world's most populous nation (1.44B, surpasses China officially). G20 presidency — New Delhi Summit September 2023. FDI boom: Apple moves 14% of iPhone production to India (Foxconn + Tata). Rupee stabilises 82–83. PLI electronics shows results." },
     { y: "2024",       t: "Modi wins 3rd term (NDA coalition). India–Middle East–Europe Economic Corridor (IMEC) framework. Russian oil imports reach 38% of crude. IT/AI exports +15% YoY. Remittances record $129B. GDP growth 7.2% — fastest major economy." },
-    { y: "2025 Q1–Q2", t: "India surpasses UK — world's 4th largest economy ($4.1T, mid-2025). Trump tariff: India gets 26% tariff (paused 90 days; negotiations ongoing). Apple and Samsung announce major India expansion. Semiconductor PLI begins — Tata Electronics + PSMC fab breaks ground in Gujarat." },
-    { y: "2025 Q3–Q4", t: "India joins Quad semiconductor technology working group. PLI pharma clusters open in Gujarat + Hyderabad: API manufacturing targets 30% self-sufficiency by 2028. IT exports cross $310B. USD FX reserves hit $670B+ (record). India–UK FTA nearing finalisation." },
-    { y: "2026",       t: "India–UK FTA finalised (signed). India becomes top beneficiary of China+1 manufacturing shift: 60+ global firms announce India facilities. First domestic chip design wins (fabless): Tata Electronics, Kaynes Semicon. GDP trajectory confirmed to $5T by 2027–28. Defence exports hit $2.5B — target $5B by 2030 on track." }
+    { y: "2025 Q1–Q2", t: "India briefly reported as world's 4th largest economy (~$4.1T, mid-2025 estimate). US tariffs on India escalate in stages to a 50% peak amid a standoff over Russian oil purchases. Apple and Samsung announce major India expansion. Semiconductor PLI begins — Tata Electronics + PSMC fab breaks ground in Gujarat." },
+    { y: "2025 Q3–Q4", t: "India joins Quad semiconductor technology working group. PLI pharma clusters open in Gujarat + Hyderabad. Full-year FY25-26 trade data: merchandise exports $441.8B, imports $775.0B, merchandise deficit widens to $333.2B; services exports reach $421.3B (from $387.5B in FY25)." },
+    { y: "2026 Feb",   t: "US–India interim trade deal cuts the tariff on most Indian goods from a 50% peak to 18% — the reciprocal rate drops 25% to 18% and the 25% punitive duty is dropped outright, in recognition of an Indian commitment to wind down Russian oil purchases. Within four months the Hormuz war makes that commitment impossible to keep." },
+    { y: "2026 Feb–Mar", t: "The Strait of Hormuz closes. India — which sources the bulk of its crude from Iraq, Saudi Arabia and the UAE, all shipping through the Strait — faces the sharpest energy shock of any large importer. Brent rises about 65% in a month. The rupee slides toward 96/USD and the import bill reprices overnight." },
+    { y: "2026 Apr",   t: "IMF WEO puts India\'s nominal GDP at $4.15T and RANKS IT 6TH, not 4th — behind Japan ($4.38T) and the UK ($4.27T). Two technical factors did it: an 11% rupee depreciation, and the MoSPI base-year revision (2011-12 to 2022-23) that cut FY26 GDP from ₹357T to ₹345T. Neither is a growth slowdown — India is still the fastest-growing major economy and is forecast to regain 4th place by 2027." },
+    { y: "2026 May–Jul", t: "The Russian-crude pivot goes vertical: Moscow\'s share of Indian oil imports climbs from 23% in January to above 50% in June and July, a record. Russian barrels avoid both Hormuz and Bab el-Mandeb, making them cheaper and physically safer to land. India rejects the notion that it needs Washington\'s permission for its energy sourcing." },
+    { y: "2026 Aug",   t: "FX reserves hit an all-time $729.33B in the week to August 21, jumping $12.4B in seven days — foreign currency assets $591.3B, gold $114.2B — as RBI special deposit schemes for non-resident Indians pull in some $74B. Russian crude intake eases from July\'s record as Ukrainian strikes on Russian export infrastructure and Chinese competition bite." },
+    { y: "2026 Sep",   t: "Q1 FY2026-27 GDP prints at 7.8% with fixed investment up 11.9% — growth is now investment-led rather than consumption-led. India holds out on finalising the US trade deal, seeking terms that beat Vietnam and Bangladesh (20%) rather than merely matching; at 18% it already undercuts both, and Pakistan at 19%." }
   ],
 
-  intel: "India's $4.1T economy is the world's fastest-growing major economy and the clearest single beneficiary of great-power competition between the US and China. The geopolitical arbitrage is real and structural: India buys Russian crude at a $20–30/barrel discount, refines it domestically (Jamnagar — world's largest refinery), and re-exports refined products to Europe and Asia at market prices — capturing $12–18B/year in margin that Western sanctions were supposed to deny Russia. IT exports ($310B+) are now India's single largest foreign exchange earner, dominating services trade with the US, UK, and EU. The China+1 shift is real: Apple assembles 14% of all iPhones in India (target 25% by 2027). India's military non-alignment — buying simultaneously from Russia (S-400), USA (F-35 under discussion, Apache), France (Rafale), and Israel (drones) — is a deliberate strategic hedge that maximises leverage from all sides. Rupee stability backed by $680B+ FX reserves gives India fiscal breathing room that none of its South Asian neighbours possess.",
+  intel: "First, kill the zombie statistic: India did NOT stay the 4th largest economy after passing the UK. The IMF\'s April 2026 WEO puts it 6th at $4.15T, behind Japan ($4.38T) and the UK ($4.27T) — an 11% rupee depreciation and the MoSPI base-year revision (₹357T to ₹345T for FY26) reversed the ranking without touching the growth rate. India is the clearest case in the world of a strong economy with a fragile external account, and 2026 widened the gap between the two. Growth is genuine and improving in quality: 7.8% in Q1 FY2026-27 with gross fixed capital formation up 11.9% against consumption at 7.1% — investment, not spending, is now leading, which is what durable industrialisation actually looks like. The external account went the other way. The Hormuz closure hit India harder than almost any large economy because its crude comes overwhelmingly from Iraq, Saudi Arabia and the UAE, all of which ship through the Strait. July merchandise imports of $76.2B against record exports of $44.2B is an energy story, not a competitiveness story. The response was the sharpest geopolitical pivot of the year: Russian crude went from 23% of oil imports in January to over 50% by June — India signed a February deal promising to reduce Russian purchases, then more than doubled them, because Russian barrels avoid both Hormuz and the Red Sea. Washington has not reimposed the penalty. The cushions are real and growing: services exports at $421.3B, record remittances of $144.8B, a Q4 current account surplus of $7.1B, and FX reserves at an all-time $729.3B. India is buying its industrial future with a currency it must constantly defend.",
 
-  risk: "PRIMARY RISK: Pharma API concentration — 68% of active pharmaceutical ingredients (APIs) are imported from China. A US–China military confrontation or export control shock isolates Indian pharma overnight; India supplies 20% of global generic medicines, so this is a systemic global risk, not just an India risk. SECONDARY RISK: Gold import drain ($58B/yr) bleeds foreign exchange and reflects absence of domestic investment alternatives — a structural weakness in the savings market that persists despite RBI gold bond schemes. THIRD RISK: Russia oil dependency (38% of crude) is profitable today but creates acute geopolitical risk — if Western sanctions escalate to secondary sanctions on Indian banks or if Russia's oil infrastructure is damaged by the Ukraine war, India faces an energy crisis with no quick substitute at scale. WILDCARD: China's bilateral trade surplus with India ($95B+ in China's favour) reflects India's inability to compete in manufactured goods against Chinese industry — high import tariffs protect but also prevent the scale-up needed for genuine industrialisation. Without resolving the China manufacturing deficit, India's trade balance will remain chronically stressed."
+  risk: "PRIMARY RISK: energy import dependence is now the binding constraint. India imports over 85% of its crude, and the Hormuz closure repriced that bill in weeks — every $10 on Brent costs roughly $15B a year in foreign exchange. The Russian workaround is a mitigation, not a fix, and it is already eroding as Ukrainian strikes on Russian export infrastructure and Chinese competition for the same barrels bite. SECONDARY: that workaround is itself the diplomatic risk. The February deal traded a tariff cut for a promise to reduce Russian oil; India instead pushed it above 50%. Washington has not moved, but the 18% rate is a policy choice that can be reversed in a day, and the full trade agreement remains unsigned as India holds out for terms better than Vietnam and Bangladesh. THIRD: pharma API concentration — a majority of active pharmaceutical ingredients come from China. India supplies roughly a fifth of the world's generic medicines, so a US–China rupture or export-control shock is a systemic global risk routed through Indian supply chains. FOURTH: the rupee needed $74B of engineered NRI deposit inflows to stabilise near 94 after touching 96.79 in May. Reserves at a record $729.3B look like strength; the mechanism that built them looks like defence. WILDCARD: China remains India's largest import source and, on combined trade, its largest partner — the bilateral deficit reflects an inability to compete in manufactured goods that tariffs protect against but cannot solve."
 }
 
 ]; /* end NATIONS */
@@ -495,7 +514,7 @@ function OverviewTab(props) {
   var n = props.nation;
   return ce(React.Fragment, null,
     ce("div", { style: { marginBottom: "1.5rem" } },
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "KEY TRADE VITALS — 2025"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "KEY TRADE VITALS — LATEST 2026 DATA"),
       ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(175px, 1fr))", gap: "0.5rem" } },
         n.vitals.map(function(v, i) {
           var dColor = v.d && v.d.charAt(0) === "+" ? C.green : v.d && (v.d.charAt(0) === "−" || v.d.charAt(0) === "-") ? C.red : C.dim;
@@ -509,7 +528,7 @@ function OverviewTab(props) {
       )
     ),
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TRADE VOLUME 2019–2025 (USD BILLIONS) — GOLD: EXPORTS · RED: IMPORTS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TRADE VOLUME 2019–2025 (USD BILLIONS) — GOLD: EXPORTS · RED: IMPORTS · 2026 IS PART-YEAR, SEE VITALS"),
       ce(ResponsiveContainer, { width: "100%", height: 260 },
         ce(BarChart, { data: n.trade6, margin: { top: 10, right: 20, left: 0, bottom: 10 } },
           ce(XAxis, { dataKey: "y", stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
@@ -554,11 +573,11 @@ function PartnersTab(props) {
   }
   return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "1.5rem" } },
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT DESTINATIONS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT DESTINATIONS — 2025 SHARES · 2026 MOVEMENT IN NOTES"),
       ce(PartnerList, { partners: n.expPartners, valueColor: C.goldL, barColor: C.gold })
     ),
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT SOURCES"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT SOURCES — 2025 SHARES · 2026 MOVEMENT IN NOTES"),
       ce(PartnerList, { partners: n.impPartners, valueColor: C.red, barColor: C.red })
     )
   );
@@ -571,13 +590,13 @@ function SectorsTab(props) {
   var maxImp = Math.max.apply(null, n.topImports.map(function(e) { return e.pct; }));
   return ce("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" } },
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT COMMODITIES & SECTORS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP EXPORT COMMODITIES & SECTORS — 2025 FULL-YEAR COMPOSITION"),
       n.topExports.map(function(item, i) {
         return ce(SectorBar, { key: i, item: item, max: maxExp });
       })
     ),
     ce("div", null,
-      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT COMMODITIES & SECTORS"),
+      ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.875rem", fontFamily: "'DM Mono', monospace" } }, "TOP IMPORT COMMODITIES & SECTORS — 2025 FULL-YEAR COMPOSITION"),
       n.topImports.map(function(item, i) {
         return ce(SectorBar, { key: i, item: item, max: maxImp });
       })
@@ -719,10 +738,10 @@ function App() {
     /* ── Site Header ── */
     ce("div", { style: { background: C.bg2, borderBottom: "1px solid " + C.border, padding: "1.5rem clamp(1rem, 5vw, 2.5rem)" } },
       ce("div", { style: { maxWidth: 1200, margin: "0 auto" } },
-        ce("div", { style: { fontSize: "0.6rem", letterSpacing: "4px", color: C.goldD, textTransform: "uppercase", marginBottom: "0.3rem", fontFamily: "'DM Mono', monospace" } }, "// TRADE INTELLIGENCE BRIEF — DATA UPDATED MAY 2026"),
+        ce("div", { style: { fontSize: "0.6rem", letterSpacing: "4px", color: C.goldD, textTransform: "uppercase", marginBottom: "0.3rem", fontFamily: "'DM Mono', monospace" } }, "// TRADE INTELLIGENCE BRIEF — DATA CURRENT TO 7 SEPTEMBER 2026"),
         ce("h1", { style: { fontSize: "clamp(1.5rem, 5vw, 2.75rem)", fontFamily: "'Playfair Display', serif", color: C.goldL, letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: "0.5rem" } }, "Global Trade Intelligence"),
         ce("p", { style: { fontSize: "0.875rem", color: C.muted, maxWidth: 720, lineHeight: 1.65 } },
-          "Comprehensive analysis of world trade flows, tariff shocks, sector performance, cashflow intelligence, and geopolitical risk — updated May 2026. Covering the world’s 3 largest trading economies: United States · China · India."
+          "Comprehensive analysis of world trade flows, tariff shocks, sector performance, cashflow intelligence, and geopolitical risk — current to 7 September 2026, incorporating trade data through July 2026, the Supreme Court’s IEEPA ruling, and the Strait of Hormuz energy shock. Covering the world’s 3 largest trading economies: United States · China · India."
         )
       )
     ),
@@ -747,10 +766,10 @@ function App() {
       }
     },
       ce("p", { style: { fontSize: "0.6rem", color: C.dim, letterSpacing: "0.75px", lineHeight: 1.9, maxWidth: 900, margin: "0 auto" } },
-        "GLOBAL TRADE INTELLIGENCE REPORT · DATA SOURCES: WTO · IMF WORLD ECONOMIC OUTLOOK APR 2026 · WORLD BANK WITS · US CENSUS BUREAU · USTR · BEA · GENERAL ADMINISTRATION OF CUSTOMS CHINA · MINISTRY OF COMMERCE INDIA · RBI · UNCTAD · CEPII · BRUEGEL INSTITUTE"
+        "GLOBAL TRADE INTELLIGENCE REPORT · DATA SOURCES: WTO · IMF WORLD ECONOMIC OUTLOOK APR 2026 & COFER Q1 2026 · US CENSUS BUREAU / BEA (JULY 2026, REL. 3 SEP) · USTR · US SUPREME COURT (IEEPA, 20 FEB 2026) · CHINA NBS & GENERAL ADMINISTRATION OF CUSTOMS (JULY 2026) · INDIA MINISTRY OF COMMERCE, MoSPI & RBI · IEA · WORLD BANK · UNCTAD · PENN WHARTON BUDGET MODEL"
       ),
       ce("p", { style: { fontSize: "0.58rem", color: C.border, marginTop: "0.5rem", letterSpacing: "0.5px" } },
-        "COMPILED MAY 2026 · ALL FIGURES ARE ESTIMATES BASED ON OFFICIAL AND PARTNER-REPORTED TRADE STATISTICS"
+        "CURRENT TO 7 SEPTEMBER 2026 · LATEST HARD DATA: US & CHINA TRADE THROUGH JULY 2026, INDIA THROUGH JULY 2026, INDIA GDP THROUGH Q1 FY2026-27 · ANNUAL BAR CHARTS SHOW COMPLETED YEARS TO 2025; 2026 IS REPORTED AS YEAR-TO-DATE, NOT ANNUALISED · ALL FIGURES ARE OFFICIAL OR PARTNER-REPORTED STATISTICS AND MAY BE REVISED"
       )
     )
   );
