@@ -26,19 +26,21 @@ button { cursor: pointer; border: none; font-family: inherit; }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/umd/Recharts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/umd/Recharts.js"></script>
 
 <script>
 "use strict";
 
 var useState = React.useState;
-var _R = Recharts;
-var ResponsiveContainer = _R.ResponsiveContainer;
-var BarChart = _R.BarChart;
-var Bar = _R.Bar;
-var XAxis = _R.XAxis;
-var YAxis = _R.YAxis;
-var Tooltip = _R.Tooltip;
+var _R = (typeof Recharts !== "undefined" && Recharts) ? Recharts : null;
+var CHARTS_OK = !!(_R && _R.ResponsiveContainer && _R.BarChart);
+var ResponsiveContainer = _R && _R.ResponsiveContainer;
+var BarChart = _R && _R.BarChart;
+var Bar = _R && _R.Bar;
+var XAxis = _R && _R.XAxis;
+var YAxis = _R && _R.YAxis;
+var Tooltip = _R && _R.Tooltip;
 
 /* ─── THEME ─── */
 var C = {
@@ -529,7 +531,11 @@ function OverviewTab(props) {
     ),
     ce("div", null,
       ce("div", { style: { fontSize: "0.6rem", letterSpacing: "2px", color: C.muted, textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'DM Mono', monospace" } }, "TRADE VOLUME 2019–2025 (USD BILLIONS) — GOLD: EXPORTS · RED: IMPORTS · 2026 IS PART-YEAR, SEE VITALS"),
-      ce(ResponsiveContainer, { width: "100%", height: 260 },
+      (!CHARTS_OK
+        ? ce("div", { style: { padding: "1.25rem", border: "1px dashed " + C.border, borderRadius: 4, color: C.muted, fontSize: "0.8rem", fontFamily: "'DM Mono', monospace" } },
+            "Chart library unavailable — trade volumes for " + n.short + ": " +
+            n.trade6.map(function(d){ return d.y + " exports $" + d.x + "B / imports $" + d.m + "B"; }).join(" · "))
+        : ce(ResponsiveContainer, { width: "100%", height: 260 },
         ce(BarChart, { data: n.trade6, margin: { top: 10, right: 20, left: 0, bottom: 10 } },
           ce(XAxis, { dataKey: "y", stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
           ce(YAxis, { stroke: C.muted, fontSize: 11, tick: { fill: C.muted } }),
@@ -540,7 +546,7 @@ function OverviewTab(props) {
           ce(Bar, { dataKey: "x", fill: C.gold,      radius: [2,2,0,0], name: "Exports" }),
           ce(Bar, { dataKey: "m", fill: C.red, opacity: 0.8, radius: [2,2,0,0], name: "Imports" })
         )
-      )
+      ))
     )
   );
 }
@@ -776,8 +782,15 @@ function App() {
 }
 
 /* ─── MOUNT ─── */
-var root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(React.createElement(App, null));
+try {
+  var root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(React.createElement(App, null));
+} catch (err) {
+  document.getElementById("root").innerHTML =
+    '<div style="padding:2rem;max-width:640px;margin:0 auto;font-family:monospace;color:#c43c3c;line-height:1.7">'
+    + '<strong>Report failed to render.</strong><br>' + String(err && err.message ? err.message : err)
+    + '<br><br><span style="color:#6b7f9a">This usually means a script blocked by the network. Reload, or try a different network.</span></div>';
+}
 </script>
 </body>
 </html>
