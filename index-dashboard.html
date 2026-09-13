@@ -57,10 +57,10 @@ function ce() {
 /* ─── TICKER DATA ─── */
 var TICKER = [
   { label: "USA: TRADE GAP — 7M 2026", value: "−29.6% YoY", note: "Goods+services deficit down $188.4B YTD (BEA, Jul)", col: C.green },
-  { label: "CHINA: SURPLUS — 7M 2026", value: "$687.4B", note: "Jan–Jul; exports +18.5%, imports +26.7%", col: C.green },
+  { label: "CHINA: SURPLUS — 8M 2026", value: "$805.5B", note: "Jan–Aug; Aug exports +25%, imports +28.2%", col: C.green },
   { label: "INDIA: GDP RANK", value: "#6 · $4.15T", note: "IMF Apr'26 — NOT 4th; behind UK & Japan", col: C.gold },
   { label: "INDIA: Q1 FY26-27 GDP", value: "+7.8%", note: "Apr–Jun 2026; fastest major economy", col: C.gold },
-  { label: "BRENT CRUDE", value: "$96.82/bbl", note: "Sep 6 2026; +47% YoY on Hormuz war", col: C.red },
+  { label: "BRENT CRUDE", value: "$104.42/bbl", note: "Sep 11 2026; +60% YoY, Oman Hormuz talks", col: C.red },
   { label: "IEEPA TARIFFS STRUCK DOWN", value: "6–3 SCOTUS", note: "Feb 20 2026; refunds ordered to importers", col: C.blue },
   { label: "US EFFECTIVE TARIFF", value: "~7.1%", note: "Jun 2026; rebuilt on §122/§232/§301", col: C.red },
   { label: "CHINA NEV EXPORTS", value: "2.36M units", note: "H1 2026; +120% YoY, 46.2% of car exports", col: C.green },
@@ -175,7 +175,7 @@ var NATIONS = [
     { y: "2026 Mar",  t: "The Court of International Trade orders CBP to liquidate and reliquidate entries without IEEPA duties. Washington rebuilds tariffs on other authorities: a 10% §122 global baseline, §232 duties of 25–50% on steel, aluminium, copper, autos, semiconductors and lumber, and §301 duties of 7.5–100% on China. Average effective rate settles near 7.1%." },
     { y: "2026 May",  t: "IEEPA refunds accelerate to the point that Treasury pays out more in customs refunds than it collects for the month. The spring oil spike pushes headline inflation above 4% before easing; Q2 GDP growth slows to 1.5% annualised from 2.1% in Q1." },
     { y: "2026 Jul",  t: "USTR imposes a fresh 12.5% forced-labor tariff on Chinese goods on July 23, lifting the blended China rate to roughly 37.5% on most consumer electronics and machinery even as the broader truce holds. FY2026 customs duties reach $154.5B through July, +13.8% YoY despite the refunds." },
-    { y: "2026 Sep",  t: "July trade data (released Sep 3) confirms the structural shift: the goods-and-services deficit is down $188.4B, or 29.6%, year-to-date — exports +12.0% against imports +1.9%. Brent trades near $96.82 as US–Iran strikes resume, keeping the energy-export windfall and the inflation risk running together." }
+    { y: "2026 Sep",  t: "July US trade data (released Sep 3) confirms the structural shift: the goods-and-services deficit is down $188.4B, or 29.6%, year-to-date — exports +12.0% against imports +1.9%. China's August release (Sep 8) shows exports up 25% to a record $401.44B and the Jan–Aug surplus at $805.5B. Brent trades near $104.42 (Sep 11) as Gulf and Iranian diplomats meet in Oman over Hormuz shipping, keeping the energy-export windfall and the inflation risk running together." }
   ],
 
   intel: "The deficit is finally narrowing — but read why before you call it a policy win. Three forces did the work, and only one was intentional. First, the courts: the Supreme Court's 6–3 ruling on February 20, 2026 held that IEEPA confers no tariff power at all, voiding the emergency duties and forcing refunds that in May exceeded collections for the month. Washington rebuilt the wall on §122, §232 and §301 — sturdier legally, narrower in reach, and averaging ~7.1% rather than the headline rates of 2025. Second, the Hormuz war: with Gulf supply down 10 mb/d and Brent up roughly 47% year-over-year, America's position as a net energy exporter turned a global catastrophe into an export windfall. That is most of the +12.0% export growth. Third, tariffs did suppress imports — but to +1.9%, not negative; the physical goods still come, they just cost more. The invisible surplus remains the real moat: IP licensing, finance and cloud together clear roughly $390B a year, and the dollar's COFER share actually rose to 57.13% in Q1 2026. A narrowing deficit built on a war premium and a court ruling is not the same as a rebalanced economy.",
@@ -186,16 +186,16 @@ var NATIONS = [
 /* ══════════════════ CHINA ══════════════════ */
 {
   id: "china", flag: "🇨🇳", name: "China", short: "CHINA", no: "02", col: "#c43c3c",
-  gdp: "$20.0T", tradeBalance: "surplus", balLabel: "SURPLUS +$687.4B IN 7M 2026 — EXPORTS +18.5%",
-  headline: "China is exporting harder than ever into a market that no longer wants it. Through July 2026 exports ran 18.5% ahead of last year and imports 26.7% ahead, holding the surplus at $687.4B for seven months. The composition is what changed: semiconductor exports nearly doubled in value and high-tech shipments rose 40.7%, while exports to the United States fell 10% and ASEAN — now 18% of China's goods exports against America's 11% — became the primary destination. Domestically the picture is weaker: Q2 GDP grew just 4.3%, the slowest since late 2022.",
+  gdp: "$20.0T", tradeBalance: "surplus", balLabel: "SURPLUS +$805.5B IN 8M 2026 — AUG EXPORTS +25%",
+  headline: "China is exporting harder than ever into a market that no longer wants it. Through August 2026 exports ran 25% ahead of last year and imports 28.2% ahead, lifting the cumulative surplus to $805.5B. The composition is what changed: integrated-circuit exports jumped nearly 130% in value and high-tech shipments rose about 57% in August, while exports to the United States fell 10% and ASEAN — now 18% of China's goods exports against America's 11% — became the primary destination. Domestically the picture is weaker: Q2 GDP grew just 4.3%, the slowest since late 2022.",
 
   vitals: [
     { k: "GDP Growth Q2'26",  v: "+4.3%",    s: "Slowest since Q4 2022; Q1 was 5.0%", d: "H1: +4.7%" },
-    { k: "Exports 7M-2026",   v: "+18.5%",   s: "Jan–Jul YoY; AI and chip-led",     d: "Booming" },
-    { k: "Imports 7M-2026",   v: "+26.7%",   s: "Jan–Jul YoY; energy cost surge",   d: "Outpacing exports" },
-    { k: "Surplus 7M-2026",   v: "+$687.4B", s: "Vs $683.5B a year earlier",        d: "Roughly flat" },
-    { k: "Jul 2026 Exports",  v: "$397.9B",  s: "Monthly record; +23.9% YoY",       d: "Beat forecast" },
-    { k: "Jul 2026 Surplus",  v: "+$112.5B", s: "Vs $97.7B in Jul 2025",            d: "+15% YoY" },
+    { k: "Aug 2026 Exports",  v: "+25%",     s: "YoY; monthly record $401.44B",     d: "Accelerating" },
+    { k: "Aug 2026 Imports",  v: "+28.2%",   s: "YoY; $282.36B, energy-cost surge", d: "Outpacing exports" },
+    { k: "Surplus 8M-2026",   v: "+$805.5B", s: "Jan–Aug, from $687.4B in 7M",      d: "Widening" },
+    { k: "Aug 2026 Surplus",  v: "+$119.09B",s: "Vs $112.5B in Jul 2026",           d: "+6% M/M" },
+    { k: "IC Export Growth",  v: "~+130%",   s: "Integrated circuits, Aug YoY",     d: "Record" },
     { k: "High-Tech Exports", v: "+40.7%",   s: "Semiconductors nearly doubled",    d: "New export engine" },
     { k: "NEV Exports H1'26", v: "2.36M units", s: "46.2% of all vehicle exports",  d: "+120% YoY" },
     { k: "Exports to USA",    v: "−10%",     s: "US share down to 11% of exports",  d: "Structural loss" },
@@ -212,9 +212,9 @@ var NATIONS = [
   ],
 
   expPartners: [
-    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "#1 partner — ¥5.14T in 7M 2026, +20%; ~$77B US-bound rerouted" },
-    { c: "EU-27",     p: 15.8, v: "$593B",  note: "¥3.67T in 7M 2026, +9.5%; 35–48% EV tariff since 2024" },
-    { c: "USA",       p: 11.1, v: "$421B",  note: "¥2.38T in 7M 2026, −1.6%; US down to ~11% of exports" },
+    { c: "ASEAN",     p: 17.2, v: "$645B",  note: "#1 partner — ~$878B total trade Jan–Aug 2026; ~$77B US-bound rerouted" },
+    { c: "EU-27",     p: 15.8, v: "$593B",  note: "~$620B total trade Jan–Aug 2026; 35–48% EV tariff since 2024" },
+    { c: "USA",       p: 11.1, v: "$421B",  note: "~$408B total trade Jan–Aug 2026; US down to ~11% of exports" },
     { c: "Hong Kong", p: 8.3,  v: "$311B",  note: "Re-export and financial gateway" },
     { c: "Japan",     p: 4.8,  v: "$180B",  note: "Exports to Japan +14.0% YoY in July 2026" },
     { c: "S. Korea",  p: 4.5,  v: "$169B",  note: "Exports +46.6% YoY in Jul'26 — AI chip supply chain" },
@@ -283,12 +283,13 @@ var NATIONS = [
     { y: "2026 Feb–Mar", t: "The Hormuz closure hits China harder than any other major economy: it is the largest buyer of Gulf crude, and roughly a quarter of seaborne oil transits the Strait. Import values surge 26.7% YTD largely on price, not volume — a direct transfer of Chinese industrial margin to energy exporters, and the main reason the surplus stopped growing." },
     { y: "2026 H1",    t: "NEV exports reach 2.355M units, up 120% year-on-year and 46.2% of all vehicle exports; in June monthly vehicle exports top 1 million for the first time and NEVs exceed half of them. Pure-electric passenger car exports hit $24.9B, +56.5% in value. BYD\'s Thailand and Mexico plants run at scale, converting export volume into local assembly." },
     { y: "2026 Jul",   t: "Exports jump 23.9% YoY to a monthly record $397.9B; semiconductor export value nearly doubles and high-tech shipments rise 40.7%. USTR adds a 12.5% forced-labor tariff on July 23, lifting the blended US rate to roughly 37.5%. Q2 GDP comes in at 4.3% — the weakest since 2022 — as domestic demand and investment stay soft." },
+    { y: "2026 Aug",   t: "Exports accelerate again, up 25% YoY to a fresh monthly record $401.44B; imports rise 28.2% to $282.36B and integrated-circuit exports jump nearly 130%. The Jan–Aug cumulative surplus reaches $805.5B, released by GACC on 8 September." },
     { y: "2026 Sep",   t: "The rerouting is now measurable: about $77B of US-bound Chinese goods have been redirected through ASEAN since April, exports to the US are down 10% for the year, and ASEAN at 18% of China\'s exports has decisively overtaken America at 11%. The export machine did not shrink — it changed address." }
   ],
 
-  intel: "The headline number hides the real story. China's surplus is roughly flat year-on-year — $687.4B over seven months against $683.5B — but that flatness is the product of two violent opposing forces, not calm. Exports are up 18.5% and imports up 26.7%; the import surge is overwhelmingly the Hormuz energy bill, a direct transfer of Chinese industrial margin to oil exporters. Meanwhile the export mix has transformed: semiconductor export value nearly doubled and high-tech shipments rose 40.7%, so the country that spent a decade as the world's assembly floor is now selling the AI supply chain's components. The geography flipped too. Exports to the US are down 10% and America is now just 11% of Chinese exports, while ASEAN at 18% has become the primary market — roughly $77B of US-bound goods rerouted through Southeast Asia since April alone. Tariffs did not stop the machine; they changed its address. The vulnerability is domestic, not external: Q2 GDP grew 4.3%, the slowest since 2022, because a country that exports its overproduction cannot consume its way out when the world starts taxing the outlet valve.",
+  intel: "The headline number hides the real story. China's surplus keeps widening — $805.5B over eight months, up from $687.4B in the seven-month count a month earlier — but that widening is the product of two violent opposing forces, not calm. Exports are up 25% and imports up 28.2% in August alone; the import surge is overwhelmingly the Hormuz energy bill, a direct transfer of Chinese industrial margin to oil exporters. Meanwhile the export mix has transformed: integrated-circuit export value jumped nearly 130% and high-tech shipments rose about 57% in August, so the country that spent a decade as the world's assembly floor is now selling the AI supply chain's components. The geography flipped too. Exports to the US are down 10% and America is now just 11% of Chinese exports, while ASEAN at 18% has become the primary market — roughly $77B of US-bound goods rerouted through Southeast Asia since April alone. Tariffs did not stop the machine; they changed its address. The vulnerability is domestic, not external: Q2 GDP grew 4.3%, the slowest since 2022, because a country that exports its overproduction cannot consume its way out when the world starts taxing the outlet valve.",
 
-  risk: "PRIMARY RISK: the growth engine is stalling underneath a strong export headline — Q2 GDP of 4.3% is the weakest since 2022, with property debt above $6T still compressing domestic demand and steel, cement and glass demand down 15–20% from peak. An export boom cannot offset a consumption economy that will not start. SECONDARY: energy exposure is now acute. China is the largest buyer of Gulf crude and the Hormuz closure drove imports up 26.7% on price alone; every month Brent holds near $97 is a margin transfer out of Chinese industry, and a prolonged closure is a far graver threat than any tariff. THIRD: semiconductor independence remains the stated 2027 goal — SMIC has reached 5nm but sits two to three generations behind TSMC, and EUV, KLA and Applied Materials tools are fully sanctioned. That the export mix now leans on chips makes the tooling dependency more dangerous, not less. FOURTH: the ASEAN rerouting that saved 2026 is the obvious target of the next enforcement round; transshipment rules would strand roughly $77B of redirected trade. WILDCARD: Taiwan Strait action stays economically suicidal — China's export machine depends on the very Pacific lanes a conflict would close, and with Hormuz already shut it would face simultaneous chokepoints on both energy in and goods out."
+  risk: "PRIMARY RISK: the growth engine is stalling underneath a strong export headline — Q2 GDP of 4.3% is the weakest since 2022, with property debt above $6T still compressing domestic demand and steel, cement and glass demand down 15–20% from peak. An export boom cannot offset a consumption economy that will not start. SECONDARY: energy exposure is now acute. China is the largest buyer of Gulf crude and the Hormuz closure drove imports up 26.7% on price alone; every month Brent holds above $100 is a margin transfer out of Chinese industry, and a prolonged closure is a far graver threat than any tariff. THIRD: semiconductor independence remains the stated 2027 goal — SMIC has reached 5nm but sits two to three generations behind TSMC, and EUV, KLA and Applied Materials tools are fully sanctioned. That the export mix now leans on chips makes the tooling dependency more dangerous, not less. FOURTH: the ASEAN rerouting that saved 2026 is the obvious target of the next enforcement round; transshipment rules would strand roughly $77B of redirected trade. WILDCARD: Taiwan Strait action stays economically suicidal — China's export machine depends on the very Pacific lanes a conflict would close, and with Hormuz already shut it would face simultaneous chokepoints on both energy in and goods out."
 },
 
 /* ══════════════════ INDIA ══════════════════ */
@@ -744,7 +745,7 @@ function App() {
     /* ── Site Header ── */
     ce("div", { style: { background: C.bg2, borderBottom: "1px solid " + C.border, padding: "1.5rem clamp(1rem, 5vw, 2.5rem)" } },
       ce("div", { style: { maxWidth: 1200, margin: "0 auto" } },
-        ce("div", { style: { fontSize: "0.6rem", letterSpacing: "4px", color: C.goldD, textTransform: "uppercase", marginBottom: "0.3rem", fontFamily: "'DM Mono', monospace" } }, "// TRADE INTELLIGENCE BRIEF — DATA CURRENT TO 7 SEPTEMBER 2026"),
+        ce("div", { style: { fontSize: "0.6rem", letterSpacing: "4px", color: C.goldD, textTransform: "uppercase", marginBottom: "0.3rem", fontFamily: "'DM Mono', monospace" } }, "// TRADE INTELLIGENCE BRIEF — DATA CURRENT TO 13 SEPTEMBER 2026"),
         ce("h1", { style: { fontSize: "clamp(1.5rem, 5vw, 2.75rem)", fontFamily: "'Playfair Display', serif", color: C.goldL, letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: "0.5rem" } }, "Global Trade Intelligence"),
         ce("p", { style: { fontSize: "0.875rem", color: C.muted, maxWidth: 720, lineHeight: 1.65 } },
           "Comprehensive analysis of world trade flows, tariff shocks, sector performance, cashflow intelligence, and geopolitical risk — current to 7 September 2026, incorporating trade data through July 2026, the Supreme Court’s IEEPA ruling, and the Strait of Hormuz energy shock. Covering the world’s 3 largest trading economies: United States · China · India."
@@ -772,10 +773,10 @@ function App() {
       }
     },
       ce("p", { style: { fontSize: "0.6rem", color: C.dim, letterSpacing: "0.75px", lineHeight: 1.9, maxWidth: 900, margin: "0 auto" } },
-        "GLOBAL TRADE INTELLIGENCE REPORT · DATA SOURCES: WTO · IMF WORLD ECONOMIC OUTLOOK APR 2026 & COFER Q1 2026 · US CENSUS BUREAU / BEA (JULY 2026, REL. 3 SEP) · USTR · US SUPREME COURT (IEEPA, 20 FEB 2026) · CHINA NBS & GENERAL ADMINISTRATION OF CUSTOMS (JULY 2026) · INDIA MINISTRY OF COMMERCE, MoSPI & RBI · IEA · WORLD BANK · UNCTAD · PENN WHARTON BUDGET MODEL"
+        "GLOBAL TRADE INTELLIGENCE REPORT · DATA SOURCES: WTO · IMF WORLD ECONOMIC OUTLOOK APR 2026 & COFER Q1 2026 · US CENSUS BUREAU / BEA (JULY 2026, REL. 3 SEP) · USTR · US SUPREME COURT (IEEPA, 20 FEB 2026) · CHINA NBS & GENERAL ADMINISTRATION OF CUSTOMS (AUGUST 2026, REL. 8 SEP) · INDIA MINISTRY OF COMMERCE, MoSPI & RBI · IEA · EIA · WORLD BANK · UNCTAD · PENN WHARTON BUDGET MODEL"
       ),
       ce("p", { style: { fontSize: "0.58rem", color: C.border, marginTop: "0.5rem", letterSpacing: "0.5px" } },
-        "CURRENT TO 7 SEPTEMBER 2026 · LATEST HARD DATA: US & CHINA TRADE THROUGH JULY 2026, INDIA THROUGH JULY 2026, INDIA GDP THROUGH Q1 FY2026-27 · ANNUAL BAR CHARTS SHOW COMPLETED YEARS TO 2025; 2026 IS REPORTED AS YEAR-TO-DATE, NOT ANNUALISED · ALL FIGURES ARE OFFICIAL OR PARTNER-REPORTED STATISTICS AND MAY BE REVISED"
+        "CURRENT TO 13 SEPTEMBER 2026 · LATEST HARD DATA: US TRADE THROUGH JULY 2026, CHINA TRADE THROUGH AUGUST 2026, INDIA THROUGH JULY 2026, INDIA GDP THROUGH Q1 FY2026-27, BRENT CRUDE THROUGH 11 SEPTEMBER 2026 · ANNUAL BAR CHARTS SHOW COMPLETED YEARS TO 2025; 2026 IS REPORTED AS YEAR-TO-DATE, NOT ANNUALISED · ALL FIGURES ARE OFFICIAL OR PARTNER-REPORTED STATISTICS AND MAY BE REVISED"
       )
     )
   );
