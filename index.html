@@ -367,10 +367,10 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0 3.5rem;font-size:.83r
     </div>
     <div class="findings">
       <div class="finding reveal" style="--c:var(--pos)">
-        <div class="finding-k">US trade gap · Jan–Jul 2026</div>
-        <div class="finding-n">−29.6%</div>
-        <p class="finding-d">The goods and services gap fell by $188.4bn against the same months of 2025. Exports rose 12.0 percent while imports moved just 1.9 percent.</p>
-        <p class="finding-s">BEA, released 3 Sep 2026</p>
+        <div class="finding-k">US trade gap · Jan–Aug 2026</div>
+        <div class="finding-n">−19.9%</div>
+        <p class="finding-d">The goods and services gap fell by $138.2bn against the same months of 2025, though August alone widened to $105.6bn, a 17-month high. Through July, exports had risen 12.0 percent while imports moved just 1.9 percent.</p>
+        <p class="finding-s">BEA and Census, released 6 Oct 2026</p>
       </div>
       <div class="finding reveal" style="--c:var(--accent)">
         <div class="finding-k">Brent crude · 6 Sep 2026</div>
@@ -508,8 +508,8 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0 3.5rem;font-size:.83r
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <p class="updated">Data current to 7 September 2026</p>
-      <p class="foot-note" style="margin-top:.6rem">Latest hard data: US and China trade through July 2026, India trade through July 2026, India GDP through Q1 FY2026-27, IMF COFER through Q1 2026. Annual charts show completed years to 2025; 2026 is reported as year to date, never annualised.</p>
+      <p class="updated">Data current to 1 November 2026</p>
+      <p class="foot-note" style="margin-top:.6rem">Latest hard data: US trade through August 2026 (BEA, 6 Oct), China trade through September 2026 (customs, 14 Oct), India merchandise trade through September 2026 (Commerce Ministry, 15 Oct). Narrative text and other tables still reflect July data and are being refreshed in stages. Also: India India GDP through Q1 FY2026-27, IMF COFER through Q1 2026. Annual charts show completed years to 2025; 2026 is reported as year to date, never annualised.</p>
     </div>
     <div class="foot-note" style="max-width:34ch">
       <p>Independent research. Official and partner-reported statistics, subject to revision. Not investment advice.</p>
@@ -523,14 +523,14 @@ var RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").mat
 /* ═══════════ DATA ═══════════ */
 var N = [
 {id:"usa",name:"United States",c:"var(--usa)",hex:"#3987e5",rank:"World #1 economy · $30.8tn",
- badge:{t:"Trade gap −29.6% YTD",k:"up"},
+ badge:{t:"Trade gap −19.9% YTD (Jan–Aug)",k:"up"},
  lede:"The tariff architecture of 2025 was dismantled in court, not at the negotiating table. On 20 February 2026 the Supreme Court ruled 6–3 that emergency powers never conferred tariff authority, voiding the duties and forcing refunds. Washington rebuilt on other statutes, landing near a 7.1 percent average effective rate. Combined with an energy windfall from the Hormuz war, the goods and services gap fell 29.6 percent in the first seven months.",
  vitals:[
-  {k:"Trade gap 7M-2026",v:"−29.6%",s:"−$188.4bn vs Jan–Jul 2025",d:"Record narrowing"},
+  {k:"Trade gap 8M-2026",v:"−19.9%",s:"−$138.2bn vs Jan–Aug 2025 (was −29.6% through July)",d:"Narrowing slowed"},
   {k:"Exports 7M-2026",v:"+12.0%",s:"+$237.2bn; energy and AI goods",d:"Boom"},
   {k:"Imports 7M-2026",v:"+1.9%",s:"+$48.8bn; tariff-suppressed",d:"Near-flat"},
-  {k:"July 2026 deficit",v:"−$88.6bn",s:"Widened from $71.2bn in June",d:"+$17.4bn M/M"},
-  {k:"July services surplus",v:"+$31.0bn",s:"IP, finance, cloud, education",d:"+$0.2bn M/M"},
+  {k:"August 2026 deficit",v:"−$105.6bn",s:"Widened from $92.8bn in July (revised); exports $315.2bn, imports $420.8bn",d:"+$12.7bn M/M"},
+  {k:"August services surplus",v:"+$31.0bn",s:"Goods deficit $136.6bn; IP, finance, cloud, education",d:"Steady"},
   {k:"GDP growth Q2'26",v:"+1.5%",s:"Annualised; 2.1% in Q1",d:"Oil-shock drag"},
   {k:"Avg effective tariff",v:"~7.1%",s:"Rebuilt post-IEEPA on §122/§232/§301",d:"Court-reset"},
   {k:"Tariff on China",v:"~37.5%",s:"12.5% reciprocal + 25% §301",d:"Truce to Nov'26"},
@@ -546,16 +546,16 @@ var N = [
  risk:"The improvement is borrowed, not earned. Strip out the energy windfall and the underlying goods gap is intact. A Hormuz de-escalation returning Brent to the $60s would reverse much of the narrowing within two quarters. Legal exposure from the IEEPA ruling is open-ended, and trade policy now moves at the speed of the courts. Leading-edge chip production stays 55 to 60 percent Taiwan-concentrated through 2027. And the China truce expires on 10 November 2026."},
 
 {id:"china",name:"China",c:"var(--china)",hex:"#d95926",rank:"World #2 economy · $20.0tn",
- badge:{t:"Surplus $687.4bn in 7M 2026",k:"up"},
+ badge:{t:"Surplus $938.1bn in 9M 2026",k:"up"},
  lede:"China is exporting harder than ever into a market that no longer wants it. Through July exports ran 18.5 percent ahead of last year and imports 26.7 percent ahead, holding the surplus at $687.4bn. The composition is what changed: semiconductor exports nearly doubled in value while shipments to the United States fell 10 percent and ASEAN became the primary destination. Domestically the picture is weaker. Q2 GDP grew just 4.3 percent, the slowest since late 2022.",
  vitals:[
   {k:"Exports 7M-2026",v:"+18.5%",s:"Jan–Jul YoY; AI and chip-led",d:"Booming"},
   {k:"Imports 7M-2026",v:"+26.7%",s:"Jan–Jul YoY; energy cost surge",d:"Outpacing exports"},
   {k:"Surplus 7M-2026",v:"+$687.4bn",s:"Versus $683.5bn a year earlier",d:"Roughly flat"},
   {k:"July 2026 exports",v:"$397.9bn",s:"Monthly record; +23.9% YoY",d:"Beat forecast"},
-  {k:"July 2026 surplus",v:"+$112.5bn",s:"Versus $97.7bn in July 2025",d:"+15% YoY"},
+  {k:"Sept 2026 surplus",v:"+$133.5bn",s:"Exports +36.3%, imports +31.0% YoY; Jan–Sep surplus $938.1bn",d:"On track for $1tn"},
   {k:"GDP growth Q2'26",v:"+4.3%",s:"Slowest since Q4 2022; Q1 was 5.0%",d:"H1: +4.7%"},
-  {k:"High-tech exports",v:"+40.7%",s:"Semiconductor value nearly doubled",d:"New engine"},
+  {k:"High-tech exports",v:"+40.7%",s:"Semiconductors +108.1% Jan–Sep",d:"New engine"},
   {k:"NEV exports H1'26",v:"2.36m units",s:"46.2% of all vehicle exports",d:"+120% YoY"},
   {k:"Exports to USA",v:"−10%",s:"US share down to 11% of exports",d:"Structural loss"},
   {k:"Exports to ASEAN",v:"+19%",s:"Now 18% of exports, the top market",d:"Rerouting hub"},
@@ -569,14 +569,14 @@ var N = [
  risk:"The growth engine is stalling underneath a strong export headline. Q2 GDP of 4.3 percent is the weakest since 2022, with property debt above $6tn still compressing domestic demand. Energy exposure is acute: China is the largest buyer of Gulf crude, and every month Brent holds near $97 transfers margin out of Chinese industry. Semiconductor independence remains two to three generations behind, and leaning the export mix on chips makes the tooling dependency more dangerous, not less. The ASEAN rerouting that saved 2026 is the obvious target of the next enforcement round."},
 
 {id:"india",name:"India",c:"var(--india)",hex:"#199e70",rank:"World #6 economy · $4.15tn",
- badge:{t:"Merch. deficit −$32.0bn in July",k:"down"},
+ badge:{t:"Merch. deficit −$30.2bn in Sept",k:"down"},
  lede:"India is the world's sixth largest economy, not the fourth. The IMF's April 2026 count puts nominal GDP at $4.15tn, behind Japan at $4.38tn and the UK at $4.27tn, after an 11 percent rupee slide and a base-year revision. It is running the fastest growth of any major economy and the widest trade gap in its history at the same time: Q1 FY2026-27 GDP came in at 7.8 percent while the Hormuz war repriced the import bill and pushed Russian crude past half of all oil imports.",
  vitals:[
   {k:"Nominal GDP 2026",v:"$4.15tn",s:"IMF Apr'26, world #6, behind UK and Japan",d:"Not 4th"},
   {k:"GDP growth Q1 FY27",v:"+7.8%",s:"Apr–Jun 2026; beat 7.1% consensus",d:"Fastest major"},
   {k:"Fixed investment",v:"+11.9%",s:"GFCF, versus 5.8% a year earlier",d:"Investment-led"},
-  {k:"July merch. exports",v:"$44.2bn",s:"Highest-ever July; +19.6% YoY",d:"Record"},
-  {k:"July merch. imports",v:"$76.2bn",s:"+17.5% YoY on energy repricing",d:"Record"},
+  {k:"Sept merch. exports",v:"$44.4bn",s:"+23.0% YoY; Apr–Sep $259.9bn, +18.5%",d:"Strong"},
+  {k:"Sept merch. imports",v:"$74.6bn",s:"Up from $69.1bn; Apr–Sep $437.5bn, +16.3%",d:"Elevated"},
   {k:"July overall gap",v:"−$15.0bn",s:"Goods plus services; +31.5% YoY",d:"Widening"},
   {k:"Services exports",v:"$421.3bn",s:"FY25-26, from $387.5bn in FY25",d:"+8.7% YoY"},
   {k:"Remittances FY25-26",v:"$144.8bn",s:"Record net private transfers",d:"+16.2% YoY"},
